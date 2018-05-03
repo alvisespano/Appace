@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/credits"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/fonti"
+        android:layout_marginEnd="16dp"
+        android:text="credits" />
+
+    <Button
+        android:id="@+id/fonti"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/presentazione"
+        android:layout_marginEnd="139dp"
+        android:text="fonti" />
+
+
+    <Button
+        android:id="@+id/luoghi"
+        android:layout_width="242dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="164dp"
+        android:layout_marginStart="58dp"
+        android:text="Luoghi di pace" />
+
+    <Button
+        android:id="@+id/presentazione"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="26dp"
+        android:layout_marginStart="24dp"
+        android:text="Presentazione" />
+
+    </RelativeLayout>
