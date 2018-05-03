@@ -36,7 +36,7 @@ public abstract class MapManager {
 
     @NonNull
     @UiThread
-    protected Marker putMarkerFromMapItem(@NonNull MapItem i, float hue) throws Exception {
+    public Marker putMarkerFromMapItem(@NonNull MapItem i, float hue) throws Exception {
         MarkerOptions opts = new MarkerOptions().title(i.getTitle()).position(i.getPosition()).snippet(i.getDescription()).icon(BitmapDescriptorFactory.defaultMarker(hue));
         return getGoogleMap().addMarker(opts);
     }
@@ -52,7 +52,7 @@ public abstract class MapManager {
      */
     @NonNull
     @UiThread
-    protected <I extends MapItem> Collection<Marker> putMarkersFromMapItems(@NonNull List<I> l, float hue) {
+    public <I extends MapItem> Collection<Marker> putMarkersFromMapItems(@NonNull List<I> l, float hue) {
         Collection<Marker> r = new ArrayList<>();
         int cnt = 0;
         for (MapItem i : l) {
@@ -68,7 +68,7 @@ public abstract class MapManager {
     }
 
     @Nullable
-    protected <I extends MapItem, P extends ProgressCounter> Collection<Marker> putMarkersFromParser(@NonNull AsyncParser<I, P> parser, float hue) {
+    public <I extends MapItem, P extends ProgressCounter> Collection<Marker> putMarkersFromParser(@NonNull AsyncParser<I, P> parser, float hue) {
         try {
             List<I> l = parser.getAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR).get();
             return putMarkersFromMapItems(l, hue);
@@ -80,7 +80,7 @@ public abstract class MapManager {
     }
 
     @NonNull
-    protected <I extends MapItem> Collection<Marker> putMarkersFromCsv(@NonNull CsvParser parser, @NonNull Function<CsvParser.Row, I> createMapItem, float hue) throws ExecutionException, InterruptedException {
+    public <I extends MapItem> Collection<Marker> putMarkersFromCsv(@NonNull CsvParser parser, @NonNull Function<CsvParser.Row, I> createMapItem, float hue) throws ExecutionException, InterruptedException {
         List<CsvParser.Row> rows = parser.getAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR).get();
         List<I> l = new ArrayList<>();
         for (CsvParser.Row r : rows)
@@ -89,13 +89,13 @@ public abstract class MapManager {
     }
 
     @NonNull
-    public <I extends MapItem> Collection<Marker> putMarkersFromCsv(@NonNull Reader rd, boolean hasHeader, @NonNull String sep, @NonNull Function<CsvParser.Row, I> createMapItem, float hue, @NonNull ProgressBarManager pbm) throws ExecutionException, InterruptedException {
+    public <I extends MapItem> Collection<Marker> putMarkersFromCsv(@NonNull Reader rd, boolean hasHeader, @NonNull String sep, @NonNull Function<CsvParser.Row, I> createMapItem, float hue, @Nullable ProgressBarManager pbm) throws ExecutionException, InterruptedException {
         return putMarkersFromCsv(new CsvParser(rd, hasHeader, sep, pbm), createMapItem, hue);
     }
 
     @NonNull
     @SuppressLint("StaticFieldLeak")
-    public <I extends MapItem> Collection<Marker> putMarkersFromCsv(@NonNull URL url, boolean hasHeader, @NonNull String sep, @NonNull Function<CsvParser.Row, I> createMapItem, float hue, @NonNull ProgressBarManager pbm) throws ExecutionException, InterruptedException {
+    public <I extends MapItem> Collection<Marker> putMarkersFromCsv(@NonNull URL url, boolean hasHeader, @NonNull String sep, @NonNull Function<CsvParser.Row, I> createMapItem, float hue, @Nullable ProgressBarManager pbm) throws ExecutionException, InterruptedException {
         return (new AsyncTask<Void, Void, Collection<Marker>>() {
             @Override
             @Nullable

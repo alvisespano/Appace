@@ -21,6 +21,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -45,9 +46,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -55,8 +54,7 @@ import java.util.List;
 import it.unive.dais.cevid.datadroid.lib.component.MapItem;
 import it.unive.dais.cevid.datadroid.lib.component.MapManager;
 import it.unive.dais.cevid.datadroid.lib.parser.AsyncParser;
-import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
-import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
+import it.unive.dais.cevid.datadroid.lib.progress.ProgressBarManager;
 
 /**
  * Questa classe è la componente principale del toolkit: fornisce servizi primari per un'app basata su Google Maps, tra cui localizzazione, pulsanti
@@ -74,13 +72,11 @@ public class MapsActivity extends AppCompatActivity
         implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
-        GoogleMap.OnMapClickListener, GoogleMap.OnMapLongClickListener, GoogleMap.OnCameraMoveStartedListener, GoogleMap.OnMarkerClickListener ,GoogleMap.OnInfoWindowClickListener {
+        GoogleMap.OnMapClickListener, GoogleMap.OnMapLongClickListener, GoogleMap.OnCameraMoveStartedListener, GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowClickListener {
 
     protected static final int REQUEST_CHECK_SETTINGS = 500;
     protected static final int PERMISSIONS_REQUEST_ACCESS_BOTH_LOCATION = 501;
 
-
-    ScrollingActivity scrollingActivity = new ScrollingActivity();
     // alcune costanti
     private static final String TAG = "MapsActivity";
     /**
@@ -108,6 +104,8 @@ public class MapsActivity extends AppCompatActivity
      */
     @Nullable
     protected Marker hereMarker = null;
+    @Nullable
+    private ProgressBarManager progressBarManager;
 
     /**
      * Questo metodo viene invocato quando viene inizializzata questa activity.
@@ -125,6 +123,8 @@ public class MapsActivity extends AppCompatActivity
         // inizializza le preferenze
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
+        progressBarManager = new ProgressBarManager(this, new ProgressBar[]{(ProgressBar) findViewById(R.id.progress_bar_1)});
+
         // trova gli oggetti che rappresentano i bottoni e li salva come campi d'istanza
         button_here = (ImageButton) findViewById(R.id.button_here);
         button_car = (ImageButton) findViewById(R.id.button_car);
@@ -141,21 +141,21 @@ public class MapsActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "here button clicked");
-        gpsCheck();
-        updateCurrentPosition();
-        if (hereMarker != null) hereMarker.remove();
-        if (currentPosition != null) {
-            MarkerOptions opts = new MarkerOptions();
-            opts.position(currentPosition);
-            opts.title(getString(R.string.marker_title));
-            opts.snippet(String.format("lat: %g\nlng: %g", currentPosition.latitude, currentPosition.longitude));
-            hereMarker = gMap.addMarker(opts);
-            if (gMap != null)
-                gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentPosition, getResources().getInteger(R.integer.zoomFactor_button_here)));
-        } else
-            Log.d(TAG, "no current position available");
-    }
-});
+                gpsCheck();
+                updateCurrentPosition();
+                if (hereMarker != null) hereMarker.remove();
+                if (currentPosition != null) {
+                    MarkerOptions opts = new MarkerOptions();
+                    opts.position(currentPosition);
+                    opts.title(getString(R.string.marker_title));
+                    opts.snippet(String.format("lat: %g\nlng: %g", currentPosition.latitude, currentPosition.longitude));
+                    hereMarker = gMap.addMarker(opts);
+                    if (gMap != null)
+                        gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentPosition, getResources().getInteger(R.integer.zoomFactor_button_here)));
+                } else
+                    Log.d(TAG, "no current position available");
+            }
+        });
     }
 
 
@@ -183,7 +183,6 @@ public class MapsActivity extends AppCompatActivity
         super.onResume();
         applyMapSettings();
     }*/
-
     @Override
     protected void onPause() {
         super.onPause();
@@ -446,7 +445,7 @@ public class MapsActivity extends AppCompatActivity
 
         applyMapSettings();
 
-        demo();
+        putMarkers();
     }
 
     /**
@@ -507,8 +506,8 @@ public class MapsActivity extends AppCompatActivity
 
     public void onInfoWindowClick(Marker marker) {
 
-       // scrollingActivity.setCurrentPosition(currentPosition);
-       // scrollingActivity.setMarkerPosition(marker.getPosition());
+        // scrollingActivity.setCurrentPosition(currentPosition);
+        // scrollingActivity.setMarkerPosition(marker.getPosition());
         //runPlace1();
 
         Intent scrollingPage = new Intent(this, ScrollingActivity.class);
@@ -517,25 +516,23 @@ public class MapsActivity extends AppCompatActivity
     }
 
 
-
-
-    protected void runPlace1(){
-        startActivity(new Intent(this, scrollingActivity.getClass()));
+    protected void runPlace1() {
+        startActivity(new Intent(this, ScrollingActivity.class));
     }
 
     public void onInfoWindowClose(Marker markers) {
         Toast.makeText(this, "Close Info Window", Toast.LENGTH_SHORT).show();
     }
 
-        /**
-         * Metodo di utilità che permette di posizionare rapidamente sulla mappa una lista di MapItem.
-         * Attenzione: l'oggetto gMap deve essere inizializzato, questo metodo va pertanto chiamato preferibilmente dalla
-         * callback onMapReady().
-         *
-         * @param l   la lista di oggetti di tipo I tale che I sia sottotipo di MapItem.
-         * @param <I> sottotipo di MapItem.
-         * @return ritorna la collection di oggetti Marker aggiunti alla mappa.
-         */
+    /**
+     * Metodo di utilità che permette di posizionare rapidamente sulla mappa una lista di MapItem.
+     * Attenzione: l'oggetto gMap deve essere inizializzato, questo metodo va pertanto chiamato preferibilmente dalla
+     * callback onMapReady().
+     *
+     * @param l   la lista di oggetti di tipo I tale che I sia sottotipo di MapItem.
+     * @param <I> sottotipo di MapItem.
+     * @return ritorna la collection di oggetti Marker aggiunti alla mappa.
+     */
     @NonNull
     protected <I extends MapItem> Collection<Marker> putMarkersFromMapItems(List<I> l) throws Exception {
         Collection<Marker> r = new ArrayList<>();
@@ -607,7 +604,7 @@ public class MapsActivity extends AppCompatActivity
     }
 
 
-    private void demo() {
+    private void putMarkers() {
         try {
             MapManager mm = new MapManager() {
                 @NonNull
@@ -620,7 +617,7 @@ public class MapsActivity extends AppCompatActivity
             mm.putMarkersFromCsv(new InputStreamReader(getResources().openRawResource(R.raw.piattaforme)),
                     true, ";",
                     MapItem.byCsvColumnNames("Latitudine (WGS84)", "Longitudine (WGS 84)", "Denominazione", "Stato"),
-                    BitmapDescriptorFactory.HUE_GREEN, null);
+                    BitmapDescriptorFactory.HUE_GREEN, progressBarManager);
 
         } catch (Exception e) {
             Log.e(TAG, String.format("exception caught: %s", e));
