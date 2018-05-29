@@ -1,4 +1,4 @@
-package it.unive.dais.cevid.appace;
+package it.unive.dais.cevid.appace.component;
 
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.coreutils.BuildConfig;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+
+import it.unive.dais.cevid.appace.R;
 
 
 /**

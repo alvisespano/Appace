@@ -1,4 +1,4 @@
-package it.unive.dais.cevid.appace;
+package it.unive.dais.cevid.appace.component;
 
 import android.Manifest;
 import android.app.Activity;
@@ -51,6 +51,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import it.unive.dais.cevid.appace.R;
+import it.unive.dais.cevid.appace.geo.Site;
 import it.unive.dais.cevid.datadroid.lib.component.MapItem;
 import it.unive.dais.cevid.datadroid.lib.component.MapManager;
 import it.unive.dais.cevid.datadroid.lib.parser.AsyncParser;
@@ -445,7 +447,7 @@ public class MapsActivity extends AppCompatActivity
 
         applyMapSettings();
 
-        putMarkers();
+        populateMap();
     }
 
     /**
@@ -604,7 +606,17 @@ public class MapsActivity extends AppCompatActivity
     }
 
 
-    private void putMarkers() {
+    private void populateMap() {
+        try {
+            Site s1 = new Site("opera1", "autore1", "via dei gelsomini 1");
+
+        } catch (Exception e) {
+            Log.e(TAG, String.format("exception caught: %s", e));
+            e.printStackTrace();
+        }
+    }
+
+    private void populateMapByCsv() {
         try {
             MapManager mm = new MapManager() {
                 @NonNull
@@ -616,7 +628,7 @@ public class MapsActivity extends AppCompatActivity
             // put markers from embedded resource CSV
             mm.putMarkersFromCsv(new InputStreamReader(getResources().openRawResource(R.raw.piattaforme)),
                     true, ";",
-                    MapItem.byCsvColumnNames("Latitudine (WGS84)", "Longitudine (WGS 84)", "Denominazione", "Stato"),
+                    MapItem.byCsvColumnNames("Latitude", "Longitude", "Title", "Description"),
                     BitmapDescriptorFactory.HUE_GREEN, progressBarManager);
 
         } catch (Exception e) {

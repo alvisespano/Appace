@@ -1,4 +1,4 @@
-package it.unive.dais.cevid.appace;
+package it.unive.dais.cevid.appace.component;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,6 +17,7 @@ import com.google.android.gms.maps.GoogleMap;
 
 import java.util.Map;
 
+import it.unive.dais.cevid.appace.R;
 import it.unive.dais.cevid.datadroid.lib.util.UnexpectedException;
 
 

@@ -33,7 +33,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".HomeActivity">
+        <activity android:name=".component.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
@@ -42,8 +42,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MapsActivity"
-            android:parentActivityName=".HomeActivity">
+            android:name=".component.MapsActivity"
+            android:parentActivityName=".component.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
@@ -53,24 +53,24 @@
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".HomeActivity" />
+                android:value=".component.HomeActivity" />
         </activity>
         <activity
-            android:name=".AboutActivity"
-            android:parentActivityName=".HomeActivity">
+            android:name=".component.AboutActivity"
+            android:parentActivityName=".component.HomeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".HomeActivity" />
+                android:value=".component.HomeActivity" />
         </activity>
         <activity
-            android:name=".SettingsActivity"
-            android:parentActivityName=".MapsActivity">
+            android:name=".component.SettingsActivity"
+            android:parentActivityName=".component.MapsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MapsActivity" />
+                android:value=".component.MapsActivity" />
         </activity>
         <activity
-            android:name=".ScrollingActivity"
+            android:name=".component.ScrollingActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
