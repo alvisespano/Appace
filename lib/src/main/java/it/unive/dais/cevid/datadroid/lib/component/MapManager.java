@@ -54,16 +54,17 @@ public abstract class MapManager {
     @UiThread
     public <I extends MapItem> Collection<Marker> putMarkersFromMapItems(@NonNull List<I> l, float hue) {
         Collection<Marker> r = new ArrayList<>();
-        int cnt = 0;
+        int index = 0;
+        final int maxIndex = l.size() - 1;
         for (MapItem i : l) {
             try {
                 r.add(putMarkerFromMapItem(i, hue));
             } catch (Exception e) {
-                Log.w(TAG, String.format("skipping MapItem at position %d: %s", cnt, e.getMessage()));
+                Log.w(TAG, String.format("skipping map item of type %s at index %d/%d: %s", i.getClass().getSimpleName(), index, maxIndex, e));
             }
-            ++cnt;
+            ++index;
         }
-        Log.v(TAG, String.format("added %d markers", cnt));
+        Log.v(TAG, String.format("added %d markers", index));
         return r;
     }
 

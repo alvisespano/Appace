@@ -608,16 +608,6 @@ public class MapsActivity extends AppCompatActivity
 
     private void populateMap() {
         try {
-            Site s1 = new Site("opera1", "autore1", "via dei gelsomini 1");
-
-        } catch (Exception e) {
-            Log.e(TAG, String.format("exception caught: %s", e));
-            e.printStackTrace();
-        }
-    }
-
-    private void populateMapByCsv() {
-        try {
             MapManager mm = new MapManager() {
                 @NonNull
                 @Override
@@ -626,10 +616,8 @@ public class MapsActivity extends AppCompatActivity
                 }
             };
             // put markers from embedded resource CSV
-            mm.putMarkersFromCsv(new InputStreamReader(getResources().openRawResource(R.raw.piattaforme)),
-                    true, ";",
-                    MapItem.byCsvColumnNames("Latitude", "Longitude", "Title", "Description"),
-                    BitmapDescriptorFactory.HUE_GREEN, progressBarManager);
+            mm.putMarkersFromCsv(new InputStreamReader(getResources().openRawResource(R.raw.luoghi)),
+                    true, ";", Site::new, BitmapDescriptorFactory.HUE_GREEN, progressBarManager);
 
         } catch (Exception e) {
             Log.e(TAG, String.format("exception caught: %s", e));

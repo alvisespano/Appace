@@ -1,50 +1,54 @@
 package it.unive.dais.cevid.appace.geo;
 
+import android.location.Location;
 import android.support.annotation.NonNull;
 
 import com.google.android.gms.maps.model.LatLng;
 
 import it.unive.dais.cevid.datadroid.lib.component.MapItem;
+import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
+import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
+import it.unive.dais.cevid.datadroid.lib.util.Function;
 
 public class Site implements MapItem {
 
-    @NonNull
-    private final LatLng pos;
+    private static final String LATITUDE = "Latitude";
+    private static final String LONGITUDE = "Longitude";
+    private static final String TITLE = "Title";
+    private static final String DESCRIPTION = "Description";
 
     @NonNull
-    private String title, author, address;
+    private final CsvParser.Row row;
 
-    public Site(@NonNull String title, @NonNull String author, @NonNull String address, @NonNull LatLng pos) {
-        this.title = title;
-        this.author = author;
-        this.address = address;
-        this.pos = pos;
+    public Site(@NonNull CsvParser.Row row) {
+        this.row = row;
     }
 
-    @Override
-    public LatLng getPosition() throws Exception {
-        return pos;
-    }
-
-    @Override
     @NonNull
-    public String getTitle() throws Exception {
-        return title;
+    private LatLng makeLatLng(Function<String, Double> f) throws ParserException {
+        return new LatLng(f.apply(row.get(LATITUDE)), f.apply(row.get(LONGITUDE)));
     }
 
     @Override
     @NonNull
-    public String getDescription() throws Exception {
-        return String.format("%s\n%s", getAuthor(), getAddress());
+    public LatLng getPosition() throws ParserException {
+        try {
+            return makeLatLng(Double::parseDouble);
+        } catch (NumberFormatException e) {
+            return makeLatLng(Location::convert);
+        }
     }
 
+    @Override
     @NonNull
-    public String getAuthor() {
-        return author;
+    public String getTitle() throws ParserException {
+        return row.get(TITLE);
     }
 
+    @Override
     @NonNull
-    public String getAddress() {
-        return address;
+    public String getDescription() throws ParserException {
+        return row.get(DESCRIPTION);
     }
+
 }

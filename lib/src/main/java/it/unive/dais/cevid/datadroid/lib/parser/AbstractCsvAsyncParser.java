@@ -77,14 +77,18 @@ public abstract class AbstractCsvAsyncParser<Data> extends AbstractAsyncParser<D
         final String TAG = getName();
         while ((line = reader.readLine()) != null) {
             int linen = prog.getCurrentCounter();
-            try {
-                if (linen == 0 && !hasActualHeader()) setHeader(line);
-                r.add(parserLine(line));
-                publishProgress(prog);
-            } catch (ParserException e) {
-                Log.w(TAG, String.format("recoverable parse error at line %d: %s", linen, e.getLocalizedMessage()));
+            if (line.isEmpty())
+                Log.w(TAG, String.format("line %d is empty", linen));
+            else {
+                try {
+                    if (linen == 0 && !hasActualHeader()) setHeader(line);
+                    r.add(parseLine(line));
+                    publishProgress(prog);
+                } catch (ParserException e) {
+                    Log.w(TAG, String.format("recoverable parse error at line %d: %s", linen, e));
+                }
+                prog.stepCounter();
             }
-            prog.stepCounter();
         }
         return r;
     }
@@ -121,7 +125,7 @@ public abstract class AbstractCsvAsyncParser<Data> extends AbstractAsyncParser<D
      * @return ritorna un singolo oggetto di tipo FiltrableData.
      */
     @NonNull
-    protected Data parserLine(@NonNull String line) throws ParserException {
+    protected Data parseLine(@NonNull String line) throws ParserException {
         return onItemParsed(parseColumns(split(line)));
     }
 
