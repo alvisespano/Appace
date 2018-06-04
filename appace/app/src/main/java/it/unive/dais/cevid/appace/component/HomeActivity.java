@@ -1,6 +1,7 @@
 package it.unive.dais.cevid.appace.component;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,34 +11,35 @@ import it.unive.dais.cevid.appace.R;
 
 public class HomeActivity extends AppCompatActivity {
 
+    @NonNull
+    private Button button_map, button_credits;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
 
-        Button vaiMappa = (Button) findViewById(R.id.luoghi);
-        vaiMappa.setOnClickListener(new View.OnClickListener(){
+        button_map = (Button) findViewById(R.id.luoghi);
+        button_map.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                runMappa();
-//PROVA 
+                startActivity(new Intent(HomeActivity.this, MapsActivity.class));
             }
         });
 
-        Button vaiCrediti = (Button) findViewById(R.id.credits);
-        vaiCrediti.setOnClickListener(new View.OnClickListener(){
+        button_credits = (Button) findViewById(R.id.credits);
+        button_credits.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                runCredits();
-
+                startActivity(new Intent(HomeActivity.this, AboutActivity.class));
             }
         });
 
 
     }
 
-    // ciclo di vita della app
+    // ciclo di vita
     //
 
     @Override
@@ -50,7 +52,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onStop();
     }
 
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -61,20 +62,10 @@ public class HomeActivity extends AppCompatActivity {
         super.onPause();
     }
 
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
     }
 
-
-
-    protected void runMappa(){
-        startActivity(new Intent(this, MapsActivity.class));
-    }
-
-    protected void runCredits(){
-        startActivity(new Intent(this, AboutActivity.class));
-    }
 
 }

@@ -5,10 +5,10 @@ import android.support.annotation.NonNull;
 
 import com.google.android.gms.maps.model.LatLng;
 
-import it.unive.dais.cevid.datadroid.lib.component.MapItem;
 import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
 import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
 import it.unive.dais.cevid.datadroid.lib.util.Function;
+import it.unive.dais.cevid.datadroid.lib.util.MapItem;
 
 public class Site implements MapItem {
 

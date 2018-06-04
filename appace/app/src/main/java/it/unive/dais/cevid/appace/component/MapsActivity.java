@@ -49,14 +49,17 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import it.unive.dais.cevid.appace.R;
 import it.unive.dais.cevid.appace.geo.Site;
-import it.unive.dais.cevid.datadroid.lib.component.MapItem;
-import it.unive.dais.cevid.datadroid.lib.component.MapManager;
 import it.unive.dais.cevid.datadroid.lib.parser.AsyncParser;
 import it.unive.dais.cevid.datadroid.lib.progress.ProgressBarManager;
+import it.unive.dais.cevid.datadroid.lib.util.AsyncTaskResult;
+import it.unive.dais.cevid.datadroid.lib.util.MapItem;
+import it.unive.dais.cevid.datadroid.lib.util.MapManager;
 
 /**
  * Questa classe è la componente principale del toolkit: fornisce servizi primari per un'app basata su Google Maps, tra cui localizzazione, pulsanti
@@ -108,6 +111,8 @@ public class MapsActivity extends AppCompatActivity
     protected Marker hereMarker = null;
     @Nullable
     private ProgressBarManager progressBarManager;
+    @Nullable
+    private Collection<Marker> markers;
 
     /**
      * Questo metodo viene invocato quando viene inizializzata questa activity.
@@ -161,16 +166,14 @@ public class MapsActivity extends AppCompatActivity
     }
 
 
-    // ciclo di vita della app
+    // ciclo di vita
     //
 
-
-    /*
     @Override
     protected void onStart() {
         super.onStart();
     }
-*/
+
     @Override
     protected void onStop() {
         super.onStop();
@@ -179,12 +182,12 @@ public class MapsActivity extends AppCompatActivity
     /**
      * Applica le impostazioni (preferenze) della mappa ad ogni chiamata.
      */
-    /*
     @Override
     protected void onResume() {
         super.onResume();
         applyMapSettings();
-    }*/
+    }
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -196,8 +199,11 @@ public class MapsActivity extends AppCompatActivity
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        gMap.clear();
+        if (gMap != null) {
+            gMap.clear();
+        }
     }
+
 
     /**
      * Quando arriva un Intent viene eseguito questo metodo.
@@ -329,30 +335,6 @@ public class MapsActivity extends AppCompatActivity
     //
 
     /**
-     * Chiamare questo metodo per aggiornare la posizione corrente del GPS.
-     * Si tratta di un metodo proprietario, che non ridefinisce alcun metodo della superclasse né implementa alcuna interfaccia: un metodo
-     * di utilità per aggiornare asincronamente in modo robusto e sicuro la posizione corrente del dispositivo mobile.
-     */
-    public void updateCurrentPosition() {
-        if (ActivityCompat.checkSelfPermission(MapsActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MapsActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            Log.d(TAG, "requiring permission");
-            ActivityCompat.requestPermissions(MapsActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSIONS_REQUEST_ACCESS_BOTH_LOCATION);
-        } else {
-            Log.d(TAG, "permission granted");
-            fusedLocationClient.getLastLocation()
-                    .addOnSuccessListener(MapsActivity.this, new OnSuccessListener<Location>() {
-                        @Override
-                        public void onSuccess(Location loc) {
-                            if (loc != null) {
-                                currentPosition = new LatLng(loc.getLatitude(), loc.getLongitude());
-                                Log.i(TAG, "current position updated");
-                            }
-                        }
-                    });
-        }
-    }
-
-    /**
      * Viene chiamato quando si clicca sulla mappa.
      * Aggiungere qui codice che si vuole eseguire quando l'utente clicca sulla mappa.
      *
@@ -446,38 +428,10 @@ public class MapsActivity extends AppCompatActivity
         uis.setMapToolbarEnabled(true);
 
         applyMapSettings();
-
         populateMap();
     }
 
-    /**
-     * Metodo proprietario che forza l'applicazione le impostazioni (o preferenze) che riguardano la mappa.
-     */
-    protected void applyMapSettings() {
-        if (gMap != null) {
-            Log.d(TAG, "applying map settings");
-            gMap.setMapType(SettingsActivity.getMapStyle(this));
-        }
-        setHereButtonVisibility();
-    }
-
-    /**
-     * Naviga dalla posizione from alla posizione to chiamando il navigatore di Google.
-     *
-     * @param from posizione iniziale.
-     * @param to   posizione finale.
-     */
-    protected void navigate(@NonNull LatLng from, @NonNull LatLng to) {
-        Intent navigation = new Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse("http://maps.google.com/maps?saddr=" + from.latitude + "," + from.longitude + "&daddr=" + to.latitude + "," + to.longitude + ""));
-        navigation.setPackage("com.google.android.apps.maps");
-        Log.i(TAG, String.format("starting navigation from %s to %s", from, to));
-        startActivity(navigation);
-    }
-
     // marker stuff
-    //
     //
 
     /**
@@ -506,72 +460,53 @@ public class MapsActivity extends AppCompatActivity
     }
 
 
+    @Override
     public void onInfoWindowClick(Marker marker) {
-
-        // scrollingActivity.setCurrentPosition(currentPosition);
-        // scrollingActivity.setMarkerPosition(marker.getPosition());
-        //runPlace1();
-
-        Intent scrollingPage = new Intent(this, ScrollingActivity.class);
-        scrollingPage.putExtra("MarkerPosition", marker.getPosition());
-        startActivity(scrollingPage);
+        Intent intent = new Intent(this, ScrollingActivity.class);
+        intent.putExtra("site", (Site) marker.getTag());
+        startActivity(intent);
     }
 
 
-    protected void runPlace1() {
-        startActivity(new Intent(this, ScrollingActivity.class));
-    }
+//    public void onInfoWindowClose(Marker marker) {
+//        Toast.makeText(this, "Closed Info Window", Toast.LENGTH_SHORT).show();
+//    }
 
-    public void onInfoWindowClose(Marker markers) {
-        Toast.makeText(this, "Close Info Window", Toast.LENGTH_SHORT).show();
+
+    // methods dealing with the map
+    //
+
+    /**
+     * Metodo proprietario che forza l'applicazione le impostazioni (o preferenze) che riguardano la mappa.
+     */
+    private void applyMapSettings() {
+        if (gMap != null) {
+            Log.d(TAG, "applying map settings");
+            gMap.setMapType(SettingsActivity.getMapStyle(this));
+        }
+        setHereButtonVisibility();
     }
 
     /**
-     * Metodo di utilità che permette di posizionare rapidamente sulla mappa una lista di MapItem.
-     * Attenzione: l'oggetto gMap deve essere inizializzato, questo metodo va pertanto chiamato preferibilmente dalla
-     * callback onMapReady().
+     * Naviga dalla posizione from alla posizione to chiamando il navigatore di Google.
      *
-     * @param l   la lista di oggetti di tipo I tale che I sia sottotipo di MapItem.
-     * @param <I> sottotipo di MapItem.
-     * @return ritorna la collection di oggetti Marker aggiunti alla mappa.
+     * @param from posizione iniziale.
+     * @param to   posizione finale.
      */
-    @NonNull
-    protected <I extends MapItem> Collection<Marker> putMarkersFromMapItems(List<I> l) throws Exception {
-        Collection<Marker> r = new ArrayList<>();
-        for (MapItem i : l) {
-            MarkerOptions opts = new MarkerOptions().title(i.getTitle()).position(i.getPosition()).snippet(i.getDescription());
-            r.add(gMap.addMarker(opts));
-        }
-        return r;
-    }
-
-    /**
-     * Metodo proprietario di utilità per popolare la mappa con i dati provenienti da un parser.
-     * Si tratta di un metodo che può essere usato direttamente oppure può fungere da esempio per come
-     * utilizzare i parser con informazioni geolocalizzate.
-     *
-     * @param parser un parser che produca sottotipi di MapItem, con qualunque generic Progress o Input
-     * @param <I>    parametro di tipo che estende MapItem.
-     * @return ritorna una collection di marker se tutto va bene; null altrimenti.
-     */
-    @Nullable
-    protected <I extends MapItem> Collection<Marker> putMarkersFromData(@NonNull AsyncParser<I, ?> parser) {
-        try {
-            List<I> l = parser.getAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR).get();
-            Log.i(TAG, String.format("parsed %d lines", l.size()));
-            return putMarkersFromMapItems(l);
-        } catch (Exception e) {
-            Log.e(TAG, String.format("exception caught while parsing: %s", e));
-            e.printStackTrace();
-            return null;
-        }
+    private void navigate(@NonNull LatLng from, @NonNull LatLng to) {
+        Intent navigation = new Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("http://maps.google.com/maps?saddr=" + from.latitude + "," + from.longitude + "&daddr=" + to.latitude + "," + to.longitude + ""));
+        navigation.setPackage("com.google.android.apps.maps");
+        Log.i(TAG, String.format("starting navigation from %s to %s", from, to));
+        startActivity(navigation);
     }
 
     /**
      * Controlla lo stato del GPS e dei servizi di localizzazione, comportandosi di conseguenza.
      * Viene usata durante l'inizializzazione ed in altri casi speciali.
      */
-    protected void gpsCheck() {
+    private void gpsCheck() {
         GoogleApiClient googleApiClient = new GoogleApiClient.Builder(MapsActivity.this).addApi(LocationServices.API).build();
         googleApiClient.connect();
 
@@ -605,24 +540,49 @@ public class MapsActivity extends AppCompatActivity
         });
     }
 
+    /**
+     * Chiamare questo metodo per aggiornare la posizione corrente del GPS.
+     * Si tratta di un metodo proprietario, che non ridefinisce alcun metodo della superclasse né implementa alcuna interfaccia: un metodo
+     * di utilità per aggiornare asincronamente in modo robusto e sicuro la posizione corrente del dispositivo mobile.
+     */
+    private void updateCurrentPosition() {
+        if (ActivityCompat.checkSelfPermission(MapsActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MapsActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            Log.d(TAG, "requiring permission");
+            ActivityCompat.requestPermissions(MapsActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSIONS_REQUEST_ACCESS_BOTH_LOCATION);
+        } else {
+            Log.d(TAG, "permission granted");
+            fusedLocationClient.getLastLocation()
+                    .addOnSuccessListener(MapsActivity.this, new OnSuccessListener<Location>() {
+                        @Override
+                        public void onSuccess(Location loc) {
+                            if (loc != null) {
+                                currentPosition = new LatLng(loc.getLatitude(), loc.getLongitude());
+                                Log.i(TAG, "current position updated");
+                            }
+                        }
+                    });
+        }
+    }
 
     private void populateMap() {
-        try {
-            MapManager mm = new MapManager() {
-                @NonNull
-                @Override
-                protected synchronized GoogleMap getGoogleMap() {
-                    return gMap;
-                }
-            };
-            // put markers from embedded resource CSV
-            mm.putMarkersFromCsv(new InputStreamReader(getResources().openRawResource(R.raw.luoghi)),
-                    true, ";", Site::new, BitmapDescriptorFactory.HUE_GREEN, progressBarManager);
+        MapManager mm = new MapManager() {
+            @NonNull
+            @Override
+            protected GoogleMap getGoogleMap() {
+                return gMap;
+            }
+        };
 
-        } catch (Exception e) {
-            Log.e(TAG, String.format("exception caught: %s", e));
-            e.printStackTrace();
-        }
+        AsyncTaskResult.run(() -> {
+            try {
+                markers = mm.putMarkersFromCsv(new InputStreamReader(getResources().openRawResource(R.raw.luoghi)),
+                        true, ";", Site::new, BitmapDescriptorFactory.HUE_GREEN, progressBarManager);
+                gMap.setOnMarkerClickListener(this);
+            } catch (ExecutionException | InterruptedException e) {
+                Log.e(TAG, String.format("exception caught: %s", e));
+                e.printStackTrace();
+            }
+        });
     }
 
 }
