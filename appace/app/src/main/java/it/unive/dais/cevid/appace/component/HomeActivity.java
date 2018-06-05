@@ -12,7 +12,7 @@ import it.unive.dais.cevid.appace.R;
 public class HomeActivity extends AppCompatActivity {
 
     @NonNull
-    private Button button_map, button_credits;
+    private Button button_map, button_credits, button_presentation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,14 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 startActivity(new Intent(HomeActivity.this, AboutActivity.class));
+            }
+        });
+
+        button_presentation = (Button) findViewById(R.id.presentazione);
+        button_presentation.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(HomeActivity.this, PresentationActivity.class));
             }
         });
 

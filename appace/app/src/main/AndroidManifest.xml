@@ -73,6 +73,14 @@
             android:name=".component.ScrollingActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".component.PresentationActivity"
+            android:label="@string/title_activity_presentation"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".component.HomeActivity" />
+        </activity>
     </application>
 
 </manifest>
