@@ -70,7 +70,7 @@
                 android:value=".component.MapsActivity" />
         </activity>
         <activity
-            android:name=".component.ScrollingActivity"
+            android:name=".component.SiteDetailsActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

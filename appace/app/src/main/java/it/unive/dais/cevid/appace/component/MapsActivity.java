@@ -47,18 +47,17 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
 import it.unive.dais.cevid.appace.R;
 import it.unive.dais.cevid.appace.geo.Site;
-import it.unive.dais.cevid.datadroid.lib.parser.AsyncParser;
+import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
+import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
 import it.unive.dais.cevid.datadroid.lib.progress.ProgressBarManager;
-import it.unive.dais.cevid.datadroid.lib.util.AsyncTaskResult;
-import it.unive.dais.cevid.datadroid.lib.util.MapItem;
+import it.unive.dais.cevid.datadroid.lib.progress.ProgressCounter;
 import it.unive.dais.cevid.datadroid.lib.util.MapManager;
 
 /**
@@ -113,6 +112,9 @@ public class MapsActivity extends AppCompatActivity
     private ProgressBarManager progressBarManager;
     @Nullable
     private Collection<Marker> markers;
+    @Nullable
+    private AsyncTask<Void, ProgressCounter, List<CsvParser.Row>> parserAsyncTask;
+
 
     /**
      * Questo metodo viene invocato quando viene inizializzata questa activity.
@@ -131,6 +133,8 @@ public class MapsActivity extends AppCompatActivity
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
         progressBarManager = new ProgressBarManager(this, new ProgressBar[]{(ProgressBar) findViewById(R.id.progress_bar_1)});
+
+        parserAsyncTask = new CsvParser(new InputStreamReader(getResources().openRawResource(R.raw.luoghi)), true, ";", progressBarManager).getAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 
         // trova gli oggetti che rappresentano i bottoni e li salva come campi d'istanza
         button_here = (ImageButton) findViewById(R.id.button_here);
@@ -462,8 +466,13 @@ public class MapsActivity extends AppCompatActivity
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-        Intent intent = new Intent(this, ScrollingActivity.class);
-        intent.putExtra("site", (Site) marker.getTag());
+        Intent intent = new Intent(this, SiteDetailsActivity.class);
+        try {
+            intent.putExtra("title", ((Site) Objects.requireNonNull(marker.getTag())).getTitle());
+        } catch (ParserException e) {
+            Log.e(TAG, String.format("marker %s does not have a valid title: %s", marker, e));
+            e.printStackTrace();
+        }
         startActivity(intent);
     }
 
@@ -568,21 +577,17 @@ public class MapsActivity extends AppCompatActivity
         MapManager mm = new MapManager() {
             @NonNull
             @Override
-            protected GoogleMap getGoogleMap() {
+            public GoogleMap getGoogleMap() {
                 return gMap;
             }
         };
+        try {
+            markers = mm.putMarkersFromCsv(parserAsyncTask.get(), Site::new, BitmapDescriptorFactory.HUE_GREEN);
+        } catch (InterruptedException | ExecutionException e) {
+            Log.e(TAG, String.format("exception caught: %s", e));
+            e.printStackTrace();
+        }
 
-        AsyncTaskResult.run(() -> {
-            try {
-                markers = mm.putMarkersFromCsv(new InputStreamReader(getResources().openRawResource(R.raw.luoghi)),
-                        true, ";", Site::new, BitmapDescriptorFactory.HUE_GREEN, progressBarManager);
-                gMap.setOnMarkerClickListener(this);
-            } catch (ExecutionException | InterruptedException e) {
-                Log.e(TAG, String.format("exception caught: %s", e));
-                e.printStackTrace();
-            }
-        });
     }
 
 }
