@@ -30,11 +30,11 @@
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-            <Button
-                android:id="@+id/tornaMappa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="torna alla mappa generale" />
+            <!--<Button-->
+                <!--android:id="@+id/tornaMappa"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="torna alla mappa generale" />-->
 
             <Button
                 android:id="@+id/goGMaps"
