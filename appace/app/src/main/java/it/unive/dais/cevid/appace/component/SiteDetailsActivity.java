@@ -34,7 +34,7 @@ public class SiteDetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scrolling);
+        setContentView(R.layout.activity_sitedetails);
 
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
@@ -45,13 +45,13 @@ public class SiteDetailsActivity extends AppCompatActivity {
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
-        Button tornaMappa = (Button) findViewById(R.id.tornaMappa);
-        tornaMappa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                backToMap();
-            }
-        });
+//        Button tornaMappa = (Button) findViewById(R.id.tornaMappa);
+//        tornaMappa.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                backToMap();
+//            }
+//        });
 
         Button goGMaps = (Button) findViewById(R.id.goGMaps);
         goGMaps.setOnClickListener(new View.OnClickListener() {

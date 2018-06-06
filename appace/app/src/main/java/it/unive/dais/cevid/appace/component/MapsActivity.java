@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.WorkerThread;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -47,6 +48,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
@@ -96,9 +98,6 @@ public class MapsActivity extends AppCompatActivity
      * API per i servizi di localizzazione.
      */
     protected FusedLocationProviderClient fusedLocationClient;
-    /**
-     * Posizione corrente. Potrebbe essere null prima di essere calcolata la prima volta.
-     */
     @Nullable
     protected LatLng currentPosition = null;
     /**
@@ -115,6 +114,38 @@ public class MapsActivity extends AppCompatActivity
     @Nullable
     private AsyncTask<Void, ProgressCounter, List<CsvParser.Row>> parserAsyncTask;
 
+    /**
+     * Posizione corrente. Potrebbe essere null prima di essere calcolata la prima volta.
+     */
+    @Nullable
+    private LatLng getCurrentPosition() {
+        return currentPosition;
+    }
+
+    private void setCurrentPosition(@NonNull LatLng currentPosition) {
+        this.currentPosition = currentPosition;
+    }
+
+    private boolean hasCurrentPosition() {
+        return getCurrentPosition() != null;
+    }
+
+    private class MyCsvParser extends CsvParser {
+        public MyCsvParser(@NonNull Reader rd, boolean hasHeader, String sep, @Nullable ProgressBarManager pbm) {
+            super(rd, hasHeader, sep, pbm);
+        }
+
+        @Override
+        @NonNull
+        @WorkerThread
+        public Row onItemParsed(@NonNull Row r, ProgressCounter prog) {
+            runOnUiThread(() -> {
+                Log.d(getName(), String.format("parsed line %d: %s", prog.getCurrentCounter(), r));
+            });
+            return r;
+        }
+
+    }
 
     /**
      * Questo metodo viene invocato quando viene inizializzata questa activity.
@@ -134,7 +165,8 @@ public class MapsActivity extends AppCompatActivity
 
         progressBarManager = new ProgressBarManager(this, new ProgressBar[]{(ProgressBar) findViewById(R.id.progress_bar_1)});
 
-        parserAsyncTask = new CsvParser(new InputStreamReader(getResources().openRawResource(R.raw.luoghi)), true, ";", progressBarManager).getAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        CsvParser parser = new MyCsvParser(new InputStreamReader(getResources().openRawResource(R.raw.luoghi)), true, ";", progressBarManager);
+        parserAsyncTask = parser.getAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 
         // trova gli oggetti che rappresentano i bottoni e li salva come campi d'istanza
         button_here = (ImageButton) findViewById(R.id.button_here);
@@ -155,14 +187,14 @@ public class MapsActivity extends AppCompatActivity
                 gpsCheck();
                 updateCurrentPosition();
                 if (hereMarker != null) hereMarker.remove();
-                if (currentPosition != null) {
+                if (getCurrentPosition() != null) {
                     MarkerOptions opts = new MarkerOptions();
-                    opts.position(currentPosition);
+                    opts.position(getCurrentPosition());
                     opts.title(getString(R.string.marker_title));
-                    opts.snippet(String.format("lat: %g\nlng: %g", currentPosition.latitude, currentPosition.longitude));
+                    opts.snippet(String.format("lat: %g\nlng: %g", getCurrentPosition().latitude, getCurrentPosition().longitude));
                     hereMarker = gMap.addMarker(opts);
                     if (gMap != null)
-                        gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentPosition, getResources().getInteger(R.integer.zoomFactor_button_here)));
+                        gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(getCurrentPosition(), getResources().getInteger(R.integer.zoomFactor_button_here)));
                 } else
                     Log.d(TAG, "no current position available");
             }
@@ -207,7 +239,6 @@ public class MapsActivity extends AppCompatActivity
             gMap.clear();
         }
     }
-
 
     /**
      * Quando arriva un Intent viene eseguito questo metodo.
@@ -455,8 +486,8 @@ public class MapsActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Snackbar.make(v, R.string.msg_button_car, Snackbar.LENGTH_SHORT);
-                if (currentPosition != null) {
-                    navigate(currentPosition, marker.getPosition());
+                if (getCurrentPosition() != null) {
+                    navigate(getCurrentPosition(), marker.getPosition());
                 }
             }
         });
@@ -565,8 +596,8 @@ public class MapsActivity extends AppCompatActivity
                         @Override
                         public void onSuccess(Location loc) {
                             if (loc != null) {
-                                currentPosition = new LatLng(loc.getLatitude(), loc.getLongitude());
-                                Log.i(TAG, "current position updated");
+                                setCurrentPosition(new LatLng(loc.getLatitude(), loc.getLongitude()));
+                                Log.d(TAG, String.format("current position updated: %s", currentPosition));
                             }
                         }
                     });
@@ -578,16 +609,20 @@ public class MapsActivity extends AppCompatActivity
             @NonNull
             @Override
             public GoogleMap getGoogleMap() {
-                return gMap;
+                return Objects.requireNonNull(gMap);
             }
         };
         try {
+            assert parserAsyncTask != null;
             markers = mm.putMarkersFromCsv(parserAsyncTask.get(), Site::new, BitmapDescriptorFactory.HUE_GREEN);
+            if (hasCurrentPosition())
+                gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(getCurrentPosition(), getResources().getInteger(R.integer.zoomFactor_button_here)));
+
         } catch (InterruptedException | ExecutionException e) {
             Log.e(TAG, String.format("exception caught: %s", e));
             e.printStackTrace();
         }
-
     }
+
 
 }
