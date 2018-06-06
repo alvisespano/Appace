@@ -25,7 +25,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-
         button_map = (Button) findViewById(R.id.luoghi);
         button_map.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -54,27 +53,27 @@ public class HomeActivity extends AppCompatActivity {
         TODO: 06/06/2018 i due bottoni della lingua inglese e italiano provvisoriamente li ho messi a fianco al bottone "luoghi di pace", poi quando funziona  lo switch della lingua, allora gli sposto
         TODO: 06/06/2018 devo capire perchè dentro l'onClick non mi funziona appunto il codice per la traduzione, che di default ora è sempre inglese
         */
-        button_en = (ImageButton) findViewById(R.id.enButton);
-        button_en.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Locale locale = new Locale("en");
-                Configuration config = getBaseContext().getResources().getConfiguration();
-                config.locale = locale;
-                getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-            }
-        });
-
-        button_it = (ImageButton) findViewById(R.id.itButton);
-        button_it.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Locale locale = new Locale("it");
-                Configuration config = getBaseContext().getResources().getConfiguration();
-                config.locale = locale;
-                getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-            }
-        });
+//        button_en = (ImageButton) findViewById(R.id.enButton);
+//        button_en.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Locale locale = new Locale("en");
+//                Configuration config = getBaseContext().getResources().getConfiguration();
+//                config.locale = locale;
+//                getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+//            }
+//        });
+//
+//        button_it = (ImageButton) findViewById(R.id.itButton);
+//        button_it.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Locale locale = new Locale("it");
+//                Configuration config = getBaseContext().getResources().getConfiguration();
+//                config.locale = locale;
+//                getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+//            }
+//        });
 
 
 

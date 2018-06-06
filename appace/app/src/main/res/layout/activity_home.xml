@@ -53,20 +53,20 @@
         app:srcCompat="@drawable/moroni_copertina2" />
 
 
-    <ImageButton
-        android:id="@+id/enButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/credits"
-        android:layout_alignTop="@+id/luoghi"
-        app:srcCompat="@drawable/inglese" />
+    <!--<ImageButton-->
+        <!--android:id="@+id/enButton"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignEnd="@+id/credits"-->
+        <!--android:layout_alignTop="@+id/luoghi"-->
+        <!--app:srcCompat="@drawable/inglese" />-->
 
-    <ImageButton
-        android:id="@+id/itButton"
-        android:layout_width="54dp"
-        android:layout_height="42dp"
-        android:layout_alignStart="@+id/credits"
-        android:layout_alignTop="@+id/luoghi"
-        app:srcCompat="@drawable/italiano" />
+    <!--<ImageButton-->
+        <!--android:id="@+id/itButton"-->
+        <!--android:layout_width="54dp"-->
+        <!--android:layout_height="42dp"-->
+        <!--android:layout_alignStart="@+id/credits"-->
+        <!--android:layout_alignTop="@+id/luoghi"-->
+        <!--app:srcCompat="@drawable/italiano" />-->
 
 </RelativeLayout>
