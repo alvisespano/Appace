@@ -14,7 +14,7 @@
         android:layout_height="@dimen/linear_layout_height"
         android:layout_gravity="start|bottom"
         android:layout_marginBottom="@dimen/linear_layout_margin_bottom"
-        android:layout_marginLeft="@dimen/linear_layout_margin_left"
+        android:layout_marginStart="@dimen/linear_layout_margin_left"
         android:gravity="start"
         >
 

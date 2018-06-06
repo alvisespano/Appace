@@ -45,14 +45,6 @@ public class SiteDetailsActivity extends AppCompatActivity {
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
-//        Button tornaMappa = (Button) findViewById(R.id.tornaMappa);
-//        tornaMappa.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                backToMap();
-//            }
-//        });
-
         Button goGMaps = (Button) findViewById(R.id.goGMaps);
         goGMaps.setOnClickListener(new View.OnClickListener() {
             @Override
