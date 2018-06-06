@@ -7,6 +7,9 @@
     android:fitsSystemWindows="true"
     tools:context=".component.SiteDetailsActivity">
 
+    <!-- TODO: Alessio: questo layout non è un po' incasinato? te l'ha generato così android studio? Come mai ci sono tutte queste toolbar, siamo sicuri che è giusto?
+               Inoltre, vorrei metterci la freccia per tornare indietro, non un bottone apposta, solo la freccia normale.
+    -->
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
@@ -40,15 +43,15 @@
                 android:id="@+id/goGMaps"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="250dp"
-                android:text="vai a google maps"
+                android:layout_marginStart="250dp"
+                android:text="@string/goto_gmaps"
                 android:textAlignment="viewStart"
                 app:layout_collapseParallaxMultiplier="1.0" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_scrolling" />
+    <include layout="@layout/content_sitedetails" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

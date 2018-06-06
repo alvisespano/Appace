@@ -114,22 +114,6 @@ public class MapsActivity extends AppCompatActivity
     @Nullable
     private AsyncTask<Void, ProgressCounter, List<CsvParser.Row>> parserAsyncTask;
 
-    /**
-     * Posizione corrente. Potrebbe essere null prima di essere calcolata la prima volta.
-     */
-    @Nullable
-    private LatLng getCurrentPosition() {
-        return currentPosition;
-    }
-
-    private void setCurrentPosition(@NonNull LatLng currentPosition) {
-        this.currentPosition = currentPosition;
-    }
-
-    private boolean hasCurrentPosition() {
-        return getCurrentPosition() != null;
-    }
-
     private class MyCsvParser extends CsvParser {
         public MyCsvParser(@NonNull Reader rd, boolean hasHeader, String sep, @Nullable ProgressBarManager pbm) {
             super(rd, hasHeader, sep, pbm);
@@ -199,6 +183,19 @@ public class MapsActivity extends AppCompatActivity
                     Log.d(TAG, "no current position available");
             }
         });
+    }
+
+
+    /**
+     * Posizione corrente. Potrebbe essere null prima di essere calcolata la prima volta.
+     */
+    @Nullable
+    private LatLng getCurrentPosition() {
+        return currentPosition;
+    }
+
+    private void setCurrentPosition(@NonNull LatLng currentPosition) {
+        this.currentPosition = currentPosition;
     }
 
 
@@ -615,8 +612,8 @@ public class MapsActivity extends AppCompatActivity
         try {
             assert parserAsyncTask != null;
             markers = mm.putMarkersFromCsv(parserAsyncTask.get(), Site::new, BitmapDescriptorFactory.HUE_GREEN);
-            if (hasCurrentPosition())
-                gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(getCurrentPosition(), getResources().getInteger(R.integer.zoomFactor_button_here)));
+            if (getCurrentPosition() != null)
+                gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(getCurrentPosition(), getResources().getInteger(R.integer.initial_zoom_factor)));
 
         } catch (InterruptedException | ExecutionException e) {
             Log.e(TAG, String.format("exception caught: %s", e));
