@@ -55,4 +55,14 @@ public class Site implements MapItem, Serializable {
         return row.get(DESCRIPTION);
     }
 
+    @Override
+    public String toString() {
+        try {
+            return String.format("Site[%s]", getTitle());
+        } catch (ParserException e) {
+            e.printStackTrace();
+            return "Site[UNKNOWN]";
+        }
+    }
+
 }

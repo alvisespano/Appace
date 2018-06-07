@@ -21,6 +21,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import java.util.Objects;
 
 import it.unive.dais.cevid.appace.R;
+import it.unive.dais.cevid.appace.geo.Site;
 
 
 public class SiteDetailsActivity extends AppCompatActivity {
@@ -37,8 +38,8 @@ public class SiteDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sitedetails);
 
         Intent intent = getIntent();
-        String title = intent.getStringExtra("title");
-        // TODO: use title for looking up the site
+        Site site = (Site) intent.getSerializableExtra("site");
+        Log.d(TAG, String.format("got site: %s", site));
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

@@ -4,5 +4,5 @@
     <integer name="zoomFactor_low">0</integer>
     <integer name="zoomFactor_mid">10</integer>
     <integer name="zoomFactor_high">18</integer>
-    <integer name="initial_zoom_factor">16</integer>
+    <integer name="initial_zoom_factor">12</integer>
 </resources>
