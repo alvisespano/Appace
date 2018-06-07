@@ -30,13 +30,13 @@
                 app:layout_collapseMode="pin"
                 app:layout_collapseParallaxMultiplier="1.0"
                 app:navigationIcon="?attr/homeAsUpIndicator"
-                app:popupTheme="@style/AppTheme.PopupOverlay"/>
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
 
             <Button
                 android:id="@+id/goGMaps"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="250dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="220dp"
                 android:text="@string/goto_gmaps"
                 android:textAlignment="viewStart"
                 app:layout_collapseParallaxMultiplier="1.0" />

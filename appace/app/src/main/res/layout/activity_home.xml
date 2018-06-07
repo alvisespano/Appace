@@ -13,6 +13,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/fonti"
         android:layout_marginEnd="16dp"
+        android:background="@color/accent"
         android:text="@string/crediti_button" />
 
     <Button
@@ -22,6 +23,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="136dp"
+        android:background="@color/accent"
         android:text="@string/fonti_button" />
 
 
@@ -32,7 +34,10 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="70dp"
-        android:text="@string/luoghi_pace_button" />
+        android:background="@color/accent"
+        android:ellipsize="marquee"
+        android:text="@string/luoghi_pace_button"
+        tools:shadowRadius="20dp" />
 
     <Button
         android:id="@+id/presentazione"
@@ -41,15 +46,16 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginStart="24dp"
+        android:background="@color/accent"
         android:text="@string/presentazione_button" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="409dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        app:srcCompat="@drawable/moroni_copertina2"
+        android:background="@drawable/moroni_copertina2"
         tools:ignore="UnknownId" />
 
 
