@@ -1,14 +1,22 @@
 package it.unive.dais.cevid.appace.component;
 
+import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.content.res.Configuration;
+import android.widget.Spinner;
+import android.widget.TextView;
+
 import java.util.Locale;
 
 
@@ -17,8 +25,12 @@ import it.unive.dais.cevid.appace.R;
 @SuppressWarnings("FieldCanBeLocal")
 public class HomeActivity extends AppCompatActivity {
 
-    private Button button_map, button_credits, button_presentation;
+    private Button button_map, button_credits, button_presentation, button_2;
     private ImageButton button_en, button_it;
+
+    Spinner mLanguage;
+    Button btn;
+    Locale myLocale;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,20 +62,20 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        /*
-        TODO: 06/06/2018 i due bottoni della lingua inglese e italiano provvisoriamente li ho messi a fianco al bottone "luoghi di pace", poi quando funziona  lo switch della lingua, allora gli sposto
-        TODO: 06/06/2018 devo capire perchè dentro l'onClick non mi funziona appunto il codice per la traduzione, che di default ora è sempre inglese
-        */
-        button_en = (ImageButton) findViewById(R.id.enButton);
+
+        //TODO: 06/06/2018 i due bottoni della lingua inglese e italiano provvisoriamente li ho messi a fianco al bottone "luoghi di pace", poi quando funziona  lo switch della lingua, allora gli sposto
+        //TODO: 06/06/2018 devo capire perchè dentro l'onClick non mi funziona appunto il codice per la traduzione, che di default ora è sempre inglese
+
+        /*button_2 = (Button) findViewById(R.id.button3);
         button_en.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Locale locale = new Locale("en");
-                Configuration config = getBaseContext().getResources().getConfiguration();
-                config.locale = locale;
-                getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+                //
             }
         });
+
+
+
 
         button_it = (ImageButton) findViewById(R.id.itButton);
         button_it.setOnClickListener(new View.OnClickListener() {
@@ -76,13 +88,15 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+*/
 
 
 
-        
 
 
     }
+
+
 
     // ciclo di vita
     //

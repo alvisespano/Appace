@@ -178,4 +178,14 @@ Buona lettura.
     <string name="crediti_button">CREDITI</string>
     <string name="presentazione_button">PRESENTAZIONE</string>
 
+
+    <string name="text_translation">Hi and welcome to codingdemos,
+        here you will learn how to develop android app. Thank you for watching</string>
+
+    <string-array name="language_option">
+        <item>English</item>
+        <item>Indonesian</item>
+        <item>Spanish</item>
+    </string-array>
+
 </resources>

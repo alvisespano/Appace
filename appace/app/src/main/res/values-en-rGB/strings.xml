@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name"></string>
+    <string name="luoghi_pace_button">PLACES OF PEACE</string>
+    <string name="fonti_button">FONTS</string>
+    <string name="crediti_button">CREDITS</string>
+    <string name="presentazione_button">PRESENTATION</string>
+    <string name="goto_gmaps">Go to Google Maps</string>
+</resources>
