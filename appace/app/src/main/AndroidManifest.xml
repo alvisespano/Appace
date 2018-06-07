@@ -81,6 +81,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".component.HomeActivity" />
         </activity>
+        <activity
+            android:name=".component.FontsActivity"
+            android:label="@string/title_activity_fonts"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".component.HomeActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -420,7 +420,7 @@ public class MapsActivity extends AppCompatActivity
                     return Objects.requireNonNull(gMap);
                 }
             };
-            markers = mm.putMarkersFromCsv(parserAsyncTask.get(), Site::new, BitmapDescriptorFactory.HUE_GREEN);
+            markers = (List<Marker>) mm.putMarkersFromCsv(parserAsyncTask.get(), Site::new, BitmapDescriptorFactory.HUE_GREEN);
             goToInitialPosition();
         } catch (InterruptedException | ExecutionException e) {
             Log.e(TAG, String.format("exception caught while getting parser result: %s", e.getLocalizedMessage()));
