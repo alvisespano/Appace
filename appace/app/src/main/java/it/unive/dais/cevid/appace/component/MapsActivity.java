@@ -124,24 +124,20 @@ public class MapsActivity extends AppCompatActivity
         mapFragment.getMapAsync(this);
 
         // quando viene premito il pulsante HERE viene eseguito questo codice
-        button_here.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(TAG, "here button clicked");
-                gpsCheck();
-                updateCurrentPosition();
-                if (hereMarker != null) hereMarker.remove();
-                if (currentPosition != null) {
-                    MarkerOptions opts = new MarkerOptions();
-                    opts.position(currentPosition);
-                    opts.title(getString(R.string.marker_title));
-                    opts.snippet(String.format("lat: %g\nlng: %g", currentPosition.latitude, currentPosition.longitude));
-                    hereMarker = gMap.addMarker(opts);
-                    if (gMap != null)
-                        goToInitialPosition();
-                } else
-                    Log.d(TAG, "no current position available");
-            }
+        button_here.setOnClickListener(v -> {
+            Log.d(TAG, "here button clicked");
+            gpsCheck();
+            updateCurrentPosition();
+            if (hereMarker != null) hereMarker.remove();
+            if (currentPosition != null) {
+                MarkerOptions opts = new MarkerOptions();
+                opts.position(currentPosition);
+                opts.title(getString(R.string.marker_title));
+                hereMarker = gMap.addMarker(opts);
+                if (gMap != null)
+                    goToInitialPosition();
+            } else
+                Log.d(TAG, "no current position available");
         });
     }
 
@@ -180,7 +176,7 @@ public class MapsActivity extends AppCompatActivity
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        final LocationSettingsStates states = LocationSettingsStates.fromIntent(intent);
+        @SuppressWarnings("unused") final LocationSettingsStates states = LocationSettingsStates.fromIntent(intent);
         switch (requestCode) {
             case REQUEST_CHECK_SETTINGS:
                 switch (resultCode) {
@@ -369,6 +365,7 @@ public class MapsActivity extends AppCompatActivity
         LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder().addLocationRequest(locationRequest);
         builder.setAlwaysShow(true);
 
+        @SuppressWarnings("deprecation")
         PendingResult<LocationSettingsResult> result = LocationServices.SettingsApi.checkLocationSettings(googleApiClient, builder.build());
         result.setResultCallback(result1 -> {
             final Status status = result1.getStatus();
