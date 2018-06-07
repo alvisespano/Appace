@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -32,9 +33,6 @@ public class SiteDetailsActivity extends AppCompatActivity {
 
     private static final String TAG = "SiteDetailsActivity";
     public static final String INTENT_SITE = "site";
-
-    private LatLng currentPosition;
-    private LatLng markerPosition;
 
     protected FusedLocationProviderClient fusedLocationClient;
 
@@ -72,14 +70,13 @@ public class SiteDetailsActivity extends AppCompatActivity {
                 // for ActivityCompat#requestPermissions for more details.
                 return;
             }
-            fusedLocationClient.getLastLocation()
-                    .addOnSuccessListener(SiteDetailsActivity.this, loc -> {
-                        if (loc != null) {
-                            SiteDetailsActivity.this.currentPosition = new LatLng(loc.getLatitude(), loc.getLongitude());
-                            Log.i(TAG, "current position updated");
-                            if (currentPosition != null)
-                                SiteDetailsActivity.this.markerPosition = (LatLng) Objects.requireNonNull(intent.getExtras()).get("MarkerPosition");
-                            navigate(currentPosition, markerPosition);
+            fusedLocationClient.getLastLocation().addOnSuccessListener(SiteDetailsActivity.this,
+                    (@NonNull Location loc) -> {
+                        LatLng currentPosition = new LatLng(loc.getLatitude(), loc.getLongitude());
+                        try {
+                            navigate(currentPosition, site.getPosition());
+                        } catch (ParserException e) {
+                            e.printStackTrace();
                         }
                     });
 
@@ -93,9 +90,6 @@ public class SiteDetailsActivity extends AppCompatActivity {
         return resources.getDrawable(resourceId, null);
     }
 
-    protected void backToMap() {
-        startActivity(new Intent(this, MapsActivity.class));
-    }
 
     protected void navigate(LatLng from, LatLng to) {
         Intent navigation = new Intent(

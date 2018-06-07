@@ -4,6 +4,7 @@ import android.location.Location;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -22,11 +23,24 @@ public class Site implements MapItem, Serializable {
     private static final String DESCRIPTION = "Description";
     private static final String PHOTO = "Photo";
 
+    private static final String TAG = "Site";
+
     @NonNull
     private final CsvParser.Row row;
 
     public Site(@NonNull CsvParser.Row row) {
         this.row = row;
+    }
+
+    // TODO: usare questo metodo e togliere le ParserException
+    @NonNull
+    protected String getRow(String name) {
+        try {
+            return row.get(name);
+        } catch (ParserException e) {
+            e.printStackTrace();
+            throw new RuntimeException("unexpected exception: %s", e);
+        }
     }
 
     @NonNull
