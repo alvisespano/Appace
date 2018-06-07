@@ -588,16 +588,14 @@ public class MapsActivity extends AppCompatActivity
             ActivityCompat.requestPermissions(MapsActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSIONS_REQUEST_ACCESS_BOTH_LOCATION);
         } else {
             Log.d(TAG, "permission granted");
-            fusedLocationClient.getLastLocation()
-                    .addOnSuccessListener(MapsActivity.this, new OnSuccessListener<Location>() {
-                        @Override
-                        public void onSuccess(Location loc) {
-                            if (loc != null) {
-                                setCurrentPosition(new LatLng(loc.getLatitude(), loc.getLongitude()));
-                                Log.d(TAG, String.format("current position updated: %s", currentPosition));
-                            }
-                        }
-                    });
+            fusedLocationClient.getLastLocation().addOnSuccessListener(MapsActivity.this, loc -> {
+                if (loc != null) {
+                    setCurrentPosition(new LatLng(loc.getLatitude(), loc.getLongitude()));
+                    Log.d(TAG, String.format("current position updated: %s", currentPosition));
+                    if (gMap != null)
+                        gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(getCurrentPosition(), getResources().getInteger(R.integer.initial_zoom_factor)));
+                }
+            });
         }
     }
 
@@ -612,9 +610,6 @@ public class MapsActivity extends AppCompatActivity
         try {
             assert parserAsyncTask != null;
             markers = mm.putMarkersFromCsv(parserAsyncTask.get(), Site::new, BitmapDescriptorFactory.HUE_GREEN);
-            if (getCurrentPosition() != null)
-                gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(getCurrentPosition(), getResources().getInteger(R.integer.initial_zoom_factor)));
-
         } catch (InterruptedException | ExecutionException e) {
             Log.e(TAG, String.format("exception caught: %s", e));
             e.printStackTrace();

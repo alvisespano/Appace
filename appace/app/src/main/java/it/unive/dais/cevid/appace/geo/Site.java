@@ -10,7 +10,7 @@ import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
 import it.unive.dais.cevid.datadroid.lib.util.Function;
 import it.unive.dais.cevid.datadroid.lib.util.MapItem;
 
-public class Site implements MapItem {
+public class Site implements MapItem implements Serializable {
 
     private static final String LATITUDE = "Latitude";
     private static final String LONGITUDE = "Longitude";
