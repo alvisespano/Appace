@@ -1,16 +1,20 @@
 package it.unive.dais.cevid.appace.geo;
 
 import android.location.Location;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
 import com.google.android.gms.maps.model.LatLng;
+
+import java.io.Serializable;
 
 import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
 import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
 import it.unive.dais.cevid.datadroid.lib.util.Function;
 import it.unive.dais.cevid.datadroid.lib.util.MapItem;
 
-public class Site implements MapItem implements Serializable {
+public class Site implements MapItem, Serializable {
 
     private static final String LATITUDE = "Latitude";
     private static final String LONGITUDE = "Longitude";
