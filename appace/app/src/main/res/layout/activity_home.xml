@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#089101">
 
     <Button
         android:id="@+id/credits"
@@ -16,11 +17,11 @@
 
     <Button
         android:id="@+id/fonti"
-        android:layout_width="66dp"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/presentazione"
-        android:layout_marginEnd="141dp"
+        android:layout_marginEnd="136dp"
         android:text="@string/fonti_button" />
 
 
@@ -29,9 +30,8 @@
         android:layout_width="242dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="66dp"
-        android:layout_marginStart="11dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp"
         android:text="@string/luoghi_pace_button" />
 
     <Button
@@ -46,9 +46,9 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="378dp"
+        android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/spLanguage"
+        android:layout_alignParentTop="true"
         app:srcCompat="@drawable/moroni_copertina2"
         tools:ignore="UnknownId" />
 
