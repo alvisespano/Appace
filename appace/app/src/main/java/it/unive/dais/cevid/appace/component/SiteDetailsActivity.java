@@ -3,6 +3,8 @@ package it.unive.dais.cevid.appace.component;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -22,11 +25,14 @@ import java.util.Objects;
 
 import it.unive.dais.cevid.appace.R;
 import it.unive.dais.cevid.appace.geo.Site;
+import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
 
 
 public class SiteDetailsActivity extends AppCompatActivity {
 
     private static final String TAG = "SiteDetailsActivity";
+    public static final String INTENT_SITE = "site";
+
     private LatLng currentPosition;
     private LatLng markerPosition;
 
@@ -38,46 +44,53 @@ public class SiteDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sitedetails);
 
         Intent intent = getIntent();
-        Site site = (Site) intent.getSerializableExtra("site");
+        Site site = (Site) intent.getSerializableExtra(INTENT_SITE);
         Log.d(TAG, String.format("got site: %s", site));
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        try {
+            toolbar.setTitle(site.getTitle());
+            ((TextView) findViewById(R.id.site_textview)).setText(site.getDescription());
+            toolbar.setLogo(getDrawable(site.getPhoto()));
+        } catch (ParserException e) {
+            Log.e(TAG, String.format("exception caught: %s", e));
+            e.printStackTrace();
+        }
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
         Button goGMaps = (Button) findViewById(R.id.goGMaps);
-        goGMaps.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (ActivityCompat.checkSelfPermission(SiteDetailsActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(SiteDetailsActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
-                    return;
-                }
-                fusedLocationClient.getLastLocation()
-                        .addOnSuccessListener(SiteDetailsActivity.this, new OnSuccessListener<Location>() {
-                            @Override
-                            public void onSuccess(Location loc) {
-                                if (loc != null) {
-                                    SiteDetailsActivity.this.currentPosition = new LatLng(loc.getLatitude(), loc.getLongitude());
-                                    Log.i(TAG, "current position updated");
-                                    if (currentPosition != null)
-                                        SiteDetailsActivity.this.markerPosition = (LatLng) Objects.requireNonNull(intent.getExtras()).get("MarkerPosition");
-                                    navigate(currentPosition, markerPosition);
-                                }
-                            }
-                        });
-
-
+        goGMaps.setOnClickListener(v -> {
+            if (ActivityCompat.checkSelfPermission(SiteDetailsActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(SiteDetailsActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
             }
+            fusedLocationClient.getLastLocation()
+                    .addOnSuccessListener(SiteDetailsActivity.this, loc -> {
+                        if (loc != null) {
+                            SiteDetailsActivity.this.currentPosition = new LatLng(loc.getLatitude(), loc.getLongitude());
+                            Log.i(TAG, "current position updated");
+                            if (currentPosition != null)
+                                SiteDetailsActivity.this.markerPosition = (LatLng) Objects.requireNonNull(intent.getExtras()).get("MarkerPosition");
+                            navigate(currentPosition, markerPosition);
+                        }
+                    });
+
+
         });
+    }
+
+    public Drawable getDrawable(String name) {
+        Resources resources = getResources();
+        final int resourceId = resources.getIdentifier(name, "drawable", getPackageName());
+        return resources.getDrawable(resourceId, null);
     }
 
     protected void backToMap() {

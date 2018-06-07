@@ -20,6 +20,7 @@ public class Site implements MapItem, Serializable {
     private static final String LONGITUDE = "Longitude";
     private static final String TITLE = "Title";
     private static final String DESCRIPTION = "Description";
+    private static final String PHOTO = "Photo";
 
     @NonNull
     private final CsvParser.Row row;
@@ -65,4 +66,8 @@ public class Site implements MapItem, Serializable {
         }
     }
 
+    @NonNull
+    public String getPhoto() throws ParserException {
+        return row.get(PHOTO);
+    }
 }
