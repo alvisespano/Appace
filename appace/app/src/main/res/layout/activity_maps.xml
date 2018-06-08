@@ -24,7 +24,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:indeterminate="false" />
+            android:indeterminate="false"
+            android:max="100"
+            android:visibility="visible"
+            tools:visibility="visible" />
 
 
         <ImageButton

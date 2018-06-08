@@ -5,14 +5,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
-import android.location.Location;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.annotation.WorkerThread;
+import android.support.annotation.UiThread;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -45,11 +44,9 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ExecutionException;
@@ -62,18 +59,6 @@ import it.unive.dais.cevid.datadroid.lib.progress.ProgressBarManager;
 import it.unive.dais.cevid.datadroid.lib.progress.ProgressCounter;
 import it.unive.dais.cevid.datadroid.lib.util.MapManager;
 
-/**
- * Questa classe è la componente principale del toolkit: fornisce servizi primari per un'app basata su Google Maps, tra cui localizzazione, pulsanti
- * di navigazione, preferenze ed altro. Essa rappresenta un template che è una buona pratica riusabile per la scrittura di app, fungendo da base
- * solida, robusta e mantenibile.
- * Vengono rispettate le convenzioni e gli standard di qualità di Google per la scrittura di app Android; ogni pulsante, componente,
- * menu ecc. è definito in modo che sia facile riprodurne degli altri con caratteristiche diverse.
- * All'interno del codice ci sono dei commenti che aiutano il programmatore ad estendere questa app in maniera corretta, rispettando le convenzioni
- * e gli standard qualitativi.
- * Per scrivere una propria app è necessario modificare questa classe, aggiungendo campi, metodi e codice che svolge le funzionalità richieste.
- *
- * @author Alvise Spanò, Università Ca' Foscari
- */
 public class MapsActivity extends AppCompatActivity
         implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
@@ -82,62 +67,37 @@ public class MapsActivity extends AppCompatActivity
 
     protected static final int REQUEST_CHECK_SETTINGS = 500;
     protected static final int PERMISSIONS_REQUEST_ACCESS_BOTH_LOCATION = 501;
-
-    // alcune costanti
     private static final String TAG = "MapsActivity";
-    /**
-     * Questo oggetto è la mappa di Google Maps. Viene inizializzato asincronamente dal metodo {@code onMapsReady}.
-     */
+    private static final LatLng DEFAULT_INITIAL_POSITION = new LatLng(45.4079700, 11.8858600);  // centre of Padova, Italy
+
     protected GoogleMap gMap;
-    /**
-     * Pulsanti in sovraimpressione gestiti da questa app. Da non confondere con i pulsanti che GoogleMaps mette in sovraimpressione e che non
-     * fanno parte degli oggetti gestiti manualmente dal codice.
-     */
+
     protected ImageButton button_here, button_car;
-    /**
-     * API per i servizi di localizzazione.
-     */
+
     protected FusedLocationProviderClient fusedLocationClient;
     @Nullable
     protected LatLng currentPosition = null;
-    /**
-     * Il marker che viene creato premendo il pulsante button_here (cioè quello dell'app, non quello di Google Maps).
-     * E' utile avere un campo d'istanza che tiene il puntatore a questo marker perché così è possibile rimuoverlo se necessario.
-     * E' null quando non è stato creato il marker, cioè prima che venga premuto il pulsante HERE la prima volta.
-     */
     @Nullable
     protected Marker hereMarker = null;
     @Nullable
     private ProgressBarManager progressBarManager;
     @Nullable
-    private Collection<Marker> markers;
+    private List<Marker> markers;
     @Nullable
     private AsyncTask<Void, ProgressCounter, List<CsvParser.Row>> parserAsyncTask;
 
     private class MyCsvParser extends CsvParser {
-        public MyCsvParser(@NonNull Reader rd, boolean hasHeader, String sep, @Nullable ProgressBarManager pbm) {
+        private MyCsvParser(@NonNull Reader rd, boolean hasHeader, String sep, @Nullable ProgressBarManager pbm) {
             super(rd, hasHeader, sep, pbm);
         }
 
         @Override
-        @NonNull
-        @WorkerThread
-        public Row onItemParsed(@NonNull Row r, ProgressCounter prog) {
-            runOnUiThread(() -> {
-                Log.d(getName(), String.format("parsed line %d: %s", prog.getCurrentCounter(), r));
-            });
-            return r;
+        @UiThread
+        public void onPostExecute(@NonNull List<Row> rows) {
         }
-
     }
 
-    /**
-     * Questo metodo viene invocato quando viene inizializzata questa activity.
-     * Si tratta di una sorta di "main" dell'intera activity.
-     * Inizializza i campi d'istanza, imposta alcuni listener e svolge gran parte delle operazioni "globali" dell'activity.
-     *
-     * @param savedInstanceState bundle con lo stato dell'activity.
-     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -164,38 +124,21 @@ public class MapsActivity extends AppCompatActivity
         mapFragment.getMapAsync(this);
 
         // quando viene premito il pulsante HERE viene eseguito questo codice
-        button_here.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(TAG, "here button clicked");
-                gpsCheck();
-                updateCurrentPosition();
-                if (hereMarker != null) hereMarker.remove();
-                if (getCurrentPosition() != null) {
-                    MarkerOptions opts = new MarkerOptions();
-                    opts.position(getCurrentPosition());
-                    opts.title(getString(R.string.marker_title));
-                    opts.snippet(String.format("lat: %g\nlng: %g", getCurrentPosition().latitude, getCurrentPosition().longitude));
-                    hereMarker = gMap.addMarker(opts);
-                    if (gMap != null)
-                        gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(getCurrentPosition(), getResources().getInteger(R.integer.zoomFactor_button_here)));
-                } else
-                    Log.d(TAG, "no current position available");
-            }
+        button_here.setOnClickListener(v -> {
+            Log.d(TAG, "here button clicked");
+            gpsCheck();
+            updateCurrentPosition();
+            if (hereMarker != null) hereMarker.remove();
+            if (currentPosition != null) {
+                MarkerOptions opts = new MarkerOptions();
+                opts.position(currentPosition);
+                opts.title(getString(R.string.marker_title));
+                hereMarker = gMap.addMarker(opts);
+                if (gMap != null)
+                    goToInitialPosition();
+            } else
+                Log.d(TAG, "no current position available");
         });
-    }
-
-
-    /**
-     * Posizione corrente. Potrebbe essere null prima di essere calcolata la prima volta.
-     */
-    @Nullable
-    private LatLng getCurrentPosition() {
-        return currentPosition;
-    }
-
-    private void setCurrentPosition(@NonNull LatLng currentPosition) {
-        this.currentPosition = currentPosition;
     }
 
 
@@ -212,9 +155,6 @@ public class MapsActivity extends AppCompatActivity
         super.onStop();
     }
 
-    /**
-     * Applica le impostazioni (preferenze) della mappa ad ogni chiamata.
-     */
     @Override
     protected void onResume() {
         super.onResume();
@@ -226,9 +166,6 @@ public class MapsActivity extends AppCompatActivity
         super.onPause();
     }
 
-    /**
-     * Pulisce la mappa quando l'app viene distrutta.
-     */
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -237,15 +174,9 @@ public class MapsActivity extends AppCompatActivity
         }
     }
 
-    /**
-     * Quando arriva un Intent viene eseguito questo metodo.
-     * Può essere esteso e modificato secondo le necessità.
-     *
-     * @see Activity#onActivityResult(int, int, Intent)
-     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        final LocationSettingsStates states = LocationSettingsStates.fromIntent(intent);
+        @SuppressWarnings("unused") final LocationSettingsStates states = LocationSettingsStates.fromIntent(intent);
         switch (requestCode) {
             case REQUEST_CHECK_SETTINGS:
                 switch (resultCode) {
@@ -262,16 +193,6 @@ public class MapsActivity extends AppCompatActivity
         }
     }
 
-    /**
-     * Questo metodo viene chiamato quando viene richiesto un permesso.
-     * Si tratta di un pattern asincrono che va gestito come qui impostato: per gestire nuovi permessi, qualora dovesse essere necessario,
-     * è possibile riprodurre un comportamento simile a quello già implementato.
-     *
-     * @param requestCode  codice di richiesta.
-     * @param permissions  array con i permessi richiesti.
-     * @param grantResults array con l'azione da intraprende per ciascun dei permessi richiesti.
-     * @see Activity#onRequestPermissionsResult(int, String[], int[])
-     */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
         switch (requestCode) {
@@ -286,13 +207,6 @@ public class MapsActivity extends AppCompatActivity
         }
     }
 
-    /**
-     * Invocato quando viene creato il menu delle impostazioni.
-     *
-     * @param menu l'oggetto menu.
-     * @return ritornare true per visualizzare il menu.
-     * @see Activity#onCreateOptionsMenu(Menu)
-     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -300,13 +214,6 @@ public class MapsActivity extends AppCompatActivity
         return true;
     }
 
-    /**
-     * Invocato quando viene cliccata una voce nel menu delle impostazioni.
-     *
-     * @param item la voce di menu cliccata.
-     * @return ritorna true per continuare a chiamare altre callback; false altrimenti.
-     * @see Activity#onOptionsItemSelected(MenuItem)
-     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -322,40 +229,18 @@ public class MapsActivity extends AppCompatActivity
 
     // onConnection callbacks
     //
-    //
 
-    /**
-     * Viene chiamata quando i servizi di localizzazione sono attivi.
-     * Aggiungere qui eventuale codice da eseguire in tal caso.
-     *
-     * @param bundle il bundle passato da Android.
-     * @see com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks#onConnected(Bundle)
-     */
     @Override
     public void onConnected(Bundle bundle) {
         Log.i(TAG, "location service connected");
     }
 
-    /**
-     * Viene chiamata quando i servizi di localizzazione sono sospesi.
-     * Aggiungere qui eventuale codice da eseguire in tal caso.
-     *
-     * @param i un intero che rappresenta il codice della causa della sospenzione.
-     * @see com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks#onConnectionSuspended(int)
-     */
     @Override
     public void onConnectionSuspended(int i) {
         Log.i(TAG, "location service connection suspended");
         Toast.makeText(this, R.string.conn_suspended, Toast.LENGTH_LONG).show();
     }
 
-    /**
-     * Viene chiamata quando la connessione ai servizi di localizzazione viene persa.
-     * Aggiungere qui eventuale codice da eseguire in tal caso.
-     *
-     * @param connectionResult oggetto che rappresenta il risultato della connessione, con le cause della disconnessione ed altre informazioni.
-     * @see com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener#onConnectionFailed(ConnectionResult)
-     */
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         Log.e(TAG, "location service connection lost");
@@ -366,68 +251,33 @@ public class MapsActivity extends AppCompatActivity
     //
     //
 
-    /**
-     * Viene chiamato quando si clicca sulla mappa.
-     * Aggiungere qui codice che si vuole eseguire quando l'utente clicca sulla mappa.
-     *
-     * @param latLng la posizione del click.
-     */
     @Override
     public void onMapClick(LatLng latLng) {
         // nascondi il pulsante della navigazione (non quello di google maps, ma il nostro pulsante custom)
         button_car.setVisibility(View.INVISIBLE);
     }
 
-    /**
-     * Viene chiamato quando si clicca a lungo sulla mappa (long click).
-     * Aggiungere qui codice che si vuole eseguire quando l'utente clicca a lungo sulla mappa.
-     *
-     * @param latLng la posizione del click.
-     */
+
     @Override
     public void onMapLongClick(LatLng latLng) {
 
     }
 
-    /**
-     * Viene chiamato quando si muove la camera.
-     * Attenzione: solamente al momento in cui la camera comincia a muoversi, non durante tutta la durata del movimento.
-     *
-     * @param reason
-     */
     @Override
     public void onCameraMoveStarted(int reason) {
-        setHereButtonVisibility();
+//        setHereButtonVisibility();
     }
 
-    /**
-     * Metodo proprietario che imposta la visibilità del pulsante HERE.
-     * Si occupa di nascondere o mostrare il pulsante HERE in base allo zoom attuale, confrontandolo con la soglia di zoom
-     * impostanta nelle preferenze.
-     * Questo comportamento è dimostrativo e non è necessario tenerlo quando si sviluppa un'applicazione modificando questo template.
-     */
-    public void setHereButtonVisibility() {
-        if (gMap != null) {
-            if (gMap.getCameraPosition().zoom < SettingsActivity.getZoomThreshold(this)) {
-                button_here.setVisibility(View.INVISIBLE);
-            } else {
-                button_here.setVisibility(View.VISIBLE);
-            }
-        }
-    }
+//    public void setHereButtonVisibility() {
+//        if (gMap != null) {
+//            if (gMap.getCameraPosition().target < SettingsActivity.getZoomThreshold(this)) {
+//                button_here.setVisibility(View.INVISIBLE);
+//            } else {
+//                button_here.setVisibility(View.VISIBLE);
+//            }
+//        }
+//    }
 
-    /**
-     * Questo metodo è molto importante: esso viene invocato dal sistema quando la mappa è pronta.
-     * Il parametro è l'oggetto di tipo GoogleMap pronto all'uso, che viene immediatamente assegnato ad un campo interno della
-     * classe.
-     * La natura asincrona di questo metodo, e quindi dell'inizializzazione del campo gMap, implica che tutte le
-     * operazioni che coinvolgono la mappa e che vanno eseguite appena essa diventa disponibile, vanno messe in questo metodo.
-     * Ciò non significa che tutte le operazioni che coinvolgono la mappa vanno eseguite qui: è naturale aver bisogno di accedere al campo
-     * gMap in altri metodi, per eseguire operazioni sulla mappa in vari momenti, ma è necessario tenere a mente che tale campo potrebbe
-     * essere ancora non inizializzato e va pertanto verificata la nullness.
-     *
-     * @param googleMap oggetto di tipo GoogleMap.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         gMap = googleMap;
@@ -448,44 +298,30 @@ public class MapsActivity extends AppCompatActivity
         uis.setZoomGesturesEnabled(true);
         uis.setMyLocationButtonEnabled(true);
         gMap.setOnMyLocationButtonClickListener(
-                new GoogleMap.OnMyLocationButtonClickListener() {
-                    @Override
-                    public boolean onMyLocationButtonClick() {
-                        gpsCheck();
-                        return false;
-                    }
+                () -> {
+                    gpsCheck();
+                    return false;
                 });
         uis.setCompassEnabled(true);
         uis.setZoomControlsEnabled(true);
         uis.setMapToolbarEnabled(true);
 
         applyMapSettings();
+        updateCurrentPosition();
         populateMap();
     }
 
     // marker stuff
     //
 
-    /**
-     * Callback che viene invocata quando viene cliccato un marker.
-     * Questo metodo viene invocato al click di QUALUNQUE marker nella mappa; pertanto, se è necessario
-     * eseguire comportamenti specifici per un certo marker o gruppo di marker, va modificato questo metodo
-     * con codice che si occupa di discernere tra un marker e l'altro in qualche modo.
-     *
-     * @param marker il marker che è stato cliccato.
-     * @return ritorna true per continuare a chiamare altre callback nella catena di callback per i marker; false altrimenti.
-     */
     @Override
     public boolean onMarkerClick(final Marker marker) {
         marker.showInfoWindow();
         button_car.setVisibility(View.VISIBLE);
-        button_car.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar.make(v, R.string.msg_button_car, Snackbar.LENGTH_SHORT);
-                if (getCurrentPosition() != null) {
-                    navigate(getCurrentPosition(), marker.getPosition());
-                }
+        button_car.setOnClickListener(v -> {
+            Snackbar.make(v, R.string.msg_button_car, Snackbar.LENGTH_SHORT);
+            if (currentPosition != null) {
+                navigate(currentPosition, marker.getPosition());
             }
         });
         return false;
@@ -495,41 +331,21 @@ public class MapsActivity extends AppCompatActivity
     @Override
     public void onInfoWindowClick(Marker marker) {
         Intent intent = new Intent(this, SiteDetailsActivity.class);
-        try {
-            intent.putExtra("title", ((Site) Objects.requireNonNull(marker.getTag())).getTitle());
-        } catch (ParserException e) {
-            Log.e(TAG, String.format("marker %s does not have a valid title: %s", marker, e));
-            e.printStackTrace();
-        }
+        intent.putExtra(SiteDetailsActivity.INTENT_SITE, (Site) marker.getTag());
         startActivity(intent);
     }
-
-
-//    public void onInfoWindowClose(Marker marker) {
-//        Toast.makeText(this, "Closed Info Window", Toast.LENGTH_SHORT).show();
-//    }
 
 
     // methods dealing with the map
     //
 
-    /**
-     * Metodo proprietario che forza l'applicazione le impostazioni (o preferenze) che riguardano la mappa.
-     */
     private void applyMapSettings() {
         if (gMap != null) {
             Log.d(TAG, "applying map settings");
             gMap.setMapType(SettingsActivity.getMapStyle(this));
         }
-        setHereButtonVisibility();
     }
 
-    /**
-     * Naviga dalla posizione from alla posizione to chiamando il navigatore di Google.
-     *
-     * @param from posizione iniziale.
-     * @param to   posizione finale.
-     */
     private void navigate(@NonNull LatLng from, @NonNull LatLng to) {
         Intent navigation = new Intent(
                 Intent.ACTION_VIEW,
@@ -539,10 +355,6 @@ public class MapsActivity extends AppCompatActivity
         startActivity(navigation);
     }
 
-    /**
-     * Controlla lo stato del GPS e dei servizi di localizzazione, comportandosi di conseguenza.
-     * Viene usata durante l'inizializzazione ed in altri casi speciali.
-     */
     private void gpsCheck() {
         GoogleApiClient googleApiClient = new GoogleApiClient.Builder(MapsActivity.this).addApi(LocationServices.API).build();
         googleApiClient.connect();
@@ -553,6 +365,7 @@ public class MapsActivity extends AppCompatActivity
         LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder().addLocationRequest(locationRequest);
         builder.setAlwaysShow(true);
 
+        @SuppressWarnings("deprecation")
         PendingResult<LocationSettingsResult> result = LocationServices.SettingsApi.checkLocationSettings(googleApiClient, builder.build());
         result.setResultCallback(result1 -> {
             final Status status = result1.getStatus();
@@ -577,49 +390,58 @@ public class MapsActivity extends AppCompatActivity
         });
     }
 
-    /**
-     * Chiamare questo metodo per aggiornare la posizione corrente del GPS.
-     * Si tratta di un metodo proprietario, che non ridefinisce alcun metodo della superclasse né implementa alcuna interfaccia: un metodo
-     * di utilità per aggiornare asincronamente in modo robusto e sicuro la posizione corrente del dispositivo mobile.
-     */
     private void updateCurrentPosition() {
         if (ActivityCompat.checkSelfPermission(MapsActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MapsActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             Log.d(TAG, "requiring permission");
             ActivityCompat.requestPermissions(MapsActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSIONS_REQUEST_ACCESS_BOTH_LOCATION);
         } else {
             Log.d(TAG, "permission granted");
-            fusedLocationClient.getLastLocation()
-                    .addOnSuccessListener(MapsActivity.this, new OnSuccessListener<Location>() {
-                        @Override
-                        public void onSuccess(Location loc) {
-                            if (loc != null) {
-                                setCurrentPosition(new LatLng(loc.getLatitude(), loc.getLongitude()));
-                                Log.d(TAG, String.format("current position updated: %s", currentPosition));
-                            }
+            fusedLocationClient.getLastLocation().addOnSuccessListener(MapsActivity.this,
+                    loc -> {
+                        if (loc != null) {
+                            currentPosition = new LatLng(loc.getLatitude(), loc.getLongitude());
+                            Log.d(TAG, String.format("current position updated: %s", currentPosition));
                         }
                     });
         }
     }
 
     private void populateMap() {
-        MapManager mm = new MapManager() {
-            @NonNull
-            @Override
-            public GoogleMap getGoogleMap() {
-                return Objects.requireNonNull(gMap);
-            }
-        };
+        assert gMap != null;
+        assert parserAsyncTask != null;
         try {
-            assert parserAsyncTask != null;
-            markers = mm.putMarkersFromCsv(parserAsyncTask.get(), Site::new, BitmapDescriptorFactory.HUE_GREEN);
-            if (getCurrentPosition() != null)
-                gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(getCurrentPosition(), getResources().getInteger(R.integer.initial_zoom_factor)));
-
+            MapManager mm = new MapManager() {
+                @NonNull
+                @Override
+                public GoogleMap getGoogleMap() {
+                    return Objects.requireNonNull(gMap);
+                }
+            };
+            markers = (List<Marker>) mm.putMarkersFromCsv(parserAsyncTask.get(), Site::new, BitmapDescriptorFactory.HUE_GREEN);
+            goToInitialPosition();
         } catch (InterruptedException | ExecutionException e) {
-            Log.e(TAG, String.format("exception caught: %s", e));
+            Log.e(TAG, String.format("exception caught while getting parser result: %s", e.getLocalizedMessage()));
             e.printStackTrace();
         }
+
     }
 
+    private void goToInitialPosition() {
+        assert gMap != null;
+        gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(getInitialPosition(), getResources().getInteger(R.integer.initial_zoom_factor)));
+    }
+
+    @NonNull
+    private LatLng getInitialPosition() {
+        if (markers != null && markers.size() >= 1) {
+            try {
+                return ((Site) Objects.requireNonNull(markers.get(0).getTag())).getPosition();
+            } catch (ParserException e) {
+                Log.w(TAG, "cannot get position from data, falling back to default initial position");
+                e.printStackTrace();
+            }
+        }
+        return DEFAULT_INITIAL_POSITION;
+    }
 
 }

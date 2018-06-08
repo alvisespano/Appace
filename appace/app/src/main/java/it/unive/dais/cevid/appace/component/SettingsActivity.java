@@ -30,6 +30,7 @@ import it.unive.dais.cevid.datadroid.lib.util.UnexpectedException;
  *
  * @author Alvise Spanò, Università Ca' Foscari
  */
+@SuppressWarnings({"deprecation", "unused"})
 public class SettingsActivity extends PreferenceActivity implements SharedPreferences.OnSharedPreferenceChangeListener, AppCompatCallback {
     /**
      * Costante di tipo stringa che indica la chiave dello stile della mappa nell'XML delle preferenze.
@@ -80,7 +81,6 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
      *
      * @param ctx oggetto Context (tipicamente {@code this} se chiamato da dentro una Activity)
      * @return ritorna il fattore della soglia di zoom attuale.
-     * @see MapsActivity#setHereButtonVisibility()
      */
     public static float getZoomThreshold(Context ctx) {
         return getZoomThreshold(ctx, PreferenceManager.getDefaultSharedPreferences(ctx));

@@ -1,6 +1,6 @@
 <resources>
     <!-- Customize your app's name here. -->
-    <string name="app_name">Appace</string>
+    <string name="app_name">APPACE</string>
     <string name="title_activity_maps">Appace - Map</string>
     <!-- -->
 
@@ -38,7 +38,7 @@
     <string name="msg_permissions_not_granted">I permessi appena negati dall\'utente sono necessari per alcune funzionalità dell\'app. Il supporto delle funzionalità sarà ridotto.</string>
     <string name="marker_title">You are HERE</string>
     <string name="logo_descr">Università Ca\' Foscari, Venezia</string>
-    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="title_activity_sitedetails">SiteDetailsActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -177,5 +177,16 @@ Buona lettura.
     <string name="fonti_button">FONTI</string>
     <string name="crediti_button">CREDITI</string>
     <string name="presentazione_button">PRESENTAZIONE</string>
+
+
+    <string name="text_translation">Hi and welcome to codingdemos,
+        here you will learn how to develop android app. Thank you for watching</string>
+
+    <string-array name="language_option">
+        <item>English</item>
+        <item>Indonesian</item>
+        <item>Spanish</item>
+    </string-array>
+    <string name="title_activity_fonts">FontsActivity</string>
 
 </resources>
