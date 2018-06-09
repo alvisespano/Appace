@@ -6,12 +6,10 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.annotation.UiThread;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -21,7 +19,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -45,18 +42,13 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.List;
 import java.util.Objects;
-import java.util.concurrent.ExecutionException;
 
 import it.unive.dais.cevid.appace.R;
 import it.unive.dais.cevid.appace.geo.Site;
 import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
 import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
-import it.unive.dais.cevid.datadroid.lib.progress.ProgressBarManager;
-import it.unive.dais.cevid.datadroid.lib.progress.ProgressCounter;
 import it.unive.dais.cevid.datadroid.lib.util.MapManager;
 
 public class MapsActivity extends AppCompatActivity
@@ -80,22 +72,7 @@ public class MapsActivity extends AppCompatActivity
     @Nullable
     protected Marker hereMarker = null;
     @Nullable
-    private ProgressBarManager progressBarManager;
-    @Nullable
     private List<Marker> markers;
-    @Nullable
-    private AsyncTask<Void, ProgressCounter, List<CsvParser.Row>> parserAsyncTask;
-
-    private class MyCsvParser extends CsvParser {
-        private MyCsvParser(@NonNull Reader rd, boolean hasHeader, String sep, @Nullable ProgressBarManager pbm) {
-            super(rd, hasHeader, sep, pbm);
-        }
-
-        @Override
-        @UiThread
-        public void onPostExecute(@NonNull List<Row> rows) {
-        }
-    }
 
 
     @Override
@@ -106,11 +83,6 @@ public class MapsActivity extends AppCompatActivity
 
         // inizializza le preferenze
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
-
-        progressBarManager = new ProgressBarManager(this, new ProgressBar[]{(ProgressBar) findViewById(R.id.progress_bar_1)});
-
-        CsvParser parser = new MyCsvParser(new InputStreamReader(getResources().openRawResource(R.raw.luoghi)), true, ";", progressBarManager);
-        parserAsyncTask = parser.getAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 
         // trova gli oggetti che rappresentano i bottoni e li salva come campi d'istanza
         button_here = (ImageButton) findViewById(R.id.button_here);
@@ -330,8 +302,8 @@ public class MapsActivity extends AppCompatActivity
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-        Intent intent = new Intent(this, SiteDetailsActivity.class);
-        intent.putExtra(SiteDetailsActivity.INTENT_SITE, (Site) marker.getTag());
+        Intent intent = new Intent(this, SiteActivity.class);
+        intent.putExtra(SiteActivity.INTENT_SITE, (Site) marker.getTag());
         startActivity(intent);
     }
 
@@ -407,23 +379,21 @@ public class MapsActivity extends AppCompatActivity
     }
 
     private void populateMap() {
-        assert gMap != null;
-        assert parserAsyncTask != null;
-        try {
-            MapManager mm = new MapManager() {
-                @NonNull
-                @Override
-                public GoogleMap getGoogleMap() {
-                    return Objects.requireNonNull(gMap);
-                }
-            };
-            markers = (List<Marker>) mm.putMarkersFromCsv(parserAsyncTask.get(), Site::new, BitmapDescriptorFactory.HUE_GREEN);
-            goToInitialPosition();
-        } catch (InterruptedException | ExecutionException e) {
-            Log.e(TAG, String.format("exception caught while getting parser result: %s", e.getLocalizedMessage()));
-            e.printStackTrace();
-        }
+        MapManager mm = new MapManager() {
+            @NonNull
+            @Override
+            public GoogleMap getGoogleMap() {
+                return Objects.requireNonNull(gMap);
+            }
+        };
+        markers = mm.putMarkersFromCsv(getCsvRows(), Site::new, BitmapDescriptorFactory.HUE_GREEN);
+        goToInitialPosition();
+    }
 
+    @NonNull
+    private List<CsvParser.Row> getCsvRows() {
+        //noinspection unchecked
+        return (List<CsvParser.Row>) getIntent().getSerializableExtra(HomeActivity.KEY_ROWS);
     }
 
     private void goToInitialPosition() {

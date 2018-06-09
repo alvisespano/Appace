@@ -5,19 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".component.SiteDetailsActivity">
+    tools:context=".component.SiteActivity">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
-        android:fitsSystemWindows="true"
-        android:theme="@style/AppTheme.AppBarOverlay">
+    <!--<android.support.design.widget.AppBarLayout-->
+        <!--android:id="@+id/app_bar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:fitsSystemWindows="true"-->
+        <!--android:theme="@style/AppTheme.AppBarOverlay">-->
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="exitUntilCollapsed"
@@ -42,8 +42,11 @@
                 app:layout_collapseParallaxMultiplier="1.0" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
-    </android.support.design.widget.AppBarLayout>
+    <!--</android.support.design.widget.AppBarLayout>-->
 
-    <include layout="@layout/content_sitedetails" />
+    <include
+        layout="@layout/content_site"
+        android:layout_height="287dp"
+        android:layout_width="match_parent" />
 
 </android.support.design.widget.CoordinatorLayout>

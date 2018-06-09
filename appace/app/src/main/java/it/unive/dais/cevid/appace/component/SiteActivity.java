@@ -25,17 +25,17 @@ import it.unive.dais.cevid.appace.geo.Site;
 import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
 
 
-public class SiteDetailsActivity extends AppCompatActivity {
+public class SiteActivity extends AppCompatActivity {
 
-    private static final String TAG = "SiteDetailsActivity";
-    public static final String INTENT_SITE = "site";
+    private static final String TAG = "SiteActivity";
+    static final String INTENT_SITE = "site";
 
     protected FusedLocationProviderClient fusedLocationClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sitedetails);
+        setContentView(R.layout.activity_site);
 
         Intent intent = getIntent();
         Site site = (Site) intent.getSerializableExtra(INTENT_SITE);
@@ -56,7 +56,7 @@ public class SiteDetailsActivity extends AppCompatActivity {
 
         Button goGMaps = (Button) findViewById(R.id.goGMaps);
         goGMaps.setOnClickListener(v -> {
-            if (ActivityCompat.checkSelfPermission(SiteDetailsActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(SiteDetailsActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.checkSelfPermission(SiteActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(SiteActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling
                 //    ActivityCompat#requestPermissions
                 // here to request the missing permissions, and then overriding
@@ -66,7 +66,7 @@ public class SiteDetailsActivity extends AppCompatActivity {
                 // for ActivityCompat#requestPermissions for more details.
                 return;
             }
-            fusedLocationClient.getLastLocation().addOnSuccessListener(SiteDetailsActivity.this,
+            fusedLocationClient.getLastLocation().addOnSuccessListener(SiteActivity.this,
                     (@NonNull Location loc) -> {
                         LatLng currentPosition = new LatLng(loc.getLatitude(), loc.getLongitude());
                         try {

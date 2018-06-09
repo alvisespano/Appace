@@ -1,53 +1,74 @@
 package it.unive.dais.cevid.appace.component;
 
 import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.content.res.Configuration;
-import java.util.Locale;
+import android.widget.ProgressBar;
 
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.Serializable;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import it.unive.dais.cevid.appace.R;
+import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
+import it.unive.dais.cevid.datadroid.lib.progress.ProgressBarManager;
+import it.unive.dais.cevid.datadroid.lib.progress.ProgressCounter;
 
 @SuppressWarnings("FieldCanBeLocal")
 public class HomeActivity extends AppCompatActivity {
 
+    static final String KEY_ROWS = "ROWS";
+    private static final String TAG = "HomeActivity";
+
     private Button button_map, button_credits, button_presentation;
+
+    @SuppressWarnings("unused")
     private ImageButton button_en, button_it;
+    @Nullable
+    private ProgressBarManager progressBarManager;
+    @Nullable
+    private List<CsvParser.Row> rows = null;
+    @Nullable
+    private AsyncTask<Void, ProgressCounter, List<CsvParser.Row>> parserAsyncTask = null;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        progressBarManager = new ProgressBarManager(this, new ProgressBar[]{(ProgressBar) findViewById(R.id.progress_bar_1)});
+
+        if (savedInstanceState != null) {
+            //noinspection unchecked
+            rows = (List<CsvParser.Row>) savedInstanceState.getSerializable(KEY_ROWS);
+            Log.d(TAG, "rows restored from instance state");
+        }
+        if (rows == null) {
+            CsvParser parser = new CsvParser(new InputStreamReader(getResources().openRawResource(R.raw.luoghi)), true, ";", progressBarManager);
+            parserAsyncTask = parser.getAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        }
+
         button_map = (Button) findViewById(R.id.luoghi);
-        button_map.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(HomeActivity.this, MapsActivity.class));
-            }
+        button_map.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, MapsActivity.class);
+            intent.putExtra(KEY_ROWS, (Serializable) getCsvRows());
+            startActivity(intent);
         });
 
         button_credits = (Button) findViewById(R.id.credits);
-        button_credits.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(HomeActivity.this, AboutActivity.class));
-            }
-        });
+        button_credits.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, AboutActivity.class)));
 
         button_presentation = (Button) findViewById(R.id.presentazione);
-        button_presentation.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(HomeActivity.this, PresentationActivity.class));
-            }
-        });
+        button_presentation.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, PresentationActivity.class)));
 
         /*
         TODO: 06/06/2018 i due bottoni della lingua inglese e italiano provvisoriamente li ho messi a fianco al bottone "luoghi di pace", poi quando funziona  lo switch della lingua, allora gli sposto
@@ -74,17 +95,31 @@ public class HomeActivity extends AppCompatActivity {
 //                getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
 //            }
 //        });
-
-
-
-
-        
-
-
     }
 
     // ciclo di vita
     //
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putSerializable(KEY_ROWS, (Serializable) getCsvRows());
+        Log.d(TAG, "rows saved into instance state");
+    }
+
+    @NonNull
+    private List<CsvParser.Row> getCsvRows() {
+        if (rows == null) {
+            assert parserAsyncTask != null;
+            try {
+                rows = parserAsyncTask.get();
+            } catch (InterruptedException | ExecutionException e) {
+                Log.e(TAG, "CSV parser async task failed");
+                e.printStackTrace();
+            }
+        }
+        return rows;
+    }
 
     @Override
     protected void onStart() {

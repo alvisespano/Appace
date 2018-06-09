@@ -6,8 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".component.SiteDetailsActivity"
-    tools:showIn="@layout/activity_sitedetails">
+    tools:context=".component.SiteActivity"
+    tools:showIn="@layout/activity_site">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/site_image_height"
+        android:contentDescription="Description" />
 
     <TextView
         android:id="@+id/site_textview"
