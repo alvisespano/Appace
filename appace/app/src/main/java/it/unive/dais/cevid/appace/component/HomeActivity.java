@@ -12,7 +12,6 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 
 import java.io.InputStreamReader;
-import java.io.Reader;
 import java.io.Serializable;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -47,18 +46,22 @@ public class HomeActivity extends AppCompatActivity {
 
         progressBarManager = new ProgressBarManager(this, new ProgressBar[]{(ProgressBar) findViewById(R.id.progress_bar_1)});
 
-        if (savedInstanceState != null) {
-            //noinspection unchecked
-            rows = (List<CsvParser.Row>) savedInstanceState.getSerializable(KEY_ROWS);
-            Log.d(TAG, "rows restored from instance state");
-        }
+        Log.d(TAG, "savedInstanceState == null: " + (savedInstanceState == null ? "yes" : "no"));
+
+//        if (savedInstanceState != null) {
+//            //noinspection unchecked
+//            rows = (List<CsvParser.Row>) savedInstanceState.getSerializable(KEY_ROWS);
+//            Log.d(TAG, "rows restored from instance state");
+//        }
         if (rows == null) {
+            Log.d(TAG, "parsing CSV....");
             CsvParser parser = new CsvParser(new InputStreamReader(getResources().openRawResource(R.raw.luoghi)), true, ";", progressBarManager);
             parserAsyncTask = parser.getAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
         }
 
         button_map = (Button) findViewById(R.id.luoghi);
         button_map.setOnClickListener(v -> {
+            Log.d(TAG, "starting MapsActivity...");
             Intent intent = new Intent(HomeActivity.this, MapsActivity.class);
             intent.putExtra(KEY_ROWS, (Serializable) getCsvRows());
             startActivity(intent);
@@ -101,10 +104,18 @@ public class HomeActivity extends AppCompatActivity {
     //
 
     @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        //noinspection unchecked
+        rows = (List<CsvParser.Row>) savedInstanceState.getSerializable(KEY_ROWS);
+        Log.d(TAG, "rows restored from instance state");
+    }
+
+    @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-        super.onSaveInstanceState(savedInstanceState);
         savedInstanceState.putSerializable(KEY_ROWS, (Serializable) getCsvRows());
         Log.d(TAG, "rows saved into instance state");
+        super.onSaveInstanceState(savedInstanceState);
     }
 
     @NonNull
