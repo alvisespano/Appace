@@ -13,16 +13,12 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.tasks.OnSuccessListener;
-
-import java.util.Objects;
 
 import it.unive.dais.cevid.appace.R;
 import it.unive.dais.cevid.appace.geo.Site;
@@ -79,8 +75,6 @@ public class SiteDetailsActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                     });
-
-
         });
     }
 
@@ -90,7 +84,6 @@ public class SiteDetailsActivity extends AppCompatActivity {
         return resources.getDrawable(resourceId, null);
     }
 
-
     protected void navigate(LatLng from, LatLng to) {
         Intent navigation = new Intent(
                 Intent.ACTION_VIEW,
@@ -99,6 +92,5 @@ public class SiteDetailsActivity extends AppCompatActivity {
         Log.i(TAG, String.format("starting navigation from %s to %s", from, to));
         startActivity(navigation);
     }
-
 
 }
