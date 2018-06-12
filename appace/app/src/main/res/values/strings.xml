@@ -188,5 +188,6 @@ Buona lettura.
         <item>Spanish</item>
     </string-array>
     <string name="title_activity_fonts">FontsActivity</string>
+    <string name="title_activity_sito">SitoActivity</string>
 
 </resources>

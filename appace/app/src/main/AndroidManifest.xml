@@ -13,7 +13,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
     <application
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
@@ -38,17 +37,19 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".component.MapsActivity"
             android:parentActivityName=".component.HomeActivity">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.VIEW" />-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-                <!--&lt;!&ndash;<category android:name="android.intent.category.LAUNCHER" />&ndash;&gt;-->
-            <!--</intent-filter>-->
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.VIEW" /> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- &lt;!&ndash;<category android:name="android.intent.category.LAUNCHER" />&ndash;&gt; -->
+            <!-- </intent-filter> -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".component.HomeActivity" />
@@ -68,11 +69,6 @@
                 android:value=".component.MapsActivity" />
         </activity>
         <activity
-            android:name=".component.SiteActivity"
-            android:parentActivityName=".component.MapsActivity"
-            android:label="@string/title_activity_site"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".component.PresentationActivity"
             android:label="@string/title_activity_presentation"
             android:theme="@style/AppTheme.NoActionBar">
@@ -83,6 +79,14 @@
         <activity
             android:name=".component.SourcesActivity"
             android:label="@string/title_activity_fonts"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".component.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".component.SitoActivity"
+            android:label="@string/title_activity_sito"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
