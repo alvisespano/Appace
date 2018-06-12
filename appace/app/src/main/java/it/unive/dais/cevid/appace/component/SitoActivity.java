@@ -9,10 +9,13 @@ import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -24,10 +27,9 @@ import it.unive.dais.cevid.appace.R;
 import it.unive.dais.cevid.appace.geo.Site;
 import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
 
+public class SitoActivity extends AppCompatActivity {
 
-public class SiteActivity extends AppCompatActivity {
-
-    private static final String TAG = "SiteActivity";
+    private static final String TAG = "SitoActivity";
     static final String INTENT_SITE = "site";
 
     protected FusedLocationProviderClient fusedLocationClient;
@@ -35,7 +37,7 @@ public class SiteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_site);
+        setContentView(R.layout.activity_sito);
 
         Intent intent = getIntent();
         Site site = (Site) intent.getSerializableExtra(INTENT_SITE);
@@ -45,7 +47,7 @@ public class SiteActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         try {
             toolbar.setTitle(site.getTitle());
-            ((TextView) findViewById(R.id.site_textview)).setText(site.getDescription());
+            ((TextView) findViewById(R.id.sito_textview)).setText(site.getDescription());
             toolbar.setLogo(getDrawable(site.getPhoto()));
         } catch (ParserException e) {
             Log.e(TAG, String.format("exception caught: %s", e));
@@ -56,7 +58,7 @@ public class SiteActivity extends AppCompatActivity {
 
         Button goGMaps = (Button) findViewById(R.id.goGMaps);
         goGMaps.setOnClickListener(v -> {
-            if (ActivityCompat.checkSelfPermission(SiteActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(SiteActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.checkSelfPermission(SitoActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(SitoActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling
                 //    ActivityCompat#requestPermissions
                 // here to request the missing permissions, and then overriding
@@ -66,7 +68,7 @@ public class SiteActivity extends AppCompatActivity {
                 // for ActivityCompat#requestPermissions for more details.
                 return;
             }
-            fusedLocationClient.getLastLocation().addOnSuccessListener(SiteActivity.this,
+            fusedLocationClient.getLastLocation().addOnSuccessListener(SitoActivity.this,
                     (@NonNull Location loc) -> {
                         LatLng currentPosition = new LatLng(loc.getLatitude(), loc.getLongitude());
                         try {
@@ -92,5 +94,4 @@ public class SiteActivity extends AppCompatActivity {
         Log.i(TAG, String.format("starting navigation from %s to %s", from, to));
         startActivity(navigation);
     }
-
 }

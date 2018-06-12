@@ -302,8 +302,8 @@ public class MapsActivity extends AppCompatActivity
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-        Intent intent = new Intent(this, SiteActivity.class);
-        intent.putExtra(SiteActivity.INTENT_SITE, (Site) marker.getTag());
+        Intent intent = new Intent(this, SitoActivity.class);
+        intent.putExtra(SitoActivity.INTENT_SITE, (Site) marker.getTag());
         startActivity(intent);
     }
 
