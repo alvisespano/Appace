@@ -85,7 +85,7 @@
                 android:value=".component.HomeActivity" />
         </activity>
         <activity
-            android:name=".component.SitoActivity"
+            android:name=".component.SiteActivity"
             android:label="@string/title_activity_sito"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
