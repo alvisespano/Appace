@@ -62,7 +62,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
-        app:srcCompat="@drawable/moroni_copertina2" />
+        app:srcCompat="@drawable/moroni_copertina" />
 
     <!--<ImageButton-->
         <!--android:id="@+id/enButton"-->
