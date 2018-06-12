@@ -22,6 +22,7 @@ public class Site implements MapItem, Serializable {
     private static final String TITLE = "Title";
     private static final String DESCRIPTION = "Description";
     private static final String PHOTO = "Photo";
+    private static final String PATH_ID = "PathId";
 
     private static final String TAG = "Site";
 
@@ -83,5 +84,10 @@ public class Site implements MapItem, Serializable {
     @NonNull
     public String getPhoto() throws ParserException {
         return row.get(PHOTO);
+    }
+
+    @NonNull
+    public String getPathId() throws ParserException {
+        return row.get(PATH_ID);
     }
 }

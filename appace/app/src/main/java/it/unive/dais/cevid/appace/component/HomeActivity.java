@@ -44,7 +44,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        progressBarManager = new ProgressBarManager(this, new ProgressBar[]{(ProgressBar) findViewById(R.id.progress_bar_1)});
+        progressBarManager = new ProgressBarManager(this, new ProgressBar[]{findViewById(R.id.progress_bar_1)});
 
         Log.d(TAG, "savedInstanceState == null: " + (savedInstanceState == null ? "yes" : "no"));
 
@@ -67,10 +67,10 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        button_credits = (Button) findViewById(R.id.credits);
+        button_credits = findViewById(R.id.credits);
         button_credits.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, AboutActivity.class)));
 
-        button_presentation = (Button) findViewById(R.id.presentazione);
+        button_presentation = findViewById(R.id.presentazione);
         button_presentation.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, PresentationActivity.class)));
 
         /*

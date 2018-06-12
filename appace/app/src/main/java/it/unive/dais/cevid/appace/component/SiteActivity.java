@@ -41,7 +41,7 @@ public class SiteActivity extends AppCompatActivity {
         Site site = (Site) intent.getSerializableExtra(INTENT_SITE);
         Log.d(TAG, String.format("got site: %s", site));
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         try {
             toolbar.setTitle(site.getTitle());

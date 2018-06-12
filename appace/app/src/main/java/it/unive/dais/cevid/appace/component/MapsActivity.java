@@ -2,16 +2,29 @@ package it.unive.dais.cevid.appace.component;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.ColorInt;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.res.ResourcesCompat;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -37,11 +50,13 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -49,7 +64,6 @@ import it.unive.dais.cevid.appace.R;
 import it.unive.dais.cevid.appace.geo.Site;
 import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
 import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
-import it.unive.dais.cevid.datadroid.lib.util.MapManager;
 
 public class MapsActivity extends AppCompatActivity
         implements OnMapReadyCallback,
@@ -74,7 +88,6 @@ public class MapsActivity extends AppCompatActivity
     @Nullable
     private List<Marker> markers;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -85,8 +98,8 @@ public class MapsActivity extends AppCompatActivity
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
         // trova gli oggetti che rappresentano i bottoni e li salva come campi d'istanza
-        button_here = (ImageButton) findViewById(R.id.button_here);
-        button_car = (ImageButton) findViewById(R.id.button_car);
+        button_here = findViewById(R.id.button_here);
+        button_car = findViewById(R.id.button_car);
 
         // API per i servizi di localizzazione
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
@@ -379,14 +392,33 @@ public class MapsActivity extends AppCompatActivity
     }
 
     private void populateMap() {
-        MapManager mm = new MapManager() {
-            @NonNull
-            @Override
-            public GoogleMap getGoogleMap() {
-                return Objects.requireNonNull(gMap);
+        markers = new ArrayList<>();
+        for (CsvParser.Row row : getCsvRows()) {
+            Site site = new Site(row);
+            try {
+                MarkerOptions opts = new MarkerOptions()
+                        .title(site.getTitle())
+                        .position(site.getPosition())
+                        .snippet(site.getDescription())
+                        .icon(BitmapDescriptorFactory.fromBitmap(getCustomMarker(site.getPathId())))
+//                        .icon(BitmapDescriptorFactory.fromBitmap(writeTextOnDrawable(R.drawable.black_marker, site.getPathId())))
+                        ;
+                Marker m = gMap.addMarker(opts);
+                m.setTag(site);
+                markers.add(m);
+            } catch (ParserException e) {
+                e.printStackTrace();
             }
-        };
-        markers = mm.putMarkersFromCsv(getCsvRows(), Site::new, BitmapDescriptorFactory.HUE_GREEN);
+        }
+//        MapManager mm = new MapManager() {
+//            @NonNull
+//            @Override
+//            public GoogleMap getGoogleMap() {
+//                return Objects.requireNonNull(gMap);
+//            }
+//        };
+//        markers = mm.putMarkersFromCsv(getCsvRows(), Site::new,
+//                opts -> opts.icon(BitmapDescriptorFactory.fromBitmap(writeTextOnDrawable(R.drawable.black_marker, ))); //writeTextOnDrawable(R.drawable.marker, "6"))));
         goToInitialPosition();
     }
 
@@ -412,6 +444,90 @@ public class MapsActivity extends AppCompatActivity
             }
         }
         return DEFAULT_INITIAL_POSITION;
+    }
+
+    // versione che disegna sopra un drawable xml
+    public Bitmap getCustomMarker(String label) {
+        Paint color = new Paint();
+        // TODO: rendere risorse le costanti
+        color.setTextSize(30);
+        color.setColor(Color.WHITE);
+
+        int px = getResources().getDimensionPixelSize(R.dimen.marker_text_size);
+
+        Bitmap r = Bitmap.createBitmap(px, px, Bitmap.Config.ARGB_8888);
+
+        Canvas canvas = new Canvas(r);
+        canvas.drawText(label, 40, 40, color);  // TODO: centrare il numero sul marker
+
+        Drawable shape = getResources().getDrawable(R.drawable.black_marker);
+
+        shape.setBounds(0, 0, r.getWidth(), r.getHeight());
+        shape.draw(canvas);
+
+        return r;
+    }
+
+    // versione che disegna sopra una resource
+    private Bitmap writeTextOnDrawable(int id, String text) {
+
+        Bitmap bm = BitmapFactory.decodeResource(getResources(), id).copy(Bitmap.Config.ARGB_8888, true);
+
+        Typeface tf = Typeface.create("Helvetica", Typeface.BOLD);
+
+        Paint paint = new Paint();
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(Color.WHITE);
+        paint.setTypeface(tf);
+        paint.setTextAlign(Paint.Align.CENTER);
+        paint.setTextSize(convertToPixels(this, 11));
+
+        Rect textRect = new Rect();
+        paint.getTextBounds(text, 0, text.length(), textRect);
+
+        Canvas canvas = new Canvas(bm);
+
+        //If the text is bigger than the canvas , reduce the font size
+        if (textRect.width() >= (canvas.getWidth() - 4))     //the padding on either sides is considered as 4, so as to appropriately fit in the text
+            paint.setTextSize(convertToPixels(this, 7));        //Scaling needs to be used for different dpi's
+
+        //Calculate the positions
+        int xPos = (canvas.getWidth() / 2) - 2;     //-2 is for regulating the x position offset
+
+        //"- ((paint.descent() + paint.ascent()) / 2)" is the distance from the baseline to the center.
+        int yPos = (int) ((canvas.getHeight() / 2) - ((paint.descent() + paint.ascent()) / 2));
+
+        canvas.drawText(text, xPos, yPos, paint);
+
+        return bm;
+    }
+
+
+    public static int convertToPixels(Context context, int nDP) {
+        final float conversionScale = context.getResources().getDisplayMetrics().density;
+
+        return (int) ((nDP * conversionScale) + 0.5f);
+
+    }
+
+    // versione per grafica vettoriale
+    public static BitmapDescriptor getBitmapFromVector(@NonNull Context context,
+                                                       @DrawableRes int vectorResourceId,
+                                                       @ColorInt int tintColor) {
+
+        Drawable vectorDrawable = ResourcesCompat.getDrawable(
+                context.getResources(), vectorResourceId, null);
+        if (vectorDrawable == null) {
+            Log.e(TAG, "Requested vector resource was not found");
+            return BitmapDescriptorFactory.defaultMarker();
+        }
+        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(),
+                vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        vectorDrawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+        DrawableCompat.setTint(vectorDrawable, tintColor);
+        vectorDrawable.draw(canvas);
+        return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
 
 }
