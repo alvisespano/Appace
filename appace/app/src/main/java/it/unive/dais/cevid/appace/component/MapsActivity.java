@@ -400,8 +400,9 @@ public class MapsActivity extends AppCompatActivity
                         .title(site.getTitle())
                         .position(site.getPosition())
                         .snippet(site.getDescription())
-                        .icon(BitmapDescriptorFactory.fromBitmap(getCustomMarker(site.getPathId())))
-//                        .icon(BitmapDescriptorFactory.fromBitmap(writeTextOnDrawable(R.drawable.black_marker, site.getPathId())))
+                        // TODO: scegliere uno dei due algoritmi di render dei marker con testo
+                        .icon(BitmapDescriptorFactory.fromBitmap(getCustomMarker(R.drawable.black_marker_small, site.getPathId())))
+//                        .icon(BitmapDescriptorFactory.fromBitmap(writeTextOnDrawable(R.drawable.black_marker_small, site.getPathId())))
                         ;
                 Marker m = gMap.addMarker(opts);
                 m.setTag(site);
@@ -447,7 +448,7 @@ public class MapsActivity extends AppCompatActivity
     }
 
     // versione che disegna sopra un drawable xml
-    public Bitmap getCustomMarker(String label) {
+    public Bitmap getCustomMarker(int id, String label) {
         Paint color = new Paint();
         // TODO: rendere risorse le costanti
         color.setTextSize(30);
@@ -460,7 +461,7 @@ public class MapsActivity extends AppCompatActivity
         Canvas canvas = new Canvas(r);
         canvas.drawText(label, 40, 40, color);  // TODO: centrare il numero sul marker
 
-        Drawable shape = getResources().getDrawable(R.drawable.black_marker);
+        Drawable shape = getResources().getDrawable(id);
 
         shape.setBounds(0, 0, r.getWidth(), r.getHeight());
         shape.draw(canvas);
@@ -472,7 +473,6 @@ public class MapsActivity extends AppCompatActivity
     private Bitmap writeTextOnDrawable(int id, String text) {
 
         Bitmap bm = BitmapFactory.decodeResource(getResources(), id).copy(Bitmap.Config.ARGB_8888, true);
-
         Typeface tf = Typeface.create("Helvetica", Typeface.BOLD);
 
         Paint paint = new Paint();

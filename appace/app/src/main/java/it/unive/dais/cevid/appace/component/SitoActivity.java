@@ -83,7 +83,12 @@ public class SitoActivity extends AppCompatActivity {
     public Drawable getDrawable(String name) {
         Resources resources = getResources();
         final int resourceId = resources.getIdentifier(name, "drawable", getPackageName());
-        return resources.getDrawable(resourceId, null);
+        try {
+            return resources.getDrawable(resourceId, null);
+        }
+        catch (Resources.NotFoundException e) {
+            return resources.getDrawable(R.drawable.beolco, null);  // TODO: togliere questo quando abbiamo tutte le immagini
+        }
     }
 
     protected void navigate(LatLng from, LatLng to) {
