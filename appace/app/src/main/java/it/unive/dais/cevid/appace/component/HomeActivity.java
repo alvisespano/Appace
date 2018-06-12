@@ -27,7 +27,7 @@ public class HomeActivity extends AppCompatActivity {
     static final String KEY_ROWS = "ROWS";
     private static final String TAG = "HomeActivity";
 
-    private Button button_map, button_credits, button_presentation;
+    private Button button_map, button_credits, button_presentation, button_sources;
 
     @SuppressWarnings("unused")
     private ImageButton button_en, button_it;
@@ -66,6 +66,9 @@ public class HomeActivity extends AppCompatActivity {
             intent.putExtra(KEY_ROWS, (Serializable) getCsvRows());
             startActivity(intent);
         });
+
+        button_sources = findViewById(R.id.sources);
+        button_sources.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, SourcesActivity.class)));
 
         button_credits = findViewById(R.id.credits);
         button_credits.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, AboutActivity.class)));
