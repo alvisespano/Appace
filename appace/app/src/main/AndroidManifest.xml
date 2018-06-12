@@ -78,7 +78,7 @@
         </activity>
         <activity
             android:name=".component.SourcesActivity"
-            android:label="@string/title_activity_fonts"
+            android:label="@string/title_activity_sources"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -86,7 +86,7 @@
         </activity>
         <activity
             android:name=".component.SiteActivity"
-            android:label="@string/title_activity_sito"
+            android:label="@string/title_activity_site"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

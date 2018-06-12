@@ -9,11 +9,13 @@ import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -40,12 +42,25 @@ public class SiteActivity extends AppCompatActivity {
         Site site = (Site) intent.getSerializableExtra(INTENT_SITE);
         Log.d(TAG, String.format("got site: %s", site));
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         try {
+            Toolbar toolbar = findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
+
+            CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar);
+            collapsingToolbarLayout.setTitle(site.getTitle());
+
+            Drawable d = getDrawable(site.getPhoto());
+
             toolbar.setTitle(site.getTitle());
-            ((TextView) findViewById(R.id.sito_textview)).setText(site.getDescription());
-            toolbar.setLogo(getDrawable(site.getPhoto()));
+            toolbar.setSubtitle(site.getTitle());
+
+            // mettendo anche il logo si ripete l'immagine in piccolo
+//            toolbar.setLogo(d);
+            ImageView v = findViewById(R.id.site_imageview);
+            v.setImageDrawable(d);
+
+            ((TextView) findViewById(R.id.site_textview)).setText(site.getDescription());
+
         } catch (ParserException e) {
             Log.e(TAG, String.format("exception caught: %s", e));
             e.printStackTrace();
@@ -53,7 +68,7 @@ public class SiteActivity extends AppCompatActivity {
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
-        Button goGMaps = (Button) findViewById(R.id.goGMaps);
+        Button goGMaps = findViewById(R.id.goGMaps);
         goGMaps.setOnClickListener(v -> {
             if (ActivityCompat.checkSelfPermission(SiteActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(SiteActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling

@@ -38,7 +38,6 @@
     <string name="msg_permissions_not_granted">I permessi appena negati dall\'utente sono necessari per alcune funzionalità dell\'app. Il supporto delle funzionalità sarà ridotto.</string>
     <string name="marker_title">You are HERE</string>
     <string name="logo_descr">Università Ca\' Foscari, Venezia</string>
-    <string name="title_activity_site">SiteDetailsActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -187,7 +186,7 @@ Buona lettura.
         <item>Indonesian</item>
         <item>Spanish</item>
     </string-array>
-    <string name="title_activity_fonts">FontsActivity</string>
-    <string name="title_activity_sito">SitoActivity</string>
+    <string name="title_activity_sources">SourcesActivity</string>
+    <string name="title_activity_site">SiteActivity</string>
 
 </resources>

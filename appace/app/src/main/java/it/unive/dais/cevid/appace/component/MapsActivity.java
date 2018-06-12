@@ -401,8 +401,8 @@ public class MapsActivity extends AppCompatActivity
                         .position(site.getPosition())
                         .snippet(site.getDescription())
                         // TODO: scegliere uno dei due algoritmi di render dei marker con testo
-                        .icon(BitmapDescriptorFactory.fromBitmap(getCustomMarker(R.drawable.black_marker_small, site.getPathId())))
-//                        .icon(BitmapDescriptorFactory.fromBitmap(writeTextOnDrawable(R.drawable.black_marker_small, site.getPathId())))
+//                        .icon(BitmapDescriptorFactory.fromBitmap(getCustomMarker(R.drawable.black_marker_small_filled, site.getPathId())))
+                        .icon(BitmapDescriptorFactory.fromBitmap(writeTextOnDrawable(R.drawable.black_marker_small_filled, site.getPathId())))
                         ;
                 Marker m = gMap.addMarker(opts);
                 m.setTag(site);
@@ -453,26 +453,22 @@ public class MapsActivity extends AppCompatActivity
         // TODO: rendere risorse le costanti
         color.setTextSize(30);
         color.setColor(Color.WHITE);
-
         int px = getResources().getDimensionPixelSize(R.dimen.marker_text_size);
-
         Bitmap r = Bitmap.createBitmap(px, px, Bitmap.Config.ARGB_8888);
-
         Canvas canvas = new Canvas(r);
-        canvas.drawText(label, 40, 40, color);  // TODO: centrare il numero sul marker
-
         Drawable shape = getResources().getDrawable(id);
-
         shape.setBounds(0, 0, r.getWidth(), r.getHeight());
         shape.draw(canvas);
-
+        canvas.drawText(label, 40, 40, color);  // TODO: centrare il numero sul marker
         return r;
     }
 
     // versione che disegna sopra una resource
     private Bitmap writeTextOnDrawable(int id, String text) {
 
-        Bitmap bm = BitmapFactory.decodeResource(getResources(), id).copy(Bitmap.Config.ARGB_8888, true);
+        Bitmap bm0 = BitmapFactory.decodeResource(getResources(), id).copy(Bitmap.Config.ARGB_8888, true);
+        // TODO: resizare ad una dimensione migliore
+        Bitmap bm = Bitmap.createScaledBitmap(bm0, 90, 90, true);
         Typeface tf = Typeface.create("Helvetica", Typeface.BOLD);
 
         Paint paint = new Paint();
