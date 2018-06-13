@@ -44,22 +44,18 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        progressBarManager = new ProgressBarManager(this, new ProgressBar[]{findViewById(R.id.progress_bar_1)});
+        progressBarManager = new ProgressBarManager(this, new ProgressBar[] { findViewById(R.id.progress_bar) });
 
         Log.d(TAG, "savedInstanceState == null: " + (savedInstanceState == null ? "yes" : "no"));
+        Log.d(TAG, "rows == null: " + (rows == null ? "yes" : "no"));
 
-//        if (savedInstanceState != null) {
-//            //noinspection unchecked
-//            rows = (List<CsvParser.Row>) savedInstanceState.getSerializable(KEY_ROWS);
-//            Log.d(TAG, "rows restored from instance state");
-//        }
         if (rows == null) {
             Log.d(TAG, "parsing CSV....");
             CsvParser parser = new CsvParser(new InputStreamReader(getResources().openRawResource(R.raw.luoghi)), true, ";", progressBarManager);
             parserAsyncTask = parser.getAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
         }
 
-        button_map = (Button) findViewById(R.id.luoghi);
+        button_map = findViewById(R.id.sites);
         button_map.setOnClickListener(v -> {
             Log.d(TAG, "starting MapsActivity...");
             Intent intent = new Intent(HomeActivity.this, MapsActivity.class);

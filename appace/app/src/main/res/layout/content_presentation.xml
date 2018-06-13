@@ -7,12 +7,13 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".component.PresentationActivity"
+    android:background="@color/background"
     tools:showIn="@layout/activity_presentation">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
-        android:text="@string/presentation" />
+        android:text="@string/presentation_text" />
 
 </android.support.v4.widget.NestedScrollView>

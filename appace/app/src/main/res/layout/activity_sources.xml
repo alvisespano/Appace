@@ -33,6 +33,6 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_fonts" />
+    <include layout="@layout/content_sources" />
 
 </android.support.design.widget.CoordinatorLayout>

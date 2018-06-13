@@ -1,14 +1,10 @@
 <resources>
-    <!-- Customize your app's name here. -->
     <string name="app_name">Appace</string>
-    <string name="title_activity_maps">Appace - Map</string>
-    <!-- -->
 
     <string name="gps_disabled">GPS disattivato</string>
     <string name="gps_enabled">GPS attivato</string>
     <string name="conn_failed">Connessione fallita</string>
     <string name="conn_suspended">Connessione sospesa</string>
-
 
     <string name="menu_mapStyle_title">Stile Mappa</string>
     <string name="menu_mapStyle_summary">Scegli il tipo di mappa di Google Maps</string>
@@ -26,19 +22,123 @@
     <string name="menu_mapStyle_hybrid">Ibrido</string>
 
     <string name="credits_year">2018</string>
-    <string name="credits_project">CEVID</string>
+    <string name="credits_project">Appace</string>
     <string name="credits_company">Università Ca\' Foscari Venezia</string>
-    <string name="credits_authors">Alessio Camata, Alvise Spanò</string>
+    <string name="credits_authors">Alvise Spanò</string>
 
     <string name="action_info">Info</string>
-    <string name="action_impostazioni">Impostazioni</string>
+    <string name="action_settings">Impostazioni</string>
 
     <string name="msg_loading">Caricamento…</string>
     <string name="msg_button_car">Pulsante premuto</string>
     <string name="msg_permissions_not_granted">I permessi appena negati dall\'utente sono necessari per alcune funzionalità dell\'app. Il supporto delle funzionalità sarà ridotto.</string>
-    <string name="marker_title">You are HERE</string>
-    <string name="logo_descr">Università Ca\' Foscari, Venezia</string>
-    <string name="large_text">
+
+    <string name="marker_title">Tu sei QUI</string>
+
+    <string-array name="language_option">
+        <item>English</item>
+        <item>Indonesian</item>
+        <item>Spanish</item>
+    </string-array>
+
+    <string name="title_activity_maps">Appace - Map</string>
+    <string name="title_activity_presentation">Presentazione</string>
+    <string name="title_activity_site">SiteActivity(IT)</string>
+    <string name="title_activity_sources">Fonti</string>
+
+    <string name="sitemap_button">LUOGHI DI PACE</string>
+    <string name="sources_button">FONTI</string>
+    <string name="credits_button">CREDITI</string>
+    <string name="presentation_button">PRESENTAZIONE</string>
+    <string name="goto_gmaps_button">VAI A MAPS</string>
+
+    <string name="presentation_text">
+        <b>Presentazione</b>"\n"
+
+"Just three years after the printing of the second edition, that was distributed to the local peace supporters who greatly appreciated that, we are now happy to introduce the third edition of this guide, this time available as an app for smartphones.
+The English translation has been considered essential for giving the large number of foreign tourists, who are fond of peace matters, the opportunity to use the guide and appreciate its contents.
+Through the correction of some minor mistakes and the insertion of new, original pictures, the guide is now more precise and more documented. The new location of two points of interest has been also here reported.
+We would like to remind the readers that this guide offers an alternative way to discover the city. It takes a rather unusual approach for a guide, promoting a culture of peace and nonviolence.
+\n\n"
+        <b>Progetti internazionali</b>"\n"
+"The idea stems from the international contacts established through the Grundtvig European programme, “Discover Peace in Europe”, financed by the European Union, which led to the creation of routes of peace in 7 more European cities: Turin, Paris, Vienna, Berlin, Budapest, The Hague and Manchester. A website showing these peace routes has also been published1.
+The first city to prepare a peace trail was Bradford (GB). The route has been published as a booklet of about 40 pages.
+A pocket book of 212 pages has also been produced in Vienna (A), presenting the city in these terms2. And a great many other cities across the globe have prepared similar routes in order to ensure due consideration of the culture of peace and nonviolence, starting from the local context. These include others in Great Britain (London, Coventry and Leeds), as well as Atlanta in the USA3, which in addition to the website has also produced a 64-page booklet, and Geneva in Switzerland4.
+\n\n"
+        <b>In Italia</b>"\n"
+
+"Padua is the first city to have produced a guide of this scope.
+Meanwhile, in Turin, a similar guide has been published in two versions, one written in Italian and another one translated into English. The aforementioned Grundtvig programme is the reference background in which this work has been conceived and published.
+\n\n"
+        <b>I criteri di scelta</b>"\n"
+"The places, people and histories are presented in the form of short summaries. The choices made were to present places and people that had taken positive action for peace and nonviolence and as such reference to places of war, which unfortunately abound in Padua, have been limited, but not forgotten. We researched the many traces, throughout the territory of Padua, which at times can prove difficult to identify, of those who sought to act in favour of peace, reconciliation and justice over the centuries, avoiding, refusing or minimising the use of violence, even if not specifically referring to the idea of nonviolence, but rather to other positive human, religious or political values. The culture of peace is an ancient one, but the culture of nonviolence is young. It is therefore not correct to label aspects of the distant past with the term “nonviolence”, when reflection on this method of action, in its precise, moral, cultural and political sense, only dates back to the last century. We had to make choices and this has sometimes meant glossing over episodes and people that others may consider important.\n\n"
+        <b>Le schede</b>"\n"
+
+"The part dedicated to pre-twentieth century history is fairly brief.
+We investigated a great many famous people, but in the end, many proved to be incoherent with the criteria we had set ourselves. Some of the most famous people we had to exclude were Bernardino da Feltre, the founder of the Monte di Pietà, an institution we can perhaps consider as a distant forerunner of ethical finance, but whom we had to exclude on the grounds of his fanatical anti-Semitism. The same applied to Galileo Galilei, the great scientist who worked not only for pure research, but also to create war machines. Unfortunately, eight hundred years of history of Padua University turned up very few examples of pioneers of a culture of peace.
+The part on twentieth century history is fairly extensive, but could potentially be even greater.
+Padua has been an important military hub and victim of a great deal of war violence, starting with the bombing.
+However, it has also been a place of resistance and actions of peace; a place of welcome for the persecuted, like the Armenians. This section includes information on monuments dedicated to the memory of the victims and the “righteous”, which abound particularly in Padua, as well as summaries on individual people. Others could certainly be added, particularly in the period of the Resistance movement.
+Finally, the contemporary part provides examples of the current culture of peace experienced in Padua. It is not intended, indeed it would be impossible, as a complete list of all movements present in the city and their work, information on which is readily available from the various websites and brochures that change rapidly; rather, we aim to provide a mere indication of places, people and subject matters that have been important, encouraging further personal research at will.
+We hope that this third edition of the guide will be followed by further, more complete editions, also incorporating any reader suggestions. At the end of the guide, a bibliography gives suggestions of additional reading materials.
+Enjoy!
+\n\n"
+        <b>Movimento Internazionale della Riconciliazione, sede di Padova</b>"\n"
+"
+1)	http://www.discoverpeace.eu
+2)	E. Hewson, G. Hamann, S. Jalka, Frieden entdecken in Wien, Pro Business, Vienna, 2011
+3)	http://www.atlantapeacetrails.com
+4)	http://www.genevaforpeace.com, Itinéraire de la paix"
+
+
+    </string>
+    <string name="sources_text">
+    <b>Literary sources and suggested bibliography</b>
+
+"\n\nAccattoli Luigi, La radice di un grande albero. Francesco Canova, medico, missionario, cosmopolita, Ed. S. Paolo, 2013;
+Arslan Antonia, La masseria delle allodole, Ed. Rizzoli, 2004;
+AA.VV., Dizionario letterario delle opere e dei personaggi, Ed.Valentino Bompiani, Milano, 1950;
+AA.VV., Padova per Antenore, Atti della giornata di studio (Padova, 14 dicembre 1989), a cura di G. Zampieri, Editoriale Programma, Padova, 1990;
+AA.VV., Strade della Resistenza, Comune di Padova, Quartiere 3 EST, 2005; AA.VV., Un frate eroe della resistenza, Dolo (VE);
+Braccesi Lorenzo, La leggenda di Antenore. Da Troia a Padova, Ed. Marsilio, Padova, 1984; Butturini Giuseppe, Una professione che diventa missione. Francesco Canova e Medici con l’Africa Cuamm, Ed. Studium, 2013;
+Collodo S., Padova al tempo di Francesco Petrarca in "Petrarca e il suo tempo, Catalogo della mostra "Petrarca e il suo tempo" Comune di Padova 8 maggio - 31 luglio 2004, Milano, Ed. Skira 2006
+Daniele Ireneo, S. Antonio di Padova, Conversazioni sulla sua vita, Ed. Associazione Universale di S. Antonio, Padova, 1984;
+Deaglio Enrico, La banalità del bene. Storia di Giorgio Perlasca, Ed. Feltrinelli, 2003;
+Emerton Ephraim, The Defensor Pacis of Marsiglio of Padua, Oxford University Press, 1920; Fabris Giovanni, Scritti di arte e storia padovana, Ed. Rebellato, Padova, 1977;
+Franceschini Ezio, Concetto Marchesi, Ed. Antenore, Padova, 1978;
+Gamboso Vergilio, Vita di sant’Antonio, Ed. Messaggero, Padova, 2011;
+Geyer Francesco Saverio, Mons Daniele Comboni, Ed. Biblioteca Comboniana, 2000;
+Jevnikar Ivo,Tottoli Apollonio ( a cura di), Padova-Chiesanuova, Un campo di concentramento e la carità di un frate, Ed. Over-Oltre, Padova 2009;
+Lamon Roberta, Le statue di Palazzo Scarpari, “Padova e il suo territorio”, 156, aprile 2012, p. 18-21;
+Lenci G., Le giornate di villa Giusti. Storia di un armistizio, Ed. Il Poligrafo, 2008;
+Martini Carla Liliana, Catena di salvezza, Ed. Messaggero, Padova, 2005;
+Puppi L., Toffanin G., Guida di Padova, Ed. Lint, Trieste, 1983;
+Ronconi Giorgio, Antenore, la sua tomba, il suo mito, “Padova e il suo territorio”, I, 1986, n. 1, pp. 8-11;
+Toffanin Giuseppe Junior, Cent’anni in una città, Ed. Rebellato, Padova, 1973;
+Todorov Tzvetan, Di fronte all’estremo, Ed. Garzanti, 1992;
+Todorov Tzvetan, Hope and Memory, Published by Princeton University Press, 2003;
+Vasoin Gigi: “La Signoria dei Carraresi nella Padova del ‘300”, Ed. la Garangola Padova, 1988
+Vecchia Giuliana, Breve storia del tempio della Pace, Tip. “La Garangola”, Padova, 1988;
+Zilli Arturo, Dio non uccide, Ed. Il Margine, 2012.\n\n
+ 
+Acknowledgements
+\n
+The photographs illustrating this guide have been taken thanks to the willingness of so many people and institutions who have kindly opened the doors of their private homes, offices and structures to allow us to obtain the results we have. Without this collaboration, certain images, taken from unusual angles, would not have been possible, and certain works of art could not have been included. We would therefore like to thank: Ms Dan and the staff of Banca Antonveneta in the offices of Via VIII Febbraio, Marco Piccolo of Banca Popolare Etica, the security staff of Padua University, the Comboni Father Celestino Prevedello, Chiara Giacon and Father Luciano Bertazzo of the Centro Studi Antoniani and Loriana Puggelli Abati. Our thanks also go to the administrative staff of the former Councillor Dalla Vecchia for their exemplary collaboration.
+\n\n
+Sergio Bergami
+\n
+ 
+The authors also wish to thank\n
+The Italian branch of the International Fellowship of Reconciliation, Giampaolo Frison, Lucia Tomasoni, Francesco Varotto
+
+and:
+Amelio Anzeliero, Enrica Barbacane, Francesca Benciolini, Giovanna Benucci, Sergio Bergami, Paola Betetto, Marina Bolletti, Ivana Bozzolan, Paolo Candelari, Carlo Cappellari, Martina Camarda, Antonia Carone, Lucia Carrara, Michela Cavallini, Circolo Legambiente di Padova, Silvia Cosentino, Davide Galati, Santino Greco, Angiola Gui, Giuseppe Gui, Angela e Beppe Marasso, Michele Marinaro, Giuseppe Martinello, Graziella Moscarda, Roberto Paccagnella, Marzia Pegolotti, Paolo Peranzoni, Davide Stevanin, Stefano Tono
+
+who gave a contribution to print this guide"
+
+
+</string>
+    <string name="site_text">
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
@@ -127,66 +227,4 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_presentation">PresentationActivity</string>
-    <string name="goto_gmaps">Vai a Google Maps</string>
-
-    <string name="presentation">
-        <b>Presentazione</b>"\n"
-
-"A distanza di soli tre anni dalla seconda edizione cartacea, che è stata diffusa e apprezzata nel mondo della pace in città, siamo lieti di presentare la terza edizione questa volta disponibile come app per smartphone.
-La traduzione in inglese si è resa indispensabile per una conoscenza e un utilizzo da parte anche dei molti turisti stranieri interessati ai temi della Pace.
-La correzione di imperfezioni e l’introduzione di nuove foto la rendono più precisa e documentata così come la segnalazione dello spostamento di due punti di interesse.
-Ci piace ricordare come questa guida proponga un modo diverso di conoscere la città, un angolo di visuale inconsueto: quello della cultura della pace e della nonviolenza.
-\n\n"
-        <b>Progetti internazionali</b>"\n"
-"L’idea ci è stata suggerita dai contatti internazionali maturati attraverso il programma europeo Grundtvig “Discover Peace in Europe”, finanziato dall’Unione Europea, che ha visto la creazione di percorsi di pace in altre 7 città europee: Torino, Parigi, Vienna, Berlino, Budapest, L’Aia, Manchester e ha prodotto anche un sito web1.
-La prima città a dotarsi di un itinerario di pace è stata Bradford (GB). Il percorso è stato editato in un opuscolo di circa 40 pagine.
-
-Anche a Vienna (A) è stato prodotto un libretto tascabile di ben 212 pagine che presenta la città da questo punto di vista2.
-Ma numerose altre sono le città che nel mondo hanno predisposto questo tipo di itinerari per valorizzare, a partire dal contesto locale, la cultura della pace e della nonviolenza. Fra queste ricordiamo Londra, Coventry e Leeds sempre in Gran Bretagna, ma anche Atlanta negli USA3, che oltre al sito ha prodotto un opuscolo di 64 pagine, e Ginevra in Svizzera4.
-\n\n"
-        <b>In Italia</b>"\n"
-
-"Padova è la prima città che ha prodotto una guida con questo taglio.
-Nel frattempo è uscita una guida analoga per la città di Torino in due versioni, in lingua italiana e inglese, realizzata nell’ambito del già ricordato progetto Grundtvig.
-\n\n"
-        <b>I criteri di scelta</b>"\n"
-"I luoghi, i personaggi, le storie sono presentati attraverso una scheda sintetica. I criteri di scelta sono stati quelli di presentare luoghi e persone che hanno agito in positivo per la pace e la nonviolenza, limitando quindi i riferimenti ai luoghi di guerra di cui Padova purtroppo è molto ricca, pur non dimenticandoli. Abbiamo ricercato le tracce, che sono sparse nel territorio padovano ed a volte di difficile individuazione, di chi nel corso dei secoli ha cercato di agire in favore della pace, della riconciliazione e della giustizia evitando, rifiutando o limitando al massimo l’uso della violenza, pur magari non facendo riferimento esplicitamente all’idea della nonviolenza, ma ad altri valori positivi, umani, religiosi o politici. In effetti la cultura della pace è antica, ma la cultura della nonviolenza è giovane, per cui non è corretto attribuire etichette di nonviolenza nel lontano passato, quando la riflessione su questo metodo di azione in un senso preciso, morale, culturale e politico, risale solo al secolo scorso. Abbiamo operato delle scelte e questo ha significato a volte tralasciare episodi e personaggi che altri possono reputare significativi.
-\n\n"
-        <b>Le schede</b>"\n"
-
-"La parte che riguarda la storia prima del Novecento non è molto ampia. Abbiamo indagato su molti personaggi celebri, che però alla fine non sono risultati congruenti con i criteri richiesti. Tra gli esclusi più illustri vi è Bernardino da Feltre, fondatore del Monte di Pietà, che potremmo considerare un lontano precursore della finanza etica, ma che abbiamo dovuto escludere per il suo fanatico antisemitismo; così anche Galileo Galilei, il grande scienziato che ha lavorato, oltre che per la ricerca pura, anche per creare strumenti di guerra; purtroppo non abbiamo trovato molti altri esempi di precursori di una cultura di pace in ottocento anni di storia dell’Università di Padova.
-La parte sulla storia del Novecento è ampia, ma potrebbe esserlo di più. Padova è stata centro di grande importanza militare e vittima di molta violenza bellica, a partire dai bombardamenti, ma è stata anche luogo di resistenza e di azioni di pace, di accoglienza per perseguitati, come ad esempio gli armeni. In questa sezione vi sono schede sui luoghi monumentali dedicati alla memoria delle vittime e dei “giusti”, di cui Padova è particolarmente ricca, e vi sono schede su singole personalità. Se ne potrebbero aggiungere sicuramente altre, soprattutto nel periodo della Resistenza.
-Infine la parte contemporanea esemplifica alcuni momenti della attuale cultura di pace in Padova. Non è e non potrebbe essere un elenco completo di tutti i movimenti presenti in città e delle loro attività, che possono essere rintracciati facilmente attraverso i relativi siti o depliant e che mutano con grande rapidità, ma soltanto un’indicazione di luoghi, figure e tematiche significativi, da cui ognuno potrà prendere spunto per ulteriori ricerche.
-Speriamo che questa terza edizione della guida sarà seguita da edizioni successive più complete, grazie anche ad un eventuale apporto dei lettori.
-Alla fine della guida una bibliografia indica possibili direzioni di approfondimento.
-Buona lettura.
-\n\n"
-        <b>Movimento Internazionale della Riconciliazione, sede di Padova</b>"\n"
-"
-1)	http://www.discoverpeace.eu
-2)	E. Hewson, G. Hamann, S. Jalka, Frieden entdecken in Wien, Pro Business, Vienna, 2011
-3)	http://www.atlantapeacetrails.com
-4)	http://www.genevaforpeace.com, Itinéraire de la paix"
-
-    </string>
-
-    <string name="luoghi_pace_button">LUOGHI DI PACE</string>
-    <string name="fonti_button">FONTI</string>
-    <string name="crediti_button">CREDITI</string>
-    <string name="presentazione_button">PRESENTAZIONE</string>
-
-
-    <string name="text_translation">Hi and welcome to codingdemos,
-        here you will learn how to develop android app. Thank you for watching</string>
-
-    <string-array name="language_option">
-        <item>English</item>
-        <item>Indonesian</item>
-        <item>Spanish</item>
-    </string-array>
-    <string name="title_activity_sources">SourcesActivity</string>
-    <string name="title_activity_site">SiteActivity</string>
-
 </resources>

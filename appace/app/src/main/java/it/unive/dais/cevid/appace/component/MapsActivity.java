@@ -84,8 +84,6 @@ public class MapsActivity extends AppCompatActivity
     @Nullable
     protected LatLng currentPosition = null;
     @Nullable
-    protected Marker hereMarker = null;
-    @Nullable
     private List<Marker> markers;
 
     @Override
@@ -113,12 +111,7 @@ public class MapsActivity extends AppCompatActivity
             Log.d(TAG, "here button clicked");
             gpsCheck();
             updateCurrentPosition();
-            if (hereMarker != null) hereMarker.remove();
             if (currentPosition != null) {
-                MarkerOptions opts = new MarkerOptions();
-                opts.position(currentPosition);
-                opts.title(getString(R.string.marker_title));
-                hereMarker = gMap.addMarker(opts);
                 if (gMap != null)
                     goToInitialPosition();
             } else
@@ -397,12 +390,11 @@ public class MapsActivity extends AppCompatActivity
             Site site = new Site(row);
             try {
                 MarkerOptions opts = new MarkerOptions()
-                        .title(site.getTitle())
+                        .title(String.format("%s. %s", site.getPathId(), site.getTitle()))
                         .position(site.getPosition())
                         .snippet(site.getAddress())
-                        // TODO: scegliere uno dei due algoritmi di render dei marker con testo
-//                        .icon(BitmapDescriptorFactory.fromBitmap(getCustomMarker(R.drawable.black_marker_small_filled, site.getPathId())))
-                        .icon(BitmapDescriptorFactory.fromBitmap(writeTextOnDrawable(R.drawable.black_marker_small_filled, site.getPathId())))
+                        // TODO: scegliere uno dei vari algoritmi di render dei marker con testo che ci sono sotto
+                        .icon(BitmapDescriptorFactory.fromBitmap(writeTextOnDrawable(R.drawable.marker_red, site.getPathId())))
                         ;
                 Marker m = gMap.addMarker(opts);
                 m.setTag(site);
@@ -439,9 +431,9 @@ public class MapsActivity extends AppCompatActivity
     }
 
     // versione che disegna sopra un drawable xml
+    @Deprecated
     public Bitmap getCustomMarker(int id, String label) {
         Paint color = new Paint();
-        // TODO: rendere risorse le costanti
         color.setTextSize(30);
         color.setColor(Color.WHITE);
         int px = getResources().getDimensionPixelSize(R.dimen.marker_text_size);
@@ -450,7 +442,7 @@ public class MapsActivity extends AppCompatActivity
         Drawable shape = getResources().getDrawable(id);
         shape.setBounds(0, 0, r.getWidth(), r.getHeight());
         shape.draw(canvas);
-        canvas.drawText(label, 40, 40, color);  // TODO: centrare il numero sul marker
+        canvas.drawText(label, 40, 40, color);
         return r;
     }
 
@@ -458,16 +450,18 @@ public class MapsActivity extends AppCompatActivity
     private Bitmap writeTextOnDrawable(int id, String text) {
 
         Bitmap bm0 = BitmapFactory.decodeResource(getResources(), id).copy(Bitmap.Config.ARGB_8888, true);
-        // TODO: resizare ad una dimensione migliore
-        Bitmap bm = Bitmap.createScaledBitmap(bm0, 90, 90, true);
-        Typeface tf = Typeface.create("Helvetica", Typeface.BOLD);
+        // TODO: ripulire sto casino, rendere le costanti risorse ecc
+        Bitmap bm = Bitmap.createScaledBitmap(bm0, 80, 80, true);
+        Typeface tf = Typeface.create("mantinia", Typeface.BOLD);
 
         Paint paint = new Paint();
-        paint.setStyle(Paint.Style.FILL);
+        paint.setStyle(Paint.Style.FILL_AND_STROKE);
+        paint.setAntiAlias(true);
+        paint.setStrokeWidth(1);
         paint.setColor(Color.WHITE);
         paint.setTypeface(tf);
         paint.setTextAlign(Paint.Align.CENTER);
-        paint.setTextSize(convertToPixels(this, 11));
+        paint.setTextSize(convertToPixels(this, 10));
 
         Rect textRect = new Rect();
         paint.getTextBounds(text, 0, text.length(), textRect);
@@ -478,11 +472,13 @@ public class MapsActivity extends AppCompatActivity
         if (textRect.width() >= (canvas.getWidth() - 4))     //the padding on either sides is considered as 4, so as to appropriately fit in the text
             paint.setTextSize(convertToPixels(this, 7));        //Scaling needs to be used for different dpi's
 
+        final int adjustmentX = 1, adjustmentY = 17;
+
         //Calculate the positions
-        int xPos = (canvas.getWidth() / 2) - 2;     //-2 is for regulating the x position offset
+        int xPos = (canvas.getWidth() / 2) + adjustmentX;     //-2 is for regulating the x position offset
 
         //"- ((paint.descent() + paint.ascent()) / 2)" is the distance from the baseline to the center.
-        int yPos = (int) ((canvas.getHeight() / 2) - ((paint.descent() + paint.ascent()) / 2));
+        int yPos = (int) ((canvas.getHeight() / 2) - ((paint.descent() + paint.ascent()) / 2)) + adjustmentY;
 
         canvas.drawText(text, xPos, yPos, paint);
 

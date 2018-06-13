@@ -97,4 +97,5 @@ public class Site implements MapItem, Serializable {
     public String getAddress() throws ParserException {
         return row.get(ADDRESS);
     }
+
 }
