@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Appace</string>
-    <string name="credits">App sviluppata da:\nUniversità Ca\' Foscari Venezia\n\nPer conto di:\n Comune di Padova.\n\n\nSviluppo:\nDott. Alvise Spanò\n\nCoordinatore progetto:\nProf. Agostino Cortesi</string>
+    <string name="credits">App sviluppata da:\nUniversità Ca\' Foscari Venezia\n\nPer conto di:\n Comune di Padova\n\n\nSviluppo:\nDott. Alvise Spanò\n\nCoordinatore progetto:\nProf. Agostino Cortesi</string>
 
     <string name="gps_disabled">GPS disattivato</string>
     <string name="gps_enabled">GPS attivato</string>
