@@ -76,10 +76,11 @@ public class HomeActivity extends AppCompatActivity {
         button_presentation = findViewById(R.id.presentazione);
         button_presentation.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, PresentationActivity.class)));
 
-        /*
-        TODO: 06/06/2018 i due bottoni della lingua inglese e italiano provvisoriamente li ho messi a fianco al bottone "luoghi di pace", poi quando funziona  lo switch della lingua, allora gli sposto
-        TODO: 06/06/2018 devo capire perchè dentro l'onClick non mi funziona appunto il codice per la traduzione, che di default ora è sempre inglese
-        */
+
+        // TODO: 06/06/2018 i due bottoni della lingua inglese e italiano provvisoriamente li ho messi a fianco al bottone "luoghi di pace", poi quando funziona  lo switch della lingua, allora gli sposto
+        // TODO: 06/06/2018 devo capire perchè dentro l'onClick non mi funziona appunto il codice per la traduzione, che di default ora è sempre inglese
+
+        // TODO: riabilitare i bottini della lingua oppure rimuovere sto codice se non serve più
 //        button_en = (ImageButton) findViewById(R.id.enButton);
 //        button_en.setOnClickListener(new View.OnClickListener() {
 //            @Override

@@ -399,7 +399,7 @@ public class MapsActivity extends AppCompatActivity
                 MarkerOptions opts = new MarkerOptions()
                         .title(site.getTitle())
                         .position(site.getPosition())
-                        .snippet(site.getDescription())
+                        .snippet(site.getAddress())
                         // TODO: scegliere uno dei due algoritmi di render dei marker con testo
 //                        .icon(BitmapDescriptorFactory.fromBitmap(getCustomMarker(R.drawable.black_marker_small_filled, site.getPathId())))
                         .icon(BitmapDescriptorFactory.fromBitmap(writeTextOnDrawable(R.drawable.black_marker_small_filled, site.getPathId())))
@@ -411,15 +411,6 @@ public class MapsActivity extends AppCompatActivity
                 e.printStackTrace();
             }
         }
-//        MapManager mm = new MapManager() {
-//            @NonNull
-//            @Override
-//            public GoogleMap getGoogleMap() {
-//                return Objects.requireNonNull(gMap);
-//            }
-//        };
-//        markers = mm.putMarkersFromCsv(getCsvRows(), Site::new,
-//                opts -> opts.icon(BitmapDescriptorFactory.fromBitmap(writeTextOnDrawable(R.drawable.black_marker, ))); //writeTextOnDrawable(R.drawable.marker, "6"))));
         goToInitialPosition();
     }
 

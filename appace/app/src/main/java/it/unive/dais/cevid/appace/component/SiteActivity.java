@@ -25,6 +25,7 @@ import com.google.android.gms.maps.model.LatLng;
 import it.unive.dais.cevid.appace.R;
 import it.unive.dais.cevid.appace.geo.Site;
 import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
+import it.unive.dais.cevid.datadroid.lib.util.UnexpectedException;
 
 public class SiteActivity extends AppCompatActivity {
 
@@ -99,7 +100,7 @@ public class SiteActivity extends AppCompatActivity {
             return resources.getDrawable(resourceId, null);
         }
         catch (Resources.NotFoundException e) {
-            return resources.getDrawable(R.drawable.beolco, null);  // TODO: togliere questo quando abbiamo tutte le immagini
+            throw new UnexpectedException(String.format("SiteActivity.getDrawable(): cannot find resource by name '%s'", name));
         }
     }
 

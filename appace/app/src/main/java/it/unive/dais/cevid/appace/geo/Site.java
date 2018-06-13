@@ -14,6 +14,7 @@ import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
 import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
 import it.unive.dais.cevid.datadroid.lib.util.Function;
 import it.unive.dais.cevid.datadroid.lib.util.MapItem;
+import it.unive.dais.cevid.datadroid.lib.util.UnexpectedException;
 
 public class Site implements MapItem, Serializable {
 
@@ -23,6 +24,7 @@ public class Site implements MapItem, Serializable {
     private static final String DESCRIPTION = "Description";
     private static final String PHOTO = "Photo";
     private static final String PATH_ID = "PathId";
+    private static final String ADDRESS = "Address";
 
     private static final String TAG = "Site";
 
@@ -40,7 +42,7 @@ public class Site implements MapItem, Serializable {
             return row.get(name);
         } catch (ParserException e) {
             e.printStackTrace();
-            throw new RuntimeException("unexpected exception: %s", e);
+            throw new UnexpectedException("unexpected exception: %s", e);
         }
     }
 
@@ -89,5 +91,10 @@ public class Site implements MapItem, Serializable {
     @NonNull
     public String getPathId() throws ParserException {
         return row.get(PATH_ID);
+    }
+
+    @NonNull
+    public String getAddress() throws ParserException {
+        return row.get(ADDRESS);
     }
 }
