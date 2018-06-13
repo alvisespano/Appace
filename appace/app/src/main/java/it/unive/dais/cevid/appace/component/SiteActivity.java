@@ -55,8 +55,6 @@ public class SiteActivity extends AppCompatActivity {
             toolbar.setTitle(site.getTitle());
             toolbar.setSubtitle(site.getTitle());
 
-            // mettendo anche il logo si ripete l'immagine in piccolo
-//            toolbar.setLogo(d);
             ImageView v = findViewById(R.id.site_imageview);
             v.setImageDrawable(d);
 
