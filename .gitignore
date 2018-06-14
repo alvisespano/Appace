@@ -35,11 +35,7 @@ captures/
 # Intellij
 *.iml
 .idea
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/gradle.xml
-.idea/dictionaries
-.idea/libraries
+.idea/
 
 # Keystore files
 *.jks
@@ -54,10 +50,4 @@ google-services.json
 freeline.py
 freeline/
 freeline_project_description.json
-appace/.idea/caches/build_file_checksums.ser
-appace/.idea/misc.xml
-appace/app/src/main/java/it/unive/dais/cevid/appace/HomeActivity.java
-appace/.idea/misc.xml
-appace/.idea/caches/build_file_checksums.ser
-appace/app/src/main/java/it/unive/dais/cevid/appace/LocaleHelper.java
-appace/.idea/caches/build_file_checksums.ser
+

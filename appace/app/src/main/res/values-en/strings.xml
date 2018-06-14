@@ -46,6 +46,8 @@
     <string name="presentation_button">PRESENTATION</string>
     <string name="goto_gmaps_button">GO TO MAPS</string>
 
+    <string name="site_imageview_content_description">Site photo</string>
+
     <string name="presentation_text">
         <b>Presentazione</b>"\n"
 

@@ -4,6 +4,10 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.net.Uri;
@@ -17,6 +21,7 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -91,16 +96,21 @@ public class SiteActivity extends AppCompatActivity {
         });
     }
 
-    public Drawable getDrawable(String name) {
+    private Drawable getDrawable(String name) {
         Resources resources = getResources();
         final int resourceId = resources.getIdentifier(name, "drawable", getPackageName());
         try {
             return resources.getDrawable(resourceId, null);
         }
         catch (Resources.NotFoundException e) {
-            throw new UnexpectedException(String.format("SiteActivity.getDrawable(): cannot find resource by name '%s'", name));
+            // TODO: una volta testato il CSV questo errore non può più accadere
+//            throw new UnexpectedException(String.format("SiteActivity.getDrawable(): cannot find resource by name '%s'", name));
+            Log.e(TAG, String.format("SiteActivity.getDrawable(): cannot find resource by name '%s'", name));
+            Toast.makeText(this, String.format("Questa immagine è sbagliata: '%s' non esiste. Correggere il CSV", name), Toast.LENGTH_LONG).show();
+            return getDrawable(R.drawable.beolco);
         }
     }
+
 
     protected void navigate(LatLng from, LatLng to) {
         Intent navigation = new Intent(

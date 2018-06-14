@@ -30,7 +30,9 @@
                 android:background="@drawable/petrarca"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
-                app:layout_collapseMode="parallax"/>
+                android:adjustViewBounds="true"
+                app:layout_collapseMode="parallax"
+                android:contentDescription="@string/site_imageview_content_description" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
