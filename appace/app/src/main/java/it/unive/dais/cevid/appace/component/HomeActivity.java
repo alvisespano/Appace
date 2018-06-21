@@ -1,5 +1,6 @@
 package it.unive.dais.cevid.appace.component;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -41,10 +42,13 @@ public class HomeActivity extends AppCompatActivity {
     private AsyncTask<Void, ProgressCounter, List<CsvParser.Row>> parserAsyncTask = null;
 
 
+    @SuppressLint("Range")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        findViewById(R.id.home_image).setAlpha(R.integer.home_image_alpha / 100.f);
 
         progressBarManager = new ProgressBarManager(this, new ProgressBar[]{findViewById(R.id.progress_bar)});
 
