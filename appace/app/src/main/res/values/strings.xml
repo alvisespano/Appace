@@ -51,6 +51,7 @@
     <string name="sources_button">FONTI</string>
     <string name="credits_button">CREDITI</string>
     <string name="presentation_button">PRESENTAZIONE</string>
+    <string name="presentation_title">Presentazione</string>
     <string name="goto_gmaps_button">VAI A MAPS</string>
 
     <string name="site_imageview_content_description">Fotografia del sito</string>

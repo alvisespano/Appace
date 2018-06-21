@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -26,12 +28,15 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -58,6 +63,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 import it.unive.dais.cevid.appace.R;
@@ -201,6 +207,25 @@ public class MapsActivity extends AppCompatActivity
             case R.id.MENU_ABOUT:
                 startActivity(new Intent(this, AboutActivity.class));
                 break;
+
+                // TODO: questo è il modo per cambiare lingua via menu?
+//            case R.id.en:
+//                Locale locale = new Locale("en");
+//                Locale.setDefault(locale);
+//                Configuration config = new Configuration();
+//                config.locale = locale;
+//                getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+//                Toast.makeText(this, "Locale in English !", Toast.LENGTH_LONG).show();
+//                break;
+//
+//            case R.id.pt:
+//                Locale locale2 = new Locale("pt");
+//                Locale.setDefault(locale2);
+//                Configuration config2 = new Configuration();
+//                config2.locale = locale2;
+//                getBaseContext().getResources().updateConfiguration(config2, getBaseContext().getResources().getDisplayMetrics());
+//                Toast.makeText(this, "Locale in Portugal !", Toast.LENGTH_LONG).show();
+//                break;
         }
         return false;
     }
