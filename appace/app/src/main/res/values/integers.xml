@@ -5,5 +5,5 @@
     <integer name="zoomFactor_mid">10</integer>
     <integer name="zoomFactor_high">18</integer>
     <integer name="initial_zoom_factor">12</integer>
-    <integer name="home_image_alpha">80</integer>
+    <integer name="home_image_alpha">70</integer>
 </resources>

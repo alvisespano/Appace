@@ -7,7 +7,6 @@
     android:backgroundTint="@color/background">
     <!--android:background="@drawable/logo_black">-->
 
-
     <ImageView
         android:id="@+id/home_background"
         android:layout_width="fill_parent"

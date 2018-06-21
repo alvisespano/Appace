@@ -32,7 +32,7 @@ import it.unive.dais.cevid.appace.geo.Site;
 import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
 import it.unive.dais.cevid.datadroid.lib.util.UnexpectedException;
 
-public class SiteActivity extends AppCompatActivity {
+public class SiteActivity extends BaseActivity {
 
     private static final String TAG = "SiteActivity";
     static final String INTENT_SITE = "site";
@@ -43,28 +43,23 @@ public class SiteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_site);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        setTitleFont();
 
         Intent intent = getIntent();
         Site site = (Site) intent.getSerializableExtra(INTENT_SITE);
         Log.d(TAG, String.format("got site: %s", site));
 
         try {
-            Toolbar toolbar = findViewById(R.id.toolbar);
-            setSupportActionBar(toolbar);
-
-            CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar);
-            collapsingToolbarLayout.setTitle(site.getTitle());
-
+            CollapsingToolbarLayout collapsingToolbar = findViewById(R.id.collapsing_toolbar);
+            collapsingToolbar.setTitle(site.getTitle());
             Drawable d = getDrawable(site.getPhoto());
-
             toolbar.setTitle(site.getTitle());
             toolbar.setSubtitle(site.getTitle());
-
             ImageView v = findViewById(R.id.site_imageview);
             v.setImageDrawable(d);
-
             ((TextView) findViewById(R.id.site_textview)).setText(site.getDescription());
-
         } catch (ParserException e) {
             Log.e(TAG, String.format("exception caught: %s", e));
             e.printStackTrace();
@@ -101,8 +96,7 @@ public class SiteActivity extends AppCompatActivity {
         final int resourceId = resources.getIdentifier(name, "drawable", getPackageName());
         try {
             return resources.getDrawable(resourceId, null);
-        }
-        catch (Resources.NotFoundException e) {
+        } catch (Resources.NotFoundException e) {
             // TODO: una volta testato il CSV questo errore non può più accadere
 //            throw new UnexpectedException(String.format("SiteActivity.getDrawable(): cannot find resource by name '%s'", name));
             Log.e(TAG, String.format("SiteActivity.getDrawable(): cannot find resource by name '%s'", name));

@@ -48,7 +48,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        findViewById(R.id.home_image).setAlpha(R.integer.home_image_alpha / 100.f);
+        findViewById(R.id.home_image).setAlpha(((float) R.integer.home_image_alpha) / 100.f);
 
         progressBarManager = new ProgressBarManager(this, new ProgressBar[]{findViewById(R.id.progress_bar)});
 

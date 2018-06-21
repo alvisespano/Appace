@@ -42,8 +42,10 @@
 
     <string name="sitemap_button">PLACES OF PEACE</string>
     <string name="sources_button">SOURCES</string>
+    <string name="sources_title">Sources</string>
     <string name="credits_button">CREDITS</string>
     <string name="presentation_button">PRESENTATION</string>
+    <string name="presentation_title">Presentation</string>
     <string name="goto_gmaps_button">GO TO MAPS</string>
 
     <string name="site_imageview_content_description">Site photo</string>
