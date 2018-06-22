@@ -29,6 +29,9 @@
     <string name="action_info">Info</string>
     <string name="action_settings">Settings</string>
 
+    <string name="lang_opt1">Your language</string>
+    <string name="lang_opt2">English</string>
+
     <string name="msg_loading">Loading…</string>
     <string name="msg_button_car">Pressed</string>
     <string name="msg_permissions_not_granted">I permessi appena negati dall\'utente sono necessari per alcune funzionalità dell\'app. Il supporto delle funzionalità sarà ridotto.</string>

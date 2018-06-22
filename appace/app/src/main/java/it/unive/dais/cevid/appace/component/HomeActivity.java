@@ -7,12 +7,13 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import java.io.InputStreamReader;
 import java.io.Serializable;
@@ -78,6 +79,31 @@ public class HomeActivity extends AppCompatActivity {
 
     // ciclo di vita
     //
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.MENU_LANG1:
+                startActivity(new Intent(this, SelectLanguageActivity.class));
+                break;
+            case R.id.MENU_LANG2:
+                startActivity(new Intent(this, SelectLanguageActivity.class));
+                break;
+
+        }
+        return false;
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.home_with_language, menu);
+        return true;
+    }
+
+
 
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
