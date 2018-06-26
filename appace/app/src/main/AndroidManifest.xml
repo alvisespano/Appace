@@ -92,13 +92,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".component.HomeActivity" />
         </activity>
-        <activity
-            android:name=".component.SelectLanguageActivity"
-            android:parentActivityName=".component.HomeActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".component.HomeActivity" />
-        </activity>
     </application>
 
 </manifest>

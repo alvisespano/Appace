@@ -80,28 +80,29 @@ public class HomeActivity extends AppCompatActivity {
     // ciclo di vita
     //
 
+    // TODO: ripulire le parti col menu lingua se non le usiamo più
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.MENU_LANG1:
-                startActivity(new Intent(this, SelectLanguageActivity.class));
-                break;
-            case R.id.MENU_LANG2:
-                startActivity(new Intent(this, SelectLanguageActivity.class));
-                break;
-
-        }
-        return false;
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.home_with_language, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case R.id.MENU_LANG1:
+////                startActivity(new Intent(this, SelectLanguageActivity.class));
+//                break;
+//            case R.id.MENU_LANG2:
+////                startActivity(new Intent(this, SelectLanguageActivity.class));
+//                break;
+//
+//        }
+//        return false;
+//    }
+//
+//
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.home_with_language, menu);
+//        return true;
+//    }
 
 
 
