@@ -18,7 +18,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +28,8 @@ import android.widget.Toast;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.model.LatLng;
+
+import org.w3c.dom.Text;
 
 import it.unive.dais.cevid.appace.R;
 import it.unive.dais.cevid.appace.geo.Site;
@@ -52,8 +56,14 @@ public class SiteActivity extends BaseActivity {
         Log.d(TAG, String.format("got site: %s", site));
 
         try {
-            CollapsingToolbarLayout collapsingToolbar = findViewById(R.id.collapsing_toolbar);
-            collapsingToolbar.setTitle(site.getTitle());
+            String title = site.getTitle();
+
+//            CollapsingToolbarLayout collapsingToolbar = findViewById(R.id.collapsing_toolbar);
+//            collapsingToolbar.setTitle(title);
+
+            TextView tv = findViewById(R.id.site_title_textview);
+            tv.setText(title);
+
             Drawable d = getDrawable(site.getPhoto());
             toolbar.setTitle(site.getTitle());
             toolbar.setSubtitle(site.getTitle());
@@ -67,7 +77,7 @@ public class SiteActivity extends BaseActivity {
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
-        Button goGMaps = findViewById(R.id.goGMaps);
+        ImageButton goGMaps = findViewById(R.id.gotomaps_site_button);
         goGMaps.setOnClickListener(v -> {
             if (ActivityCompat.checkSelfPermission(SiteActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(SiteActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling

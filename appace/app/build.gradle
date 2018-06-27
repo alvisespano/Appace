@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+    }
     compileSdkVersion 27
     defaultConfig {
         applicationId 'it.unive.dais.cevid.appace'
@@ -15,14 +17,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
     compileOptions {
         targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility JavaVersion.VERSION_1_8
     }
     productFlavors {
     }
-
     lintOptions {
         checkReleaseBuilds true
         // Or, if you prefer, you can continue to check for errors in release builds,

@@ -40,7 +40,7 @@
 
     <string name="title_activity_maps">Appace - Map</string>
     <string name="title_activity_presentation">Presentation</string>
-    <string name="title_activity_site">SiteActivity(EN)</string>
+    <string name="title_activity_site"></string>
     <string name="title_activity_sources">Sources</string>
 
     <string name="sitemap_button">PLACES OF PEACE</string>
@@ -50,8 +50,6 @@
     <string name="presentation_button">PRESENTATION</string>
     <string name="presentation_title">Presentation</string>
     <string name="goto_gmaps_button">GO TO MAPS</string>
-
-    <string name="site_imageview_content_description">Site photo</string>
 
     <string name="presentation_text">
         <b>Presentazione</b>"\n"
