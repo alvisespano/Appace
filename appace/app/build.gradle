@@ -2,8 +2,16 @@ apply plugin: 'com.android.application'
 
 android {
     signingConfigs {
+        config {
+            storeFile file('C:/Users/spano/OneDrive/alvisespano.jks')
+            storePassword "aliel111223"
+            keyAlias "key0"
+            keyPassword "aliel111223"
+        }
     }
+
     compileSdkVersion 27
+
     defaultConfig {
         applicationId 'it.unive.dais.cevid.appace'
         minSdkVersion 22
@@ -12,17 +20,22 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
+
     compileOptions {
         targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility JavaVersion.VERSION_1_8
     }
+
     productFlavors {
     }
+
     lintOptions {
         checkReleaseBuilds true
         // Or, if you prefer, you can continue to check for errors in release builds,
