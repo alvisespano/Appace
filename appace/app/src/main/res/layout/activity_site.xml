@@ -39,14 +39,17 @@
                 >
 
                 <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/logo_black" />
+
+                <ImageView
                     android:id="@+id/site_imageview"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
-                    android:backgroundTint="@color/mainBright_overlay"
-                    android:background="@drawable/logo_black"
-                    android:backgroundTintMode="src_over"
-                    android:src="@drawable/petrarca"
+                    android:src="@drawable/beolco"
                     android:alpha="0.9"
                     android:fitsSystemWindows="true"
                     android:scaleType="fitCenter"
@@ -72,21 +75,22 @@
 
             </RelativeLayout>
 
-
             <ImageButton
                 android:id="@+id/gotomaps_site_button"
                 style="@android:style/Widget.Holo.Light.ImageButton"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginStart="300dp"
-                android:scaleType="fitStart"
-                app:layout_collapseMode="parallax"
-                app:layout_collapseParallaxMultiplier="2.0"
-                app:srcCompat="@drawable/button_car" />
+                android:elevation="20dp"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="top|end"
+                android:layout_margin="10dp"
+                android:src="@drawable/button_car" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_site" />
+
 
 </android.support.design.widget.CoordinatorLayout>

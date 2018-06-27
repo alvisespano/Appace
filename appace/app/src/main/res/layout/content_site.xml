@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".component.SiteActivity"
-    tools:showIn="@layout/activity_site"
-    android:background="@color/background"
-    >
+    tools:showIn="@layout/activity_site">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -25,15 +24,11 @@
 
         <ImageView
             android:id="@+id/site_bg_imageview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:background="@drawable/logo_red"
-            android:backgroundTintMode="src_over"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:alpha="0.1"
-            app:layout_collapseMode="parallax"
-            app:layout_collapseParallaxMultiplier="2.0" />
-
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo_red" />
     </RelativeLayout>
 
 </android.support.v4.widget.NestedScrollView>

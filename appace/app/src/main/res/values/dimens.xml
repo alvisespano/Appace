@@ -12,7 +12,6 @@
     <dimen name="linear_layout_margin_left">10dp</dimen>
     <dimen name="button_margin">10dp</dimen>
     <dimen name="app_bar_height">140dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="site_bar_height">300dp</dimen>
     <dimen name="site_image_height">200dp</dimen>

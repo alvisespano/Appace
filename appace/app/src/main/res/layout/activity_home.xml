@@ -48,7 +48,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="50dp"
         android:scaleType="fitEnd"
-        app:srcCompat="@drawable/moroni_copertina" />
+        android:src="@drawable/moroni_copertina" />
 
     <LinearLayout
         android:layout_width="match_parent"
