@@ -14,76 +14,103 @@
         android:scaleType="centerCrop"
         android:src="@drawable/logo_black" />
 
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/home_image"
-        android:layout_gravity="bottom"
-        android:indeterminate="false"
-        android:max="100"
-        android:visibility="visible"
-        tools:visibility="visible" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/sites"
-        style="@android:style/Widget.Material.Button.Colored"
-        android:layout_width="242dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="80dp"
-        android:backgroundTint="@color/mainBright_overlay"
-        android:background="@drawable/logo_red"
-        android:text="@string/sitemap_button" />
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:alpha="0.8"
+            android:indeterminate="false"
+            android:max="100"
+            android:progressTint="@color/colorAccent"
+            android:visibility="visible"
+            tools:visibility="visible" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
 
-    <ImageView
-        android:id="@+id/home_image"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="50dp"
-        android:scaleType="fitEnd"
-        android:src="@drawable/moroni_copertina" />
+        <ImageView
+            android:id="@+id/home_image"
+            android:layout_width="234dp"
+            android:layout_height="279dp"
+            android:layout_gravity="center"
+            android:alpha="0.9"
+            android:scaleType="fitCenter"
+            android:src="@drawable/moroni_copertina" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="12dp"
-        android:orientation="horizontal">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
 
-        <Button
-            android:id="@+id/presentazione"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/gray"
-            android:text="@string/presentation_button" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/sources"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/gray"
-            android:text="@string/sources_button" />
+            <Button
+                android:id="@+id/map"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/mainBright_overlay"
+                android:text="@string/sitemap_button" />
 
-        <Button
-            android:id="@+id/credits"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/list"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/mainBright_overlay"
+                android:text="@string/sitelist_button" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/gray"
-            android:text="@string/credits_button" />
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/presentazione"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:text="@string/presentation_button" />
+
+            <Button
+                android:id="@+id/sources"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:text="@string/sources_button" />
+
+            <Button
+                android:id="@+id/credits"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:text="@string/credits_button" />
+        </LinearLayout>
     </LinearLayout>
 
 

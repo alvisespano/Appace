@@ -1,25 +1,18 @@
 package it.unive.dais.cevid.appace.component;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,17 +22,13 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.model.LatLng;
 
-import org.w3c.dom.Text;
-
 import it.unive.dais.cevid.appace.R;
 import it.unive.dais.cevid.appace.geo.Site;
-import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
-import it.unive.dais.cevid.datadroid.lib.util.UnexpectedException;
 
 public class SiteActivity extends BaseActivity {
 
     private static final String TAG = "SiteActivity";
-    static final String INTENT_SITE = "site";
+    public static final String BUNDLE_KEY_SITE = "site";
 
     protected FusedLocationProviderClient fusedLocationClient;
 
@@ -52,28 +41,17 @@ public class SiteActivity extends BaseActivity {
         setTitleFont();
 
         Intent intent = getIntent();
-        Site site = (Site) intent.getSerializableExtra(INTENT_SITE);
+        Site site = (Site) intent.getSerializableExtra(BUNDLE_KEY_SITE);
         Log.d(TAG, String.format("got site: %s", site));
 
-        try {
-            String title = site.getTitle();
+        String title = site.getTitle();
+        toolbar.setTitle(title);
+        toolbar.setSubtitle(title);
 
-//            CollapsingToolbarLayout collapsingToolbar = findViewById(R.id.collapsing_toolbar);
-//            collapsingToolbar.setTitle(title);
-
-            TextView tv = findViewById(R.id.site_title_textview);
-            tv.setText(title);
-
-            Drawable d = getDrawable(site.getPhoto());
-            toolbar.setTitle(site.getTitle());
-            toolbar.setSubtitle(site.getTitle());
-            ImageView v = findViewById(R.id.site_imageview);
-            v.setImageDrawable(d);
-            ((TextView) findViewById(R.id.site_textview)).setText(site.getDescription());
-        } catch (ParserException e) {
-            Log.e(TAG, String.format("exception caught: %s", e));
-            e.printStackTrace();
-        }
+        this.<TextView>findViewById(R.id.site_title_textview).setText(title);
+        ImageView iv = findViewById(R.id.site_imageview);
+        iv.setImageDrawable(getPhoto(this, site));
+        this.<TextView>findViewById(R.id.site_textview).setText(site.getDescription());
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
@@ -92,26 +70,21 @@ public class SiteActivity extends BaseActivity {
             fusedLocationClient.getLastLocation().addOnSuccessListener(SiteActivity.this,
                     (@NonNull Location loc) -> {
                         LatLng currentPosition = new LatLng(loc.getLatitude(), loc.getLongitude());
-                        try {
-                            navigate(currentPosition, site.getPosition());
-                        } catch (ParserException e) {
-                            e.printStackTrace();
-                        }
+                        navigate(currentPosition, site.getPosition());
                     });
         });
     }
 
-    private Drawable getDrawable(String name) {
-        Resources resources = getResources();
-        final int resourceId = resources.getIdentifier(name, "drawable", getPackageName());
+    public static Drawable getPhoto(Context ctx, Site site) {
+        Resources resources = ctx.getResources();
+        String name = site.getPhoto();
+        final int resourceId = resources.getIdentifier(name, "drawable", ctx.getPackageName());
         try {
             return resources.getDrawable(resourceId, null);
         } catch (Resources.NotFoundException e) {
-            // TODO: una volta testato il CSV questo errore non può più accadere
-//            throw new UnexpectedException(String.format("SiteActivity.getDrawable(): cannot find resource by name '%s'", name));
             Log.e(TAG, String.format("SiteActivity.getDrawable(): cannot find resource by name '%s'", name));
-            Toast.makeText(this, String.format("Questa immagine è sbagliata: '%s' non esiste. Correggere il CSV", name), Toast.LENGTH_LONG).show();
-            return getDrawable(R.drawable.beolco);
+            Toast.makeText(ctx, String.format("Questa immagine è sbagliata: '%s' non esiste. Correggere il CSV", name), Toast.LENGTH_LONG).show();
+            return ctx.getDrawable(R.drawable.beolco);
         }
     }
 

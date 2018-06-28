@@ -71,7 +71,7 @@
                     android:textColor="@color/white"
                     android:textSize="40sp"
                     android:theme="@style/AppTheme"
-                    tools:text="Site Very Very Long Title Like Those In The Real CSV" />
+                    tools:text="@string/site_title" />
 
             </RelativeLayout>
 

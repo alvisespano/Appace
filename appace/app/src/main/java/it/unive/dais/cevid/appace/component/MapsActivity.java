@@ -6,8 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -15,28 +13,19 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.annotation.ColorInt;
-import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v4.graphics.drawable.DrawableCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -55,7 +44,6 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -63,7 +51,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Objects;
 
 import it.unive.dais.cevid.appace.R;
@@ -71,7 +58,7 @@ import it.unive.dais.cevid.appace.geo.Site;
 import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
 import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
 
-public class MapsActivity extends AppCompatActivity
+public class MapsActivity extends BaseActivity
         implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
@@ -333,11 +320,15 @@ public class MapsActivity extends AppCompatActivity
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-        Intent intent = new Intent(this, SiteActivity.class);
-        intent.putExtra(SiteActivity.INTENT_SITE, (Site) marker.getTag());
-        startActivity(intent);
+        startSiteActivity(this, (Site) marker.getTag());
     }
 
+
+    public static void startSiteActivity(Context ctx, Site site) {
+        Intent intent = new Intent(ctx, SiteActivity.class);
+        intent.putExtra(SiteActivity.BUNDLE_KEY_SITE, site);
+        ctx.startActivity(intent);
+    }
 
     // methods dealing with the map
     //
@@ -411,7 +402,7 @@ public class MapsActivity extends AppCompatActivity
 
     private void populateMap() {
         markers = new ArrayList<>();
-        for (CsvParser.Row row : getCsvRows()) {
+        for (CsvParser.Row row : getCsvRowsFromIntent()) {
             Site site = new Site(row);
             try {
                 MarkerOptions opts = new MarkerOptions()
@@ -431,12 +422,6 @@ public class MapsActivity extends AppCompatActivity
         goToInitialPosition();
     }
 
-    @NonNull
-    private List<CsvParser.Row> getCsvRows() {
-        //noinspection unchecked
-        return (List<CsvParser.Row>) getIntent().getSerializableExtra(HomeActivity.KEY_ROWS);
-    }
-
     private void goToInitialPosition() {
         assert gMap != null;
         gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(getInitialPosition(), getResources().getInteger(R.integer.initial_zoom_factor)));
@@ -445,33 +430,12 @@ public class MapsActivity extends AppCompatActivity
     @NonNull
     private LatLng getInitialPosition() {
         if (markers != null && markers.size() >= 1) {
-            try {
-                return ((Site) Objects.requireNonNull(markers.get(0).getTag())).getPosition();
-            } catch (ParserException e) {
-                Log.w(TAG, "cannot get position from data, falling back to default initial position");
-                e.printStackTrace();
-            }
+            return ((Site) Objects.requireNonNull(markers.get(0).getTag())).getPosition();
         }
         return DEFAULT_INITIAL_POSITION;
     }
 
-    // versione che disegna sopra un drawable xml
-    @Deprecated
-    public Bitmap getCustomMarker(int id, String label) {
-        Paint color = new Paint();
-        color.setTextSize(30);
-        color.setColor(Color.WHITE);
-        int px = getResources().getDimensionPixelSize(R.dimen.marker_text_size);
-        Bitmap r = Bitmap.createBitmap(px, px, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(r);
-        Drawable shape = getResources().getDrawable(id);
-        shape.setBounds(0, 0, r.getWidth(), r.getHeight());
-        shape.draw(canvas);
-        canvas.drawText(label, 40, 40, color);
-        return r;
-    }
 
-    // versione che disegna sopra una resource
     private Bitmap writeTextOnDrawable(int id, String text) {
 
         Bitmap bm0 = BitmapFactory.decodeResource(getResources(), id).copy(Bitmap.Config.ARGB_8888, true);
@@ -516,26 +480,6 @@ public class MapsActivity extends AppCompatActivity
 
         return (int) ((nDP * conversionScale) + 0.5f);
 
-    }
-
-    // versione per grafica vettoriale
-    public static BitmapDescriptor getBitmapFromVector(@NonNull Context context,
-                                                       @DrawableRes int vectorResourceId,
-                                                       @ColorInt int tintColor) {
-
-        Drawable vectorDrawable = ResourcesCompat.getDrawable(
-                context.getResources(), vectorResourceId, null);
-        if (vectorDrawable == null) {
-            Log.e(TAG, "Requested vector resource was not found");
-            return BitmapDescriptorFactory.defaultMarker();
-        }
-        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(),
-                vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(bitmap);
-        vectorDrawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
-        DrawableCompat.setTint(vectorDrawable, tintColor);
-        vectorDrawable.draw(canvas);
-        return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
 
 }

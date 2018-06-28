@@ -85,6 +85,14 @@
                 android:value=".component.HomeActivity" />
         </activity>
         <activity
+            android:name=".component.recyclerview.ListActivity"
+            android:label="@string/title_activity_list"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".component.HomeActivity" />
+        </activity>
+        <activity
             android:name=".component.SiteActivity"
             android:label="@string/title_activity_site"
             android:theme="@style/AppTheme.NoActionBar">

@@ -35,7 +35,6 @@ public class Site implements MapItem, Serializable {
         this.row = row;
     }
 
-    // TODO: usare questo metodo e togliere le ParserException
     @NonNull
     protected String getRow(String name) {
         try {
@@ -47,13 +46,13 @@ public class Site implements MapItem, Serializable {
     }
 
     @NonNull
-    private LatLng makeLatLng(Function<String, Double> f) throws ParserException {
-        return new LatLng(f.apply(row.get(LATITUDE)), f.apply(row.get(LONGITUDE)));
+    private LatLng makeLatLng(Function<String, Double> f) {
+        return new LatLng(f.apply(getRow(LATITUDE)), f.apply(getRow(LONGITUDE)));
     }
 
     @Override
     @NonNull
-    public LatLng getPosition() throws ParserException {
+    public LatLng getPosition() {
         try {
             return makeLatLng(Double::parseDouble);
         } catch (NumberFormatException e) {
@@ -63,34 +62,29 @@ public class Site implements MapItem, Serializable {
 
     @Override
     @NonNull
-    public String getTitle() throws ParserException {
-        return row.get(TITLE);
+    public String getTitle() {
+        return getRow(TITLE);
     }
 
     @Override
     @NonNull
-    public String getDescription() throws ParserException {
-        return row.get(DESCRIPTION);
+    public String getDescription() {
+        return getRow(DESCRIPTION);
     }
 
     @Override
     public String toString() {
-        try {
-            return String.format("Site[%s]", getTitle());
-        } catch (ParserException e) {
-            e.printStackTrace();
-            return "Site[UNKNOWN]";
-        }
+        return String.format("Site[%s]", getTitle());
     }
 
     @NonNull
-    public String getPhoto() throws ParserException {
-        return row.get(PHOTO);
+    public String getPhoto() {
+        return getRow(PHOTO);
     }
 
     @NonNull
-    public String getPathId() throws ParserException {
-        return row.get(PATH_ID);
+    public String getPathId() {
+        return getRow(PATH_ID);
     }
 
     @NonNull

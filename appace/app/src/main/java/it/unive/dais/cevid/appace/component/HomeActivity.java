@@ -8,11 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ProgressBar;
 
 import java.io.InputStreamReader;
@@ -21,6 +17,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import it.unive.dais.cevid.appace.R;
+import it.unive.dais.cevid.appace.component.recyclerview.ListActivity;
 import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
 import it.unive.dais.cevid.datadroid.lib.progress.ProgressBarManager;
 import it.unive.dais.cevid.datadroid.lib.progress.ProgressCounter;
@@ -28,13 +25,10 @@ import it.unive.dais.cevid.datadroid.lib.progress.ProgressCounter;
 @SuppressWarnings("FieldCanBeLocal")
 public class HomeActivity extends AppCompatActivity {
 
-    static final String KEY_ROWS = "ROWS";
     private static final String TAG = "HomeActivity";
 
-    private Button button_map, button_credits, button_presentation, button_sources;
+    private Button button_map, button_list, button_credits, button_presentation, button_sources;
 
-    @SuppressWarnings("unused")
-    private ImageButton button_en, button_it;
     @Nullable
     private ProgressBarManager progressBarManager;
     @Nullable
@@ -59,11 +53,14 @@ public class HomeActivity extends AppCompatActivity {
             parserAsyncTask = parser.getAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
         }
 
-        button_map = findViewById(R.id.sites);
+        button_map = findViewById(R.id.map);
         button_map.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, MapsActivity.class);
-            intent.putExtra(KEY_ROWS, (Serializable) getCsvRows());
-            startActivity(intent);
+            startCsvRowsActivity(MapsActivity.class);
+        });
+
+        button_list = findViewById(R.id.list);
+        button_list.setOnClickListener(v -> {
+            startCsvRowsActivity(ListActivity.class);
         });
 
         button_sources = findViewById(R.id.sources);
@@ -75,6 +72,12 @@ public class HomeActivity extends AppCompatActivity {
         button_presentation = findViewById(R.id.presentazione);
         button_presentation.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, PresentationActivity.class)));
 
+    }
+
+    private void startCsvRowsActivity(Class<? extends BaseActivity> cl) {
+        Intent intent = new Intent(HomeActivity.this, cl);
+        intent.putExtra(BaseActivity.BUNDLE_KEY_ROWS, (Serializable) getCsvRows());
+        startActivity(intent);
     }
 
     // ciclo di vita
@@ -110,13 +113,13 @@ public class HomeActivity extends AppCompatActivity {
     public void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         //noinspection unchecked
-        rows = (List<CsvParser.Row>) savedInstanceState.getSerializable(KEY_ROWS);
+        rows = (List<CsvParser.Row>) savedInstanceState.getSerializable(BaseActivity.BUNDLE_KEY_ROWS);
         Log.d(TAG, "rows restored from instance state");
     }
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-        savedInstanceState.putSerializable(KEY_ROWS, (Serializable) getCsvRows());
+        savedInstanceState.putSerializable(BaseActivity.BUNDLE_KEY_ROWS, (Serializable) getCsvRows());
         Log.d(TAG, "rows saved into instance state");
         super.onSaveInstanceState(savedInstanceState);
     }
