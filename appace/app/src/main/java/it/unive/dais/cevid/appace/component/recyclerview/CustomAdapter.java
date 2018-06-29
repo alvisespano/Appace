@@ -25,13 +25,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     @NonNull
     private final Context ctx;
 
+
     public CustomAdapter(@NonNull Context ctx, @NonNull List<Site> sites) {
         this.ctx = ctx;
         this.sites = sites;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        final TextView textView;
+        final TextView textView, idTextView;
         final ImageView imageView;
 
         public ViewHolder(View v) {
@@ -42,6 +43,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 Log.d(TAG, "Element " + i + " clicked.");
                 MapsActivity.startSiteActivity(ctx, sites.get(i));
             });
+            idTextView = v.findViewById(R.id.list_id_textview);
             textView = v.findViewById(R.id.list_textview);
             imageView = v.findViewById(R.id.list_imageview);
         }
@@ -54,13 +56,16 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.recyclerview_item, viewGroup, false);
         return new ViewHolder(v);
     }
+
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
-        Log.d(TAG, "Element " + position + " set.");
-
         Site site = sites.get(position);
+        viewHolder.idTextView.setText(site.getPathId());
         viewHolder.textView.setText(site.getTitle());
         viewHolder.imageView.setImageDrawable(SiteActivity.getPhoto(ctx, site));
+//        Typeface mantinia = Typeface.create(ResourcesCompat.getFont(viewHolder.getContext(), R.font.mantinia), Typeface.NORMAL);
+//        v.set(mantinia);
+//        v.setCollapsedTitleTypeface(mantinia);
     }
 
     @Override

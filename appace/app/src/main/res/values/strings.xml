@@ -50,7 +50,7 @@
     <string name="title_activity_site"></string>
     <string name="title_activity_sources">Fonti</string>
 
-    <string name="sitemap_button">MAPPA DEI LUOGHI</string>
+    <string name="sitemap_button">LUOGHI DI PACE</string>
     <string name="sources_button">FONTI</string>
     <string name="sources_title">Fonti</string>
     <string name="credits_button">CREDITI</string>
@@ -142,8 +142,8 @@ che hanno offerto un contributo per la stampa di questa guida"
     <string name="site_text">
         "Material is the metaphor.\n\n"
     </string>
-    <string name="title_activity_list">Luoghi</string>
+    <string name="title_activity_list">Percorsi</string>
+    <string name="sitelist_button">PERCORSI</string>
     <string name="site_title">Site Very Very Long Title Like Those In The Real CSV</string>
-    <string name="sitelist_button">LISTA DEI LUOGHI</string>
 
 </resources>

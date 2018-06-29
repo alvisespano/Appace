@@ -16,7 +16,6 @@
 
 package it.unive.dais.cevid.appace.component.recyclerview;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -27,13 +26,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioButton;
 
 import java.util.List;
 
 import it.unive.dais.cevid.appace.R;
 import it.unive.dais.cevid.appace.component.BaseActivity;
-import it.unive.dais.cevid.appace.component.SiteActivity;
 import it.unive.dais.cevid.appace.geo.Site;
 
 /**
@@ -45,9 +42,8 @@ public class RecyclerViewFragment extends Fragment {
     private static final String TAG = "RecyclerViewFragment";
 
     private List<Site> sites;
-    protected RecyclerView mRecyclerView;
-    protected CustomAdapter mAdapter;
-    protected RecyclerView.LayoutManager mLayoutManager;
+    protected RecyclerView recyclerView;
+    protected CustomAdapter adapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,28 +54,23 @@ public class RecyclerViewFragment extends Fragment {
     @Override
     public void setArguments(@Nullable Bundle b) {
         if (b != null) {
+            //noinspection unchecked
             sites = (List<Site>) b.getSerializable(BaseActivity.BUNDLE_KEY_SITES);
         }
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.recyclerview_frag, container, false);
-        rootView.setTag(TAG);
+        View root = inflater.inflate(R.layout.recyclerview_frag, container, false);
+        root.setTag(TAG);
 
-        mRecyclerView = rootView.findViewById(R.id.recyclerview);
+        recyclerView = root.findViewById(R.id.recyclerview);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
 
-        // LinearLayoutManager is used here, this will layout the elements in a similar fashion
-        // to the way ListView would layout elements. The RecyclerView.LayoutManager defines how
-        // elements are laid out.
-        mLayoutManager = new LinearLayoutManager(getActivity());
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        adapter = new CustomAdapter(container.getContext(), sites);
+        recyclerView.setAdapter(adapter);
 
-        mAdapter = new CustomAdapter(container.getContext(), sites);
-        // Set CustomAdapter as the adapter for RecyclerView.
-        mRecyclerView.setAdapter(mAdapter);
-
-        return rootView;
+        return root;
     }
 
 }

@@ -31,13 +31,14 @@
                 app:navigationIcon="?attr/homeAsUpIndicator"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-            <FrameLayout
-                android:id="@+id/content_fragment"
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="2" />
-
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
+
+    <FrameLayout
+        android:id="@+id/content_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        />
 
 </android.support.design.widget.CoordinatorLayout>
