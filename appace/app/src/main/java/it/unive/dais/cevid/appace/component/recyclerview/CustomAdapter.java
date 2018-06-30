@@ -1,7 +1,9 @@
 package it.unive.dais.cevid.appace.component.recyclerview;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -46,6 +48,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             idTextView = v.findViewById(R.id.list_id_textview);
             textView = v.findViewById(R.id.list_textview);
             imageView = v.findViewById(R.id.list_imageview);
+            Typeface tf = Typeface.create(ResourcesCompat.getFont(ctx, R.font.mantinia), Typeface.NORMAL);
+            idTextView.setTypeface(tf);
+            textView.setTypeface(tf);
         }
 
     }
@@ -63,9 +68,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         viewHolder.idTextView.setText(site.getPathId());
         viewHolder.textView.setText(site.getTitle());
         viewHolder.imageView.setImageDrawable(SiteActivity.getPhoto(ctx, site));
-//        Typeface mantinia = Typeface.create(ResourcesCompat.getFont(viewHolder.getContext(), R.font.mantinia), Typeface.NORMAL);
-//        v.set(mantinia);
-//        v.setCollapsedTitleTypeface(mantinia);
     }
 
     @Override

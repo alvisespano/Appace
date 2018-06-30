@@ -24,7 +24,7 @@ public class AboutActivity extends AppCompatActivity {
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_about);
-        TextView tv_1 = (TextView) findViewById(R.id.textView_1);
+        TextView tv_1 = findViewById(R.id.about_textview);
         tv_1.setText(getCredits());
     }
 
@@ -46,9 +46,9 @@ public class AboutActivity extends AppCompatActivity {
         buf.append("\n\tID {").append(Build.ID).append("}");
         return String.format(
                 "--- APP ---\n" +
-                        "%s v%s [%s]\n" +
-                        "(c) %s %s @ %s - %s \n\n" +
-                        "--- ANDROID ---\n%s",
+                "%s v%s [%s]\n" +
+                "(c) %s %s @ %s - %s \n\n" +
+                "--- ANDROID ---\n%s",
                 getString(ai.labelRes),
                 BuildConfig.VERSION_NAME,
                 BuildConfig.BUILD_TYPE,

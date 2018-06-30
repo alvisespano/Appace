@@ -43,9 +43,12 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        findViewById(R.id.home_image).setAlpha(((float) R.integer.home_image_alpha) / 100.f);
-
         progressBarManager = new ProgressBarManager(this, new ProgressBar[]{findViewById(R.id.progress_bar)});
+
+        // TODO: scroll bitmap image by uncommemnting this
+//        ScrollingImageView scrollingBackground = (ScrollingImageView) findViewById(R.id.home_background);
+//        scrollingBackground.stop();
+//        scrollingBackground.start();
 
         if (rows == null) {
             Log.d(TAG, "parsing CSV....");

@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Appace</string>
-    <string name="credits">App sviluppata da:\nUniversità Ca\' Foscari Venezia\n\nPer conto di:\n Comune di Padova\n\n\nSviluppo:\nDott. Alvise Spanò\n\nCoordinatore progetto:\nProf. Agostino Cortesi</string>
+    <string name="credits">App sviluppata da:\nUniversità Ca\' Foscari Venezia\n\nPer conto di:\n Comune di Padova\n\nSviluppo:\nDott. Alvise Spanò\n\nCoordinatore progetto:\nProf. Agostino Cortesi\n\n
+        Testi tratti da:\nPercorsi di Pace e di Non Violenza a Padova\n\n
+        Casa Editrice:\nTipografia Imprenda, Limena (PD), 2015
+    </string>
 
     <string name="gps_disabled">GPS disattivato</string>
     <string name="gps_enabled">GPS attivato</string>
@@ -47,16 +50,18 @@
 
     <string name="title_activity_maps">Appace - Map</string>
     <string name="title_activity_presentation">Presentazione</string>
-    <string name="title_activity_site"></string>
+    <string name="title_activity_site"><!--non inserire testo--></string>
     <string name="title_activity_sources">Fonti</string>
+    <string name="title_activity_list">Luoghi di Pace</string>
 
-    <string name="sitemap_button">LUOGHI DI PACE</string>
+    <string name="sitemap_button">MAPPA DEI LUOGHI</string>
     <string name="sources_button">FONTI</string>
-    <string name="sources_title">Fonti</string>
     <string name="credits_button">CREDITI</string>
     <string name="presentation_button">PRESENTAZIONE</string>
-    <string name="presentation_title">Presentazione</string>
     <string name="goto_gmaps_button">VAI A MAPS</string>
+    <string name="sitelist_button">LUOGHI DI PACE</string>
+
+    <string name="site_long_title">Site Very Very Long Title Like Those In The Real CSV</string>
 
     <string name="presentation_text">
 <b>Presentazione</b>"\n"
@@ -142,8 +147,5 @@ che hanno offerto un contributo per la stampa di questa guida"
     <string name="site_text">
         "Material is the metaphor.\n\n"
     </string>
-    <string name="title_activity_list">Percorsi</string>
-    <string name="sitelist_button">PERCORSI</string>
-    <string name="site_title">Site Very Very Long Title Like Those In The Real CSV</string>
 
 </resources>

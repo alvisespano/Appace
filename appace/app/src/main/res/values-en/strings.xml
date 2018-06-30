@@ -40,16 +40,16 @@
 
     <string name="title_activity_maps">Appace - Map</string>
     <string name="title_activity_presentation">Presentation</string>
-    <string name="title_activity_site"></string>
+    <string name="title_activity_site"><!--non inserire testo--></string>
     <string name="title_activity_sources">Sources</string>
+    <string name="title_activity_list">Paths</string>
 
-    <string name="sitemap_button">PLACES OF PEACE</string>
+    <string name="sitemap_button">MAP OF PLACES</string>
     <string name="sources_button">SOURCES</string>
-    <string name="sources_title">Sources</string>
     <string name="credits_button">CREDITS</string>
     <string name="presentation_button">PRESENTATION</string>
-    <string name="presentation_title">Presentation</string>
     <string name="goto_gmaps_button">GO TO MAPS</string>
+    <string name="sitelist_button">PLACES OF PEACE</string>
 
     <string name="presentation_text">
         <b>Presentazione</b>"\n"
@@ -91,6 +91,7 @@ Enjoy!
 
 
     </string>
+
     <string name="sources_text">
     <b>Literary sources and suggested bibliography</b>
 
@@ -136,7 +137,5 @@ who gave a contribution to print this guide"
     <string name="site_text">
         "Material is the metaphor.\n\n"
     </string>
-    <string name="title_activity_list">Paths</string>
-    <string name="sitelist_button">PATHS</string>
 
 </resources>

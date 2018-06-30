@@ -194,25 +194,6 @@ public class MapsActivity extends BaseActivity
             case R.id.MENU_ABOUT:
                 startActivity(new Intent(this, AboutActivity.class));
                 break;
-
-                // TODO: questo è il modo per cambiare lingua via menu?
-//            case R.id.en:
-//                Locale locale = new Locale("en");
-//                Locale.setDefault(locale);
-//                Configuration config = new Configuration();
-//                config.locale = locale;
-//                getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-//                Toast.makeText(this, "Locale in English !", Toast.LENGTH_LONG).show();
-//                break;
-//
-//            case R.id.pt:
-//                Locale locale2 = new Locale("pt");
-//                Locale.setDefault(locale2);
-//                Configuration config2 = new Configuration();
-//                config2.locale = locale2;
-//                getBaseContext().getResources().updateConfiguration(config2, getBaseContext().getResources().getDisplayMetrics());
-//                Toast.makeText(this, "Locale in Portugal !", Toast.LENGTH_LONG).show();
-//                break;
         }
         return false;
     }
@@ -409,9 +390,7 @@ public class MapsActivity extends BaseActivity
                         .title(String.format("%s. %s", site.getPathId(), site.getTitle()))
                         .position(site.getPosition())
                         .snippet(site.getAddress())
-                        // TODO: scegliere uno dei vari algoritmi di render dei marker con testo che ci sono sotto
-                        .icon(BitmapDescriptorFactory.fromBitmap(writeTextOnDrawable(R.drawable.marker_red, site.getPathId())))
-                        ;
+                        .icon(BitmapDescriptorFactory.fromBitmap(writeTextOnDrawable(R.drawable.marker_red, site.getPathId())));
                 Marker m = gMap.addMarker(opts);
                 m.setTag(site);
                 markers.add(m);

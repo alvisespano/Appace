@@ -4,21 +4,20 @@
     <color name="mainDark">#661016</color>
     <color name="mainBright">#964046</color>
     <color name="mainBright_overlay">#66964046</color>
-    <color name="background_original">#e2dfd0</color>
-    <color name="background_brighter">#f2efe0</color>
-    <color name="background">@color/background_original</color>
+    <color name="background">#e2dfd0</color>
+    <color name="background_overlay">#bbe2dfd0</color>
     <color name="text">#31383d</color>
     <color name="about_background">#273445</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-    <color name="black_overlay">#66000000</color>
+    <color name="list_text_color_overlay">#bb000000</color>
     <color name="gray">#44888800</color>
     <color name="transparent">#00000000</color>
 
     <color name="colorPrimary">@color/main</color>
     <color name="colorPrimaryDark">@color/mainDark</color>
     <color name="colorAccent">@color/mainBright</color>
-    <color name="textColor">@color/text</color>
+    <color name="site_textColor">#eeffffff</color>
     <color name="textColorHighlight">#11181d</color>
     <color name="textBackground">@color/background</color>
 </resources>

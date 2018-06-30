@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="@color/background">
-    <!--android:background="@drawable/logo_black">-->
 
     <ImageView
-        android:id="@+id/home_background"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/logo_black" />
 
+    <!--<com.q42.android.scrollingimageview.ScrollingImageView-->
+    <!--xmlns:scrolling_image_view="http://schemas.android.com/apk/res-auto"-->
+    <!--android:id="@+id/home_background"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--scrolling_image_view:speed="1dp"-->
+    <!--scrolling_image_view:src="@drawable/beolco" />-->
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="@dimen/home_vertical_padding"
+        android:gravity="bottom"
         android:orientation="vertical">
 
         <ProgressBar
@@ -34,24 +40,24 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="30dp"/>
+            android:layout_height="@dimen/home_vertical_padding" />
 
         <ImageView
             android:id="@+id/home_image"
-            android:layout_width="234dp"
-            android:layout_height="279dp"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
             android:layout_gravity="center"
             android:alpha="0.9"
             android:scaleType="fitCenter"
-            android:src="@drawable/moroni_copertina" />
+            android:src="@drawable/pace_frontespizio" />
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="30dp"/>
+            android:layout_height="@dimen/home_vertical_padding" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/home_button_height"
             android:orientation="horizontal">
 
             <Button
@@ -75,13 +81,12 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="30dp"/>
+            android:layout_height="@dimen/home_vertical_padding" />
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_height="@dimen/home_button_height"
             android:orientation="horizontal">
 
             <Button

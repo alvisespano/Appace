@@ -16,4 +16,6 @@
     <dimen name="site_bar_height">300dp</dimen>
     <dimen name="site_image_height">200dp</dimen>
     <dimen name="marker_text_size">50dp</dimen>
+    <dimen name="home_vertical_padding">30dp</dimen>
+    <dimen name="home_button_height">50dp</dimen>
 </resources>

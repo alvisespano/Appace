@@ -5,12 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.ImageButton;
@@ -51,7 +53,9 @@ public class SiteActivity extends BaseActivity {
         this.<TextView>findViewById(R.id.site_title_textview).setText(title);
         ImageView iv = findViewById(R.id.site_imageview);
         iv.setImageDrawable(getPhoto(this, site));
-        this.<TextView>findViewById(R.id.site_textview).setText(site.getDescription());
+
+        TextView tv = findViewById(R.id.site_textview);
+        tv.setText(site.getDescription());
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 

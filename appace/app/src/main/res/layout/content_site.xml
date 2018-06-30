@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@color/black"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".component.SiteActivity"
     tools:showIn="@layout/activity_site">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:alpha="0.5"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo_black" />
+
+    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/site_textview"
@@ -19,16 +26,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_margin"
             android:text="@string/site_text"
-            android:textColor="@color/textColor"
+            android:fontFamily="@font/grotesk"
+            android:textColor="@color/site_textColor"
             android:textColorHighlight="@color/textColorHighlight" />
 
-        <ImageView
-            android:id="@+id/site_bg_imageview"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:alpha="0.1"
-            android:scaleType="centerCrop"
-            android:src="@drawable/logo_red" />
-    </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
 
-</android.support.v4.widget.NestedScrollView>
+</RelativeLayout>
