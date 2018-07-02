@@ -16,10 +16,6 @@ import it.unive.dais.cevid.appace.R;
  * @author Alvise Spanò, Università Ca' Foscari
  */
 public class AboutActivity extends AppCompatActivity {
-    /**
-     * Metodo di creazione dell'activity che imposta il layout e la text view con la stringa con i crediti.
-     * @param saveInstanceState
-     */
     @Override
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
@@ -28,10 +24,7 @@ public class AboutActivity extends AppCompatActivity {
         tv_1.setText(getCredits());
     }
 
-    /**
-     * Produce la stringa completa coi crediti.
-     * @return ritorna la stringa completa.
-     */
+    @SuppressWarnings("unused")
     public String getSystemInfo() {
         ApplicationInfo ai = getApplicationInfo();
         StringBuffer buf = new StringBuffer();

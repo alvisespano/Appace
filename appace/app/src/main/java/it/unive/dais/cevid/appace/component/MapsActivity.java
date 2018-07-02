@@ -13,7 +13,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Typeface;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
@@ -101,7 +100,6 @@ public class MapsActivity extends BaseActivity
 
         // quando viene premito il pulsante HERE viene eseguito questo codice
         button_here.setOnClickListener(v -> {
-            Log.d(TAG, "here button clicked");
             gpsCheck();
             updateCurrentPosition();
             if (currentPosition != null) {
@@ -292,7 +290,7 @@ public class MapsActivity extends BaseActivity
         button_car.setOnClickListener(v -> {
             Snackbar.make(v, R.string.msg_button_car, Snackbar.LENGTH_SHORT);
             if (currentPosition != null) {
-                navigate(currentPosition, marker.getPosition());
+                navigate(marker.getPosition(), marker.getTitle());
             }
         });
         return false;
@@ -319,15 +317,6 @@ public class MapsActivity extends BaseActivity
             Log.d(TAG, "applying map settings");
             gMap.setMapType(SettingsActivity.getMapStyle(this));
         }
-    }
-
-    private void navigate(@NonNull LatLng from, @NonNull LatLng to) {
-        Intent navigation = new Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse("http://maps.google.com/maps?saddr=" + from.latitude + "," + from.longitude + "&daddr=" + to.latitude + "," + to.longitude + ""));
-        navigation.setPackage("com.google.android.apps.maps");
-        Log.i(TAG, String.format("starting navigation from %s to %s", from, to));
-        startActivity(navigation);
     }
 
     private void gpsCheck() {

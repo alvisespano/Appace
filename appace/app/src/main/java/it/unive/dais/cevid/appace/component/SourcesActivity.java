@@ -13,6 +13,6 @@ public class SourcesActivity extends BaseActivity {
         setContentView(R.layout.activity_sources);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitleFont();
+        setCollapsingToolbarFont();
     }
 }

@@ -1,10 +1,7 @@
 package it.unive.dais.cevid.appace.geo;
 
 import android.location.Location;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -25,8 +22,6 @@ public class Site implements MapItem, Serializable {
     private static final String PHOTO = "Photo";
     private static final String PATH_ID = "PathId";
     private static final String ADDRESS = "Address";
-
-    private static final String TAG = "Site";
 
     @NonNull
     private final CsvParser.Row row;
@@ -78,7 +73,7 @@ public class Site implements MapItem, Serializable {
     }
 
     @NonNull
-    public String getPhoto() {
+    public String getPhotoName() {
         return getRow(PHOTO);
     }
 

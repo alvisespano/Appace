@@ -57,14 +57,10 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         button_map = findViewById(R.id.map);
-        button_map.setOnClickListener(v -> {
-            startCsvRowsActivity(MapsActivity.class);
-        });
+        button_map.setOnClickListener(v -> startCsvRowsActivity(MapsActivity.class));
 
         button_list = findViewById(R.id.list);
-        button_list.setOnClickListener(v -> {
-            startCsvRowsActivity(ListActivity.class);
-        });
+        button_list.setOnClickListener(v -> startCsvRowsActivity(ListActivity.class));
 
         button_sources = findViewById(R.id.sources);
         button_sources.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, SourcesActivity.class)));

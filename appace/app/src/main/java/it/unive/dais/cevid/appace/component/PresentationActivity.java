@@ -13,7 +13,7 @@ public class PresentationActivity extends BaseActivity {
         setContentView(R.layout.activity_presentation);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitleFont();
+        setCollapsingToolbarFont();
     }
 
 

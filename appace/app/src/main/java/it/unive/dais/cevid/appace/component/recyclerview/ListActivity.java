@@ -9,14 +9,10 @@ import java.util.List;
 
 import it.unive.dais.cevid.appace.R;
 import it.unive.dais.cevid.appace.component.BaseActivity;
-import it.unive.dais.cevid.appace.component.HomeActivity;
-import it.unive.dais.cevid.appace.component.MapsActivity;
 import it.unive.dais.cevid.appace.geo.Site;
 import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
 
 public class ListActivity extends BaseActivity {
-
-    public static final String TAG = "ListActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +21,7 @@ public class ListActivity extends BaseActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitleFont();
+        setCollapsingToolbarFont();
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         RecyclerViewFragment fragment = new RecyclerViewFragment();

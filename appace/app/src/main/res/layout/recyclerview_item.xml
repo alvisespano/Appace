@@ -10,13 +10,14 @@
 
     <TextView
         android:id="@+id/list_id_textview"
-        android:layout_width="50dp"
+        android:layout_width="wrap_content"
+        android:minWidth="60dp"
         android:layout_height="wrap_content"
         android:textColor="@color/mainDark"
         android:textAlignment="center"
         android:textSize="20sp"
         android:fontFamily="@font/mantinia"
-        android:text="XVII"
+        android:text="XVIII"
         tools:ignore="HardcodedText" />
 
     <TextView
@@ -25,18 +26,19 @@
         android:layout_height="wrap_content"
         android:textColor="@color/list_text_color_overlay"
         android:textAlignment="textStart"
-        android:textSize="23sp"
+        android:textSize="22sp"
         android:maxLines="3"
         android:fontFamily="@font/mantinia"
         android:text="@string/site_long_title" />
 
     <ImageView
         android:id="@+id/list_imageview"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="match_parent"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         android:layout_gravity="end"
-        android:src="@drawable/annigoni" />
+        android:src="@drawable/san_antonio3"
+        android:contentDescription="@string/imageview_default_contentdescription" />
 
 </LinearLayout>
 

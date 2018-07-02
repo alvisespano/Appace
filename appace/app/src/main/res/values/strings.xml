@@ -147,5 +147,6 @@ che hanno offerto un contributo per la stampa di questa guida"
     <string name="site_text">
         "Material is the metaphor.\n\n"
     </string>
+    <string name="imageview_default_contentdescription">Immagine</string>
 
 </resources>

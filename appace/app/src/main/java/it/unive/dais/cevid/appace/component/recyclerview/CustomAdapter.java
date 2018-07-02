@@ -5,7 +5,6 @@ import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +20,6 @@ import it.unive.dais.cevid.appace.geo.Site;
 
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
-    private static final String TAG = "CustomAdapter";
     @NonNull
     private final List<Site> sites;
     @NonNull
@@ -39,10 +37,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         public ViewHolder(View v) {
             super(v);
-            // Define click listener for the ViewHolder's View.
             v.setOnClickListener(v1 -> {
                 int i = getAdapterPosition();
-                Log.d(TAG, "Element " + i + " clicked.");
                 MapsActivity.startSiteActivity(ctx, sites.get(i));
             });
             idTextView = v.findViewById(R.id.list_id_textview);
@@ -52,7 +48,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             idTextView.setTypeface(tf);
             textView.setTypeface(tf);
         }
-
     }
 
     @NonNull
@@ -67,7 +62,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         Site site = sites.get(position);
         viewHolder.idTextView.setText(site.getPathId());
         viewHolder.textView.setText(site.getTitle());
-        viewHolder.imageView.setImageDrawable(SiteActivity.getPhoto(ctx, site));
+        viewHolder.imageView.setImageDrawable(SiteActivity.getMainPhoto(ctx, site.getPhotoName()));
     }
 
     @Override

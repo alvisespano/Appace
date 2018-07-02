@@ -10,9 +10,10 @@
     tools:showIn="@layout/activity_site">
 
     <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:alpha="0.5"
+        android:contentDescription="@string/imageview_default_contentdescription"
         android:scaleType="centerCrop"
         android:src="@drawable/logo_black" />
 
@@ -25,8 +26,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_margin"
-            android:text="@string/site_text"
             android:fontFamily="@font/grotesk"
+            android:text="@string/site_text"
             android:textColor="@color/site_textColor"
             android:textColorHighlight="@color/textColorHighlight" />
 
