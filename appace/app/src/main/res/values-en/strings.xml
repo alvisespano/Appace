@@ -134,9 +134,6 @@ who gave a contribution to print this guide"
 
 </string>
 
-    <string name="site_text">
-        "Material is the metaphor.\n\n"
-    </string>
     <string name="imageview_default_contentdescription">Image</string>
 
 </resources>

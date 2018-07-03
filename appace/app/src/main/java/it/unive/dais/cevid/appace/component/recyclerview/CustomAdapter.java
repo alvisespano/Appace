@@ -14,6 +14,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import it.unive.dais.cevid.appace.R;
+import it.unive.dais.cevid.appace.component.HomeActivity;
 import it.unive.dais.cevid.appace.component.MapsActivity;
 import it.unive.dais.cevid.appace.component.SiteActivity;
 import it.unive.dais.cevid.appace.geo.Site;
@@ -37,7 +38,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         public ViewHolder(View v) {
             super(v);
-            v.setOnClickListener(v1 -> {
+            HomeActivity.setAnimatedOnClickListener(v, v1 -> {
                 int i = getAdapterPosition();
                 MapsActivity.startSiteActivity(ctx, sites.get(i));
             });
@@ -58,11 +59,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
+    public void onBindViewHolder(@NonNull ViewHolder vh, final int position) {
         Site site = sites.get(position);
-        viewHolder.idTextView.setText(site.getPathId());
-        viewHolder.textView.setText(site.getTitle());
-        viewHolder.imageView.setImageDrawable(SiteActivity.getMainPhoto(ctx, site.getPhotoName()));
+        vh.idTextView.setText(site.getRomanOrdinal());
+        vh.textView.setText(site.getTitle());
+        vh.imageView.setImageDrawable(SiteActivity.getMainPhoto(ctx, site.getPhotoName()));
     }
 
     @Override

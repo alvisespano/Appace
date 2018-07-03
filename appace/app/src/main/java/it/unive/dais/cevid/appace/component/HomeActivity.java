@@ -4,11 +4,11 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.Button;
+import android.view.View;
 import android.widget.ProgressBar;
 
 import java.io.InputStreamReader;
@@ -23,11 +23,9 @@ import it.unive.dais.cevid.datadroid.lib.progress.ProgressBarManager;
 import it.unive.dais.cevid.datadroid.lib.progress.ProgressCounter;
 
 @SuppressWarnings("FieldCanBeLocal")
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BaseActivity {
 
     private static final String TAG = "HomeActivity";
-
-    private Button button_map, button_list, button_credits, button_presentation, button_sources;
 
     @Nullable
     private ProgressBarManager progressBarManager;
@@ -56,21 +54,16 @@ public class HomeActivity extends AppCompatActivity {
             parserAsyncTask = parser.getAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
         }
 
-        button_map = findViewById(R.id.map);
-        button_map.setOnClickListener(v -> startCsvRowsActivity(MapsActivity.class));
+        setAnimatedOnClickListener(R.id.map, v -> startCsvRowsActivity(MapsActivity.class));
+        setAnimatedOnClickListener(R.id.list, v -> startCsvRowsActivity(ListActivity.class));
+        setAnimatedOnClickListener(R.id.sources, v -> startActivity(new Intent(HomeActivity.this, SourcesActivity.class)));
+        setAnimatedOnClickListener(R.id.credits, v -> startActivity(new Intent(HomeActivity.this, AboutActivity.class)));
+        setAnimatedOnClickListener(R.id.presentation, v -> startActivity(new Intent(HomeActivity.this, PresentationActivity.class)));
+    }
 
-        button_list = findViewById(R.id.list);
-        button_list.setOnClickListener(v -> startCsvRowsActivity(ListActivity.class));
-
-        button_sources = findViewById(R.id.sources);
-        button_sources.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, SourcesActivity.class)));
-
-        button_credits = findViewById(R.id.credits);
-        button_credits.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, AboutActivity.class)));
-
-        button_presentation = findViewById(R.id.presentazione);
-        button_presentation.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, PresentationActivity.class)));
-
+    private <V extends View> void setAnimatedOnClickListener(@IdRes int rid, View.OnClickListener l) {
+        V b = findViewById(rid);
+        setAnimatedOnClickListener(b, l);
     }
 
     private void startCsvRowsActivity(Class<? extends BaseActivity> cl) {
@@ -105,7 +98,6 @@ public class HomeActivity extends AppCompatActivity {
 //        inflater.inflate(R.menu.home_with_language, menu);
 //        return true;
 //    }
-
 
 
     @Override

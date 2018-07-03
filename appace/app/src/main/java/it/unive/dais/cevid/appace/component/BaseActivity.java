@@ -10,6 +10,9 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -21,6 +24,7 @@ import java.util.List;
 import java.util.Objects;
 
 import it.unive.dais.cevid.appace.R;
+import it.unive.dais.cevid.appace.geo.Site;
 import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
 
 public abstract class BaseActivity extends AppCompatActivity {
@@ -28,6 +32,17 @@ public abstract class BaseActivity extends AppCompatActivity {
     public static final String BUNDLE_KEY_ROWS = "ROWS";
     public static final String BUNDLE_KEY_SITES = "SITES";
     private static final String TAG = "BaseActivity";
+
+    public static <V extends View> void setAnimatedOnClickListener(V b, View.OnClickListener l) {
+        b.setOnClickListener(v -> {
+            float a = b.getAlpha();
+            Animation ani = new AlphaAnimation(a, a / 2.f);
+            ani.setDuration(200);
+            ani.setFillAfter(false);
+            v.startAnimation(ani);
+            l.onClick(v);
+        });
+    }
 
     @NonNull
     public List<CsvParser.Row> getCsvRowsFromIntent() {
@@ -48,9 +63,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         return cname == null ? TAG : cname.getShortClassName();
     }
 
+    protected void navigate(@NonNull Site site) {
+        navigate(site.getPosition(), site.getAddress());
+    }
+
     protected void navigate(@NonNull final LatLng to, @Nullable final String where) {
         String tag = getCallingActivityShortName();
-//                Uri.parse("http://maps.google.com/maps?saddr=" + from.latitude + "," + from.longitude + "&daddr=" + to.latitude + "," + to.longitude + ""));
         String uris = String.format("https://www.google.com/maps/dir/?api=1&query=%s,%s", to.latitude, to.latitude);
         if (where != null) uris += "&destination=" + where;
 

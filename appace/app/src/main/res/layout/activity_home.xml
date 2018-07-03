@@ -9,7 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/logo_black" />
+        android:src="@drawable/logo_black"
+        android:contentDescription="@string/imageview_default_contentdescription" />
 
     <!--<com.q42.android.scrollingimageview.ScrollingImageView-->
     <!--xmlns:scrolling_image_view="http://schemas.android.com/apk/res-auto"-->
@@ -49,7 +50,8 @@
             android:layout_gravity="center"
             android:alpha="0.9"
             android:scaleType="fitCenter"
-            android:src="@drawable/pace_frontespizio" />
+            android:src="@drawable/pace_frontespizio"
+            android:contentDescription="@string/imageview_default_contentdescription" />
 
         <View
             android:layout_width="match_parent"
@@ -90,7 +92,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/presentazione"
+                android:id="@+id/presentation"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

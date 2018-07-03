@@ -1,8 +1,8 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Appace</string>
-    <string name="credits">App sviluppata da:\nUniversità Ca\' Foscari Venezia\n\nPer conto di:\n Comune di Padova\n\nSviluppo:\nDott. Alvise Spanò\n\nCoordinatore progetto:\nProf. Agostino Cortesi\n\n
-        Testi tratti da:\nPercorsi di Pace e di Non Violenza a Padova\n\n
-        Casa Editrice:\nTipografia Imprenda, Limena (PD), 2015
+    <string name="credits" tools:ignore="TypographyOther">App sviluppata da:\n(c) 2018 Università Ca\' Foscari, Venezia\n\nPer conto di:\n Comune di Padova\n\nSviluppo:\nDott. Alvise Spanò\n\nCoordinatore progetto:\nProf. Agostino Cortesi\n\n
+        Testi tratti da:\n«Percorsi di Pace e di Non Violenza a Padova»\n
+        (c) 2015 Tipografia Imprenda, Limena (pd)
     </string>
 
     <string name="gps_disabled">GPS disattivato</string>
@@ -144,8 +144,10 @@ che hanno offerto un contributo per la stampa di questa guida"
 
 </string>
 
-    <string name="site_text">
-        "Material is the metaphor.\n\n"
+    <string name="site_long_text">
+        Material is the metaphors.
+        Long long sentence like those in the real CSV with lots of\nend-of-lines
+        \n\nand other stuff such as link like http://www.google.com or spano.alvise@gmail.com
     </string>
     <string name="imageview_default_contentdescription">Immagine</string>
 

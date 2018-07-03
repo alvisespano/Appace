@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
+    android:clipChildren="false"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".component.SiteActivity"
     tools:showIn="@layout/activity_site">
@@ -25,11 +26,17 @@
             android:id="@+id/site_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_margin="@dimen/text_margin"
+            android:autoLink="all"
             android:fontFamily="@font/grotesk"
-            android:text="@string/site_text"
+            android:gravity="center_horizontal|start"
+            android:linksClickable="true"
+            android:text="@string/site_long_text"
             android:textColor="@color/site_textColor"
-            android:textColorHighlight="@color/textColorHighlight" />
+            android:textColorHighlight="@color/textColorHighlight"
+            android:textColorLink="@color/mainBright"
+            />
 
     </android.support.v4.widget.NestedScrollView>
 

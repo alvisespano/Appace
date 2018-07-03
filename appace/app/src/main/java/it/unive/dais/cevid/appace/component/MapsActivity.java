@@ -55,7 +55,6 @@ import java.util.Objects;
 import it.unive.dais.cevid.appace.R;
 import it.unive.dais.cevid.appace.geo.Site;
 import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
-import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
 
 public class MapsActivity extends BaseActivity
         implements OnMapReadyCallback,
@@ -290,7 +289,7 @@ public class MapsActivity extends BaseActivity
         button_car.setOnClickListener(v -> {
             Snackbar.make(v, R.string.msg_button_car, Snackbar.LENGTH_SHORT);
             if (currentPosition != null) {
-                navigate(marker.getPosition(), marker.getTitle());
+                navigate((Site) Objects.requireNonNull(marker.getTag()));
             }
         });
         return false;
@@ -374,18 +373,14 @@ public class MapsActivity extends BaseActivity
         markers = new ArrayList<>();
         for (CsvParser.Row row : getCsvRowsFromIntent()) {
             Site site = new Site(row);
-            try {
-                MarkerOptions opts = new MarkerOptions()
-                        .title(String.format("%s. %s", site.getPathId(), site.getTitle()))
-                        .position(site.getPosition())
-                        .snippet(site.getAddress())
-                        .icon(BitmapDescriptorFactory.fromBitmap(writeTextOnDrawable(R.drawable.marker_red, site.getPathId())));
-                Marker m = gMap.addMarker(opts);
-                m.setTag(site);
-                markers.add(m);
-            } catch (ParserException e) {
-                e.printStackTrace();
-            }
+            MarkerOptions opts = new MarkerOptions()
+                    .title(String.format("%s. %s", site.getRomanOrdinal(), site.getTitle()))
+                    .position(site.getPosition())
+                    .snippet(site.getAddress())
+                    .icon(BitmapDescriptorFactory.fromBitmap(writeTextOnDrawable(R.drawable.marker_red, site.getRomanOrdinal())));
+            Marker m = gMap.addMarker(opts);
+            m.setTag(site);
+            markers.add(m);
         }
         goToInitialPosition();
     }

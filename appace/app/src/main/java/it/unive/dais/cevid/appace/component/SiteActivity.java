@@ -66,12 +66,10 @@ public class SiteActivity extends BaseActivity {
             iv.setAdjustViewBounds(true);
             layout.addView(iv);
         }
-//        ImageView iv = findViewById(R.id.site_imageview);
-//        iv.setImageDrawable(getPhotos(this, site));
 
         // text
         TextView tv = findViewById(R.id.site_textview);
-        tv.setText(site.getDescription());
+        tv.setText(site.getDescription() + "\n\n\n");   // append newlines for making textview scroll down a bit
 
         // other stuff
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
@@ -87,8 +85,7 @@ public class SiteActivity extends BaseActivity {
                 // for ActivityCompat#requestPermissions for more details.
                 return;
             }
-            fusedLocationClient.getLastLocation().addOnSuccessListener(SiteActivity.this,
-                    (@NonNull Location loc) -> navigate(site.getPosition(), site.getTitle()));
+            fusedLocationClient.getLastLocation().addOnSuccessListener(SiteActivity.this, (@NonNull Location loc) -> navigate(site));
         });
     }
 
@@ -101,8 +98,7 @@ public class SiteActivity extends BaseActivity {
             if (i == 1) {
                 d = getPhoto(ctx, name);
                 if (d == null) d = getPhoto(ctx, name + 1);
-            }
-            else d = getPhoto(ctx, name + i);
+            } else d = getPhoto(ctx, name + i);
             if (d != null) r.add(d);
             else if (i >= 2) stop = true;
         }

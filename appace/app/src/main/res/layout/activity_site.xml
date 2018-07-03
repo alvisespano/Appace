@@ -10,7 +10,7 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="@dimen/site_title_app_bar_height"
         android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.AppBarOverlay">
 
@@ -45,8 +45,8 @@
                 <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
                     android:fillViewport="true">
 
                     <LinearLayout
@@ -87,23 +87,42 @@
 
             </RelativeLayout>
 
-            <ImageButton
-                android:id="@+id/gotomaps_site_button"
-                style="@android:style/Widget.Holo.Light.ImageButton"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_gravity="top|end"
-                android:layout_margin="10dp"
-                android:background="#00000000"
-                android:contentDescription="@string/imageview_default_contentdescription"
-                android:elevation="20dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/button_car" />
-
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_site" />
+    <!--<ImageButton-->
+    <!--android:id="@+id/gotomaps_site_button"-->
+    <!--style="@android:style/Widget.Holo.Light.ImageButton"-->
+    <!--android:layout_width="35dp"-->
+    <!--android:layout_height="35dp"-->
+    <!--android:layout_below="@+id/site_title_textview"-->
+    <!--android:background="#00000000"-->
+    <!--android:contentDescription="@string/imageview_default_contentdescription"-->
+    <!--android:scaleType="fitCenter"-->
+    <!--android:src="@drawable/button_car"-->
+    <!--android:adjustViewBounds="true"-->
+    <!--android:focusedByDefault="true"-->
+    <!--app:layout_anchor="@+id/include"-->
+    <!--app:layout_anchorGravity="right|top" />-->
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_site" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/gotomaps_site_button"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="5dp"
+        app:backgroundTint="#00000000"
+        app:borderWidth="0dp"
+        app:elevation="5dp"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="right|bottom"
+        app:pressedTranslationZ="5dp"
+        app:rippleColor="@android:color/white"
+        app:srcCompat="@drawable/button_car" />
 
 
 </android.support.design.widget.CoordinatorLayout>

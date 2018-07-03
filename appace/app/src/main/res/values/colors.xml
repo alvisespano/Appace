@@ -2,7 +2,7 @@
 <resources>
     <color name="main">#863036</color>
     <color name="mainDark">#661016</color>
-    <color name="mainBright">#964046</color>
+    <color name="mainBright">#a65056</color>
     <color name="mainBright_overlay">#66964046</color>
     <color name="background">#e2dfd0</color>
     <color name="background_overlay">#bbe2dfd0</color>
