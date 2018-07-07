@@ -1,9 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Appace</string>
-    <string name="credits" tools:ignore="TypographyOther">App sviluppata da:\n(c) 2018 Università Ca\' Foscari, Venezia\n\nPer conto di:\n Comune di Padova\n\nSviluppo:\nDott. Alvise Spanò\n\nCoordinatore progetto:\nProf. Agostino Cortesi\n\n
-        Testi tratti da:\n«Percorsi di Pace e di Non Violenza a Padova»\n
-        (c) 2015 Tipografia Imprenda, Limena (pd)
-    </string>
 
     <string name="gps_disabled">GPS disattivato</string>
     <string name="gps_enabled">GPS attivato</string>
@@ -48,6 +44,9 @@
         <item>Spanish</item>
     </string-array>
 
+    <string name="imageview_default_contentdescription">Immagine</string>
+
+
     <string name="title_activity_maps">Appace - Map</string>
     <string name="title_activity_presentation">Presentazione</string>
     <string name="title_activity_site"><!--non inserire testo--></string>
@@ -64,6 +63,10 @@
     <string name="site_long_title">Site Very Very Long Title Like Those In The Real CSV</string>
 
     <string name="presentation_text">
+<i>“Il buon uso della memoria è quello che serve una giusta causa, non quello che si limita a riprodurre il passato.”</i>
+        \n
+-Tzvetan Todorov, “Memoria del male, tentazione del bene”, Ed. Garzanti
+\n\n\n
 <b>Presentazione</b>"\n"
 
 "A distanza di soli tre anni dalla seconda edizione cartacea, che è stata diffusa e apprezzata nel mondo della pace in città, siamo lieti di presentare la terza edizione questa volta disponibile come app per smartphone.
@@ -149,6 +152,58 @@ che hanno offerto un contributo per la stampa di questa guida"
         Long long sentence like those in the real CSV with lots of\nend-of-lines
         \n\nand other stuff such as link like http://www.google.com or spano.alvise@gmail.com
     </string>
-    <string name="imageview_default_contentdescription">Immagine</string>
+
+    <string name="credits" tools:ignore="TypographyOther">
+Contenuti a cura del MIR\n
+- Movimento Internazionale Riconciliazione\n
+\n
+Tratti da «Percorsi di Pace e di Non Violenza a Padova»\n
+Tipografia Imprimenda, Limena (pd)\n
+\n
+Sviluppo:\ndott. Alvise Spanò\n
+\n
+Coordinatore progetto:\nprof. Agostino Cortesi\n
+\n
+(c) 2018\n
+Università Ca\' Foscari Venezia
+
+<!--Percorsi di Pace e di Nonviolenza a Padova-->
+<!--Terza edizione, maggio 2018-->
+<!--Progetto a cura del Movimento Internazionale della Riconciliazione, sede di Padova, Via-->
+<!--Cornaro 1/A, Padova.-->
+<!--Sito Web: www.mirpadova.org-->
+<!--Traduzione in lingua inglese finanziata dal Comune di Padova.-->
+<!--Hanno collaborato alla stesura dei testi:-->
+<!--Andrea Alessandrini, Luca Baggio, Sergio Bergami, Antonia Carone, Claudio Carrara,-->
+<!--Giampaolo Frison, Alfeo Merlin, Mariacristina Tassan, Francesco Varotto, Alberto Zangheri-->
+<!--Scheda su Francesco Canova a cura di Linda Previato, Medici con l’Africa Cuamm.-->
+<!--Foto:-->
+<!--“Sant’Antonio affronta il tiranno Ezzelino da Romano”, foto di Sergio Bergami (2013) per-->
+<!--gentile concessione del “Centro Studi Antoniani”.-->
+<!--Tutte le altre foto sono di Sergio Bergami (2012, 2013, 2014, 2015, 2018),-->
+<!--ad esclusione di:-->
+<!-- - Placido Cortese ( Messaggero di S. Antonio su licenza Creative Commons );-->
+<!-- - Concetto Marchesi, Mario Todesco, Silvio Barbato ( Wikipedia );-->
+<!-- - Mariano Girotto ( Famiglia Varotto );-->
+<!--Tempio dell’Internato Ignoto e Giardino dei Giusti ( Giampaolo Frison );-->
+<!-- - Francesco Canova ( Medici con l’Africa, Cuamm );-->
+<!-- - “S. Antonio restituisce la pace ai padovani”, dalla fototeca del “Centro Studi-->
+<!--Antoniani” per gentile concessione (Prot. 092/13 del 23/04/2013).-->
+<!-- - “Ritratto di Francesco Petrarca di Altichiero da Verona” ( foto: Wikimedia Commons )-->
+<!--Traduzione schede:-->
+<!--Helen Tamara Matthews-->
+<!--Traduzioni aggiuntive:-->
+<!--Francesco Varotto-->
+<!--Revisione:-->
+<!--Francesco Varotto, Alberto Zangheri-->
+<!--Editing:-->
+<!--Francesco Varotto-->
+<!--Stampa:-->
+<!--Imprimenda, Limena (PD)-->
+<!--Il M.I.R. di Padova ringrazia fin d’ora quanti vorranno fornire eventuali suggerimenti o-->
+<!--informazioni utili alla maggiore completezza di questa guida. Si prega di inviare le-->
+<!--indicazioni all’indirizzo di posta elettronica: mirsezpd@libero.it-->
+    </string>
+
 
 </resources>

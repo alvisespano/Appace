@@ -20,8 +20,8 @@ public class AboutActivity extends AppCompatActivity {
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_about);
-        TextView tv_1 = findViewById(R.id.about_textview);
-        tv_1.setText(getCredits());
+        TextView tv = findViewById(R.id.about_textview);
+        tv.setText(getCredits());
     }
 
     @SuppressWarnings("unused")

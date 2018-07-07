@@ -6,14 +6,12 @@ import android.support.annotation.NonNull;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.io.Serializable;
-import java.util.Map;
 import java.util.TreeMap;
 
 import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
 import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
 import it.unive.dais.cevid.datadroid.lib.util.Function;
 import it.unive.dais.cevid.datadroid.lib.util.MapItem;
-import it.unive.dais.cevid.datadroid.lib.util.Prelude;
 import it.unive.dais.cevid.datadroid.lib.util.UnexpectedException;
 
 public class Site implements MapItem, Serializable {
@@ -24,6 +22,7 @@ public class Site implements MapItem, Serializable {
     private static final String DESCRIPTION = "Description";
     private static final String PHOTO = "Photo";
     private static final String ADDRESS = "Address";
+    private static final String ERA = "Era";
 
     @NonNull
     private final CsvParser.Row row;
@@ -79,6 +78,25 @@ public class Site implements MapItem, Serializable {
         return getRow(PHOTO);
     }
 
+    public enum Era {
+        PreXX, XX, XXI
+    }
+
+    @NonNull
+    public Era getEra() {
+        String s = getRow(ERA);
+        switch (s) {
+            case "1":
+                return Era.PreXX;
+            case "2":
+                return Era.XX;
+            case "3":
+                return Era.XXI;
+            default:
+                throw new UnexpectedException(String.format("unknown Era identifier: %s", s));
+        }
+    }
+
     @NonNull
     public String getRomanOrdinal() {
         return RomanNumber.toRoman(row.getLine() - 1);  // header counts as first line
@@ -110,11 +128,11 @@ public class Site implements MapItem, Serializable {
         }
 
         public static String toRoman(int number) {
-            int l =  map.floorKey(number);
-            if ( number == l ) {
+            int l = map.floorKey(number);
+            if (number == l) {
                 return map.get(number);
             }
-            return map.get(l) + toRoman(number-l);
+            return map.get(l) + toRoman(number - l);
         }
     }
 
