@@ -38,41 +38,44 @@
 
     <string name="marker_title">You are HERE</string>
 
-    <string name="title_activity_maps">Appace - Map</string>
+    <string name="title_activity_maps">Map of Places</string>
     <string name="title_activity_presentation">Presentation</string>
     <string name="title_activity_site"><!--non inserire testo--></string>
     <string name="title_activity_sources">Sources</string>
-    <string name="title_activity_list">Paths</string>
+    <string name="title_activity_list">Places of Peace</string>
 
     <string name="sitemap_button">MAP OF PLACES</string>
     <string name="sources_button">SOURCES</string>
     <string name="credits_button">CREDITS</string>
     <string name="presentation_button">PRESENTATION</string>
-    <string name="goto_gmaps_button">GO TO MAPS</string>
     <string name="sitelist_button">PLACES OF PEACE</string>
 
     <string name="presentation_text">
-        <b>Presentazione</b>"\n"
+        <i>“A good use of memory is one that serves a just cause and does not content itself with reproducing the past.”</i>
+        \n
+-Tzvetan Todorov, “Hope and Memory”, Ed. Garzanti
+\n\n\n
 
+        <b>Presentation</b>"\n"
 "Just three years after the printing of the second edition, that was distributed to the local peace supporters who greatly appreciated that, we are now happy to introduce the third edition of this guide, this time available as an app for smartphones.
 The English translation has been considered essential for giving the large number of foreign tourists, who are fond of peace matters, the opportunity to use the guide and appreciate its contents.
 Through the correction of some minor mistakes and the insertion of new, original pictures, the guide is now more precise and more documented. The new location of two points of interest has been also here reported.
 We would like to remind the readers that this guide offers an alternative way to discover the city. It takes a rather unusual approach for a guide, promoting a culture of peace and nonviolence.
 \n\n"
-        <b>Progetti internazionali</b>"\n"
+        <b>International Projects</b>"\n"
 "The idea stems from the international contacts established through the Grundtvig European programme, “Discover Peace in Europe”, financed by the European Union, which led to the creation of routes of peace in 7 more European cities: Turin, Paris, Vienna, Berlin, Budapest, The Hague and Manchester. A website showing these peace routes has also been published1.
 The first city to prepare a peace trail was Bradford (GB). The route has been published as a booklet of about 40 pages.
 A pocket book of 212 pages has also been produced in Vienna (A), presenting the city in these terms2. And a great many other cities across the globe have prepared similar routes in order to ensure due consideration of the culture of peace and nonviolence, starting from the local context. These include others in Great Britain (London, Coventry and Leeds), as well as Atlanta in the USA3, which in addition to the website has also produced a 64-page booklet, and Geneva in Switzerland4.
 \n\n"
-        <b>In Italia</b>"\n"
+        <b>In Italy</b>"\n"
 
 "Padua is the first city to have produced a guide of this scope.
 Meanwhile, in Turin, a similar guide has been published in two versions, one written in Italian and another one translated into English. The aforementioned Grundtvig programme is the reference background in which this work has been conceived and published.
 \n\n"
-        <b>I criteri di scelta</b>"\n"
+        <b>Choice Criteria</b>"\n"
 "The places, people and histories are presented in the form of short summaries. The choices made were to present places and people that had taken positive action for peace and nonviolence and as such reference to places of war, which unfortunately abound in Padua, have been limited, but not forgotten. We researched the many traces, throughout the territory of Padua, which at times can prove difficult to identify, of those who sought to act in favour of peace, reconciliation and justice over the centuries, avoiding, refusing or minimising the use of violence, even if not specifically referring to the idea of nonviolence, but rather to other positive human, religious or political values. The culture of peace is an ancient one, but the culture of nonviolence is young. It is therefore not correct to label aspects of the distant past with the term “nonviolence”, when reflection on this method of action, in its precise, moral, cultural and political sense, only dates back to the last century. We had to make choices and this has sometimes meant glossing over episodes and people that others may consider important.\n\n"
-        <b>Le schede</b>"\n"
 
+        <b>The Summaries</b>"\n"
 "The part dedicated to pre-twentieth century history is fairly brief.
 We investigated a great many famous people, but in the end, many proved to be incoherent with the criteria we had set ourselves. Some of the most famous people we had to exclude were Bernardino da Feltre, the founder of the Monte di Pietà, an institution we can perhaps consider as a distant forerunner of ethical finance, but whom we had to exclude on the grounds of his fanatical anti-Semitism. The same applied to Galileo Galilei, the great scientist who worked not only for pure research, but also to create war machines. Unfortunately, eight hundred years of history of Padua University turned up very few examples of pioneers of a culture of peace.
 The part on twentieth century history is fairly extensive, but could potentially be even greater.
@@ -82,8 +85,8 @@ Finally, the contemporary part provides examples of the current culture of peace
 We hope that this third edition of the guide will be followed by further, more complete editions, also incorporating any reader suggestions. At the end of the guide, a bibliography gives suggestions of additional reading materials.
 Enjoy!
 \n\n"
-        <b>Movimento Internazionale della Riconciliazione, sede di Padova</b>"\n"
-"
+        <b>Movimento Internazionale della Riconciliazione, Padua offices</b>"\n"
+
 1)	http://www.discoverpeace.eu
 2)	E. Hewson, G. Hamann, S. Jalka, Frieden entdecken in Wien, Pro Business, Vienna, 2011
 3)	http://www.atlantapeacetrails.com

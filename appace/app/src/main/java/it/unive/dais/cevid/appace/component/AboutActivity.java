@@ -3,7 +3,13 @@ package it.unive.dais.cevid.appace.component;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
+import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.LeadingMarginSpan;
 import android.widget.TextView;
 
 import it.unive.dais.cevid.appace.BuildConfig;
@@ -15,43 +21,28 @@ import it.unive.dais.cevid.appace.R;
  *
  * @author Alvise Spanò, Università Ca' Foscari
  */
-public class AboutActivity extends AppCompatActivity {
+public class AboutActivity extends BaseActivity {
+
     @Override
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_about);
-        TextView tv = findViewById(R.id.about_textview);
-        tv.setText(getCredits());
+        // TODO: migliorare l'indentazione della prima linea di ogni paragrafo, ma stare attenti ai tag html che vengono persi nella conversione a Spannable
+//        indentTextView(R.id.about_textview, R.string.credits);
+//        indentTextView(R.id.about2_textview, R.string.credits2);
     }
 
-    @SuppressWarnings("unused")
-    public String getSystemInfo() {
-        ApplicationInfo ai = getApplicationInfo();
-        StringBuffer buf = new StringBuffer();
-        buf.append("\tVERSION.RELEASE {").append(Build.VERSION.RELEASE).append("}");
-        buf.append("\n\tVERSION.INCREMENTAL {").append(Build.VERSION.INCREMENTAL).append("}");
-        buf.append("\n\tVERSION.SDK {").append(Build.VERSION.SDK_INT).append("}");
-        buf.append("\n\tBOARD {").append(Build.BOARD).append("}");
-        buf.append("\n\tBRAND {").append(Build.BRAND).append("}");
-        buf.append("\n\tDEVICE {").append(Build.DEVICE).append("}");
-        buf.append("\n\tFINGERPRINT {").append(Build.FINGERPRINT).append("}");
-        buf.append("\n\tHOST {").append(Build.HOST).append("}");
-        buf.append("\n\tID {").append(Build.ID).append("}");
-        return String.format(
-                "--- APP ---\n" +
-                "%s v%s [%s]\n" +
-                "(c) %s %s @ %s - %s \n\n" +
-                "--- ANDROID ---\n%s",
-                getString(ai.labelRes),
-                BuildConfig.VERSION_NAME,
-                BuildConfig.BUILD_TYPE,
-                R.string.credits_year, R.string.credits_project, R.string.credits_company, R.string.credits_authors,
-                buf);
+    private void indentTextView(@IdRes int rid, @StringRes int sid) {
+        TextView tv = findViewById(rid);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            Spanned s = Html.fromHtml(getString(sid), Html.FROM_HTML_MODE_COMPACT);
+            tv.setText(s);
+        }
     }
 
-
-    private CharSequence getCredits() {
-        return String.format("%s", getString(R.string.credits));
+    public static SpannableString indentText(Spanned text, int marginFirstLine, int marginNextLines) {
+        SpannableString result=new SpannableString(text);
+        result.setSpan(new LeadingMarginSpan.Standard(marginFirstLine, marginNextLines),0,text.length(),0);
+        return result;
     }
-
 }

@@ -4,8 +4,10 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="about_logo_dimen">300dp</dimen>
     <dimen name="about_logo_padding">30dp</dimen>
-    <dimen name="about_logo_padding_2">40dp</dimen>
+    <dimen name="about_text_padding">40dp</dimen>
+    <dimen name="about2_text_padding">30dp</dimen>
     <dimen name="about_text_size">20sp</dimen>
+    <dimen name="about2_text_size">16sp</dimen>
     <dimen name="linear_layout_height">120dp</dimen>
     <dimen name="linear_layout_width">50dp</dimen>
     <dimen name="linear_layout_margin_bottom">40dp</dimen>
@@ -19,4 +21,5 @@
     <dimen name="home_vertical_padding">30dp</dimen>
     <dimen name="home_button_height">50dp</dimen>
     <dimen name="site_title_app_bar_height">300dp</dimen>
+    <dimen name="about_vertical_separator">20dp</dimen>
 </resources>

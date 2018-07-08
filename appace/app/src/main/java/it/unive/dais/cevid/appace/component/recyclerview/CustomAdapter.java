@@ -2,7 +2,11 @@ package it.unive.dais.cevid.appace.component.recyclerview;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.support.annotation.ColorInt;
+import android.support.annotation.ColorRes;
+import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -63,7 +67,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         Site site = sites.get(position);
         vh.idTextView.setText(site.getRomanOrdinal());
         vh.textView.setText(site.getTitle());
-        vh.imageView.setImageDrawable(SiteActivity.getMainPhoto(ctx, site.getPhotoName()));
+        @ColorRes int cid;
+        switch (site.getEra()) {
+            case PreXX: cid =  R.color.era_yellow_overlay; break;
+            case XX: cid =  R.color.era_red_overlay; break;
+            default: cid =  R.color.era_green_overlay; break;
+        }
+        vh.idTextView.setBackgroundColor(ContextCompat.getColor(ctx, cid));
+        vh.imageView.setImageDrawable(site.getMainPhoto());
     }
 
     @Override

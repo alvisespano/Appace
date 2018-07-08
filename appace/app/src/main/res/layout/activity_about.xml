@@ -16,39 +16,46 @@
         android:src="@mipmap/unive_logo"
         android:contentDescription="@string/imageview_default_contentdescription" />
 
-    <!--<LinearLayout-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content">-->
-
-    <!--<ImageView-->
-    <!--android:id="@+id/imgView_2"-->
-    <!--android:layout_width="@dimen/logo_info"-->
-    <!--android:layout_height="@dimen/logo_info"-->
-    <!--android:layout_marginStart="0dp"-->
-    <!--android:alpha="0.9"-->
-    <!--android:padding="@dimen/info_padding"-->
-    <!--android:src="@mipabout_logo_img"-->
-    <!--android:contentDescription="@string/logo_descr" />-->
-
     <ScrollView
         android:id="@+id/info_scrollview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/about_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:padding="@dimen/about_logo_padding_2"
+                android:autoLink="all"
+                android:padding="@dimen/about2_text_padding"
+                android:text="@string/credits"
                 android:textColor="@color/white"
-                android:textSize="@dimen/about_text_size"
-                android:textIsSelectable="false" />
-        </RelativeLayout>
+                android:textIsSelectable="false"
+                android:textSize="@dimen/about_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/about_vertical_separator"
+                android:background="@color/background_overlay"/>
+
+            <TextView
+                android:id="@+id/about2_textview"
+                style="@style/AppTheme.NoActionBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="all"
+                android:includeFontPadding="true"
+                android:padding="@dimen/about2_text_padding"
+                android:text="@string/credits2"
+                android:textColor="@color/white"
+                android:textIsSelectable="false"
+                android:textSize="@dimen/about2_text_size" />
+
+        </LinearLayout>
     </ScrollView>
 
     <!--</LinearLayout>-->

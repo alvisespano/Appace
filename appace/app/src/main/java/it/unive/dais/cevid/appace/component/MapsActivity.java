@@ -306,7 +306,7 @@ public class MapsActivity extends BaseActivity
 
     public static void startSiteActivity(Context ctx, Site site) {
         Intent intent = new Intent(ctx, SiteActivity.class);
-        intent.putExtra(SiteActivity.BUNDLE_KEY_SITE, site);
+        intent.putExtra(SiteActivity.BUNDLE_KEY_SITE, site.getCsvRow());
         ctx.startActivity(intent);
     }
 
@@ -374,7 +374,7 @@ public class MapsActivity extends BaseActivity
     private void populateMap() {
         markers = new ArrayList<>();
         for (CsvParser.Row row : getCsvRowsFromIntent()) {
-            Site site = new Site(row);
+            Site site = new Site(this, row);
             String ord = site.getRomanOrdinal();
             @IdRes int mid;
             switch (site.getEra()) {
@@ -411,8 +411,9 @@ public class MapsActivity extends BaseActivity
     private Bitmap writeTextOnDrawable(int id, String text) {
 
         Bitmap bm0 = BitmapFactory.decodeResource(getResources(), id).copy(Bitmap.Config.ARGB_8888, true);
-        // TODO: ripulire sto casino, rendere le costanti risorse ecc
-        Bitmap bm = Bitmap.createScaledBitmap(bm0, (int) (70 * 1.1), (int) (84 * 1.1), true);
+        // TODO: ripulire sto casino, rendere le costanti risorse
+        final double scale = 0.45;
+        Bitmap bm = Bitmap.createScaledBitmap(bm0, (int) (bm0.getWidth() * scale), (int) (bm0.getHeight() * scale), true);
         Typeface tf = Typeface.create("mantinia", Typeface.BOLD);
 
         Paint paint = new Paint();
@@ -433,7 +434,7 @@ public class MapsActivity extends BaseActivity
         if (textRect.width() >= (canvas.getWidth() - 4))     //the padding on either sides is considered as 4, so as to appropriately fit in the text
             paint.setTextSize(convertToPixels(this, 7));        //Scaling needs to be used for different dpi's
 
-        final int adjustmentX = 1, adjustmentY = -8;
+        final int adjustmentX = 0, adjustmentY = -8;
 
         //Calculate the positions
         int xPos = (canvas.getWidth() / 2) + adjustmentX;     //-2 is for regulating the x position offset

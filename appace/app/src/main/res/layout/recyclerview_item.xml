@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:minWidth="60dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/mainDark"
+        android:textColor="@color/text"
         android:textAlignment="center"
         android:textSize="20sp"
         android:fontFamily="@font/mantinia"
