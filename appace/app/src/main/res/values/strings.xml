@@ -59,8 +59,6 @@
     <string name="presentation_button">PRESENTAZIONE</string>
     <string name="sitelist_button">LUOGHI DI PACE</string>
 
-    <string name="site_long_title">Site Very Very Long Title Like Those In The Real CSV</string>
-
     <string name="presentation_text">
 <i>“Il buon uso della memoria è quello che serve una giusta causa, non quello che si limita a riprodurre il passato.”</i>
         \n
@@ -145,12 +143,6 @@ che hanno offerto un contributo per la stampa di questa guida"
 
 
 </string>
-
-    <string name="site_long_text">
-        Material is the metaphors.
-        Long long sentence like those in the real CSV with lots of\nend-of-lines
-        \n\nand other stuff such as link like http://www.google.com or spano.alvise@gmail.com
-    </string>
 
     <string name="credits" tools:ignore="TypographyOther">
     Contenuti a cura del MIR\n

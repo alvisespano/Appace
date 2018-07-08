@@ -72,7 +72,7 @@
                     android:textIsSelectable="false"
                     android:textSize="40sp"
                     android:theme="@style/AppTheme"
-                    tools:text="@string/site_long_title" />
+                    tools:text="@string/tomba_antenore_title" />
 
             </RelativeLayout>
 

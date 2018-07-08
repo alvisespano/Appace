@@ -7,11 +7,11 @@ import android.location.Location;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
@@ -66,17 +66,20 @@ public class Site implements MapItem {
         }
     }
 
-    @Override
     @NonNull
+    @Override
     public String getTitle() {
-        return getStringResourceByName(ctx, String.format("%s_title", getRoot()));
+        return ctx.getString(getTitleResId());
     }
 
-    @Override
-    @NonNull
-    public String getDescription() {
-        String r = getStringResourceByName(ctx, String.format("%s_text", getRoot()));
-        return r.replaceAll("\\\\n", System.getProperty("line.separator"));
+    @StringRes
+    public int getTitleResId() {
+        return getHtmlStringResourceByName(ctx, String.format("%s_title", getRoot()));
+    }
+
+    @StringRes
+    public int getDescriptionResId() {
+        return getHtmlStringResourceByName(ctx, String.format("%s_text", getRoot()));
     }
 
     @Override
@@ -117,18 +120,20 @@ public class Site implements MapItem {
         return RomanNumber.toRoman(row.getLine() - 1);  // header counts as first line
     }
 
+    @Override
     @NonNull
-    public String getAddress() {
+    public String getDescription() {
         return getRow(ADDRESS);
     }
 
     @NonNull
-    public static String getStringResourceByName(Context ctx, String name) {
-        try {
-            return ctx.getString(ctx.getResources().getIdentifier(name, "string", ctx.getPackageName()));
-        } catch (Resources.NotFoundException e) {
-            return String.format("Error retrieving string resource by name: %s", name);
-        }
+    public String getAddress() {
+        return getDescription();
+    }
+
+    @StringRes
+    public static int getHtmlStringResourceByName(Context ctx, String name) {
+        return ctx.getResources().getIdentifier(name, "string", ctx.getPackageName());
     }
 
     @NonNull

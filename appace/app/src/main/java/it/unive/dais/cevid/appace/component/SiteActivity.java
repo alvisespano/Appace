@@ -2,21 +2,15 @@ package it.unive.dais.cevid.appace.component;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.Application;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.os.Bundle;
-import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -25,13 +19,11 @@ import android.widget.TextView;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import it.unive.dais.cevid.appace.R;
 import it.unive.dais.cevid.appace.geo.Site;
 import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
-import it.unive.dais.cevid.datadroid.lib.util.UnexpectedException;
 
 public class SiteActivity extends BaseActivity {
 
@@ -54,7 +46,7 @@ public class SiteActivity extends BaseActivity {
         final Site site = new Site (this, (CsvParser.Row) intent.getSerializableExtra(BUNDLE_KEY_SITE));
 
         // title
-        final String title = site.getTitle();
+        @StringRes int title = site.getTitleResId();
         toolbar.setTitle(title);
         toolbar.setSubtitle(title);
         this.<TextView>findViewById(R.id.site_title_textview).setText(title);
@@ -75,7 +67,10 @@ public class SiteActivity extends BaseActivity {
 
         // text
         TextView tv = findViewById(R.id.site_textview);
-        tv.setText(site.getDescription() + "\n\n\n");   // append newlines for making textview scroll down a bit
+        tv.setText(site.getDescriptionResId());   // append newlines for making textview scroll down a bit
+
+//        return r.toString().replaceAll("\\\\n", System.getProperty("line.separator"));
+
 
         // other stuff
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);

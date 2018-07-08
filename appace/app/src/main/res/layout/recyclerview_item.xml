@@ -28,7 +28,7 @@
         android:textSize="22sp"
         android:maxLines="3"
         android:fontFamily="@font/mantinia"
-        android:text="@string/site_long_title" />
+        android:text="@string/tomba_antenore_title" />
 
     <ImageView
         android:id="@+id/list_imageview"

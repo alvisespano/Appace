@@ -4,11 +4,15 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
+import android.os.Build;
+import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.LeadingMarginSpan;
@@ -16,6 +20,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -35,6 +40,24 @@ public abstract class BaseActivity extends AppCompatActivity {
     public static final String BUNDLE_KEY_ROWS = "ROWS";
     public static final String BUNDLE_KEY_SITES = "SITES";
     private static final String TAG = "BaseActivity";
+
+    // non servono se uso le charsequence ritornate da getText()
+    @Deprecated
+    public void setHtmlText(TextView tv, String s) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            Spanned sp = Html.fromHtml(s, Html.FROM_HTML_MODE_COMPACT);
+            tv.setText(sp);
+        } else {
+            tv.setText(s);
+        }
+    }
+
+    @Deprecated
+    public static SpannableString indentText(Spanned text, int marginFirstLine, int marginNextLines) {
+        SpannableString result = new SpannableString(text);
+        result.setSpan(new LeadingMarginSpan.Standard(marginFirstLine, marginNextLines), 0, text.length(), 0);
+        return result;
+    }
 
     public static <V extends View> void setAnimatedOnClickListener(V b, View.OnClickListener l) {
         b.setOnClickListener(v -> {

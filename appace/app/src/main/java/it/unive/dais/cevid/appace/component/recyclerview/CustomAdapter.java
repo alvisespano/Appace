@@ -66,7 +66,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder vh, final int position) {
         Site site = sites.get(position);
         vh.idTextView.setText(site.getRomanOrdinal());
-        vh.textView.setText(site.getTitle());
+        vh.textView.setText(site.getTitleResId());
         @ColorRes int cid;
         switch (site.getEra()) {
             case PreXX: cid =  R.color.era_yellow_overlay; break;

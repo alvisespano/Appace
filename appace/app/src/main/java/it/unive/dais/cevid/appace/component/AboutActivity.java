@@ -1,5 +1,6 @@
 package it.unive.dais.cevid.appace.component;
 
+import android.app.Application;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
 import android.os.Bundle;
@@ -32,17 +33,4 @@ public class AboutActivity extends BaseActivity {
 //        indentTextView(R.id.about2_textview, R.string.credits2);
     }
 
-    private void indentTextView(@IdRes int rid, @StringRes int sid) {
-        TextView tv = findViewById(rid);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            Spanned s = Html.fromHtml(getString(sid), Html.FROM_HTML_MODE_COMPACT);
-            tv.setText(s);
-        }
-    }
-
-    public static SpannableString indentText(Spanned text, int marginFirstLine, int marginNextLines) {
-        SpannableString result=new SpannableString(text);
-        result.setSpan(new LeadingMarginSpan.Standard(marginFirstLine, marginNextLines),0,text.length(),0);
-        return result;
-    }
 }
