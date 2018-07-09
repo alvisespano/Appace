@@ -28,9 +28,6 @@ public class AboutActivity extends BaseActivity {
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_about);
-        // TODO: migliorare l'indentazione della prima linea di ogni paragrafo, ma stare attenti ai tag html che vengono persi nella conversione a Spannable
-//        indentTextView(R.id.about_textview, R.string.credits);
-//        indentTextView(R.id.about2_textview, R.string.credits2);
     }
 
 }

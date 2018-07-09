@@ -411,7 +411,6 @@ public class MapsActivity extends BaseActivity
     private Bitmap writeTextOnDrawable(int id, String text) {
 
         Bitmap bm0 = BitmapFactory.decodeResource(getResources(), id).copy(Bitmap.Config.ARGB_8888, true);
-        // TODO: ripulire sto casino, rendere le costanti risorse
         final double scale = 0.45;
         Bitmap bm = Bitmap.createScaledBitmap(bm0, (int) (bm0.getWidth() * scale), (int) (bm0.getHeight() * scale), true);
         Typeface tf = Typeface.create("mantinia", Typeface.BOLD);

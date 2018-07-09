@@ -46,14 +46,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="@dimen/site_photo_margin_top"
                     android:fillViewport="true">
 
                     <LinearLayout
                         android:id="@+id/site_imageview_layout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
+                        android:gravity="center"
                         android:orientation="horizontal">
 
                     </LinearLayout>
@@ -66,7 +66,7 @@
                     android:layout_margin="15dp"
                     android:alpha="0.9"
                     android:gravity="bottom|end"
-                    android:maxLines="4"
+                    android:maxLines="5"
                     android:textAlignment="gravity"
                     android:textColor="@color/white"
                     android:textIsSelectable="false"
@@ -80,21 +80,21 @@
     </android.support.design.widget.AppBarLayout>
 
     <include
-        android:id="@+id/include"
+        android:id="@+id/site_include"
         layout="@layout/content_site" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/gotomaps_site_button"
         android:layout_width="65dp"
         android:layout_height="65dp"
+        android:layout_marginTop="15dp"
         android:scaleType="fitCenter"
-        android:layout_marginBottom="5dp"
         app:backgroundTint="#00000000"
         app:borderWidth="0dp"
         app:elevation="5dp"
-        app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="right|bottom"
-        app:pressedTranslationZ="5dp"
+        app:layout_anchor="@+id/collapsing_toolbar"
+        app:layout_anchorGravity="left|top"
+        app:pressedTranslationZ="0dp"
         app:rippleColor="@android:color/white"
         app:srcCompat="@drawable/button_car" />
 

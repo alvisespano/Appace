@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tomba_antenore_title">"<i>Antenor</i>\'s Tomb"</string>
+    <string name="tomba_antenore_title">"Antenor\'s Tomb"</string>
     <string name="tomba_antenore_text">
-According to Greek-Roman tradition, Antenor (<I>Antenore</I> in Italian) was the legendary founder
+According to Greek-Roman tradition, Antenor (<i>Antenore</i> in Italian) was the legendary founder
 of Padua.\n
 In the Iliad, Antenor is a noble wise man of Troy who first seeks to avoid a clash with the
 Greeks, encouraging negotiations with Menelaus and Ulysses, and thereafter requests that Helen
@@ -14,7 +14,7 @@ and Virgil (70 BC - 19 BC) is flanked by a negative version, which portrays him 
 the cause of the Trojan defeat.\n
 This vision is exacerbated in Mediaeval knightly tales and taken up by Dante, who in his Divine
 Comedy names the round in the circle of hell where traitors of their countries are punished
-“ Antenorea ”.\n
+        <i>“Antenorea”</i>.\n
 In Padua, the legend is revived in the Age of the Communes. Judge and poet Lovato Lovati
 (1240- 1309) promoted the construction of a monument in celebration of Antenor, which was
 completed by the municipality in 1283-1285 (according to two stone plaques on the aedicule): a
@@ -25,12 +25,12 @@ arches, originally adjoined to the church of San Lorenzo, which was knocked down
 open up to the current piazza.\n
 Lovato composed the inscription carved into the sarcophagus, taking up texts by Livius and
 Virgil. A translation (translated here from the version by Giorgio Ronconi) of his difficult
-pre-humanistic Latin reads: <I>“ Noble Antenor, supporter of domestic peace, here brought the fugitive Eneti and
+pre-humanistic Latin reads: <i>“Noble Antenor, supporter of domestic peace, here brought the fugitive Eneti and
 Dardanians [Trojans], crushed the Euganei and founded the city of Padua: here is his home, carved into humble
-        marble. ”</I>\n
+        marble.”</i>\n
 At a time when political dynamics were usually solved through war and violence, Lovato presents
 the people of Padua not so much with the Trojan hero’s wartime value, but highlights the role of
-Antenor as pacifier, a civic model to be imitated
+Antenor as pacifier, a civic model to be imitated.
     </string>
 
     <string name="ponte_torricelle_title">Epigraph to the Torricelle Bridge</string>
@@ -43,11 +43,11 @@ Antenor as pacifier, a civic model to be imitated
     The Latin text in ten hexameters was dictated by Giovanni Valdetaro, a grammarian amongst
     the entourage of the Podesta in office, Giacomo Landi from Piacenza, as the official
     certification of Padua municipality. The translation reads:\n\n
-    <I>“ The nobleman Giacomo Landi, native to Piacenza, deservedly Podesta of Padua, in 1210 adorned the city
+    <i>“The nobleman Giacomo Landi, native to Piacenza, deservedly Podesta of Padua, in 1210 adorned the city
     with walls and a gate facing south. O sons of Antenor, if you wish to be safe from the enemy outside, Peace will
     bind you within, with a wall of love. In vain is the shade sought under a leafy tree if an acute disease corrodes our
-        bladders within.</I>\n\n
-    If the fatigue and the expense of the wall is not to be wasted, listen to the counsel of your poet Giovanni ”
+        bladders within.”</i>\n\n
+    If the fatigue and the expense of the wall is not to be wasted, listen to the counsel of your poet Giovanni”
     The text refers to the construction of a new part of the city walls, which connected the Gate to
     the Castle running along the canal in lieu of the previous ones.\n
     The concerned invitation of the local authorities for harmony amongst the citizens is expressed
@@ -71,8 +71,8 @@ adversary and brother-in-law, Count Rizzardo, whom Ezzelino had imprisoned. Alth
 unsuccessful on this occasion, he was more fortunate in Padua, a short while before he passed
 away, as he obtained an attenuation from the municipality of the harsh law governing insolvent
 debtors, which effectively struck the poorest members of the community, forcing them to
-imprisonment: “at the instance of the venerable friar Anthony of the Order of the Friars
-Minor”, it was established that no one else would be imprisoned for unpaid debts in the future,
+imprisonment: <i>“at the instance of the venerable friar Anthony of the Order of the Friars
+        Minor”</i>, it was established that no one else would be imprisoned for unpaid debts in the future,
 as long as they were willing to give up their belongings.\n\n
 Over the centuries, he has inspired the work of a great many other people who have kept his
 spirit alive (see, for example, the summary on Father Cortese).\n\n
@@ -81,6 +81,873 @@ basically completed in 1310. Since then, it has undergone various restoration an
 works, with the apse area restored in the 15th century and other works carried out generally in
 the seventeenth and eighteenth centuries.\n\n
         For further information, see: www.basilicadelsanto.it
+    </string>
+
+
+    <string name="marsilio_title">Marsilio da Padova</string>
+    <string name="marsilio_text">
+Born between 1275 and 1280 in Padua, having graduated in medicine, he moved to Paris to
+work as a theology teacher. In 1313 became rector of Paris University; he then lived in Orleans
+and Avignon. Following the publication of his most important work, Defensor pacis (Defendant
+of the Peace), which was condemned by the ecclesiastical authorities, he sought refuge at the
+Court of Louis IV “the Bavarian” in Nuremberg. He then lived in Munich, where he wrote
+Defensor minor and died in 1342 or 1343.\n
+        \n
+        <b>The concept of peace expressed by Marsilius of Padua in his Defensor Pacis</b>\n
+        \n
+In this treaty of civil and ecclesiastical law, written in collaboration with John of Jandun,
+philosopher and averroist master, the State is seen as a natural institution with the aim of
+        enabling man to achieve happiness. In the first dictio (1) of the <i>Defensor pacis</i> , the author defines the
+meaning of certain key terms that constitute the main structure on which the text is hinged: law,
+peace, the State, civil life, etc. He claims that in order to achieve this objective, peace needs to
+be safeguarded through the elimination of conflict and, in order to do so, the State uses the law
+as its tool.\n
+        \n
+As an expression of the people’s will, the State laws guide men towards the collective good,
+making up for individual deficits. The source of power is therefore the population itself, which
+can decide to entrust governance to an authority, a prince, with the strength needed to
+guarantee peace.\n
+        \n\n
+(1) Defensor Pacis, I, 1: <i>“Omni quippe regno desiderabilis debet esse tranquillitas, in qua et
+populi proficiunt, et utilitas gencium custoditur. Hec est enim bonarum arcium decora mater.
+Hec mortalium genus reparabili successione multiplicans, facultates protendit, mores
+excolit. Et tantarum rerum ignarus agnoscitur, qui eam minime quesisse sentitur.
+Cassiodorus in prima suarum epistolarum, hac serie premissa, tranquillitatis seu pacis
+civilium regiminum commoditates et fructus expressit, ut per hos tamquam optimos,
+humanum optimum, eius vite scilicet sufficienciam explicans, quam sine pace ac
+tranquillitate nemo consequi potest, ad pacem habendam invicem, et hunc tranquillitatem,
+voluntates homines excitaret”.</i>
+    </string>
+
+
+    <string name="petrarca_title">Francesco Petrarch</string>
+    <string name="petrarca_text">
+For further information, see: http://padovacultura.padovanet.it/it/attivita-culturali/petrarca-padova
+        \n\n
+        <b>His Paduan period</b>\n
+        \n
+By the mid-1300s, Francesco Petrarca (Petrarch)\'s name as a poet, scholar and erudite had
+spread, earning him national fame. Thus in 1349, Jacopo II da Carrara, lord of Padua, invited
+him to stay in the city, welcoming him in full glory.
+Indeed, the Carrarese lordship was getting ready to launch into a phase of absolute political and
+military affirmation, albeit with alternating turns of fate. And to increase its prestige, it sought to
+attract a large number of artists, jurists and scholars to its domains, offering them benefits and
+appointments, in particular lecturing posts in the already prestigious University of Padua.\n
+        \n
+This first stay in Padua was to mark the start of a relationship of mutual esteem and friendship
+        enjoyed by Petrarch and Jacopo II, and later with his son, Francesco I, also known as <i>“Il Vecchio”</i>
+(Senior). The Arezzo-born poet was to stay in Padua for various periods of time, always invited
+by the two lords, initially staying in a large (for the time) house alongside the cathedral basilica.
+(Although considerable changes have been made to it over the centuries, the building still stands
+today, as number 26-28 Via Dietro Duomo).\n
+Now more elderly, Petrarch decided to settle on the Euganean Hills. Francesco I had already
+given him a piece of land and a house, which the poet restored, in the area of Arquà (today the
+municipality of Arquà Petrarca). Here, he lived in peace until he passed away in 1374.\n
+        \n
+        <b>Aspiring to peace</b>\n
+        \n
+Neglecting the aspects relating more closely to the intimate or personal dimension that can be
+seen in his thoughts and works, it must be noted that Petrarch also played a role that can only
+really be defined as one of “civil conscience”, putting his vision of ideal civilisation or society (1)
+forward to the representatives of the political powers of the time - whether emperors or
+noblemen or popes and bishops, as well as to leaders of more popular social classes, like Cola di
+Rienzo.\n
+His striving, at least on principle, to achieve a status of an autonomous man of literature, free
+from political power, did not prevent him from taking an interest in the concrete events that
+featured throughout the complex century that was Italy in the 1300s.\n
+This also led to some form of involvement in various disputes or conflicts, mainly with a view to
+persuading the parties involved to seek agreement and pacification.\n
+Hence 1350 saw him take part in the Council of Padua, aiming, amongst other aspects, to put an
+end to hostilities between the Patriarch of Aquileia and the Count of Gorizia. A few years later,
+he exhorted the Doge of Venice, Andrea Dandolo, not once but twice in a bid to convince him
+not to go to war with Genoa again.\n
+Then, between 1356 and 1368, he was sent by the Visconti family to take part in various peace
+missions, not so much on account of any particular diplomatic skills, but rather because of the
+great esteem in which he was held. In 1373, now an old man, he agreed to accompany Francesco
+Novello da Carrara to Venice to try - unfortunately the attempt was in vain, despite the solemn
+speech made by the poet to the Grand Council - to mitigate the very difficult peace conditions
+imposed by the Venetians against the Carrarese lordship.\n
+        \n
+We can say that Petrarch too, just as Marsilius of Padua before him - yet without the Marsilius’
+consistent reflection - shared the dream of a “ pax imperialis ” for Italy. He did, however,
+influenced by the admiration of ancient Roman culture or institutions, appeal to a common
+national identity, hoping that the Italian lords and princes would put an end to their fratricidal
+wars - including through renouncing use of foreign mercenary troops - so as to guarantee peace
+to the country.\n
+This desire for moral and political peace is the subject matter chosen for his most famous
+        <i>“canzone”</i>i>, entitled <i><b>“Italia mia, benché ‘l parlar sia indarno”</b></i>, which concludes with the fervent
+        appeal <i>“I’ vo gridando: Pace, pace, pace”</i> (<i>Peace! Peace! on thee I call! return, O heaven-born Peace! (2)</i>).
+        \n\n\n
+(1) For example, on the virtues and fair policies that a prince must adopt in order to correctly govern his kingdom, see
+        Petrarch’s Letter I <i>“Al magnifico Francesco da Carrara Signore di Padova”</i> (To the magnificent lord of Padua, Francesco da Carrara)
+from the fourteenth book of the Seniles epistolary collection.\n
+        2) English translation in <i>“The Sonnets, Triumphs, and Other Poems of Petrarch”</i>, London: George Bell and Sons, York Street,
+Covent Garden, 1879.\n
+    </string>
+
+
+    <string name="beolco_title">Angelo Beolco</string>
+    <string name="beolco_text">
+Angelo Beolco, better known as “Il Ruzzante” or “el Ruzante” (Padua or Pernumia, 1496? -
+Padua, 1542), the son of the doctor Giovan Francesco Beolco, professor at Padua University
+Faculty of Medicine, was a famous actor and playwright who liked to perform his works in
+person, often in the loggia of his friend Alvise Cornaro, a wealthy landowner and intellectual, in
+Via Cesarotti.
+Ruzante was the character Beolco played - a Venetian peasant who speaks in pavano , the Padua
+dialect of the times.
+Ruzante’s many works include two particularly famous dialogues. The first, “Parlamento de
+Ruzante che iera vegnù de campo” , tells of the dramatic events of Ruzante, survivor of a clash with
+the Imperial troops caused by the League of Cognac to which the Republic of Venice also
+adhered. The peasant had become involved in the hope of making his fortune, but instead
+found himself risking his life. The war is described from the point of view of a terrified peasant,
+who seeks only to hide away from the gunshots and danger, faking death to save himself. Upon
+his rapid return to Venice by foot, Ruzante finds that his wife, tired of living in poverty, has left
+him for a new companion. When he protests, this new man beats him soundly. There are many
+places in Padua recalling Ruzante, including a statue now in Piazza Capitaniato and soon
+relocated in Piazzetta L.V. Terrani (the work of Amleto Sartori), one in the Giardini dell’Arena
+park (by Serge Zelikson) and a theatre. A commemorative funeral stone is positioned in the
+little church of San Daniele in Padua, whilst the house opposite is where the author lived in
+Padua.
+    </string>
+
+    <string name="moroni_title">Palazzo Moroni</string>
+    <string name="moroni_text">
+        For further information, see: www.padovanet.it\n
+        \n
+Così viene chiamato il Palazzo del Comune dal nome dell’architetto Andrea Moroni che a
+partire dal 1539 ne iniziò la costruzione. La facciata che dà su via VIII Febbraio è in realtà
+l’ala nuova del palazzo comunale, chiamata Moretti-Scarpari, costruita dopo la Prima Guerra
+Mondiale. Su di essa sono riportati i nomi di tutti i militari padovani caduti durante la Prima
+e la Seconda Guerra Mondiale: è un elenco di 1376 nomi. Attorno alla torretta centrale,
+molto in alto, immediatamente sotto la bronzea Vittoria alata a celebrazione della
+conclusione vittoriosa della Prima Guerra Mondiale (vedi scheda su Villa Giusti), sono
+collocate 4 statue in pietra di Aurisina: rappresentano la Guerra, la Pace, l’Assistenza e la
+Città di Padova. Sono opere dello scultore Salvatore Saponaro. Senza dubbio la collocazione
+ed il significato della statua della Pace (è la statua verso Sud) possono risultare lontani dal
+modo in cui intendiamo la pace oggi.
+Nel cortile, a cui si accede attraverso l’ingresso principale ad arco, sotto il portico sulla
+sinistra, è collocato un altro importante segno: il ricordo della tragedia del genocidio degli
+Armeni compiutosi in Turchia durante la Prima Guerra Mondiale a partire dal 1915. Anche il
+Comune di Padova ha voluto onorare il ricordo del primo genocidio del ‘900 collocando nel
+2005 questo bassorilievo bronzeo, opera dello scultore armeno Movses Guloyan
+(1970-vivente). Il bassorilievo riporta i seguenti versi del poeta Daniel Varujan (1884-1915),
+che fu una delle prime vittime del genocidio: “ Con la penna di canna cantai sangue / per
+libare a voi, vittime della spada ”. Sono circa una ventina le famiglie di origine armena
+presenti in città, alcune delle quali sfuggite miracolosamente al massacro.\n
+Sullo scalone che porta dal cortile al Palazzo della Ragione all’altezza del primo piano è
+collocato un altro interessante bassorilievo bronzeo opera dello scultore Piero Perin
+(1924-2008): è in memoria di Giorgio Perlasca (Como 1910-Padova 1992).\n
+        \n
+Singolare figura di Giusto del mondo, Perlasca, dopo aver aderito in modo convinto al
+fascismo ed avere partecipato come volontario dalla parte dei Franchisti alla Guerra civile
+spagnola, a Budapest, dove si trovava nel 1944-45, si impegnò nel salvataggio di migliaia di
+ebrei ungheresi dalla deportazione nei campi di sterminio nazisti. Il suo nome è ricordato al
+Museo Yad Vashem di Gerusalemme come Giusto tra le Nazioni. A lui è dedicato un albero
+anche nel Giardino dei Giusti del Mondo (vedi scheda), creato a partire dal 2008 dal Comune
+di Padova.
+    </string>
+
+    <string name="giusti_villa_title">Villa Giusti</string>
+    <string name="giusti_villa_text">
+Villa Giusti is famous because it was here that the armistice that put an end to the First World
+War between Italy and Austria-Hungary was signed on 3rd November 1918. The armistice
+came into force the following day, on 4th November, marking the effective end to hostility
+between the two countries. The armistice sanctioned the defeat of Austria-Hungary, which
+surrendered to all the harsh conditions imposed upon them by the Allied Forces. The defeat led
+to the dissolution of the multinational Austrian-Hungarian empire, the creation of new national
+entities and the redefinition of the European political map.\n
+        \n
+It was the end to a terrible war that in Italy alone had caused 654,000
+deaths, 451,000 people permanently disabled and 240,000 condemned by the military courts.
+In Italy, 4th November has now become a commemoration of National Unity and the day
+dedicated to the Armed Forces. During the war, the villa was used by the Supreme Italian
+Military Command, as well as offering accommodation and shelter to King Victor Emmanuel
+III. It is owned by the Lanfranchi family. At the time, it was owned by Count Vettor Giusti del
+Giardino, who had been mayor of Padua from 1890 to 1897 before being made senator (during
+the Savoy reign, senators were by royal appointment and remained in office for life). The room
+in which the armistice was signed retains its original furnishings of the time.\n
+        \n
+The current appearance of the villa, which was previously known as Villa Capodilista della
+Mandria, is the result of major restoration works carried out in 1875. The villa was built on top
+of earlier buildings, including a fourteenth century tower. The seven-acre garden is also worth a
+visit to admire the centuries-old trees and the design that combines an English-style woodland
+with an Italian garden.
+    </string>
+
+    <string name="tempio_pace_title">St Anthony’s Temple of Peace</string>
+    <string name="tempio_pace_text">
+Situated in the management centre area between the railway station and the Fair location, the
+temple is a place of gathering and memory; indeed, it can be defined as the city’s cemetery of
+war.\n
+        \n
+Construction began in 1920 and was completed in 1934, during the fascist period.\n
+        \n
+Designed by Italian-Armenian architect Antonio Zanivan, the church’s visible bricks and stone
+reflect the architectonic culture of central Europe, and Vienna in particular, at the start of the
+century.\n
+        \n
+It also has something of the tradition of the great charnel houses of the First World War of
+Asiago (Vicenza) and Redipuglia (Gorizia), however. The inside walls in fact hold the remains
+of 5401 Italian soldiers who fell ill or were wounded on the front during the First World War
+and subsequently died in the hospitals of Padua and the province.\n
+        \n
+The chapel to the right of the entrance features a stone covering the remains of 989 civilians of
+Padua, victims of the Allied bombs in the Second World War: their names are given on the
+walls. Another 100 unknown bodies lie under another stone in the same chapel.\n
+        \n
+Every year, a solemn mass is held in memory of the civil victims of all wars.\n
+        \n
+Inspired by the plea of Pope John Paul II “No more war”, since 1996 prayer vigils and events
+for peace have been organised here regularly. The Peace March of 1st January, organised by the
+city catholic diocese, often starts out from here, or passes by it. Meetings, conferences and
+prayer sessions are also held here, to discuss peace routes and itineraries. The Temple is home
+to a small parish, a third of whose regulars are foreigners, seeking to value the different cultures
+and, therefore, the many varied religious experiences throughout the territory.\n
+        \n
+On Epiphany, the traditional “ Festa della Genti ” (People’s Festival) is held, involving various
+different Italian and foreign religious communities based in the city, whilst the “ Rassegna di canti
+di Natale dal Mondo ” (International Christmas Carol event) sees Italian, Romanian, Filipino,
+Ukrainian, African, Chinese and Sri Lankan choirs all come together in celebration. All in the
+name of experienced ecumenism and a sharing of peace.
+    </string>
+
+    <string name="cortese_title">Father Placido Cortese</string>
+    <string name="cortese_text">
+Born Nicolò Matteo on 7th March 1907 in Cres, now part of Croatia, he was appointed priest
+with the name of Placido on 6th June 1930. After three years spent in Padua at the Saint
+Anthony Basilica, he was assigned to Milan before definitively returning to Padua in 1937, as
+director of the monthly publication “Il Messaggero di S. Antonio”. Arrested by the SS on 8th
+October 1944, he was taken to the Gestapo headquarters in Piazza Oberdan, Trieste, and he
+died the following November from the torture suffered.\n
+        \n
+<b>The role played by Father Cortese in assisting those persecuted by Nazi-Fascism</b>\n
+        \n
+Croatian prisoners held in the Chiesanuova concentration camp (where the Romagnoli barracks
+stand today), on the outskirts of Padua. Following the armistice of 8th September 1943, a
+structure was required that could help the Jews and other victims of the Nazi-Facism
+persecution leave Italy and reach Switzerland. Father Cortese joined this organisation, called
+“FRA-MA”, founded by Professor Ezio Franceschini of Milan Catholic University and by
+Concetto Marchesi, rector of Padua University (see the relevant summary). Father Cortese
+immediately stood out for his commitment and efforts made towards helping Jews,
+Czechoslovakian exiles and allied prisoners escape.\n
+        \n
+The various tasks assigned to Placido Cortese included procuring the photographs necessary
+for the false documents the people needed on their journey to Switzerland. Father Cortese used
+ex-voto photographs left by worshippers on the tomb of Saint Anthony for these documents,
+seeking out those showing people who at least partially resembled those to whom the false
+documents were to be intended.\n
+        \n
+Despite having been warned on several occasions that he should move to a different convent
+to escape capture, he instead chose to remain and continue his work until the day he was
+arrested, by virtue of trickery, by two infiltrators.\n
+        \n
+The beatificationn process began in 2002 and was completed in 2003; the deeds are now kept in
+Rome.\n
+        \n
+On 7 June 2017 Father Cortese was awarded the gold medal of Civil Merits. On 16 February
+2018 the medal was actually delivered by Sergio Mattarella, the President of the Italian Republic,
+to the friars of the Saint Anthony Basilica.
+    </string>
+
+
+    <string name="girotto_title">Father Mariano Girotto</string>
+    <string name="girotto_text">
+Born Arturo, on 22nd January 1897 in La Stortola, now S. Cosma, a hamlet of Monselice
+(Padua), of Antonio Girotto and Angela Alberti, the last of eleven children, he took priesthood
+with the name of Mariano on 30th July 1922. On 1st December 1935, he officially took up the
+post of parish priest at the church of S. Francesco in Padua, a role in which he remained until
+1972.\n
+        \n
+<b>The role played by Father Mariano in the resistance movement against Nazi-fascism</b>\n
+        \n
+A tragic turn of fate meant that the church of S. Francesco in Padua stands very close to
+Palazzo Giusti, where, from October 1944 to April 1945, the “Banda Carità” (Florence Special
+Services), named after Major Mario Carità, commander of the Special Services Department,
+joined with the German SS, took up residence. The building became a place of imprisonment
+and torture for partisans or their sympathisers, from which the unfortunate victims were only
+released for shooting or to be taken to prison camps.\n
+        \n
+Father Mariano, who had always been anti-fascist but up until then reluctant to become
+involved in the partisan fight, with the arrival of the Banda Carità in the same street in which he
+performed his religious function, found himself embarking on a series of initiatives that, even if
+not directly aimed at fighting the Nazi-fascists, were of great support to the partisan cause, not
+only morally, but also logistically and materially.\n
+        \n
+From the welcoming of the partisan leaders to the parish to making contact with prisoners held
+in Palazzo Giusti, providing assistance in supplying everyday basic needs for those wanted by
+the Nazi-fascists and visiting and comforting those hidden away or who had escaped from
+prison or were avoiding the fascist conscription, Father Mariano’s work stood out for his
+complete commitment, charity and compassion, as well as his high-risk, bold actions.\n
+        \n
+These included the installation of a radio transmitter in a corner of the convent, to allow for the
+conveying of news and information to the partisans and the organisation of an ingenious
+communication system with the prisoners of Palazzo Giusti that successfully prevented a great
+many arrests. He also hid many Jewish families and helped some out of his own pocket,
+assisting them as they escaped abroad.\n
+        \n
+<b>Father Mariano and his work after the fascist surrender</b>\n
+        \n
+After the Germans’ escape from Padua, on 28th April 1945, Father Mariano devoted his life to
+helping and hiding some non-criminal fascists, saving them from execution by the partisans.\n
+        \n
+Indeed, Father Mariano even hid a member of the Banda Carità, who had not been guilty of
+nefarious crimes, in his parish office for two months, later handing him over to the American
+authorities.\n
+        \n
+He also hid a famous fascist in the convent for months, saving him from certain revenge. As
+acknowledgement and thanks for his help, the fascist donated to the Father a villa he owned, in
+Saccolongo (Padua), which was later used as a rest home for elderly friars.
+    </string>
+
+
+    <string name="internato_title">Temple of the Unknown Internment Victims and the Internment Museum</string>
+    <string name="internato_text">
+        For further information, see: www.museodellinternamento.it\n
+        \n
+        Founded by: Don Giovanni Fortin (Monselice 23/08/1909 – Padua 16/09/1985)\n
+        \n
+Made priest in 1933, in 1938 Don Giovanni Fortin took up the reins of the parish of
+Terranegra (Padua). In December 1943, at the request of another priest, Don Antonio Varotto,
+he provided refuge to a dozen or so fleeing English prisoners in the parish.\n
+        \n
+Some fascists, pretending to be partisans, became aware of this and Don Fortin, who refused to
+collaborate, was accordingly arrested and sentenced to death. He remained in prison in Venice
+until February 1944, when he was deported to the concentration camp of Dachau.\n
+        \n
+He survived, and in June 1945 was able to return to his community in Terranegra. He worked
+to ensure the construction of the new parish church, which, at his behest, was devoted to the
+approximately 70,000 Italian soldiers who had perished in the concentration camps (the Temple
+of Internato Ignoto).\n
+        \n
+Again at his initiative, an Internment Museum was prepared to provide more in-depth
+information on one of the darkest chapters in recent history.\n
+        \n
+In 1964, he was awarded a gold medal for the assistance he had provided to all war victims.\n
+        \n
+<b>Temple of the Unknown Internment Victims</b>\n
+        \n
+The Temple (the parish church of S. Gaetano) can be reached by taking Viale dell’Internato
+Ignoto which features 27 trachyte memorial stones along the two sides. These memorial stones
+bear the names of some Nazi concentration camps, whilst those in front of the church recall
+some of their victims. The church pronaos houses stones of some internees and two sacellums
+to the right and left. The first holds the remains of Don Giovanni Fortin.\n
+        \n
+There are stones and bodies of some of the deceased prisoners housed within the church. We
+should mention the two paintings showing Saint Massimiliano Kolbe and Saint Edith Stein, as
+well as the “altar” dedicated to Mafalda of Savoy, who died in the Buchenwald concentration
+camp.\n
+        \n
+<b>Internment Museum</b>\n
+        \n
+The museum is situated to the right of the church. Near the entrance, three embossed copper
+works (by the Roma artist Loris Levak, in memory of the 500,000 Roma and Sinti who died in
+the Nazi concentration camps) provide an artistic expression condemning the barbarous
+treatment of the extermination camps and the pity felt for their victims, thereby introducing the
+visitor to the sense of the museum.\n
+        \n
+It consists of several themed rooms:\n
+        \n
+- the Sala della Storia (History Room) uses panels and other period objects to recall the events
+that led to the rise by the fascist movement to power, the progressive persecution of the Jews,
+the explosion of the war with the construction of the extermination camps and the various
+people’s rebellious and resistance movements that culminated in the liberation from the
+Nazi-fascist regime;\n
+        \n
+- the Sala della Memoria (Memory Room) holds photographs and objects bearing witness to the
+great tragedy of the “life” of prisoners in the camps.\n
+        \n
+A small temple to the side holds the ashes collected from four concentration camps: Dachau,
+Mauthausen, Buchenwald and Belsen. It is important to point out that the museum also has a
+library/ media library and a large conference room. This latter area is often used for showing
+groups introductory film clips.\n
+        \n
+The Museum and Temple aim to keep the memory alive of the many (military and civil) Italians
+who lost their lives in the Nazi concentration camps. They therefore convey a message
+condemning all forms of the oppression by man of his own kind and a desire that war can be
+overcome with the construction of reconciliation and peace.\n
+        \n
+In pursuing these goals, the national association of ex internment victims (ANEI, Associazione
+Nazionale Ex Internati) that currently manages the museum, promotes guided tours, particularly
+for younger visitors, as well as conferences and scientific congresses on these matters.
+    </string>
+
+
+    <string name="todesco_title">Mario Todesco</string>
+    <string name="todesco_text">
+Born in Solagna (Vicenza) on 15th August 1908, he graduated in literature from Padua
+University in 1931. He first taught at the Marco Foscarini secondary school in Venice and later
+(from 1942 to 1944), at the Tito Livio secondary school of Padua. Arrested by the Brigate Nere
+(Black Brigades) on 27th June 1944, he was found murdered two days later in Via Emanuele
+Filiberto in Padua.\n
+        \n
+        <b>Todesco’s commitment to the partisan cause and to the fight against fascism</b>\n
+        \n
+The 1938 implementation of Royal Decree no. 1390, which removed Jewish teachers and
+students from the Italian schools, reinforced Todesco’s anti-fascist approach that three years
+later led him to organise the struggle against fascism in schools and universities. After 25th July
+1943, his efforts intensified, becoming increasingly dangerous. He began collaborating both
+with the university group organised by Concetto Marchesi and Egidio Meneghetti and with the
+Action Party, as well as with the first unit of the National Liberation Committee established in
+Padua. He took a forefront role, making his home a collection centre for weapons, medicines
+and other materials that, through his relatives in Solagna, were then dispensed to the partisans.
+Thanks to his friendship with and the collaboration of various railway workers, he also
+managed to guarantee a safe expatriation for some Allied ex-prisoners and Jews persecuted by
+the fascists. On several occasions, in addition to providing escapees with false documents, he
+even took them to Chioggia (Venice) himself, from where they embarked out to southern Italy
+or Milan, for those deciding to head to Switzerland. Arrested for the first time on 29th
+November 1943 and released on 13th March 1944, instead of seeking refuge and going
+underground, he went straight back to his normal life and teaching, thereby exposing himself to
+the risk of a new arrest. And, in fact, this is exactly what happened a few months later, with the
+tragic results described above.\n
+        \n
+In 2008, Todesco was awarded the gold medal of Civil Merits; a local middle school has also
+been named after him. In Via Emanuele Filiberto is located the stone recalling this event.
+    </string>
+
+
+    <string name="sorelle_martini_title">The Martini Sisters</string>
+    <string name="sorelle_martini_text">
+The four Martini sisters (Teresa, Lidia, Renata and Carla Liliana) collaborate with Father
+Placido Cortese (see the relevant summary) in the “rescue chain” designed to help South
+African, New Zealand and English prisoners who escaped from the Chiesanuova (Padua)
+internment camp after 8th September 1943.\n
+        \n
+Despite the fact that they were part of a large family, numbering 12 siblings, they temporarily
+housed the prisoners in their large home, obtaining civil clothing and distributing the
+counterfeit Italian ID documents prepared by P. Cortese in the “ Messaggero ” printing room.
+They then took them by train to Oggiono, in the province of Como, where they were then
+taken care of by smugglers who, in exchange for payment, took them over the border to
+Switzerland, entrusting them to Armando Romani, a former officer who had escaped from
+Padua and coordinated the rescue missions.\n
+        \n
+Teresa and Carla Liliana, together with other women from Padua and Saonara (Padua) who hid
+the escapees in their homes, were arrested on 14th March 1944 and taken to the concentration
+camps of Mauthausen, Linz and Grein. Lidia was captured later and incarcerated in Venice,
+whilst Renata, who miraculously escaped Nazi-fascist capture, remained with her parents. The
+four sisters were reunited with their family in June 1945.\n
+        \n
+Their names have been engraved into the stone of Father Cortese in the “ Giardino dei Giusti ”
+(Garden of the Righteous) in Terranegra.\n
+        \n
+On 25 September 2017, Carla Liliana Martini, the last of the sisters still alive, also died.
+    </string>
+
+
+    <string name="barbato_title">Silvio Barbato</string>
+    <string name="barbato_text">
+Born in Ponte di Brenta (Padua) on 12th February 1880, he was employed by Veneta Ferrovie.
+During the last few years of his life he was forced by a serious hearing disability to abandon the
+political scene where is was active a socialist reformist. He was murdered on 11th June 1944 in
+front of the Brigate Nere barracks of Ponte di Brenta, apparently in retaliation (in a similar
+fashion to the anti-fascist Enrico Zanella, killed that same day as Barbato, in Vigonza, in the
+province of Padua) for the murder of the fascist party secretary Giuseppe Begon, by the
+Patriotic Action Groups.\n
+        \n
+        <b>The personality of Barbato and his commitment to ideals of nonviolence and justice</b>\n
+        \n
+Barbato’s work throughout his political and trade union career was always focused on
+obtaining freedom and dignity for the social classes in greatest difficulty. In order to achieve
+this end, he strove to ensure that the population became aware of their rights and reached
+political power through free elections. Barbato had some success for workers in Padua and the
+province, including the “ Concordato per l’equo trattamento ” (Fair Treatment Agreement). He took
+a position with regards to fascism that was coherent with the standards by which he lived his
+life, yet without challenging its power and never being involved in conspiracies or other
+violent initiatives. He was a firm believer that not only was violence barbaric and uncivilized,
+but it was also counter-productive, because it resulted in the conquest of power that simple
+could not last, insofar as its grip was purely through the brutality of its methods.\n
+        \n
+        <i>“I prefer to die than use violence against anyone, or worse still kill!”</i> - Silvio Barbato
+    </string>
+
+
+    <string name="marchesi_title">Concetto Marchesi</string>
+    <string name="marchesi_text">
+Born in Catania on 1st February 1878, he graduated in literature from Florence University in
+1899 and then in law in Messina in 1923. That same year he moved to Padua to teach
+Mediaeval Latin at the local university, of which he was then appointed rector on 7th
+September 1943. In 1946, he was elected member of the Constituent Assembly and was
+involved in drafting the Italian Constitution. A national MP for the Communist Party since
+1948, he died in Rome on 12th February 1957.\n
+        \n
+<b>The role played by Concetto Marchesi in the fight against Nazi-fascism</b>\n
+        \n
+In May 1943, accompanied by other anti-fascists, he met secretly with General Cadorna, to
+work out how the military forces could best act if any initiatives should be taken against the
+fascist regime. A few days after having moved to Padua, in his role as university rector, on 10th
+September 1943, he and the pro- rector Egidio Meneghetti, together with Silvio Trentin,
+formed the National Liberation Committee of Veneto.\n
+Right from his first speech after appointment, made before the Fascist Minister of Education,
+Mr Biggini, he firmly expelled thirty or so fascists in uniform who were terming the students
+present cowards and draft dodgers. Later he was also to clash directly with the German
+commander of the Padua area, Mr Von Frankenberg. Indeed, having been asked to allow the
+installation of a radio station in the Experimental Physics Institute tower, Marchesi opposed the
+request decisively. The German commander, who was already hostile towards Marchesi by
+virtue of these events, held him responsible for the increasing skirmishes between students and
+the Italian Social Republic militia and asked Padua’s Prefect, Primo Fumei, to intervene.
+Marchesi was warned that he risked arrest and decided to go underground.\n
+On 29th November, he tendered his resignation to the Minister Biggini and addressed his
+famous appeal, post-dated to 1st December, to the students of Padua. This appeal, which was
+launched on 5th December, not only criticised the political class but also urged the younger
+generation to rise up against fascism. It had a major effect, first in Italy and then abroad, being
+disseminated both in Switzerland and broadcast over Radio London. In the meantime,
+Marchesi moved to Milan and then other cities, before crossing the border to Switzerland in
+February 1944. Here, he established a unit of the clandestine organisation FRA-MA
+(Franceschini-Marchesi), connected with the Veneto National Liberation Committee and the
+Action Party, and entertained relations with the allied information services. From April to
+November 1944, he led a new supplies route for the partisans fighting in northern Italy.
+    </string>
+
+
+    <string name="giusti_giardino_title">The Garden of the Righteous in the World</string>
+    <string name="giusti_giardino_text">
+        For further information, see: www.padovanet.it/giusti/
+        \n\n
+Opposite the Tempio dell’Internato Ignoto (Temple of the Unknown Internment Victims) and
+the Internment Museum, rising up towards the top of the banks of the S. Gregorio canal, is a
+truly unique garden of great symbolic value.\n
+This is the “ Giardino dei Giusti del Mondo ” (Garden of the Righteous in the World), introduced,
+on the right, by a wall featuring the words of Hannah Arendt “ Si può sempre dire un sì o un no ”
+(You can always say yes or no) and some sculptures by Elio Armano.\n
+Its underlying purpose is to “reveal the concept of righteousness as a universal one, regardless
+of any specific historic or geographic context and to pay homage to those who have opposed
+crimes against humanity perpetrated as from the 20th century” (Giuliano Pisani). It is therefore
+dedicated to all those people, often unknown, who in extreme situations (of genocide or civil
+war or similar) have put their own lives at risk to save those of others.\n
+At present the “Righteous” who have operated in four genocides (Armenia, Shoah, Rwanda
+and Bosnia) are recalled in a stele bearing their name and a tree, as a symbol of life, planted in
+their honour. Of all those we could cite, we would just mention, insofar as they are connected
+in some way with the city of Padua, husband and wife Giovanni and Regina Bettin, Father
+Placido Cortese, Giorgio Perlasca and Father Marco Antonio Pressino. The project, which was
+started on the initiative of Giuliano Pisani, was officially opened in 2008 and is connected with
+other similar projects started in other countries. A scientific committee has the task of
+evaluating which new names of the “Righteous” can be added and oversees the various events
+organised to ensure reflection on these matters involving society as a whole and the younger
+generations in particular. The documents are available for perusal at the Padua City Council
+offices. Other stones and plants are added each year along the banks now referred to as the
+“ Cammino dei Giusti ” (Path of the Righteous) and in the municipality of Noventa Padovana
+(Padua), with a trail that, in the future, will head along the Brenta river until it reaches the sea.
+    </string>
+
+
+    <string name="centro_umani_title">Human Rights Centre <i>“Antonio Papisca”</i></string>
+    <string name="centro_umani_text">
+        For further information, see: http://unipd-centrodirittiumani.it
+        \n\n
+The current “Human Rights Centre “Antonio Papisca” was opened in 1982 within the Political
+Sciences Faculty of Padua University.\n
+It was created by Professor Antonio Papisca, who was also its first director. At present, four
+university departments adhere to the centre.\n
+The Centre aims to:\n
+- build interdisciplinary “knowledge” on human rights and the rights of people;\n
+- spread awareness of the theoretical and applicative contents of this knowledge;\n
+- educate to ensure that knowledge of human rights is fully implemented in social and
+political life.\n
+The University Human Rights Centre is recognised as a UNESCO Chair “Human rights,
+democracy and peace” and as a European Jean Monnet Centre of Excellence.\n
+\n
+        The centre manages the European Master in Human Rights and Democracy, the study grant
+on “Civic defence and people’s rights”, as part of the Agreement with the Office of the
+Regional Ombudsman of the Region of Veneto, and the study grant on the “Social services
+custody by the legal authorities” under the scope of the Agreement with the Office of the
+Ombudsman for Children of the Region of Veneto. It also houses the important regional
+archive “Pace diritti umani - Peace human rights”, which collects, processes and makes publicly
+available documents, themed databases and information resources. The Centre publishes the
+magazine entitled “Pace diritti umani - Peace human rights” and the editorial series “ Quaderni.
+Ricerca e documentazione interdisciplinare sui diritti umani ” (Paperbooks. Interdisciplinary research and
+documentation on Human rights).\n
+In more than 30 years since it was first opened, the Centre has published countless scientific
+works and is one of Italy’s, indeed Europe’s most qualified university hubs in the research and
+dissemination of matters relating to human rights.
+    </string>
+
+
+
+    <string name="banca_etica_title">Banca Etica (the <i>“Ethical Bank”</i>)</string>
+    <string name="banca_etica__text">
+        For further information, see: www.bancaetica.it
+        \n\n
+In the 1980s, some of the pacifist and other organisations involved in the cooperation between
+Italy and the Third World began asking themselves about the social role played by money and
+querying the fact that traditional banks often operated making financing and investment
+choices that were in contrast with the values pursued by these movements.\n
+In the 1980s, these considerations on the need for a responsible, controlled use of money gave
+        rise to the cooperative companies called MAG (<i>Mutue per l’Autogestione</i>, Mutual Aid Associations
+for Self Management). Their objective was (and continues to be) twofold: to create a system for
+the collection and use of funds raised by its members, privileging those in difficulty and
+proposing social projects. Forced by new legislation and driven by the need to provide the
+tertiary sector with a suitable financial entity, in 1999 they created Banca Popolare Etica. Its
+history therefore starts from the bottom, thanks to the hard work of a great many people and
+organisations who strove to establish a bank inspired by ethical finance. Banca Etica (the
+“Ethical Bank”) conducts its business hinged on the following principles: <b>transparency,
+participation, fairness, efficiency, sobriety, attention to non- economic consequences of
+economic actions and credit as a human right</b>. This is why the bank has developed various
+“ethical guarantee” instruments by which to assure the effective possibility of responsible use
+of money. It is involved in the European coordination of ethical financial institutes and, as
+Etica Srl, manages investment funds in Europe. It uses the savings collected to finance
+organisations operating in four specific sectors: <b>social cooperation, international
+        cooperation, culture and environmental protection.</b>\n
+As it is a cooperative bank, democratic management is assured by the free participation of its
+members, on the basis of “one head, one vote” principle.
+    </string>
+
+
+    <string name="beati_title">Blessed are the Peace Builders</string>
+    <string name="beati_text">
+Near the Golena San Massimo of the Piovego canal, from which a picturesque view of the
+sixteenth century walls of Padua can be enjoyed, we find the headquarters of the “Beati i
+costruttori di Pace”.\n
+This association, famous for its commitment to peace both nationally and internationally, was
+founded in 1985, above all on the initiative of Don Albino Bizzotto. That year, a group of
+Catholic worshippers prepared a document entitled “Beati i costruttori di Pace”, setting out a
+clear position in terms of peace, disarmament, conscientious objection and nonviolence. The
+document signed quickly by thousands of consecrated and lay members of the church alike,
+was sent as an appeal to the Catholic Church of the Triveneto area. The promoters of the
+initiative, who in the meantime had formed an association, therefore decided to follow up on
+this commitment by organising five annual assemblies in Verona arena. The aim was to
+compare notes, with discussion led by important scholars and witnesses, on matters of peace, as
+well as on new lifestyles, the ethical economy and finance. In terms of popular diplomacy, the
+attempted nonviolent interposition implemented in 1993 in besieged Sarajevo, to which
+hundreds of militants for peace flocked initially, whilst a great many alternated their presence in
+the city over the following years, was particularly important.\n
+In 2001, the Association organized another peace mission in Bukavu, in north Kivu
+(Democratic Republic of Congo). The Association has also been involved in a great many other
+initiatives against ongoing military conflicts, military bases, atomic weapons, nuclear power for
+civilian use and in favour of solidarity with immigrants.
+    </string>
+
+
+    <string name="prandina_title">Prandina Park</string>
+    <string name="prandina_text">
+The Great General Town Plan of 1957 of the city of Padua allocated the large area (60,000 m2)
+owned by the military administration, inside the sixteenth century Venetian walls near Porta
+Savonarola, to a public green area. The area had been taken up by old mechanical workshops,
+properties for soldiers’ families, large yards and, in the ancient Convent of San Benedetto,
+commands and offices of various ex-servicemen’s associations.\n
+In 1983, a small portion of this area (4000 square metres) was converted back into a public
+park: Parco Cavalleggeri, locally better known as Parco Prandina, from the name of the
+barracks. This was achieved thanks to the hard work of many associations operating for peace
+and ecology, as well as through the dedication of residents of the central district, who animated
+the gardens with parties, teaching routes and mural paintings produced by the local art schools.
+The pressure applied to the City council for it to purchase the area also resulted in the
+restoration of a building that is now used for congresses and various forms of entertainment.
+In 1991, with the contribution made by conscientious objectors to military expenses, the “Sign
+of Peace” was created. This is an olive tree surrounded by four bronze high- reliefs, the work
+carried out free of charge by four Padua-born artists (Iral, Liverani, Petrucci and Rodella), who
+applied their own personal style to interpret the clear opposition to war and efforts made for
+peace in those years.\n
+Prandina Park is the first important example in Padua - a city so filled with barracks and former
+military buildings - of the reconversion for civil use of a military area.
+    </string>
+
+
+    <string name="ramin_title">Ezechiele Ramin</string>
+    <string name="ramin_text">
+Born on 9th February 1953 in Padua, he attended the classical studies secondary school at the
+Barbarigo College, which he completed successfully in 1972. He then began v o l u n t e e r
+work with the local group of the “Mani Tese” association.
+In 1972, he joined the Comboni missionaries, completing his training in various cities
+throughout Italy and then in Chicago in 1977.
+He therefore graduated in theology, specialised in missiology. He was involved in pastoral
+experiences with the Native Americans of South Dakota and in Baja California (Mexico).
+Following his ordination on 28th September 1980, he worked in various places in Italy (Naples,
+Troy, etc.), before being sent to Cacoal in the State of Rondonia (Brazil) on 20th January 1984.
+It was here that he met his untimely demise on 24th July 1985, for having taken the side of the
+campesinos and challenged the fazenderos , the local landowners.
+        \n
+        <b>Peace, justice and nonviolence</b>\n
+        \n
+Since a very young age, these were the ideals that inspired Ezechiele Ramin and as an avid
+young reader, he devoured books by Dietrich Bonhoeffer, a Protestant theologian. The concept
+of justice and the desire to fight social injustice, even at the cost of his own life, cut dramatically
+short, was what drove Ramin to do so for as long as he was able. During one of his last
+homilies, on 17th February 1985, he said: “ The free areas of our State of Rondonia, namely no man’s
+land, belong to our brothers without land, and not to the greedy fazenderos. No, because this is not justice… ”.
+Whilst in Cacoal, he sought to persuade the locals to oppose the landowners by organising
+peaceful protests instead of armed fights. The day he died he intervened approximately 100 km
+from Cacoal, in a dispute between farmers and landowners, seeking to convince the farmers
+not to take up arms and instead to wait for the State of Rondonia to assign them land, paying
+the owners a cash indemnity. The success of his peaceful action was, therefore, perhaps the
+reason that led to his death sentence. His moral authority and prestige amongst the campesinos
+made him a dangerous adversary for anyone not wishing to see the further development of an
+organisation of small farmers.\n
+        \n
+On 25 April 2017 the Rogatory for his Beatification and Canonisation, which was started in April
+2016, was closed at the Diocese of Padua.\n
+        \n
+“We cannot sit here with our arms folded, waiting for others to rise up first. Come on,
+let’s get moving first ourselves, let’s do something. Because the others will then follow” - Ezechiele Ramin
+    </string>
+
+
+    <string name="canova_title">Francesco Canova</string>
+    <string name="canova_text">
+Canova was born in Schio (Vicenza) on 21st March 1908. Despite his family’s financial
+difficulties, in 1927 he managed to enrol in the Faculty of Medicine of Padua University.
+During his studies, he joined the Italian Catholic Federation of University Students (FUCI),
+managed by Igino Righetti and Giovanni Battista Montini. Canova claimed that “At the time,
+wearing a FUCI badge meant being exposed to continuous insult and sarcasm, and all too
+often, violence”.\n
+He graduated with first class honours in 1933, but was not awarded a distinction, almost
+certainly for political reasons. With a solid preparation behind him, he received various offers
+of work, all, however, bound to his adhering to fascism.\n
+Yet he gradually made a clamorous choice dictated not only by his refusal of the regimen, but
+also by a strong inner drive in which the evangelical call to help others played a central role.
+Thus in 1935 he left for Jordan where he worked as a doctor in the missionary hospital of
+El-Kerak. He was later joined by his wife, Reginetta Dal Zio, whom he had married in 1936. In
+June 1940, as Italy entered the war, Canova was interned by the British authorities in Palestine.
+During his imprisonment, he was put in charge of providing Italian and foreign prisoners held
+in the region with medical assistance. He was released in March 1944. Unable to return to Italy
+or resume work in El-Kerak Hospital, which had been seized by the English, Canova worked
+independently in Jerusalem. In 1947 he made his definitive return to Italy with a view to
+devoting his time to a project that he had already mentioned to Montini and Father Agostino
+Gemelli, rector of the Catholic University of Milan, during his early years in El-Kerak: to
+establish a university that would train Italian and foreign medical students who could then be
+sent to work as doctors in missionary hospitals. The initiative did not take off immediately:
+resources were limited in Italy still suffering the aftermath of the war, and not all clerical
+environments were in favour. But Canova refused to give up and in December 1950, with the
+support of the Bishop of Padua, Girolamo Bortignon, he founded the University College of
+Aspiring Missionary Doctors, the CUAMM, which began housing and training Italian and
+foreign students and sending its first doctors to the missionary hospitals. In 1955, Canova,
+secretary for CUAMM, was joined by Don Luigi Mazzucato, who acted as director until 2008.
+Canova was also chief physician in the Clinica Sanatoriale in Bassano del Grappa (Vicenza) and
+authored a great many books. Over the years, he continued to work with CUAMM, maintaining
+correspondence with doctors and staff sent to Africa, and remaining a constant presence in the
+life of the organisation he had founded until his death in Padua on 25th July 1998.
+    </string>
+
+
+    <string name="caserma_piave_title">Piave Barracks</string>
+    <string name="caserma_piave_text">
+Up until 1st January 2005, when compulsory military service was abolished, the Piave barracks,
+which, like other similar military structures, occupied an ancient secularised convent, was the
+place where military check-ups took place, the three days during which fitness to serve was
+assessed.\n
+Here, and specifically on the pavement in front of the barracks, given that the soldiers
+prohibited access to the yard, for a great many years conscientious objectors of Padua handed
+out leaflets, informing the young recruits that they had the right to object to military service on
+conscientious grounds and instead serve civilian service. If truth be told, in fact, the 1972 law
+no. 772 made civilian service a valid option in Italy too, in lieu of military service, but the
+military structures were careful not to inform the young recruits of this. More generally, for
+almost forty years, civilian service was managed by the military structures, which sought in all
+ways possible to hinder the application of the law.\n
+Conscientious objection and civilian service were a key opportunity of great mobilisation
+amongst the younger generations, particularly in the 1970s and 80s, and found Padua to be an
+important hub where major events were organised. Padua also hosted some of the first
+objectors to be imprisoned before the approval of the conscientious objection law (1972), such
+as Alberto Trevisan and Alberto Gardin, and, afterwards, Padua was important for the many
+political fights against the application of the civilian service law: self- reduction,
+self-secondment and opposition of applications that had been rejected. Thereafter, despite a
+dizzying increase in the number of applications submitted for civilian, as opposed to military
+service, the younger generations gradually lost interest in peace matters, as the civilian service
+organisational difficulties grew. In Padua, a strong group of the Conscientious Objectors
+League has been active for many years. Today, young men and women are allowed to perform
+the voluntary civilian service.\n
+        \n
+On 29 November 2017 the former Piave Barracks was officially delivered to the University
+of Padua, which will build the <i>"Campus del Polo Scienze Sociali ed Economia (Campus of
+        the Social Sciences and Economics Pole)"</i>.
+    </string>
+
+
+    <string name="comboniani_title">Comboni Fathers</string>
+    <string name="comboniani_text">
+For further information, see: www.comboniani.org\n
+        \n
+Of the numerous religious orders represented in Padua, the Comboni Missionary Fathers have
+always particularly stood out for their active commitment to peace and nonviolence.
+Publishers of the historic missionary magazines “ Nigrizia ”, “ Il piccolo missionario ” and “ Combifem ”,
+they have always accompanied missionary work in Africa with a commitment to pacification
+and to instilling the culture of the evangelic message and social promotion, true to the motto of
+their founder, Saint Daniele Comboni (Limone sul Garda 1831- Karthoum 1881): “Africa with
+the Africans”.\n
+They were first, in the 1980s, to denounce the trafficking of weapons with the corrupt regimes
+of a great many countries, and this led to their being heavily criticised in Italy and expelled from
+various African countries, also because they declared that much of the international
+cooperation was hypocritical, mystifying and functional only to allowing Italian businesses to
+enter foreign markets. The best way to help development, on the other hand, was to encourage
+pacification, mediation in conflict and put an end to weapons sales.\n
+In Padua, the Comboni collaborated openly with all peace campaigns and initiatives (from
+supporting conscientious objectors to military service and military expenditure through to
+campaigns against mines and atomic bombs and the NATO base of Aviano (Pordenone), as
+well as against the interventions in Iraq and Afghanistan), thereby historicising their unique
+missionary charisma. For schools and young movements, they opened a rich, up- to-date
+documents centre dedicated to Paulo Freire, where magazines, publications and books on peace
+and missionary commitment can all be found. One wing of the building, Casa Comboni, is used
+by several associations working towards international cooperation, helping get the many
+foreigners that visit them settled, and striving to have the areas of Italian legislation that are so
+restrictive and penalising for foreigners, refugees and political refugees, amended.
+    </string>
+
+
+    <string name="casa_arcobaleno_title">Casa Arcobaleno (The Rainbow House)</string>
+    <string name="casa_arcobaleno_text">
+For further information, see: www.mirpadova.org, www.assopace.org
+The MIR (Movimento Internazionale della Riconciliazione), the Italian branch of the
+spiritually-based nonviolent International Fellowship of Reconciliation established in 1914 and
+operating worldwide, has been active in Padua since the late 1970s, when it was created on the
+initiative of a group of young men and women interested in matters of nonviolence and
+conscientious objection.\n
+In forty years, starting from the central nucleus of nonviolence, its work has involved many
+different related areas: ranging from conscientious objection to military service to the research
+on nonviolent popular defence. It has also campaigned against military expenditure, for
+nonviolent methods and against Euromissiles, the military bases and the F35 airplanes and has
+contributed to the dissemination of peace education and a culture of nonviolence.\n
+The Association for Peace was created as a national organisation on the ashes of the popular
+committees that in the early 1980s had organised opposition against Euromissiles. Since then, it
+has always worked on matters of peace, disarmament, military expenses, the opposition to war
+and international solidarity, particularly with the populations of ex-Yugoslavia and Palestine.
+The structure that houses these two groups is the Casa Arcobaleno. Its use by Padua-based
+eco-pacifist associations was authorised by the Padua City Council in 1989, as part of a project
+that looked to connect the multiple and varied approaches taken to issues concerning peace,
+the environment and international cooperation.\n
+Casa Arcobaleno takes up the left portion of the avant-corps of the former Padua
+slaughterhouse. The former slaughterhouse is a structure dating to the early 1900s, partly taken
+up by cultural activities and partly as yet abandoned and awaiting restoration, with a pretty
+historic garden.\n
+The building occupying the right- hand side instead houses the CLAC (Community for Free
+Cultural Activities) since the 1970s, grouping together several different, mainly
+environmentalist, associations.\n
+The entire structure, a rare example of industrial archaeology, is a site protected by UNESCO
+    </string>
+
+
+    <string name="esquivel_title">Adolfo Pérez Esquivel</string>
+    <string name="equivel_text">
+Born in Buenos Aires, Argentina, on 26th November 1931, he attended the National School of
+Fine Arts and Plata National University.
+Having graduated in architecture, he initially worked as a teacher but thereafter decided to
+spend his life helping the poor and fighting social injustice, contributing to the 1974 foundation
+of the “Servicio Paz y Justicia (Serpaj)” movement. Following the coup d’etat in Argentina on
+24th March 1976, in spring 1977, Esquivel was arrested with no formal charges and then
+incarcerated for 14 months without being taken to trial. After being tortured, he was eventually
+released, but remained under house arrest for 14 months. In 1980, he was awarded the Nobel
+Peace Prize and in 1999 received the Pacem in Terris prize awarded by the Catholic Church to
+people who stand out for their work in matters of peace and justice.\n
+        \n
+<b>The Serpaj</b>\n
+        \n
+The creation of Serpaj can be traced to the 1962 journey made by two delegates of the
+International Fellowship of Reconciliation (of which the MIR is the Italian branch) in South
+America: Jean and Hildegard Goss. Their aim was to analyse the explosive situation in Latin
+America, the consequence of a long-standing tradition of social inequality and a worsening of
+various forms of exploitation of the population. Their meeting with Father Camilo Torres, at
+the time a supporter of armed fighting, enabled Jean and Hildegard to initiate debate on
+potential alternatives and the possibility that nonviolence may allow for a step forward to be
+made towards liberation.\n
+Over the next few years, the two representatives of IFOR continued to meet with people and
+organisations and the results of all this hard work were finally seen in Colombia in 1974, when
+this non-governmental organisation, committed to promoting human rights, solidarity and
+nonviolence, was formally established. In 1974, Esquivel was appointed general coordinator of
+Serpaj for Latin America, at the time consisting of groups and movements whose members
+ranged from religious figures to laymen, farmers, natives, grassroots organisations and
+intellectuals, all united in their concern over the fate of their countries and committed to
+promoting shared policies and actions to fight violence and the oppression of military dictators
+at the government. In 1975, Serpaj was involved in the foundation of the Permanent Assembly
+for Human Rights and in the Ecumenical Movement for Human Rights and embarked on an
+international campaign to denounce the atrocities performed by military dictatorships. Esquivel
+is today president of Serpaj- Argentina.\n
+        \n
+        <i>“Nonviolence is not passiveness, it is active resistance to injustice”</i> - Adolfo Pérez Esquivel
     </string>
 
 </resources>

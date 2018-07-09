@@ -7,11 +7,11 @@
     tools:context="it.unive.dais.cevid.appace.component.MapsActivity">
 
     <LinearLayout
-        android:layout_width="@dimen/linear_layout_width"
-        android:layout_height="@dimen/linear_layout_height"
+        android:layout_width="@dimen/map_layout_width"
+        android:layout_height="@dimen/map_layout_height"
         android:layout_gravity="start|bottom"
-        android:layout_marginBottom="@dimen/linear_layout_margin_bottom"
-        android:layout_marginStart="@dimen/linear_layout_margin_left"
+        android:layout_marginBottom="@dimen/map_layout_margin_bottom"
+        android:layout_marginStart="@dimen/map_layout_margin_left"
         android:gravity="start"
         android:orientation="vertical"
         android:weightSum="2">

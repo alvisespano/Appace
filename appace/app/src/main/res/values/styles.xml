@@ -10,6 +10,11 @@
         <item name="coordinatorLayoutStyle">@style/Widget.Support.CoordinatorLayout</item>
     </style>
 
+    <style name="Custom.Widget.TextView" parent="@android:style/Widget.TextView">
+        <item name="android:gravity">fill</item>
+        <item name="android:paddingBottom">@dimen/textview_extra_padding_workaround</item>
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

@@ -32,6 +32,7 @@
             android:fontFamily="@font/grotesk"
             android:gravity="center_horizontal|start"
             android:linksClickable="true"
+            style="@style/Custom.Widget.TextView"
             android:text="@string/tomba_antenore_text"
             android:textColor="@color/site_textColor"
             android:textColorHighlight="@color/textColorHighlight"
