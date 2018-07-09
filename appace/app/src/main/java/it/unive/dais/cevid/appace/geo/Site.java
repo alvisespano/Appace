@@ -6,14 +6,12 @@ import android.support.annotation.NonNull;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.io.Serializable;
-import java.util.Map;
 import java.util.TreeMap;
 
 import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
 import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
 import it.unive.dais.cevid.datadroid.lib.util.Function;
 import it.unive.dais.cevid.datadroid.lib.util.MapItem;
-import it.unive.dais.cevid.datadroid.lib.util.Prelude;
 import it.unive.dais.cevid.datadroid.lib.util.UnexpectedException;
 
 public class Site implements MapItem, Serializable {
@@ -81,7 +79,7 @@ public class Site implements MapItem, Serializable {
 
     @NonNull
     public String getRomanOrdinal() {
-        return RomanNumber.toRoman(row.getLine() - 1);  // header counts as first line
+        return RomanConverter.toRoman(row.getLine() - 1);  // header counts as first line
     }
 
     @NonNull
@@ -89,7 +87,7 @@ public class Site implements MapItem, Serializable {
         return getRow(ADDRESS);
     }
 
-    private static class RomanNumber {
+    private static class RomanConverter {
 
         private final static TreeMap<Integer, String> map = new TreeMap<>();
 
@@ -110,11 +108,11 @@ public class Site implements MapItem, Serializable {
         }
 
         public static String toRoman(int number) {
-            int l =  map.floorKey(number);
-            if ( number == l ) {
+            int l = map.floorKey(number);
+            if (number == l) {
                 return map.get(number);
             }
-            return map.get(l) + toRoman(number-l);
+            return map.get(l) + toRoman(number - l);
         }
     }
 
