@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tomba_antenore_title">"<i>Antenor</i>\'s Tomb"</string>
+    <string name="tomba_antenore_text">
+According to Greek-Roman tradition, Antenor (<I>Antenore</I> in Italian) was the legendary founder
+of Padua.\n
+In the Iliad, Antenor is a noble wise man of Troy who first seeks to avoid a clash with the
+Greeks, encouraging negotiations with Menelaus and Ulysses, and thereafter requests that Helen
+be returned to her Greek husband in order to put an end to the war.\n
+Later texts tell of his journey across the Mediterranean after Troy was destroyed, of his arrival on
+the shores of Venice and foundation of Padua, as a new home for the surviving Trojans.\n
+Yet the positive image we have of Antenor, sustained by Titus Livius Patavinus (57 BC - 17 AD)
+and Virgil (70 BC - 19 BC) is flanked by a negative version, which portrays him as a traitor and
+the cause of the Trojan defeat.\n
+This vision is exacerbated in Mediaeval knightly tales and taken up by Dante, who in his Divine
+Comedy names the round in the circle of hell where traitors of their countries are punished
+“ Antenorea ”.\n
+In Padua, the legend is revived in the Age of the Communes. Judge and poet Lovato Lovati
+(1240- 1309) promoted the construction of a monument in celebration of Antenor, which was
+completed by the municipality in 1283-1285 (according to two stone plaques on the aedicule): a
+sarcophagus dating to the Late Antiquity, holding what are believed to be the remains of the
+legendary founder (although in actual fact, modern scientific investigations date the body in the
+sepulchre to between the 2nd and 5th century AD), and an aedicule featuring columns and
+arches, originally adjoined to the church of San Lorenzo, which was knocked down in 1937 to
+open up to the current piazza.\n
+Lovato composed the inscription carved into the sarcophagus, taking up texts by Livius and
+Virgil. A translation (translated here from the version by Giorgio Ronconi) of his difficult
+pre-humanistic Latin reads: <I>“ Noble Antenor, supporter of domestic peace, here brought the fugitive Eneti and
+Dardanians [Trojans], crushed the Euganei and founded the city of Padua: here is his home, carved into humble
+        marble. ”</I>\n
+At a time when political dynamics were usually solved through war and violence, Lovato presents
+the people of Padua not so much with the Trojan hero’s wartime value, but highlights the role of
+Antenor as pacifier, a civic model to be imitated
+    </string>
+
+    <string name="ponte_torricelle_title">Epigraph to the Torricelle Bridge</string>
+    <string name="ponte_torricelle_text">
+    This epigraph was originally located on the Torricelle Gate when it was constructed in 1210.
+    When the gate was knocked down in 1819, the stone plaque was positioned on a home, before
+    ending up where it is today, in Via Roma.\n\n
+    The epigraph is carved into Nanto stone and positioned under another stone that recalls the
+    entrance by Ezzelino da Romano in 1237.\n\n
+    The Latin text in ten hexameters was dictated by Giovanni Valdetaro, a grammarian amongst
+    the entourage of the Podesta in office, Giacomo Landi from Piacenza, as the official
+    certification of Padua municipality. The translation reads:\n\n
+    <I>“ The nobleman Giacomo Landi, native to Piacenza, deservedly Podesta of Padua, in 1210 adorned the city
+    with walls and a gate facing south. O sons of Antenor, if you wish to be safe from the enemy outside, Peace will
+    bind you within, with a wall of love. In vain is the shade sought under a leafy tree if an acute disease corrodes our
+        bladders within.</I>\n\n
+    If the fatigue and the expense of the wall is not to be wasted, listen to the counsel of your poet Giovanni ”
+    The text refers to the construction of a new part of the city walls, which connected the Gate to
+    the Castle running along the canal in lieu of the previous ones.\n
+    The concerned invitation of the local authorities for harmony amongst the citizens is expressed
+    in a period of great social and political change, with frequent internal divisions and violent
+    clashes.\n
+    Only one other inscription is known with similar contents and dating to the same period, in the
+    city of Bremen.
+    </string>
+
+    <string name="san_antonio_title">Saint Anthony</string>
+    <string name="san_antonio_text">
+        Saint Anthony is famous the world over: considered a saint whilst still alive, he was canonised
+less than a year after his death. Born in Lisbon, probably in 1195, he died in Padua on 13th
+June 1231 and is the patron saint of not only Padua but Portugal and Brazil too. Having
+become a Franciscan, he spent the last seven years of his life working and preaching in the
+north of Italy and France. He has always opposed violence and sought to settle disputes and
+arguments at every occasion.\n\n
+In May 1231, Anthony bravely faced up unarmed to the powerful Ezzelino III da Romano -
+vicar of the Emperor Frederick II and ruler of Verona, and asked him to free his political
+adversary and brother-in-law, Count Rizzardo, whom Ezzelino had imprisoned. Although
+unsuccessful on this occasion, he was more fortunate in Padua, a short while before he passed
+away, as he obtained an attenuation from the municipality of the harsh law governing insolvent
+debtors, which effectively struck the poorest members of the community, forcing them to
+imprisonment: “at the instance of the venerable friar Anthony of the Order of the Friars
+Minor”, it was established that no one else would be imprisoned for unpaid debts in the future,
+as long as they were willing to give up their belongings.\n\n
+Over the centuries, he has inspired the work of a great many other people who have kept his
+spirit alive (see, for example, the summary on Father Cortese).\n\n
+Construction on the Basilica that houses the Saint’s remains began in the 13th century and was
+basically completed in 1310. Since then, it has undergone various restoration and extension
+works, with the apse area restored in the 15th century and other works carried out generally in
+the seventeenth and eighteenth centuries.\n\n
+        For further information, see: www.basilicadelsanto.it
+    </string>
+
+</resources>

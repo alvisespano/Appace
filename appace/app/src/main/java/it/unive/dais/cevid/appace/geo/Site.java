@@ -1,11 +1,19 @@
 package it.unive.dais.cevid.appace.geo;
 
+import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.location.Location;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
+import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
 
-import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeMap;
 
 import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
@@ -14,19 +22,22 @@ import it.unive.dais.cevid.datadroid.lib.util.Function;
 import it.unive.dais.cevid.datadroid.lib.util.MapItem;
 import it.unive.dais.cevid.datadroid.lib.util.UnexpectedException;
 
-public class Site implements MapItem, Serializable {
+public class Site implements MapItem {
 
+    private static final String TAG = "Site";
     private static final String LATITUDE = "Latitude";
     private static final String LONGITUDE = "Longitude";
-    private static final String TITLE = "Title";
-    private static final String DESCRIPTION = "Description";
-    private static final String PHOTO = "Photo";
+    private static final String ROOT = "Root";
     private static final String ADDRESS = "Address";
+    private static final String ERA = "Era";
 
+    @NonNull
+    private final Context ctx;
     @NonNull
     private final CsvParser.Row row;
 
-    public Site(@NonNull CsvParser.Row row) {
+    public Site(@NonNull Context ctx, @NonNull CsvParser.Row row) {
+        this.ctx = ctx;
         this.row = row;
     }
 
@@ -55,40 +66,120 @@ public class Site implements MapItem, Serializable {
         }
     }
 
-    @Override
     @NonNull
+    @Override
     public String getTitle() {
-        return getRow(TITLE);
+        return ctx.getString(getTitleResId());
+    }
+
+    @StringRes
+    public int getTitleResId() {
+        return getHtmlStringResourceByName(ctx, String.format("%s_title", getRoot()));
+    }
+
+    @StringRes
+    public int getDescriptionResId() {
+        return getHtmlStringResourceByName(ctx, String.format("%s_text", getRoot()));
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Site[%s]", getRoot());
+    }
+
+    @NonNull
+    public String getRoot() {
+        return getRow(ROOT);
+    }
+
+    public CsvParser.Row getCsvRow() {
+        return row;
+    }
+
+    public enum Era {
+        PreXX, XX, XXI
+    }
+
+    @NonNull
+    public Era getEra() {
+        String s = getRow(ERA);
+        switch (s) {
+            case "1":
+            case "PreXX":
+            case "XIX":
+                return Era.PreXX;
+            case "2":
+            case "XX":
+                return Era.XX;
+            case "3":
+            case "XXI":
+                return Era.XXI;
+            default:
+                throw new UnexpectedException(String.format("unknown Era identifier: %s", s));
+        }
+    }
+
+    @NonNull
+    public String getRomanOrdinal() {
+        return Roman.toRoman(row.getLine() - 1);  // header counts as first line
     }
 
     @Override
     @NonNull
     public String getDescription() {
-        return getRow(DESCRIPTION).replaceAll("\\\\n", System.getProperty("line.separator"));
-    }
-
-    @Override
-    public String toString() {
-        return String.format("Site[%s]", getTitle());
-    }
-
-    @NonNull
-    public String getPhotoName() {
-        return getRow(PHOTO);
-    }
-
-    @NonNull
-    public String getRomanOrdinal() {
-        return RomanConverter.toRoman(row.getLine() - 1);  // header counts as first line
+        return getRow(ADDRESS);
     }
 
     @NonNull
     public String getAddress() {
-        return getRow(ADDRESS);
+        return getDescription();
     }
 
-    private static class RomanConverter {
+    @StringRes
+    public static int getHtmlStringResourceByName(Context ctx, String name) {
+        return ctx.getResources().getIdentifier(name, "string", ctx.getPackageName());
+    }
 
+    @NonNull
+    public List<Drawable> getPhotos() {
+        String name = getRoot();
+        List<Drawable> r = new ArrayList<>();
+        boolean stop = false;
+        for (int i = 1; !stop; ++i) {
+            Drawable d;
+            if (i == 1) {
+                d = getDrawableByName(name);
+                if (d == null) d = getDrawableByName(name + 1);
+            } else d = getDrawableByName(name + i);
+            if (d != null) r.add(d);
+            else if (i >= 2) stop = true;
+        }
+        Log.d(TAG, String.format("found %d photos with root name: %s", r.size(), name));
+        if (r.size() <= 0)
+            throw new UnexpectedException(String.format("no photos available for name: %s", name));
+        return r;
+    }
+
+    @Nullable
+    private Drawable getDrawableByName(String name) {
+        Resources resources = ctx.getResources();
+        @DrawableRes final int rid = resources.getIdentifier(name, "drawable", ctx.getPackageName());
+        try {
+            Drawable r = resources.getDrawable(rid, null);
+            Log.d(TAG, String.format("photo name exists: %s", name));
+            return r;
+        } catch (Resources.NotFoundException e) {
+            Log.d(TAG, String.format("photo name does not exist: %s", name));
+            return null;
+        }
+    }
+
+    @NonNull
+    public Drawable getMainPhoto() {
+        return getPhotos().get(0);
+    }
+
+    private static class Roman {
         private final static TreeMap<Integer, String> map = new TreeMap<>();
 
         static {

@@ -28,7 +28,7 @@ public class ListActivity extends BaseActivity {
 
         List<CsvParser.Row> rows = getCsvRowsFromIntent();
         ArrayList<Site> sites = new ArrayList<>();
-        for (CsvParser.Row row : rows) sites.add(new Site(row));
+        for (CsvParser.Row row : rows) sites.add(new Site(this, row));
         Bundle b = new Bundle();
         b.putSerializable(BUNDLE_KEY_SITES, sites);
         fragment.setArguments(b);

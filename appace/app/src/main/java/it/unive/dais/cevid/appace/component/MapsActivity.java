@@ -15,6 +15,8 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.ColorInt;
+import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -304,7 +306,7 @@ public class MapsActivity extends BaseActivity
 
     public static void startSiteActivity(Context ctx, Site site) {
         Intent intent = new Intent(ctx, SiteActivity.class);
-        intent.putExtra(SiteActivity.BUNDLE_KEY_SITE, site);
+        intent.putExtra(SiteActivity.BUNDLE_KEY_SITE, site.getCsvRow());
         ctx.startActivity(intent);
     }
 
@@ -372,12 +374,19 @@ public class MapsActivity extends BaseActivity
     private void populateMap() {
         markers = new ArrayList<>();
         for (CsvParser.Row row : getCsvRowsFromIntent()) {
-            Site site = new Site(row);
+            Site site = new Site(this, row);
+            String ord = site.getRomanOrdinal();
+            @IdRes int mid;
+            switch (site.getEra()) {
+                case PreXX: mid = R.drawable.marker_yellow; break;
+                case XX: mid = R.drawable.marker_red; break;
+                default: mid = R.drawable.marker_green; break;
+            }
             MarkerOptions opts = new MarkerOptions()
-                    .title(String.format("%s. %s", site.getRomanOrdinal(), site.getTitle()))
+                    .title(String.format("%s. %s", ord, site.getTitle()))
                     .position(site.getPosition())
                     .snippet(site.getAddress())
-                    .icon(BitmapDescriptorFactory.fromBitmap(writeTextOnDrawable(R.drawable.marker_red, site.getRomanOrdinal())));
+                    .icon(BitmapDescriptorFactory.fromBitmap(writeTextOnDrawable(mid, ord)));
             Marker m = gMap.addMarker(opts);
             m.setTag(site);
             markers.add(m);
@@ -402,8 +411,9 @@ public class MapsActivity extends BaseActivity
     private Bitmap writeTextOnDrawable(int id, String text) {
 
         Bitmap bm0 = BitmapFactory.decodeResource(getResources(), id).copy(Bitmap.Config.ARGB_8888, true);
-        // TODO: ripulire sto casino, rendere le costanti risorse ecc
-        Bitmap bm = Bitmap.createScaledBitmap(bm0, 80, 80, true);
+        // TODO: ripulire sto casino, rendere le costanti risorse
+        final double scale = 0.45;
+        Bitmap bm = Bitmap.createScaledBitmap(bm0, (int) (bm0.getWidth() * scale), (int) (bm0.getHeight() * scale), true);
         Typeface tf = Typeface.create("mantinia", Typeface.BOLD);
 
         Paint paint = new Paint();
@@ -424,7 +434,7 @@ public class MapsActivity extends BaseActivity
         if (textRect.width() >= (canvas.getWidth() - 4))     //the padding on either sides is considered as 4, so as to appropriately fit in the text
             paint.setTextSize(convertToPixels(this, 7));        //Scaling needs to be used for different dpi's
 
-        final int adjustmentX = 1, adjustmentY = 17;
+        final int adjustmentX = 0, adjustmentY = -8;
 
         //Calculate the positions
         int xPos = (canvas.getWidth() / 2) + adjustmentX;     //-2 is for regulating the x position offset
