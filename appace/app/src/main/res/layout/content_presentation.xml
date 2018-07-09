@@ -10,12 +10,28 @@
     android:background="@color/background"
     tools:showIn="@layout/activity_presentation">
 
-    <TextView
-        android:id="@+id/presentation_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        style="@style/Custom.Widget.TextView"
-        android:text="@string/presentation_text" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/text_margin"
+            android:layout_marginBottom="@dimen/text_margin"
+            android:gravity="center_horizontal"
+            android:text="@string/presentation_header_text" />
+
+        <TextView
+            android:id="@+id/presentation_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            style="@style/Custom.Widget.TextView"
+            android:text="@string/presentation_text" />
+
+    </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

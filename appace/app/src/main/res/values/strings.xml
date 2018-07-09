@@ -59,10 +59,16 @@
     <string name="presentation_button">PRESENTAZIONE</string>
     <string name="sitelist_button">LUOGHI DI PACE</string>
 
+    <string name="presentation_header_text">
+    <b>PERCORSI DI PACE E DI NONVIOLENZA A PADOVA</b>
+        \n
+    Luoghi, personaggi, eventi, testimonianze
+    </string>
+
     <string name="presentation_text">
 <i>“Il buon uso della memoria è quello che serve una giusta causa, non quello che si limita a riprodurre il passato.”</i>
         \n
--Tzvetan Todorov, “Memoria del male, tentazione del bene”, Ed. Garzanti
+- Tzvetan Todorov, “Memoria del male, tentazione del bene”, Ed. Garzanti
 \n\n
 <b>Presentazione</b>\n\n
 
@@ -72,11 +78,12 @@ La correzione di imperfezioni e l’introduzione di nuove foto la rendono più p
 Ci piace ricordare come questa guida proponga un modo diverso di conoscere la città, un angolo di visuale inconsueto: quello della cultura della pace e della nonviolenza.
 \n\n
         <b>Progetti internazionali</b>\n\n
-L’idea ci è stata suggerita dai contatti internazionali maturati attraverso il programma europeo Grundtvig “Discover Peace in Europe”, finanziato dall’Unione Europea, che ha visto la creazione di percorsi di pace in altre 7 città europee: Torino, Parigi, Vienna, Berlino, Budapest, L’Aia, Manchester e ha prodotto anche un sito web1.
+L’idea ci è stata suggerita dai contatti internazionali maturati attraverso il programma europeo Grundtvig “Discover Peace in Europe”, finanziato dall’Unione Europea, che ha visto la creazione di percorsi di pace in altre 7 città europee: Torino, Parigi, Vienna, Berlino, Budapest, L’Aia, Manchester e ha prodotto anche un sito web (1).
 La prima città a dotarsi di un itinerario di pace è stata Bradford (GB). Il percorso è stato editato in un opuscolo di circa 40 pagine.
 
-Anche a Vienna (A) è stato prodotto un libretto tascabile di ben 212 pagine che presenta la città da questo punto di vista.
-Ma numerose altre sono le città che nel mondo hanno predisposto questo tipo di itinerari per valorizzare, a partire dal contesto locale, la cultura della pace e della nonviolenza. Fra queste ricordiamo Londra, Coventry e Leeds sempre in Gran Bretagna, ma anche Atlanta negli USA3, che oltre al sito ha prodotto un opuscolo di 64 pagine, e Ginevra in Svizzera.
+Anche a Vienna (A) è stato prodotto un libretto tascabile di ben 212 pagine che presenta la città da questo punto di vista (2).
+Ma numerose altre sono le città che nel mondo hanno predisposto questo tipo di itinerari per valorizzare, a partire dal contesto locale, la cultura della pace e della nonviolenza. Fra queste ricordiamo Londra,
+        Coventry e Leeds sempre in Gran Bretagna, ma anche Atlanta negli USA (3), che oltre al sito ha prodotto un opuscolo di 64 pagine, e Ginevra in Svizzera (4).
 \n\n
         <b>In Italia</b>\n\n
 Padova è la prima città che ha prodotto una guida con questo taglio.
@@ -92,14 +99,15 @@ La parte sulla storia del Novecento è ampia, ma potrebbe esserlo di più. Padov
 Infine la parte contemporanea esemplifica alcuni momenti della attuale cultura di pace in Padova. Non è e non potrebbe essere un elenco completo di tutti i movimenti presenti in città e delle loro attività, che possono essere rintracciati facilmente attraverso i relativi siti o depliant e che mutano con grande rapidità, ma soltanto un’indicazione di luoghi, figure e tematiche significativi, da cui ognuno potrà prendere spunto per ulteriori ricerche.
 Speriamo che questa terza edizione della guida sarà seguita da edizioni successive più complete, grazie anche ad un eventuale apporto dei lettori.
 Alla fine della guida una bibliografia indica possibili direzioni di approfondimento.
-Buona lettura.
-\n\n
-        <b>Movimento Internazionale della Riconciliazione, sede di Padova</b>\n\n
+Buona lettura.\n
+\n
+        <b>Movimento Internazionale della Riconciliazione, sede di Padova</b>\n
+        \n
 
-1)	http://www.discoverpeace.eu\n
-2)	E. Hewson, G. Hamann, S. Jalka, Frieden entdecken in Wien, Pro Business, Vienna, 2011\n
-3)	http://www.atlantapeacetrails.com\n
-4)	http://www.genevaforpeace.com, Itinéraire de la paix"\n
+(1)	http://www.discoverpeace.eu\n
+(2)	E. Hewson, G. Hamann, S. Jalka, Frieden entdecken in Wien, Pro Business, Vienna, 2011\n
+(3)	http://www.atlantapeacetrails.com\n
+(4)	http://www.genevaforpeace.com, Itinéraire de la paix"\n
     </string>
 
     <string name="sources_text">
@@ -129,7 +137,7 @@ Todorov Tzvetan, Hope and Memory, Published by Princeton University Press, 2003;
 Vasoin Gigi: “La Signoria dei Carraresi nella Padova del ‘300”, Ed. la Garangola Padova, 1988\n\n
 Vecchia Giuliana, Breve storia del tempio della Pace, Tip. “La Garangola”, Padova, 1988;\n\n
 Zilli Arturo, Dio non uccide, Ed. Il Margine, 2012.\n
-        \n\n
+        \n
         <b>Ringraziamenti</b>\n\n
 Le foto che illustrano questa guida sono state scattate grazie alla cordiale disponibilità di
 tante persone ed istituzioni che mi hanno gentilmente aperto le porte delle loro case
@@ -207,6 +215,15 @@ collaborazione.\n
     indicazioni all’indirizzo di posta elettronica: mirsezpd@libero.it\n\n
         Nessuna parte dei testi può essere riprodotta con sistemi elettronici, meccanici o altri, senza
 l’autorizzazione scritta del M.I.R. di Padova.
+    </string>
+
+    <string name="site_string_not_found_error">
+        \n
+        <b>Errore: string resource non trovata.</b>\n
+        \n
+        Se questo errore si verifica, contattare l\'autore:\n
+        \n
+        alvise.spano@unive.it
     </string>
 
 

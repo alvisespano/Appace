@@ -27,7 +27,6 @@
         android:textAlignment="textStart"
         android:textSize="22sp"
         android:maxLines="3"
-        android:ellipsize="middle"
         android:fontFamily="@font/mantinia"
         android:text="@string/tomba_antenore_title" />
 

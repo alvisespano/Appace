@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
 
+import it.unive.dais.cevid.appace.R;
 import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
 import it.unive.dais.cevid.datadroid.lib.parser.ParserException;
 import it.unive.dais.cevid.datadroid.lib.util.Function;
@@ -73,13 +74,24 @@ public class Site implements MapItem {
     }
 
     @StringRes
+    public int getStringRedId(String suffix) {
+        final String s = String.format("%s_%s", getRoot(), suffix);
+        try {
+            return getStringResourceByName(ctx, s);
+        } catch (Resources.NotFoundException e) {
+            Log.e(TAG, String.format("cannot find string resource: %s", s));
+            return R.string.site_string_not_found_error;
+        }
+    }
+
+    @StringRes
     public int getTitleResId() {
-        return getHtmlStringResourceByName(ctx, String.format("%s_title", getRoot()));
+        return getStringRedId("title");
     }
 
     @StringRes
     public int getDescriptionResId() {
-        return getHtmlStringResourceByName(ctx, String.format("%s_text", getRoot()));
+        return getStringRedId("text");
     }
 
     @Override
@@ -136,8 +148,10 @@ public class Site implements MapItem {
     }
 
     @StringRes
-    public static int getHtmlStringResourceByName(Context ctx, String name) {
-        return ctx.getResources().getIdentifier(name, "string", ctx.getPackageName());
+    public static int getStringResourceByName(Context ctx, String name) {
+        int r = ctx.getResources().getIdentifier(name, "string", ctx.getPackageName());
+        if (r == 0) throw new Resources.NotFoundException("invalid resource ID #0x0");  // ogni tanto ritorna 0 invece dell'eccezione, quindi bisogna controllare
+        else return r;
     }
 
     @NonNull

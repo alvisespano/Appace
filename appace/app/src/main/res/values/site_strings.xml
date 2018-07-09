@@ -12,7 +12,7 @@ Ma all’immagine positiva di Antenore, sostenuta da Tito Livio (57 a.C. - 17 d.
 (70 a.C. - 19 a.C.), si affianca una versione negativa, che lo presenta come traditore e causa
 della sconfitta troiana.\n
 Questa visione viene esasperata nei romanzi cavallereschi medievali e recepita da Dante,
-che nella <i>Divina Commedia</i> chiama “<i>Antenorea</i>” il luogo infernale dove sono puniti i
+che nella <i>Divina Commedia</i> chiama <i>“<i>Antenorea</i>”</i> il luogo infernale dove sono puniti i
 traditori della patria. A Padova il mito rivive in età comunale. Il giudice e poeta Lovato
 Lovati (1240-1309) promuove la costruzione di un monumento celebrativo di Antenore,
 realizzato dal Comune nel 1283-1285 (secondo due lapidi sull’edicola): un sarcofago
@@ -38,16 +38,19 @@ ruolo di pacificatore, quale modello civico da imitare.
 trovare l’attuale collocazione in via Roma.\n
 L’epigrafe è incisa su pietra di Nanto e collocata sotto un’altra lapide che ricorda l’ingresso
 in città di Ezzelino da Romano nel 1237.\n
+        \n
 Il testo latino in dieci esametri fu dettato da Giovanni Valdetaro, grammatico al seguito del
 podestà in carica, Giacomo Landi da Piacenza, come attestazione ufficiale del Comune
 padovano.\n
-La traduzione dice:
+        \n
+La traduzione dice:\n
 <i>“Il nobiluomo Giacomo Landi, nativo di Piacenza, meritatamente Podestà di Padova, nel
 1210 adornò la città di mura e di una porta verso mezzogiorno. O figli di Antenore, se
 volete essere sicuri dal nemico di fuori la Pace vi leghi all’interno con un muro di amore.
 Invano si cerca l’ombra sotto un albero frondoso se un acuto morbo ci rode le viscere
 interne. Affinché la fatica e le spese del muro non siano sprecate ascoltate il consiglio del
-vostro vate Giovanni”</i>\n
+vostro vate Giovanni.”</i>\n
+        \n
 La scritta si riferisce alla costruzione di una nuova parte di mura cittadine che collegavano
 la Porta al Castello correndo lungo il naviglio in sostituzione delle precedenti. L’accorato
 invito delle autorità comunali alla concordia dei cittadini viene espresso in un periodo di
@@ -58,6 +61,8 @@ solo un’altra iscrizione di contenuto simile della stessa epoca, nella città 
 
     <string name="san_antonio_title">Sant’Antonio</string>
     <string name="san_antonio_text">
+       Informazioni: www.basilicadelsanto.it\n
+        \n
         La figura di Sant’Antonio è notissima in tutto il mondo: era considerato santo già in vita e
 infatti fu canonizzato a meno di un anno dalla sua morte. Nato a Lisbona probabilmente nel
 1195 e morto a Padova il 13 giugno 1231, è santo patrono oltre che della città di Padova
@@ -71,14 +76,12 @@ successo ebbe invece a Padova, poco prima della sua morte, perché ottenne dal C
 un’attenuazione della dura legge sui debitori insolventi, che sostanzialmente colpiva i più
 poveri, costringendoli alla detenzione: «su istanza del venerabile frate Antonio dell’ordine
 dei frati Minori», si stabilì che più nessuno fosse incarcerato per debiti non pagati purché
-disposto a cedere i suoi beni.
+disposto a cedere i suoi beni.\n
 La sua figura ha ispirato, nel corso dei secoli, l’opera di moltissime altre persone che hanno
 saputo perpetuarne lo spirito (vedi anche scheda su Padre Cortese).
 La Basilica che custodisce le spoglie del Santo, iniziata nel XIII secolo e sostanzialmente
 conclusa nel 1310, subì il rifacimento della zona absidale nel XV secolo e ampliamenti e
 rifacimenti nel Seicento e nel Settecento.
-        \n
-        Informazioni: www.basilicadelsanto.it
     </string>
 
     <string name="marsilio_title">Marsilio da Padova</string>
@@ -88,9 +91,9 @@ teologia e nel 1313 divenne rettore dell’Università di Parigi; visse quindi a
 Avignone. A seguito della pubblicazione della sua opera maggiore, il Defensor pacis
 (Difensore della Pace), che venne condannata dall’autorità ecclesiastica, si rifugiò presso la
 Corte di Ludovico il Bavaro a Norimberga. Visse poi a Monaco di Baviera dove scrisse il
-Defensor minor e dove morì nel 1342 o nel 1343.
+Defensor minor e dove morì nel 1342 o nel 1343.\n
         \n
-        <b>Il concetto di Pace espresso da Marsilio da Padova nel Defensor Pacis</b>
+        <b>Il concetto di Pace espresso da Marsilio da Padova nel Defensor Pacis</b>\n
         \n
 In questo trattato di diritto civile ed ecclesiastico, scritto in collaborazione con Jean de
 Jandun, filosofo e maestro averroista, lo Stato viene visto come un’istituzione naturale il cui
@@ -112,13 +115,15 @@ quesisse sentitur. Cassiodorus in prima suarum epistolarum, hac serie premissa,
 tranquillitatis seu pacis civilium regiminum commoditates et fructus expressit, ut per
 hos tamquam optimos, humanum optimum, eius vite scilicet sufficienciam explicans,
 quam sine pace ac tranquillitate nemo consequi potest, ad pacem habendam invicem, et
-hunc tranquillitatem, voluntates homines excitaret”</i>
+hunc tranquillitatem, voluntates homines excitaret.”</i>
     </string>
 
 
     <string name="petrarca_title">Francesco Petrarca</string>
     <string name="petrarca_text">
-<b>Il soggiorno padovano</b>
+        Per informazioni: http://padovacultura.padovanet.it/it/attivita-culturali/petrarca-padova\n
+        \n
+<b>Il soggiorno padovano</b>\n
         \n
 Alla metà del 1300 la fama di Francesco Petrarca come poeta, letterato ed erudito
 era ampiamente diffusa e riconosciuta in ambito nazionale. Ed è per questo motivo che, nel
@@ -127,7 +132,8 @@ accogliendolo con tutti gli onori.\n
 La signoria carrarese si apprestava, infatti, a dare l’avvio, sia pure con alterne vicende, alla
 fase di massima affermazione in campo politico-militare. E per accrescere il proprio prestigio
 puntava ad attrarre nei propri domini un alto numero di artisti, giuristi e letterati offrendo loro
-benefici e incarichi, in particolare nell’attività di docenza nel già prestigioso ateneo patavino.
+benefici e incarichi, in particolare nell’attività di docenza nel già prestigioso ateneo patavino.\n
+        \n
 Questo primo soggiorno padovano segnerà l’inizio di un rapporto di stima e amicizia fra il
 Petrarca e Jacopo II e poi con il di lui figlio Francesco I detto il Vecchio. Il poeta aretino
 soggiornerà in vari periodi a Padova, sempre su invito dei due citati signori, inizialmente
@@ -138,12 +144,14 @@ Divenuto più anziano il Petrarca deciderà di stabilirsi definitivamente sui co
 Francesco I gli aveva fatto dono di un terreno e di una casa, che il poeta provvide a
 ristrutturare, in località Arquà (oggi comune di Arquà Petrarca). Qui egli visse serenamente
 fino alla morte avvenuta nel 1374.\n
-<b>L’aspirazione alla pace</b>
+        \n
+<b>L’aspirazione alla pace</b>\n
+        \n
 Tralasciando gli aspetti inerenti più prettamente la dimensione intima o personale ravvisabili
 nel suo pensiero e nelle sue opere, va rilevato come il Petrarca svolse anche una funzione che
-potremmo definire di “coscienza civile” nel proporre agli esponenti del potere politico
+potremmo definire di <i>“coscienza civile”</i> nel proporre agli esponenti del potere politico
 dell’epoca - fossero essi imperatori o nobili oppure papi e vescovi ma anche esponenti di ceti
-più popolari come Cola di Rienzo - la sua visione di civiltà o società ideale.\n
+più popolari come Cola di Rienzo - la sua visione di civiltà o società ideale (1).\n
 La ricerca, almeno in via di principio, di uno status di uomo di lettere autonomo e libero
 rispetto al potere politico, non gli impedì di interessarsi alle vicende concrete di un secolo
 complesso come fu il trecento italiano.\n
@@ -158,16 +166,21 @@ non tanto per le sue capacità diplomatiche ma per la stima di cui godeva. Nel 1
 anziano, accettò di accompagnare Francesco Novello da Carrara a Venezia per cercare - ma il
 tentativo fu vano nonostante il solenne discorso pronunciato dal poeta al gran Consiglio - di
 mitigare le durissime condizioni di pace imposte dai veneziani nei confronti della signoria
-carrarese.
+carrarese.\n
+        \n
 Possiamo affermare che anche il Petrarca come in precedenza Marsilio da Padova – senza
-tuttavia la riflessione organica del primo – abbia condiviso per l’Italia il sogno di una “pax
-imperialis”. Egli tuttavia, influenzato dal culto della “romanità”, fa appello alla comune
+tuttavia la riflessione organica del primo – abbia condiviso per l’Italia il sogno di una <i>“pax
+imperialis”</i>. Egli tuttavia, influenzato dal culto della <i>“romanità”</i>, fa appello alla comune
 identità nazionale affinché i signori e principi italiani mettano fine alle guerre fratricide -
 anche attraverso la rinuncia all’uso di truppe mercenarie straniere – per garantire una
 condizione di pace al paese.\n
-Questo auspicio alla pace, di carattere morale e politico, è l’oggetto della sua “canzone” più
-famosa dal titolo “ Italia mia, benché ‘l parlar sia indarno ” che si conclude con l’accorato
-        appello <i>“ I’ vo gridando: Pace, pace, pace ”</i>.\n
+Questo auspicio alla pace, di carattere morale e politico, è l’oggetto della sua <i>“canzone”</i> più
+        famosa dal titolo <i><b>“Italia mia, benché ‘l parlar sia indarno”</b></i> che si conclude con l’accorato
+        appello <i>“I’ vo gridando: Pace, pace, pace”</i>
+        \n\n
+(1) Ad esempio sulle virtù e giuste politiche che un principe deve adottare per il buongoverno di un regno si veda del
+Petrarca dalla raccolta Seniles la Lettera I del Libro quattordicesimo intitolata “Al magnifico Francesco da Carrara Signore
+di Padova”.
     </string>
 
     <string name="beolco_title">Angelo Beolco</string>
@@ -177,16 +190,18 @@ Angelo Beolco detto Ruzzante o Ruzante (Padova, o forse Pernumia, 1496? – Pado
 medicina dell’Università di Padova, fu un famoso attore e drammaturgo, che recitava in
 prima persona i propri testi, spesso nella loggia dell’amico Alvise Cornaro, ricco
 proprietario terriero e letterato, in via Cesarotti. Ruzante, il personaggio interpretato da
-Beolco, è un contadino veneto che si esprime in pavano, il dialetto padovano dell’epoca.
+Beolco, è un contadino veneto che si esprime in pavano, il dialetto padovano dell’epoca.\n
+        \n
 Tra le numerose opere di Ruzante sono famosi in particolare i due dialoghi. Nel primo, il
-Parlamento de Ruzante che iera vegnù de campo , si racconta la drammatica vicenda di
+Parlamento de Ruzante che iera vegnù de campo, si racconta la drammatica vicenda di
 Ruzante, reduce da uno scontro con gli imperiali, provocato dalla Lega di Cognac a cui
 aderiva anche la Serenissima. Il contadino vi aveva partecipato sperando di arricchirsi, ma
 aveva invece rischiato di morire. La guerra viene descritta dal punto di vista di un contadino
 terrorizzato, che cerca solo di nascondersi per sfuggire alle schioppettate e alle cariche e si
 finge morto per salvare la pelle. Ritornato di corsa a Venezia a piedi, Ruzante trova che la
 moglie, stanca di fare la fame, lo ha abbandonato per un nuovo compagno, che risponde alle
-proteste di Ruzante riempiendolo di bastonate.
+proteste di Ruzante riempiendolo di bastonate.\n
+        \n
 A Padova molti luoghi ricordano Ruzante, tra gli altri una statua ora in piazza Capitaniato e
 presto ricollocata in Piazzetta L.V. Terrani (opera di Amleto Sartori), una nei Giardini
 dell’Arena (opera di Serge Zelikson) e un teatro. Una lapide funeraria commemorativa è
@@ -206,19 +221,21 @@ conclusione vittoriosa della Prima Guerra Mondiale (vedi scheda su Villa Giusti)
 collocate 4 statue in pietra di Aurisina: rappresentano la Guerra, la Pace, l’Assistenza e la
 Città di Padova. Sono opere dello scultore Salvatore Saponaro. Senza dubbio la collocazione
 ed il significato della statua della Pace (è la statua verso Sud) possono risultare lontani dal
-modo in cui intendiamo la pace oggi.
+modo in cui intendiamo la pace oggi.\n
+        \n
 Nel cortile, a cui si accede attraverso l’ingresso principale ad arco, sotto il portico sulla
 sinistra, è collocato un altro importante segno: il ricordo della tragedia del genocidio degli
 Armeni compiutosi in Turchia durante la Prima Guerra Mondiale a partire dal 1915. Anche il
 Comune di Padova ha voluto onorare il ricordo del primo genocidio del ‘900 collocando nel
 2005 questo bassorilievo bronzeo, opera dello scultore armeno Movses Guloyan
 (1970-vivente). Il bassorilievo riporta i seguenti versi del poeta Daniel Varujan (1884-1915),
-che fu una delle prime vittime del genocidio: “ Con la penna di canna cantai sangue / per
-libare a voi, vittime della spada ”. Sono circa una ventina le famiglie di origine armena
+che fu una delle prime vittime del genocidio: <i>“Con la penna di canna cantai sangue / per
+libare a voi, vittime della spada”</i>. Sono circa una ventina le famiglie di origine armena
 presenti in città, alcune delle quali sfuggite miracolosamente al massacro.
 Sullo scalone che porta dal cortile al Palazzo della Ragione all’altezza del primo piano è
 collocato un altro interessante bassorilievo bronzeo opera dello scultore Piero Perin
-(1924-2008): è in memoria di Giorgio Perlasca (Como 1910-Padova 1992).
+(1924-2008): è in memoria di Giorgio Perlasca (Como 1910-Padova 1992).\n
+       \n
 Singolare figura di Giusto del mondo, Perlasca, dopo aver aderito in modo convinto al
 fascismo ed avere partecipato come volontario dalla parte dei Franchisti alla Guerra civile
 spagnola, a Budapest, dove si trovava nel 1944-45, si impegnò nel salvataggio di migliaia di
@@ -238,7 +255,8 @@ la sconfitta dell’Austria-Ungheria che si arrese a tutte le dure condizioni im
 Alleati. La sconfitta portò alla dissoluzione dell’impero multinazionale austroungarico, alla
 nascita di nuove entità nazionali e alla ridefinizione della carta politica europea. Fu la
 conclusione di una guerra terribile che solo all’Italia era costata 654.000 morti, 451.000
-invalidi, 240.000 condannati dai tribunali militari.
+invalidi, 240.000 condannati dai tribunali militari.\n
+        \n
 Il 4 novembre per l’Italia è diventato poi festa dell’Unità Nazionale e giornata delle Forze
 Armate. La Villa durante la guerra era stata la sede del Comando Supremo Italiano e aveva
 anche ospitato il Re Vittorio Emanuele III. È di proprietà della famiglia Lanfranchi.
@@ -249,36 +267,36 @@ l’arredamento originario dell’epoca e l’aspetto attuale della Villa, che i
 chiamava Villa Capodilista della Mandria, è frutto di un’importante ristrutturazione attuata
 nel 1875. La Villa è stata costruita su edifici di epoca precedente, tra cui una torre del
 Trecento. Interessante è anche il giardino di 7 ettari, per gli alberi secolari presenti e per la
-progettazione che unisce il bosco all’inglese ed il giardino italiano
+progettazione che unisce il bosco all’inglese ed il giardino italiano.
     </string>
 
     <string name="tempio_pace_title">Tempio Antoniano della Pace</string>
     <string name="tempio_pace_text">
 Situato nell’area del centro direzionale tra la stazione ferroviaria e la sede della Fiera, il
 Tempio rappresenta un luogo di raccoglimento e di ricordo: si può infatti definire il
-cimitero di guerra della città.
+cimitero di guerra della città.\n
 La sua costruzione, iniziata nel 1920, viene terminata nel 1934 in epoca fascista. Progettata
 dall’architetto italo-armeno Antonio Zanivan, la chiesa, in mattoni a vista e pietra,
 rispecchia la cultura architettonica mitteleuropea, viennese in particolare, di inizio secolo.
 Riprende tuttavia anche la tradizione dei grandi ossari della prima guerra Mondiale di
 Asiago (VI) e Redipuglia (GO). Nelle pareti interne infatti sono stati posti i resti di 5401
 soldati italiani, ammalati o feriti al fronte durante la prima guerra mondiale e poi deceduti
-negli ospedali di Padova e provincia.
+negli ospedali di Padova e provincia.\n
 Nella cappella a destra dell’ingresso, una lapide ricopre i resti di 989 civili padovani periti
 nei bombardamenti della seconda guerra mondiale ad opera degli alleati: i loro nomi sono
 riportati sulle pareti. Altri 100 ignoti giacciono sotto un’altra lapide nella medesima
-cappella.
+cappella.\n
 Ogni anno si celebra una messa solenne in ricordo dei caduti civili di tutte le guerre.
-Dal 1996, prendendo spunto dal grido di Papa Giovanni Paolo II “Mai più la guerra”,
-vengono organizzate veglie di preghiera e di testimonianza per la Pace.
+Dal 1996, prendendo spunto dal grido di Papa Giovanni Paolo II <i>“Mai più la guerra”</i>,
+vengono organizzate veglie di preghiera e di testimonianza per la Pace.\n
 Da qui spesso parte o transita la annuale marcia della Pace del 1° gennaio organizzata dalla
 diocesi cattolica cittadina. Vi si tengono pure incontri, conferenze e preghiere per
-approfondire itinerari e percorsi di pace.
+approfondire itinerari e percorsi di pace.\n
 Il Tempio è sede di una piccola parrocchia abitata per un terzo da stranieri, che cerca di
 valorizzare le differenti culture e dunque le varie esperienze religiose presenti nel territorio.
-In particolare il giorno dell’Epifania si tiene la tradizionale “Festa delle Genti”, alla quale
+In particolare il giorno dell’Epifania si tiene la tradizionale <i>“Festa delle Genti”</i>, alla quale
 partecipano varie comunità religiose, italiane o straniere, presenti in città, mentre la
-“Rassegna di canti di Natale dal Mondo” raccoglie cori italiani, romeni, filippini, ucraini,
+<i>“Rassegna di canti di Natale dal Mondo”</i> raccoglie cori italiani, romeni, filippini, ucraini,
 africani, cinesi, cingalesi. E ciò in nome di un ecumenismo vissuto e di una pace condivisa.
     </string>
 
@@ -287,7 +305,7 @@ africani, cinesi, cingalesi. E ciò in nome di un ecumenismo vissuto e di una pa
 Nato Nicolò Matteo, il 7 marzo 1907, a Cherso, ora in Croazia, è ordinato sacerdote con il
 nome di Placido il 6 giugno 1930. Dopo tre anni trascorsi a Padova, presso la Basilica di S.
 Antonio, è trasferito a Milano per poi tornare definitivamente a Padova, nel 1937, quale
-direttore del mensile “Il Messaggero di S. Antonio”. Arrestato dalle SS l’8 ottobre 1944,
+direttore del mensile <i>“Il Messaggero di S. Antonio”</i>. Arrestato dalle SS l’8 ottobre 1944,
 trasferito nella sede della Gestapo in Piazza Oberdan a Trieste, muore nel mese di novembre
 successivo per le torture subite.
         \n\n
@@ -319,7 +337,7 @@ poi il 16 febbraio 2018
 
     <string name="girotto_title">Padre Mariano Girotto</string>
     <string name="girotto_text">
-Nato Arturo, il 22 gennaio 1897, a “La Stortola”, ora S. Cosma, frazione di Monselice (PD),
+Nato Arturo, il 22 gennaio 1897, a <i>“La Stortola”</i>, ora S. Cosma, frazione di Monselice (PD),
 da Antonio Girotto e Angela Alberti, ultimogenito di undici figli, è ordinato sacerdote con il
 nome di Mariano il 30 luglio 1922.
 Il 1° dicembre 1935 assume ufficialmente l’incarico di Parroco presso la Chiesa di S.
@@ -332,7 +350,8 @@ a Palazzo Giusti dove si insediò, dall’ottobre 1944 fino all’aprile 1945, l
 Carità, dal nome del Maggiore Mario Carità, comandante del Reparto Servizi Speciali,
 aggregato alle SS tedesche. Tale palazzo divenne un luogo di prigionia e di torture per i
 partigiani o simpatizzanti, da cui poi tali sventurati uscivano solo per affrontare la fucilazione
-o il viaggio verso i campi di prigionia.
+o il viaggio verso i campi di prigionia.\n
+        \n
 Padre Mariano, antifascista da sempre, ma fino a quel momento restio a lasciarsi coinvolgere
 nella lotta dei partigiani, si trovò, con l’arrivo della Banda Carità nella stessa strada dove
 svolgeva il suo ruolo di religioso, a intraprendere una serie di iniziative che, anche se non
@@ -364,20 +383,26 @@ il quale, per riconoscenza, regalò successivamente al padre una propria villa, 
 
     <string name="internato_title">Tempio dell\'Internato Ignoto e Museo dell\'Internamento</string>
 <string name="internato_text">
+    Informazioni: www.museodellinternamento.it\n
+    \n
+    Fondatore: Don Giovanni Fortin (Monselice 23.8.1909 – Padova 16.9.1985)\n
+    \n
 Consacrato sacerdote nel 1933, Don Giovanni Fortin nel 1938 diventa parroco della
 comunità di Terranegra (Padova). Nel dicembre del 1943, su richiesta di un altro sacerdote,
 don Antonio Varotto, dà asilo in parrocchia a una dozzina di prigionieri inglesi in fuga.
 Alcuni fascisti, che si fingono partigiani, vengono a conoscenza del fatto e Don Fortin viene
 arrestato e condannato a morte anche a causa del suo rifiuto a collaborare. Rimane in carcere
-a Venezia fino a febbraio 1944 quando viene deportato nel lager di Dachau.
+a Venezia fino a febbraio 1944 quando viene deportato nel lager di Dachau.\n
 Sopravvive e nel giugno del 1945 ritorna alla sua comunità di Terranegra. Si adopera per la
 costruzione della nuova chiesa parrocchiale che, su suo desiderio, viene dedicata ai circa
 70.000 militari italiani periti nei campi di concentramento (Tempio dell’Internato Ignoto).
 Sempre su sua iniziativa viene poi realizzato un Museo dell’Internamento per offrire una
 conoscenza più approfondita su una delle pagine più buie della storia recente.
 Nel 1964 viene insignito della medaglia d’oro per la sua opera di soccorso di tutte le vittime
-di guerra.
-<b>Il Tempio dell’Internato Ignoto</b>
+di guerra.\n
+    \n
+<b>Il Tempio dell’Internato Ignoto</b>\n
+    \n
 Si giunge al Tempio (Chiesa parrocchiale di S. Gaetano) percorrendo il Viale dell’Internato
 Ignoto, caratterizzato dalla presenza, sui due lati, di 27 cippi di trachite. Questi cippi
 riportano i nomi di alcuni campi di concentramento nazisti mentre quelli antistanti la chiesa
@@ -385,30 +410,33 @@ ricordano alcune delle loro vittime. Nel pronao della chiesa si trovano le lapid
 due sacelli a destra e a sinistra. Nel primo riposano le spoglie di Don Giovanni Fortin.
 All’interno della chiesa si trovano lapidi e salme di alcuni degli internati deceduti. Da
 ricordare la presenza di due quadri raffiguranti San Massimiliano Kolbe e Santa Edith Stein,
-come pure un “altare” dedicato alla figura di Mafalda di Savoia, deceduta nel campo di
-concentramento di Buchenwald.
-<b>Il Museo dell’Internamento</b>
+come pure un <i>“altare”</i> dedicato alla figura di Mafalda di Savoia, deceduta nel campo di
+concentramento di Buchenwald.\n
+    \n
+<b>Il Museo dell’Internamento</b>\n
+    \n
 Si trova sul lato destro della Chiesa. Nei pressi dell’entrata tre opere in rame sbalzato (opera
 dell’artista rom Loris Levak, a ricordo dei 500.000 rom e sinti deceduti nei campi di
 concentramento nazisti) esprimono in forma artistica la condanna della barbarie dei campi di
 sterminio e la pietà per le loro vittime, introducendo il visitatore al senso del museo.
-Il museo è costituito da alcune sale tematiche:
-● la Sala della Storia ricorda attraverso pannelli e altri oggetti d’epoca le vicende che
+Il museo è costituito da alcune sale tematiche:\n
+- la Sala della Storia ricorda attraverso pannelli e altri oggetti d’epoca le vicende che
 portarono alla presa del potere da parte del movimento fascista, la progressiva
 persecuzione degli ebrei, lo scoppio della guerra con la costruzione dei campi di
 sterminio e i moti di ribellione e resistenza della popolazione che culminarono nella
-Liberazione;
-● la Sala della Memoria contiene foto e oggetti che testimoniano in tutta la loro
-tragicità la “vita” degli internati nei lager.
+Liberazione;\n
+- la Sala della Memoria contiene foto e oggetti che testimoniano in tutta la loro
+tragicità la <i>“vita”</i> degli internati nei lager.\n
+    \n
 In un tempietto laterale sono conservate le ceneri prelevate da quattro campi di sterminio:
 Dachau, Mauthausen, Buchenwald, Belsen. Va anche sottolineato come il museo sia dotato
 di una biblioteca/ mediateca e di un’ampia sala per conferenze. In quest’ultima di regola
-vengono effettuate delle proiezioni introduttive alle visite di gruppo.
+vengono effettuate delle proiezioni introduttive alle visite di gruppo.\n
 Il Museo e il Tempio hanno la funzione di mantenere viva la memoria sulla moltitudine di
 italiani (militari e civili) che persero la vita nei campi di concentramento nazisti. Essi
 rappresentano dunque un messaggio di condanna di ogni forma di sopraffazione dell’uomo
 sui suoi simili e un auspicio per il superamento delle guerre e la costruzione della
-riconciliazione e della pace.
+riconciliazione e della pace.\n
 Per il perseguimento di tali finalità l’Associazione Nazionale Ex Internati (A.N.E.I.), che
 gestisce attualmente il museo, promuove visite guidate, rivolte soprattutto ai giovani, ma
 pure conferenze e convegni scientifici su questi temi.
@@ -420,8 +448,10 @@ pure conferenze e convegni scientifici su questi temi.
 Nato a Solagna (VI) il 15 agosto 1908, si laureò in Lettere a Padova nel 1931. Insegnò prima
 presso il liceo Marco Foscarini di Venezia e poi, dal 1942 al 1944, presso il liceo Tito Livio
 di Padova. Arrestato dalle Brigate Nere il 27 giugno 1944, fu trovato ucciso due giorni dopo
-in via Emanuele Filiberto a Padova.
-L’impegno di Todesco contro il fascismo e a favore della lotta dei partigiani
+in via Emanuele Filiberto a Padova.\n
+        \n
+<b>L’impegno di Todesco contro il fascismo e a favore della lotta dei partigiani</b>\n
+        \n
 L’attuazione, nel 1938, del Regio Decreto 1390, che allontanava dalla scuola italiana i
 docenti e gli alunni ebrei, rafforzò in Todesco il sentimento antifascista che tre anni più tardi
 lo condusse all’organizzazione della lotta al fascismo nel mondo della scuola e
@@ -448,22 +478,23 @@ tale avvenimento.
     <string name="sorelle_martini_title">Sorelle Martini</string>
     <string name="sorelle_martini_text">
 Le quattro sorelle Martini (Teresa, Lidia, Renata e Carla Liliana) collaborano con Padre
-Placido Cortese (vedi scheda) nella “catena della salvezza” a favore di prigionieri
+Placido Cortese (vedi scheda) nella <i>“catena della salvezza”</i> a favore di prigionieri
 sudafricani, neozelandesi e inglesi fuggiti dal campo di internamento di Chiesanuova (PD)
-dopo l’8 settembre del 1943.
+dopo l’8 settembre del 1943.\n
 Nonostante appartengano ad una numerosa famiglia, di 12 fratelli, ospitano
 temporaneamente nella grande casa i prigionieri, procurano loro abiti civili, smistano i
-documenti di identità italiani contraffatti da P. Cortese nella tipografia del “Messaggero”. Poi
+documenti di identità italiani contraffatti da P. Cortese nella tipografia del <i>“Messaggero”</i>. Poi
 li accompagnano in treno sino ad Oggiono, in provincia di Como, dove vengono presi in
 consegna da contrabbandieri che, sotto compenso, li accompagnano oltre il confine con la
 Svizzera e li consegnano ad Armando Romani, ex ufficiale fuggito da Padova, che coordina i
-salvataggi.
+salvataggi.\n
 Teresa e Carla Liliana, insieme ad altre donne padovane e di Saonara (PD) che nascondevano
 i fuggitivi nelle proprie case, vengono arrestate il 14 marzo del 1944 e portate nei campi di
 concentramento di Mauthausen, Linz e Grein. Lidia viene presa in un secondo momento ed
 incarcerata a Venezia, mentre Renata, miracolosamente scampata alla cattura nazifascista,
 resta coi genitori. Le quattro sorelle si ricongiungeranno in famiglia nel giugno del 1945.
-I loro nomi sono incisi, nella lapide di P. Cortese, nel “Giardino dei Giusti” a Terranegra.
+I loro nomi sono incisi, nella lapide di P. Cortese, nel <i>“Giardino dei Giusti”</i> a Terranegra.\n
+        \n
 Il 25 settembre 2017 è scomparsa anche Carla Liliana Martini, l’ultima delle sorelle ancora
 in vita.
     </string>
@@ -477,23 +508,23 @@ una grave menomazione uditiva. Venne assassinato l’11 giugno 1944 davanti alla
 delle Brigate Nere di Ponte di Brenta, pare come rappresaglia (in modo analogo
 all’antifascista Enrico Zanella, ucciso lo stesso giorno di Barbato, a Vigonza, in provincia di
 Padova) per l’omicidio del segretario del partito fascista Giuseppe Begon ad opera dei Gruppi
-di Azione Patriottica.
-La figura di Barbato e il suo impegno per gli ideali di nonviolenza e giustizia
+di Azione Patriottica.\n
+        \n
+        <b>La figura di Barbato e il suo impegno per gli ideali di nonviolenza e giustizia</b>\n
+        \n
 L’impegno di Barbato durante la sua attività politica e sindacale fu sempre rivolto a far
 ottenere libertà e dignità alle classi sociali più disagiate. Per raggiungere tali scopi egli
 auspicava che il popolo prendesse coscienza dei propri diritti e raggiungesse il potere politico
 attraverso libere elezioni. Barbato riuscì anche a ottenere alcune conquiste per la categoria
-impiegatizia di Padova e Provincia tra le quali il “Concordato per l’equo trattamento”.
+impiegatizia di Padova e Provincia tra le quali il <i>“Concordato per l’equo trattamento”</i>.\n
 Rispetto al fascismo assunse una posizione coerente con i propri principi, ma senza giungere
 a sfidarne il potere e non partecipò mai a cospirazioni o altre iniziative violente. Riteneva,
 infatti, che la violenza, oltre che barbara e incivile, fosse anche controproducente, perché
 porta alla conquista di un potere che non può essere duraturo, in quanto si regge solo grazie
-alla brutalità dei propri metodi.
-        \n\n
-        <i>“Preferisco morire che usare violenza verso chicchessia o peggio
-uccidere!”</i>
+alla brutalità dei propri metodi.\n
         \n
-Silvio Barbato
+        <i>“Preferisco morire che usare violenza verso chicchessia o peggio
+uccidere!”</i> - Silvio Barbato
     </string>
 
 
@@ -539,53 +570,56 @@ combattevano nel Nord-Italia.
     <string name="giusti_giardino_text">
 Di fronte al Tempio dell’Internato Ignoto e al Museo dell’Internamento salendo verso la
 sommità arginale del canale S. Gregorio si può incontrare un giardino particolare, dall’alta
-valenza simbolica.
-È il “Giardino dei Giusti del Mondo”, introdotto, alla destra, da un muro sul quale campeggia
-la frase di Hannah Arendt “Si può sempre dire un sì o un no” e da alcune sculture di Elio
-Armano.
-Il suo scopo di fondo è quello di “far emergere il concetto di giusto come concetto universale,
+valenza simbolica.\n
+È il <i>“Giardino dei Giusti del Mondo”</i>, introdotto, alla destra, da un muro sul quale campeggia
+la frase di Hannah Arendt <i>“Si può sempre dire un sì o un no”</i> e da alcune sculture di Elio
+Armano.\n
+Il suo scopo di fondo è quello di <i>“far emergere il concetto di giusto come concetto universale,
 indipendentemente dal particolare contesto storico e geografico, e di rendere omaggio a
-coloro che si sono opposti ai crimini contro l’umanità perpetrati a partire dal XX secolo”
+coloro che si sono opposti ai crimini contro l’umanità perpetrati a partire dal XX secolo”</i>
 (Giuliano Pisani). Esso è dunque dedicato a tutte quelle persone, spesso poco conosciute, che
 in situazioni estreme (genocidi e guerre civili, ecc.) hanno rischiato la propria vita per salvare
-quella degli altri.
-Attualmente sono ricordati i “Giusti” che hanno operato in quattro genocidi (Armenia, Shoah,
+quella degli altri.\n
+Attualmente sono ricordati i <i>“Giusti”</i> che hanno operato in quattro genocidi (Armenia, Shoah,
 Ruanda e Bosnia) attraverso una stele che riporta il loro nome e un albero, simbolo di vita,
 piantato in loro onore. Fra di loro ricordiamo, poiché legati in qualche modo alla città di
 Padova, i coniugi Giovanni e Regina Bettin, padre Placido Cortese, Giorgio Perlasca e padre
-Marco Antonio Pressino.
+Marco Antonio Pressino.\n
 Il progetto, avviato su iniziativa di Giuliano Pisani, è stato ufficialmente inaugurato nel 2008
 e si ricollega agli analoghi progetti avviati in diversi altri paesi. Un Comitato scientifico ha il
-compito di valutare quali nuovi nominativi di “Giusti” possono essere aggiunti e soprintende
+compito di valutare quali nuovi nominativi di <i>“Giusti”</i> possono essere aggiunti e soprintende
 alle diverse iniziative di riflessione su questi temi rivolte alla società tutta, ma in particolare
 ai giovani. La relativa documentazione è consultabile presso gli uffici del Comune di Padova.
-Altre lapidi e piante vengono poste ogni anno lungo l’argine ora denominato “Cammino dei
-Giusti” e nel Comune di Noventa Padovana (PD) con un percorso che in futuro, lungo il
+Altre lapidi e piante vengono poste ogni anno lungo l’argine ora denominato <i>“Cammino dei
+Giusti”</i> e nel Comune di Noventa Padovana (PD) con un percorso che in futuro, lungo il
 Brenta, arriverà fino al mare.
     </string>
 
 
     <string name="centro_umani_title">Centro di Ateneo per i Diritti Umani <i>“Antonio Papisca”</i></string>
     <string name="centro_umani_text">
-L’attuale “Centro di Ateneo per i Diritti Umani Antonio Papisca” è nato nel 1982 all’interno
+        Per maggiori informazioni: http://unipd-centrodirittiumani.it\n
+        \n
+L’attuale <i>“Centro di Ateneo per i Diritti Umani Antonio Papisca”</i> è nato nel 1982 all’interno
 della Facoltà di Scienze Politiche dell’Università di Padova. Il creatore ed il primo direttore
 del Centro è stato il Prof. Antonio Papisca. Attualmente aderiscono al Centro 4 Dipartimenti
-universitari. Il Centro ha lo scopo di:
-● costruire il “sapere” interdisciplinare dei diritti umani (delle persone e dei popoli);
-● informare diffusamente circa i contenuti, teorici e applicativi, di questo sapere;
-● educare perché il sapere dei diritti umani operi fertilmente nella vita sociale e politica.
-Il Centro è riconosciuto come Cattedra UNESCO “Diritti umani, democrazia e pace” ed
+universitari. Il Centro ha lo scopo di:\n
+- costruire il <i>“sapere”</i> interdisciplinare dei diritti umani (delle persone e dei popoli);\n
+- informare diffusamente circa i contenuti, teorici e applicativi, di questo sapere;\n
+- educare perché il sapere dei diritti umani operi fertilmente nella vita sociale e politica.\n
+        \n
+Il Centro è riconosciuto come Cattedra UNESCO <i>“Diritti umani, democrazia e pace”</i> ed
 anche come Centro Europeo di Eccellenza Jean Monnet. Il Centro gestisce il Master Europeo
-in Diritti Umani e Democratizzazione, la borsa di studio sul tema “Difesa civica e diritti dei
-cittadini”, nell’ambito della Convenzione con l’Ufficio del Difensore civico della Regione del
-Veneto, e la Borsa di studio sul tema “Affidamento ai servizi sociali da parte dell’Autorità
-giudiziaria”, nell’ambito della Convenzione con l’Ufficio del Pubblico Tutore della Regione
-del Veneto.
-Ospita inoltre l’importante Archivio Regionale “Pace diritti umani - Peace human rights”, che
+in Diritti Umani e Democratizzazione, la borsa di studio sul tema <i>“Difesa civica e diritti dei
+cittadini”</i>, nell’ambito della Convenzione con l’Ufficio del Difensore civico della Regione del
+Veneto, e la Borsa di studio sul tema <i>“Affidamento ai servizi sociali da parte dell’Autorità
+giudiziaria”</i>, nell’ambito della Convenzione con l’Ufficio del Pubblico Tutore della Regione
+del Veneto.\n
+Ospita inoltre l’importante Archivio Regionale <i>“Pace diritti umani - Peace human rights”</i>, che
 ha le funzioni di raccolta, elaborazione e messa a disposizione del pubblico di documenti,
-database tematici e risorse informative.
-Il Centro pubblica la rivista “Pace diritti umani - Peace human rights” e la collana “Quaderni.
-Ricerca e documentazione interdisciplinare sui diritti umani”. Innumerevoli sono le
+database tematici e risorse informative.\n
+Il Centro pubblica la rivista <i>“Pace diritti umani - Peace human rights”</i> e la collana <i>“Quaderni.
+Ricerca e documentazione interdisciplinare sui diritti umani”</i>. Innumerevoli sono le
 pubblicazioni scientifiche prodotte in oltre 30 anni dal Centro che si propone come uno dei
 poli universitari più qualificati in Italia e in Europa nella ricerca e nella divulgazione delle
 tematiche relative ai diritti umani.
@@ -594,7 +628,9 @@ tematiche relative ai diritti umani.
 
 
     <string name="banca_etica_title">Banca Etica</string>
-    <string name="banca_etica__text">
+    <string name="banca_etica_text">
+        Informazioni: www.bancaetica.it\n
+        \n
 Negli anni ’80 del secolo scorso alcune organizzazioni pacifiste e altre impegnate nella
 cooperazione in Italia e nel Terzo Mondo cominciarono a interrogarsi sul ruolo sociale del
 denaro e sul fatto che le banche tradizionali spesso operassero compiendo scelte di
@@ -607,28 +643,30 @@ progetti con finalità sociale. Obbligate dalla nuova normativa e spinte dall’
 il terzo settore di un soggetto finanziario adatto, nel 1999 esse diedero vita a Banca Popolare
 Etica. Essa ha dunque una storia che parte dal basso, grazie all’impegno di tante persone ed
 organizzazioni che si sono attivate per costituire un istituto di credito ispirato alla Finanza
-Etica. Banca Etica sviluppa l’attività bancaria basandosi su questi principi: trasparenza,
+Etica. Banca Etica sviluppa l’attività bancaria basandosi su questi principi: <b>trasparenza,
 partecipazione, equità, efficienza, sobrietà, attenzione alle conseguenze non economiche
-delle azioni economiche, credito come diritto umano . Per questo la Banca ha sviluppato
-diversi strumenti di “garanzia etica” per assicurare l’effettiva possibilità di un uso
+delle azioni economiche, credito come diritto umano</b>. Per questo la Banca ha sviluppato
+diversi strumenti di <i>“garanzia etica”</i> per assicurare l’effettiva possibilità di un uso
 responsabile del denaro. È attiva nel coordinamento europeo di istituti finanziari etici e come
 Etica Srl gestisce fondi di investimento in Europa. Con il risparmio raccolto essa finanzia
-organizzazioni che operano in quattro settori specifici: cooperazione sociale, cooperazione
-internazionale, cultura e tutela ambientale .
+organizzazioni che operano in quattro settori specifici: <b>cooperazione sociale, cooperazione
+internazionale, cultura e tutela ambientale</b>.
 Poiché essa è una banca cooperativa, la gestione democratica è assicurata dalla libera
-partecipazione dei soci secondo il principio “una testa, un voto”.
+partecipazione dei soci secondo il principio <i>“una testa, un voto”</i>.
     </string>
 
 
     <string name="beati_title">Beati i costruttori di Pace</string>
     <string name="beati_text">
+        Informazioni: www.beati.eu\n
+        \n
 Nei pressi della Golena San Massimo del canale Piovego, luogo dal quale si può godere di un
-pittoresco scorcio delle cinquecentesche mura di Padova, si trova la sede di “Beati i
-costruttori di Pace”.
+pittoresco scorcio delle cinquecentesche mura di Padova, si trova la sede di <i>“Beati i
+costruttori di Pace”</i>.\n
 La costituzione di questa associazione, nota per l’impegno per la pace sia a livello nazionale
 sia a livello internazionale, risale al 1985 grazie soprattutto all’iniziativa di Don Albino
 Bizzotto. In quell’anno un gruppo di credenti cattolici redige un documento dal titolo appunto
-“Beati i costruttori di Pace”, con il quale prende una posizione molto ferma sui temi della
+<i>“Beati i costruttori di Pace”</i>, con il quale prende una posizione molto ferma sui temi della
 pace, del disarmo, dell’obiezione di coscienza e della nonviolenza. Il documento, sottoscritto
 in breve tempo da migliaia di consacrati e laici, viene inviato come appello alla Chiesa
 cattolica del Triveneto. I promotori di questa iniziativa, costituitisi nel frattempo in
@@ -652,16 +690,18 @@ Il Grande Piano Regolatore generale del 1957 della città di Padova previde di d
 verde pubblico l’ampia area (60.000 m2) di proprietà militare, interna alle cinquecentesche
 mura veneziane presso Porta Savonarola. L’area era occupata da vecchie officine
 meccaniche, immobili per famiglie di militari, ampi piazzali e, nell’antico Convento di San
-Benedetto, da comandi e sedi di varie associazioni d’armi.
+Benedetto, da comandi e sedi di varie associazioni d’armi.\n
+        \n
 Nel 1983 una piccola parte di quest’area, 4000 metri quadri, venne riconvertita a parco
 pubblico: il Parco Cavalleggeri, più conosciuto in città come Parco Prandina, dal nome della
 caserma. Questo avvenne grazie all’impegno di molte associazioni operanti nell’ambito della
 pace e dell’ecologia, nonché dei residenti del quartiere centro, che animarono il giardino con
 feste, percorsi didattici, murales di scuole d’arte. La pressione fatta sul Comune affinché
 acquisisse l’area sfociò anche nella ristrutturazione di un edificio, attualmente utilizzato per
-convegni ed intrattenimenti vari.
-Nel 1991, con il contributo degli obiettori alle spese militari, venne realizzato il “Segno di
-Pace”: una pianta di ulivo attorniata da quattro altorilievi bronzei, opera gratuita di quattro
+convegni ed intrattenimenti vari.\n
+        \n
+Nel 1991, con il contributo degli obiettori alle spese militari, venne realizzato il <i>“Segno di
+Pace”</i>: una pianta di ulivo attorniata da quattro altorilievi bronzei, opera gratuita di quattro
 artisti padovani (Iral, Liverani, Petrucci e Rodella), che interpretarono, con stile personale, la
 decisa opposizione alla guerra e gli sforzi per la pace di quegli anni. Il Parco Prandina è il
 primo significativo esempio a Padova, città ricca di caserme e antichi palazzi ancora occupati
@@ -673,23 +713,26 @@ dai militari, di riconversione ad uso civile di un’area militare.
     <string name="ramin_text">
 Nato il 9 febbraio 1953 a Padova, studente di Liceo classico presso il collegio Barbarigo
 dove si diplomò nel 1972, prese parte ad attività di volontariato con il gruppo locale
-dell’associazione “Mani Tese”.
+dell’associazione <i>“Mani Tese”</i>.\n
+        \n
 Nel 1972 entrò a far parte dei missionari comboniani svolgendo il suo periodo di formazione
 in varie città italiane e poi a Chicago nel 1977. Si diplomò quindi in teologia con la
 specializzazione in missiologia. Partecipò poi a delle esperienze pastorali tra gli indios del
 Sud Dakota e nella Bassa California messicana. A seguito dell’ordinazione, avvenuta il 28
 settembre 1980, svolse alcuni incarichi in Italia (Napoli, Troia, ecc.) e venne quindi inviato il
 20 gennaio 1984 a Cacoal nello stato di Rondonia (Brasile), dove venne ucciso il 24 luglio
-1985 per essersi schierato a fianco dei campesinos e aver sfidato i fazenderos , i latifondisti
-locali.
-Pace, giustizia e nonviolenza
+1985 per essersi schierato a fianco dei campesinos e aver sfidato i fazenderos, i latifondisti
+locali.\n
+        \n
+<b>Pace, giustizia e nonviolenza</b>\n
+        \n
 Fin da giovanissimo furono questi gli ideali che ispirarono Ezechiele Ramin e tra le sue
 letture giovanili non mancarono i libri di Dietrich Bonhoeffer, teologo evangelico. Il concetto
 di giustizia e il desiderio di combattere le ingiustizie sociali, anche a costo della vita,
 guidarono poi le azioni di Ramin nel corso della sua breve vita. Durante una delle sue ultime
-omelie, il 17 febbraio 1985, pronunciò queste parole: “ Le aree libere del nostro Stato di
+omelie, il 17 febbraio 1985, pronunciò queste parole: <i>“Le aree libere del nostro Stato di
 Rondonia, cioè la terra di nessuno, appartengono ai nostri fratelli senza terra, e non ai
-fazenderos avidi. No, perché non è questa la giustizia…”. Nella sua attività a Cacoal cercò di
+fazenderos avidi. No, perché non è questa la giustizia…”</i>. Nella sua attività a Cacoal cercò di
 persuadere gli indigeni a opporsi ai latifondisti per mezzo di proteste pacifiche e non
 ricorrendo alla lotta armata. Il giorno della sua morte intervenne a circa 100 Km da Cacoal in
 una disputa tra contadini e proprietari riuscendo a convincere i primi a non armarsi e ad
@@ -697,24 +740,26 @@ aspettare che lo Stato di Rondonia affidasse la terra ai contadini, dando ai pro
 indennizzo in denaro. La riuscita della sua azione pacificatrice fu perciò, forse, il motivo che
 decretò la sua condanna a morte. La sua autorità morale e il suo prestigio fra i campesinos
 infatti ne avrebbero fatto un avversario pericoloso per chi non voleva si sviluppasse
-ulteriormente un’organizzazione dei piccoli agricoltori.
+ulteriormente un’organizzazione dei piccoli agricoltori.\n
+        \n
 Il 25 aprile 2017 si è chiusa presso la Diocesi di Padova la Rogatoria per la sua
-Beatificazione e Canonizzazione avviata nell’aprile del 2016.
-        \n\n\n
-“Non si può stare seduti con le braccia conserte, aspettando che i primi
+Beatificazione e Canonizzazione avviata nell’aprile del 2016.\n
+        \n
+<i>“Non si può stare seduti con le braccia conserte, aspettando che i primi
 ad alzarsi siano gli altri. Su muoviamoci prima noi, diamoci da fare. Poi
-anche gli altri ci seguiranno”
-Ezechiele Ramin
+anche gli altri ci seguiranno.”</i> - Ezechiele Ramin
     </string>
 
 
     <string name="canova_title">Francesco Canova</string>
     <string name="canova_text">
+        Informazioni: www.mediciconlafrica.org/\n
+        \n
 Canova nasce a Schio (VI) il 21 marzo 1908. Nonostante le difficoltà economiche della
 famiglia, riesce a iscriversi nel 1927 alla facoltà di Medicina dell’Università di Padova.
 Durante gli studi aderisce alla FUCI, retta da Igino Righetti e Giovanni Battista Montini.
 «Allora – ricorderà Canova – portare il distintivo della FUCI significava esporci di continuo
-ad ingiurie, sarcasmi, non raramente anche alla violenza».
+ad ingiurie, sarcasmi, non raramente anche alla violenza».\n
 Si laurea a pieni voti nel 1933, senza lode, quasi certamente per ragioni politiche. Forte della
 sua preparazione riceve diverse proposte professionali, vincolate all’adesione al fascismo.
 Matura tuttavia in lui una scelta clamorosa dettata non solo dal rifiuto del regime ma anche
@@ -725,7 +770,8 @@ con l’entrata in guerra dell’Italia, Canova viene internato dalle autorità 
 Palestina. Durante la prigionia è incaricato dell’assistenza medica ai prigionieri italiani e
 stranieri detenuti nella regione. La prigionia termina nel marzo del 1944. Non potendo
 rientrare in Italia né riprendere l’attività nell’ospedale di El-Kerak, sequestrato dagli inglesi,
-Canova esercita la libera professione a Gerusalemme.
+Canova esercita la libera professione a Gerusalemme.\n
+        \n
 Nel 1947 rientra definitivamente in Italia con l’idea di dedicarsi ad un progetto che già nei
 primi anni a El- Kerak aveva anticipato a Montini e a Padre Agostino Gemelli, rettore
 dell’Università Cattolica di Milano: quello di realizzare un’università che si occupasse di
@@ -740,8 +786,7 @@ Mazzucato che ne sarà direttore sino al 2008. Canova sarà anche primario della
 sanatoriale di Bassano del Grappa (VI) e autore di numerosi libri. Negli anni continuerà a
 seguire il Cuamm, in particolare curando la corrispondenza con i medici e il personale
 inviato in Africa, rimanendo presente nella vita dell’organismo da lui fondato sino alla
-scomparsa, avvenuta
-a Padova il 25 luglio 1998.
+scomparsa, avvenuta a Padova il 25 luglio 1998.
     </string>
 
 
@@ -749,8 +794,9 @@ a Padova il 25 luglio 1998.
     <string name="caserma_piave_text">
 Fino al 1° gennaio 2005, quando è entrata in vigore la sospensione della leva obbligatoria, la
 Caserma Piave, che occupa, come analoghe strutture militari, un’antica struttura conventuale
-secolarizzata, era il luogo dove veniva svolta la visita militare, i “tre giorni” con cui veniva
-valutata l’idoneità al servizio di leva.
+secolarizzata, era il luogo dove veniva svolta la visita militare, i <i>“tre giorni”</i> con cui veniva
+valutata l’idoneità al servizio di leva.\n
+        \n
 Qui, in particolare sul marciapiede di fronte alla caserma, dato che i militari vietavano
 l’accesso anche al piazzale, per molti anni gli obiettori di coscienza padovani hanno
 distribuito volantini per informare i ragazzi di leva sulla possibilità dell’obiezione di
@@ -758,7 +804,8 @@ coscienza e del servizio civile. Dal 1972, infatti, la legge 772 permetteva anch
 svolgere un servizio civile in luogo di quello militare, ma le strutture militari si guardavano
 bene dall’informare i giovani di leva su questa possibilità. Più in generale, per quasi
 quarant’anni il servizio civile è stato gestito dalle strutture militari, che hanno sempre
-ostacolato in ogni modo l’applicazione della legge.
+ostacolato in ogni modo l’applicazione della legge.\n
+        \n
 L’obiezione di coscienza e il servizio civile hanno rappresentato un momento di grande
 mobilitazione giovanile soprattutto negli anni ’70 e ’80 e hanno trovato a Padova un centro
 molto importante, dove si sono svolte grandi manifestazioni. A Padova vi sono stati obiettori
@@ -778,19 +825,23 @@ Padova che vi realizzerà il "Campus del Polo Scienze Sociali ed Economia".
 
     <string name="comboniani_title">Padri Comboniani</string>
     <string name="comboniani_text">
+        Informazioni: www.comboniani.org\n
+        \n
 Tra i numerosi ordini religiosi presenti a Padova, i Padri Missionari Comboniani si sono
-sempre distinti nell’impegno attivo per la pace e per la nonviolenza.
-Editori delle storiche riviste missionarie, “Nigrizia”, “Il piccolo missionario” e “Combifem”,
+sempre distinti nell’impegno attivo per la pace e per la nonviolenza.\n
+        \n
+Editori delle storiche riviste missionarie, <i>“Nigrizia”</i>, <i>“Il piccolo missionario”</i> e <i>“Combifem”</i>,
 hanno sempre accompagnato l’opera missionaria in Africa con un impegno di pacificazione,
 di inculturazione del messaggio evangelico e di promozione sociale, fedeli al motto del loro
-fondatore
-S. Daniele Comboni (Limone sul Garda 1831- Karthoum 1881): “L’Africa con gli africani”.
+fondatore S. Daniele Comboni (Limone sul Garda 1831- Karthoum 1881): <i>“L’Africa con gli africani”</i>.\n
+        \n
 Per primi, negli anni ’80, hanno denunciato i traffici d’armi con i regimi corrotti di molti
 paesi, e per questo sono stati criticati in Italia ed espulsi da alcuni paesi africani, anche
 perché sostenevano che gran parte della cooperazione internazionale è ipocrita, mistificatoria
 e funzionale solo alla penetrazione delle aziende italiane nei mercati esteri. Il migliore aiuto
 allo sviluppo è invece favorire la pacificazione, la mediazione nei conflitti, la fine delle
-vendite di armi.
+vendite di armi.\n
+        \n
 A Padova i Comboniani hanno collaborato apertamente a tutte le iniziative e campagne di
 pace (dal sostegno agli obiettori di coscienza al servizio militare e alle spese militari, sino
 alle campagne contro le mine, contro le bombe atomiche e la base NATO di Aviano (PN) e
@@ -806,51 +857,55 @@ legislazione italiana restrittiva e penalizzante per gli stranieri, i rifugiati,
 
     <string name="casa_arcobaleno_title">Casa Arcobaleno</string>
     <string name="casa_arcobaleno_text">
+        Informazioni: www.mirpadova.org, www.assopace.org\n
+        \n
 Il MIR (Movimento Internazionale della Riconciliazione), sezione italiana di un movimento
 nonviolento a base spirituale nato nel 1914 e diffuso in tutto il mondo, opera a Padova dalla
 fine degli anni ’70, quando sorse per iniziativa di un gruppo di giovani interessati alle
-tematiche della nonviolenza e dell’obiezione di coscienza.
+tematiche della nonviolenza e dell’obiezione di coscienza.\n
+        \n
 In quarant’anni di attività, partendo dal nucleo centrale della nonviolenza, i suoi interventi
 hanno spaziato in molti ambiti collegati: dall’obiezione di coscienza al servizio militare alla
 ricerca sulla difesa popolare nonviolenta, dalla campagna per l’obiezione alle spese militari
 alla sperimentazione di metodologie di azione nonviolenta, dalla diffusione dell’educazione
 alla pace e della cultura della nonviolenza all’opposizione agli euromissili, alle basi militari,
-agli F35.
+agli F35.\n
 L’Associazione per la Pace è nata come organizzazione nazionale sulle ceneri dei comitati
 popolari che all’inizio degli anni ’80 avevano organizzato l’opposizione agli euromissili. Da
 allora ha sempre operato sui temi della pace, del disarmo, delle spese militari,
 dell’opposizione alla guerra, della solidarietà internazionale, in particolare con i popoli della
-ex-Jugoslavia e con il popolo palestinese.
+ex-Jugoslavia e con il popolo palestinese.\n
+        \n
 La struttura che ospita questi due gruppi è la Casa Arcobaleno, concessa dal Comune di
 Padova alle associazioni ecopacifiste padovane nel 1989, riunite in un progetto che ambiva a
 collegare la pluralità e la varietà degli approcci ai problemi della pace, dell’ambiente e della
-cooperazione internazionale.
+cooperazione internazionale.\n
 La Casa Arcobaleno occupa la parte sinistra dell’avancorpo dell’ex- macello di Padova.
 L’ex-macello è una struttura dell’inizio del ‘900 in parte occupata da attività culturali ed in
 parte in abbandono ed in attesa di restauro, con un bel giardino storico.
 Nell’edificio che occupa la parte destra ha invece sede dagli anni ’70 la Clac (Comunità per
 le Libere Attività Culturali), che raggruppa numerose associazioni di base, soprattutto
-ambientaliste.
+ambientaliste.\n
 L’intera struttura, un raro esempio di archeologia industriale, si trova sotto la protezione
 dell’Unesco.
-        \n\n
-        Informazioni: www.mirpadova.org, www.assopace.org
     </string>
 
 
     <string name="esquivel_title">Adolfo Pérez Esquivel</string>
-    <string name="equivel_text">
+    <string name="esquivel_text">
 Nato il 26 novembre 1931 a Buenos Aires in Argentina, frequenta l’Escuela Nacional de
 Bellas Artes e l’Universidad Nacional de la Plata. Laureatosi in architettura, svolge
 inizialmente l’attività di insegnante, ma successivamente decide di dedicarsi all’assistenza dei
 poveri e alla lotta contro le ingiustizie sociali, contribuendo alla fondazione, nel 1974, del
-movimento “Servicio Paz y Justicia (Serpaj)”. A seguito del colpo di stato in Argentina del
+movimento <i>“Servicio Paz y Justicia (Serpaj)”</i>. A seguito del colpo di stato in Argentina del
 24 marzo 1976, nella primavera del 1977 Esquivel viene arrestato senza una formale accusa e
 quindi incarcerato per 14 mesi senza processo. Sottoposto a tortura, viene poi scarcerato, ma
 ancora soggetto a libertà vigilata per 14 mesi. Nel 1980 gli viene attribuito il Premio Nobel
 per la Pace, mentre nel 1999 riceve il premio Pacem in Terris assegnato dalla Chiesa
-Cattolica a persone che si distinguono in attività di pace e giustizia.
-Il Serpaj
+Cattolica a persone che si distinguono in attività di pace e giustizia.\n
+        \n
+        <b>Il Serpaj</b>\n
+        \n
 La nascita del Serpaj si può far risalire al viaggio, compiuto nel 1962 in Sudamerica, di due
 inviati dell’International Fellowship of Reconciliation (di cui il Mir è la branca italiana): Jean
 e Hildegard Goss. Il loro obiettivo era quello di analizzare l’esplosiva situazione latinoamericana,
@@ -858,7 +913,8 @@ conseguenza di una vasta tradizione di disuguaglianze sociali e dell’aggravame
 di varie forme di sfruttamento del popolo. L’incontro con padre Camilo Torres, allora
 sostenitore della lotta armata, permise a Jean e Hildegard di avviare un confronto sulle
 eventuali alternative e sulla possibilità che la nonviolenza permettesse un passo in avanti nel
-processo di liberazione.
+processo di liberazione.\n
+        \n
 Negli anni successivi i due inviati dell’Ifor continuarono a incontrare persone e
 organizzazioni e il frutto di tutta questa attività si vide nel 1974, in Colombia, quando prese
 infine vita, formalmente, questa organizzazione non governativa impegnata nella promozione
@@ -869,12 +925,10 @@ tutti uniti dalla preoccupazione per la sorte dei loro paesi e impegnati nel con
 politiche comuni per contrastare la violenza e l’oppressione delle dittature militari al governo.
 Nel 1975 il Serpaj contribuì alla fondazione dell’Assemblea permanente per i Diritti Umani e
 al Movimento Ecumenico per i Diritti Umani e cominciò una campagna internazionale per
-denunciare le atrocità compiute dalle dittature militari.
+denunciare le atrocità compiute dalle dittature militari.\n
 Esquivel è l’attuale presidente di Serpaj-Argentina.
         \n\n
-        <i>“La nonviolenza non è passività, è resistenza attiva all’ingiustizia”</i>.
-        \n
-Adolfo Pérez Esquivel
+        <i>“La nonviolenza non è passività, è resistenza attiva all’ingiustizia”</i> - Adolfo Pérez Esquivel
     </string>
 
 </resources>

@@ -49,10 +49,17 @@
 
     <string name="imageview_default_contentdescription">Image</string>
 
+    <string name="presentation_header_text">
+    <b>ROUTES OF PEACE AND NONVIOLENCE IN PADUA</b>
+        \n
+    Places, people, events and experiences
+    </string>
+
+
     <string name="presentation_text">
 <i>“A good use of memory is one that serves a just cause and does not content itself with reproducing the past.”</i>
         \n
--Tzvetan Todorov, “Hope and Memory”, Ed. Garzanti
+- Tzvetan Todorov, “Hope and Memory”, Ed. Garzanti
 \n\n
 <b>Presentation</b>\n\n
 Just three years after the printing of the second edition, that was distributed to the local peace supporters who greatly appreciated that, we are now happy to introduce the third edition of this guide, this time available as an app for smartphones.
@@ -61,10 +68,19 @@ Through the correction of some minor mistakes and the insertion of new, original
 We would like to remind the readers that this guide offers an alternative way to discover the city. It takes a rather unusual approach for a guide, promoting a culture of peace and nonviolence.
 \n\n
         <b>International Projects</b>\n\n
-The idea stems from the international contacts established through the Grundtvig European programme, “Discover Peace in Europe”, financed by the European Union, which led to the creation of routes of peace in 7 more European cities: Turin, Paris, Vienna, Berlin, Budapest, The Hague and Manchester. A website showing these peace routes has also been published.
-The first city to prepare a peace trail was Bradford (GB). The route has been published as a booklet of about 40 pages.
-A pocket book of 212 pages has also been produced in Vienna (A), presenting the city in these terms. And a great many other cities across the globe have prepared similar routes in order to ensure due consideration of the culture of peace and nonviolence, starting from the local context. These include others in Great Britain (London, Coventry and Leeds), as well as Atlanta in the USA, which in addition to the website has also produced a 64-page booklet, and Geneva in Switzerland4.
-\n\n
+The idea stems from the international contacts established through the Grundtvig European
+programme, “Discover Peace in Europe”, financed by the European Union, which led to the
+creation of routes of peace in 7 more European cities: Turin, Paris, Vienna, Berlin, Budapest,
+The Hague and Manchester. A website showing these peace routes has also been published (1).
+The first city to prepare a peace trail was Bradford (GB). The route has been published as a
+booklet of about 40 pages.
+A pocket book of 212 pages has also been produced in Vienna (A), presenting the city in these
+terms (2). And a great many other cities across the globe have prepared similar routes in order to
+ensure due consideration of the culture of peace and nonviolence, starting from the local
+context. These include others in Great Britain (London, Coventry and Leeds), as well as Atlanta
+in the USA (3), which in addition to the website has also produced a 64-page booklet, and Geneva
+in Switzerland (4).
+        \n\n
         <b>In Italy</b>\n\n
 Padua is the first city tohave produced a guide of this scope.
 Meanwhile, in Turin, a similar guide has been published in two versions, one written in Italian and another one translated into English. The aforementioned Grundtvig programme is the reference background in which this work has been conceived and published.
@@ -84,10 +100,10 @@ Enjoy!
 \n\n
         <b>Movimento Internazionale della Riconciliazione, Padua offices</b>\n\n
 
-1)	http://www.discoverpeace.eu\n
-2)	E. Hewson, G. Hamann, S. Jalka, Frieden entdecken in Wien, Pro Business, Vienna, 2011\n
-3)	http://www.atlantapeacetrails.com\n
-4)	http://www.genevaforpeace.com, Itinéraire de la paix"\n
+(1)	http://www.discoverpeace.eu\n
+(2)	E. Hewson, G. Hamann, S. Jalka, Frieden entdecken in Wien, Pro Business, Vienna, 2011\n
+(3)	http://www.atlantapeacetrails.com\n
+(4)	http://www.genevaforpeace.com, Itinéraire de la paix"\n
 
     </string>
 
@@ -118,7 +134,7 @@ Todorov Tzvetan, Hope and Memory, Published by Princeton University Press, 2003;
 Vasoin Gigi: “La Signoria dei Carraresi nella Padova del ‘300”, Ed. la Garangola Padova, 1988\n\n
 Vecchia Giuliana, Breve storia del tempio della Pace, Tip. “La Garangola”, Padova, 1988;\n\n
 Zilli Arturo, Dio non uccide, Ed. Il Margine, 2012.\n
-        \n\n
+        \n
         <b>Acknowledgements</b>\n\n
 The photographs illustrating this guide have been taken thanks to the willingness of so many
 people and institutions who have kindly opened the doors of their private homes, offices and
@@ -199,5 +215,15 @@ mirsezpd@libero.it.\n\n
 No part of the texts can be reproduced using electronic, mechanical or any other means, unless
 authorised in writing by the MIR of Padua.
     </string>
+
+    <string name="site_string_not_found_error">
+        \n
+        <b>Error: string resource not found.</b>\n
+        \n
+        In case this error occurs, contact the author:\n
+        \n
+        alvise.spano@unive.it
+    </string>
+
 
 </resources>

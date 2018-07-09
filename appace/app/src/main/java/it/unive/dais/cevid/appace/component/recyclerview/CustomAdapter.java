@@ -2,9 +2,7 @@ package it.unive.dais.cevid.appace.component.recyclerview;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
-import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
@@ -20,7 +18,6 @@ import java.util.List;
 import it.unive.dais.cevid.appace.R;
 import it.unive.dais.cevid.appace.component.HomeActivity;
 import it.unive.dais.cevid.appace.component.MapsActivity;
-import it.unive.dais.cevid.appace.component.SiteActivity;
 import it.unive.dais.cevid.appace.geo.Site;
 
 

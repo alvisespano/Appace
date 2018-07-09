@@ -15,7 +15,6 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.annotation.ColorInt;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -300,7 +299,7 @@ public class MapsActivity extends BaseActivity
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-        startSiteActivity(this, (Site) marker.getTag());
+        startSiteActivity(this, (Site) Objects.requireNonNull(marker.getTag()));
     }
 
 
