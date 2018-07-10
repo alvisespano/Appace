@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="rosso">#860f25</color>
+    <color name="beige">#e1d7c5</color>
+    <color name="nero">#1f2a24</color>
+
     <color name="main">#863036</color>
     <color name="mainDark">#661016</color>
     <color name="mainBright">#a65056</color>

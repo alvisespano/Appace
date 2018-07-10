@@ -22,4 +22,5 @@
     <dimen name="about_vertical_separator">20dp</dimen>
     <dimen name="textview_extra_padding_workaround">20sp</dimen>
     <dimen name="site_photo_margin_top">25dp</dimen>
+    <dimen name="home_scroll_margin_height">10dp</dimen>
 </resources>

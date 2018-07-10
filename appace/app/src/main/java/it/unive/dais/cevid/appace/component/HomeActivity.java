@@ -1,5 +1,6 @@
 package it.unive.dais.cevid.appace.component;
 
+import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -9,7 +10,13 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.widget.FrameLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
+
+import com.q42.android.scrollingimageview.ScrollingImageView;
 
 import java.io.InputStreamReader;
 import java.io.Serializable;
@@ -43,11 +50,57 @@ public class HomeActivity extends BaseActivity {
 
         progressBarManager = new ProgressBarManager(this, new ProgressBar[]{findViewById(R.id.progress_bar)});
 
-        // TODO: scroll bitmap image by uncommemnting this
-//        ScrollingImageView scrollingBackground = (ScrollingImageView) findViewById(R.id.home_background);
-//        scrollingBackground.stop();
-//        scrollingBackground.start();
+        // animations
+        ScrollingImageView blackBg = findViewById(R.id.home_black_bg), redBg = findViewById(R.id.home_red_bg);
+        blackBg.stop();
+        redBg.stop();
+        blackBg.start();
+        redBg.start();
 
+        AlphaAnimation blackBgAnim = new AlphaAnimation(0.5f, 0.8f);
+        AlphaAnimation redBgAnim = new AlphaAnimation(0.6f, 0.1f);
+
+        blackBgAnim.setDuration(11 * 1000);
+        redBgAnim.setDuration(23 * 1000);
+
+        blackBgAnim.setRepeatCount(Animation.INFINITE);
+        redBgAnim.setRepeatCount(Animation.INFINITE);
+
+        blackBgAnim.setRepeatMode(Animation.REVERSE);
+        redBgAnim.setRepeatMode(Animation.REVERSE);
+
+        blackBg.startAnimation(blackBgAnim);
+        redBg.startAnimation(redBgAnim);
+
+        ValueAnimator colorAnim = ValueAnimator.ofArgb(
+                getResources().getColor(R.color.mainBright_overlay),
+                0x88000000
+        );
+        TextView tv = findViewById(R.id.home_scrolling_textview);
+        colorAnim.setDuration(2 * 1000);
+        colorAnim.setRepeatCount(ValueAnimator.INFINITE);
+        colorAnim.setRepeatMode(ValueAnimator.REVERSE);
+        colorAnim.addUpdateListener(an -> {
+            int x = (int) an.getAnimatedValue();
+            tv.setBackgroundColor(x);
+        });
+        colorAnim.start();
+
+
+//        FrameLayout layout = findViewById(R.id.home_background_layout);
+//        // doppia rotation animata
+//        ValueAnimator an1 = ValueAnimator.ofFloat(0.0f, 360.0f);
+//        an1.addUpdateListener(an -> {
+//            float a = (float) an.getAnimatedValue();
+////            blackBg.setRotation(a);
+////            redBgAnim.setRotation(a * 2.3);
+////            layout.setRotation(a);    // anche l'intero layout si può ruotare, volendo
+//        });
+//        an1.setDuration(100 * 1000);
+//        an1.setRepeatCount(ValueAnimator.INFINITE);
+//        an1.start();
+
+        // state recovery
         if (rows == null) {
             Log.d(TAG, "parsing CSV....");
             CsvParser parser = new CsvParser(new InputStreamReader(getResources().openRawResource(R.raw.luoghi)), true, ";", progressBarManager);

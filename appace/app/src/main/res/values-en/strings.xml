@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">Appace</string>
+    <string name="app_name">APpace</string>
 
     <string name="gps_disabled">GPS disattivato</string>
     <string name="gps_enabled">GPS attivato</string>
@@ -20,11 +20,6 @@
     <string name="menu_mapStyle_satellite">Satellite</string>
     <string name="menu_mapStyle_terrain">Terreno</string>
     <string name="menu_mapStyle_hybrid">Ibrido</string>
-
-    <string name="credits_year">2018</string>
-    <string name="credits_project">Appace</string>
-    <string name="credits_company">Università Ca\' Foscari, Venice, Italy</string>
-    <string name="credits_authors">Alvise Spanò</string>
 
     <string name="action_info">Info</string>
     <string name="action_settings">Settings</string>
@@ -151,6 +146,8 @@ exemplary collaboration.\n
 </string>
 
     <string name="credits" tools:ignore="TypographyOther">
+        APpace - Places of Peace in Padua\n
+        \n
     Photos and text by MIR\n
     - Movimento Internazionale Riconciliazione\n
     \n
@@ -225,5 +222,6 @@ authorised in writing by the MIR of Padua.
         alvise.spano@unive.it
     </string>
 
+    <string name="home_scrolling_text">APpace · Comune di Padova (Padua) · Places of Peace in the city center</string>
 
 </resources>
