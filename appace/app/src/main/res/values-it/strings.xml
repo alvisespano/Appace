@@ -1,0 +1,229 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">APpace</string>
+
+    <string name="gps_disabled">GPS disattivato</string>
+    <string name="gps_enabled">GPS attivato</string>
+    <string name="conn_failed">Connessione fallita</string>
+    <string name="conn_suspended">Connessione sospesa</string>
+
+    <string name="menu_mapStyle_title">Stile Mappa</string>
+    <string name="menu_mapStyle_summary">Scegli il tipo di mappa di Google Maps</string>
+    <string name="menu_zoomThreshold_title">Soglia di Zoom</string>
+    <string name="menu_zoomThreshold_summary">Soglia oltre la quale scompare il pulsante per impostare il marker</string>
+    <string name="menu_checkBox_title">Aggiornamento Automatico</string>
+    <string name="menu_checkBox_summary">Verifica la presenza di versioni più recenti.</string>
+
+    <string name="menu_zoomThreshold_low">Basso</string>
+    <string name="menu_zoomThreshold_mid">Medio</string>
+    <string name="menu_zoomThreshold_high">Alto</string>
+    <string name="menu_mapStyle_normal">Standard</string>
+    <string name="menu_mapStyle_satellite">Satellite</string>
+    <string name="menu_mapStyle_terrain">Terreno</string>
+    <string name="menu_mapStyle_hybrid">Ibrido</string>
+
+    <string name="action_info">Info</string>
+    <string name="action_settings">Impostazioni</string>
+
+    <string name="msg_loading">Caricamento…</string>
+    <string name="msg_button_car">Pulsante premuto</string>
+    <string name="msg_permissions_not_granted">I permessi appena negati dall\'utente sono necessari per alcune funzionalità dell\'app. Il supporto delle funzionalità sarà ridotto.</string>
+
+    <string name="marker_title">Tu sei QUI</string>
+
+    <string-array name="language_option">
+        <item>English</item>
+        <item>Indonesian</item>
+        <item>Spanish</item>
+    </string-array>
+
+    <string name="imageview_default_contentdescription">Immagine</string>
+
+
+    <string name="title_activity_maps">Mappa dei Luoghi</string>
+    <string name="title_activity_presentation">Presentazione</string>
+    <string name="title_activity_site"><!--non inserire testo--></string>
+    <string name="title_activity_sources">Fonti</string>
+    <string name="title_activity_list">Luoghi di Pace</string>
+
+    <string name="sitemap_button">MAPPA DEI LUOGHI</string>
+    <string name="sources_button">FONTI</string>
+    <string name="credits_button">CREDITI</string>
+    <string name="presentation_button">PRESENTAZIONE</string>
+    <string name="sitelist_button">LUOGHI DI PACE</string>
+
+    <string name="presentation_header_text">
+    <b>PERCORSI DI PACE E DI NONVIOLENZA A PADOVA</b>
+        \n
+    Luoghi, personaggi, eventi, testimonianze
+    </string>
+
+    <string name="presentation_text">
+<i>“Il buon uso della memoria è quello che serve una giusta causa, non quello che si limita a riprodurre il passato.”</i>
+        \n
+- Tzvetan Todorov, “Memoria del male, tentazione del bene”, Ed. Garzanti
+\n\n
+<b>Presentazione</b>\n\n
+
+A distanza di soli tre anni dalla seconda edizione cartacea, che è stata diffusa e apprezzata nel mondo della pace in città, siamo lieti di presentare la terza edizione questa volta disponibile come app per smartphone.
+La traduzione in inglese si è resa indispensabile per una conoscenza e un utilizzo da parte anche dei molti turisti stranieri interessati ai temi della Pace.
+La correzione di imperfezioni e l’introduzione di nuove foto la rendono più precisa e documentata così come la segnalazione dello spostamento di due punti di interesse.
+Ci piace ricordare come questa guida proponga un modo diverso di conoscere la città, un angolo di visuale inconsueto: quello della cultura della pace e della nonviolenza.
+\n\n
+        <b>Progetti internazionali</b>\n\n
+L’idea ci è stata suggerita dai contatti internazionali maturati attraverso il programma europeo Grundtvig “Discover Peace in Europe”, finanziato dall’Unione Europea, che ha visto la creazione di percorsi di pace in altre 7 città europee: Torino, Parigi, Vienna, Berlino, Budapest, L’Aia, Manchester e ha prodotto anche un sito web (1).
+La prima città a dotarsi di un itinerario di pace è stata Bradford (GB). Il percorso è stato editato in un opuscolo di circa 40 pagine.
+
+Anche a Vienna (A) è stato prodotto un libretto tascabile di ben 212 pagine che presenta la città da questo punto di vista (2).
+Ma numerose altre sono le città che nel mondo hanno predisposto questo tipo di itinerari per valorizzare, a partire dal contesto locale, la cultura della pace e della nonviolenza. Fra queste ricordiamo Londra,
+        Coventry e Leeds sempre in Gran Bretagna, ma anche Atlanta negli USA (3), che oltre al sito ha prodotto un opuscolo di 64 pagine, e Ginevra in Svizzera (4).
+\n\n
+        <b>In Italia</b>\n\n
+Padova è la prima città che ha prodotto una guida con questo taglio.
+Nel frattempo è uscita una guida analoga per la città di Torino in due versioni, in lingua italiana e inglese, realizzata nell’ambito del già ricordato progetto Grundtvig.
+\n\n
+        <b>I criteri di scelta</b>\n\n
+I luoghi, i personaggi, le storie sono presentati attraverso una scheda sintetica. I criteri di scelta sono stati quelli di presentare luoghi e persone che hanno agito in positivo per la pace e la nonviolenza, limitando quindi i riferimenti ai luoghi di guerra di cui Padova purtroppo è molto ricca, pur non dimenticandoli. Abbiamo ricercato le tracce, che sono sparse nel territorio padovano ed a volte di difficile individuazione, di chi nel corso dei secoli ha cercato di agire in favore della pace, della riconciliazione e della giustizia evitando, rifiutando o limitando al massimo l’uso della violenza, pur magari non facendo riferimento esplicitamente all’idea della nonviolenza, ma ad altri valori positivi, umani, religiosi o politici. In effetti la cultura della pace è antica, ma la cultura della nonviolenza è giovane, per cui non è corretto attribuire etichette di nonviolenza nel lontano passato, quando la riflessione su questo metodo di azione in un senso preciso, morale, culturale e politico, risale solo al secolo scorso. Abbiamo operato delle scelte e questo ha significato a volte tralasciare episodi e personaggi che altri possono reputare significativi.
+\n\n
+        <b>Le schede</b>\n\n
+
+La parte che riguarda la storia prima del Novecento non è molto ampia. Abbiamo indagato su molti personaggi celebri, che però alla fine non sono risultati congruenti con i criteri richiesti. Tra gli esclusi più illustri vi è Bernardino da Feltre, fondatore del Monte di Pietà, che potremmo considerare un lontano precursore della finanza etica, ma che abbiamo dovuto escludere per il suo fanatico antisemitismo; così anche Galileo Galilei, il grande scienziato che ha lavorato, oltre che per la ricerca pura, anche per creare strumenti di guerra; purtroppo non abbiamo trovato molti altri esempi di precursori di una cultura di pace in ottocento anni di storia dell’Università di Padova.
+La parte sulla storia del Novecento è ampia, ma potrebbe esserlo di più. Padova è stata centro di grande importanza militare e vittima di molta violenza bellica, a partire dai bombardamenti, ma è stata anche luogo di resistenza e di azioni di pace, di accoglienza per perseguitati, come ad esempio gli armeni. In questa sezione vi sono schede sui luoghi monumentali dedicati alla memoria delle vittime e dei “giusti”, di cui Padova è particolarmente ricca, e vi sono schede su singole personalità. Se ne potrebbero aggiungere sicuramente altre, soprattutto nel periodo della Resistenza.
+Infine la parte contemporanea esemplifica alcuni momenti della attuale cultura di pace in Padova. Non è e non potrebbe essere un elenco completo di tutti i movimenti presenti in città e delle loro attività, che possono essere rintracciati facilmente attraverso i relativi siti o depliant e che mutano con grande rapidità, ma soltanto un’indicazione di luoghi, figure e tematiche significativi, da cui ognuno potrà prendere spunto per ulteriori ricerche.
+Speriamo che questa terza edizione della guida sarà seguita da edizioni successive più complete, grazie anche ad un eventuale apporto dei lettori.
+Alla fine della guida una bibliografia indica possibili direzioni di approfondimento.
+Buona lettura.\n
+\n
+        <b>Movimento Internazionale della Riconciliazione, sede di Padova</b>\n
+        \n
+
+(1)	http://www.discoverpeace.eu\n
+(2)	E. Hewson, G. Hamann, S. Jalka, Frieden entdecken in Wien, Pro Business, Vienna, 2011\n
+(3)	http://www.atlantapeacetrails.com\n
+(4)	http://www.genevaforpeace.com, Itinéraire de la paix"\n
+    </string>
+
+    <string name="sources_text">
+    <b>Fonti Letterarie e suggerimenti bibliografici</b>
+
+"\n\nAccattoli Luigi, La radice di un grande albero. Francesco Canova, medico, missionario, cosmopolita, Ed. S. Paolo, 2013;\n
+Arslan Antonia, La masseria delle allodole, Ed. Rizzoli, 2004;\n
+AA.VV., Dizionario letterario delle opere e dei personaggi, Ed.Valentino Bompiani, Milano, 1950;\n
+AA.VV., Padova per Antenore, Atti della giornata di studio (Padova, 14 dicembre 1989), a cura di G. Zampieri, Editoriale Programma, Padova, 1990;\n
+AA.VV., Strade della Resistenza, Comune di Padova, Quartiere 3 EST, 2005;\n\nAA.VV., Un frate eroe della resistenza, Dolo (VE);\n
+Braccesi Lorenzo, La leggenda di Antenore. Da Troia a Padova, Ed. Marsilio, Padova, 1984;\n\nButturini Giuseppe, Una professione che diventa missione. Francesco Canova e Medici con l’Africa Cuamm, Ed. Studium, 2013;\n
+Collodo S., Padova al tempo di Francesco Petrarca in "Petrarca e il suo tempo, Catalogo della mostra "Petrarca e il suo tempo" Comune di Padova 8 maggio - 31 luglio 2004, Milano, Ed. Skira 2006;\n\nDaniele Ireneo, S. Antonio di Padova, Conversazioni sulla sua vita, Ed. Associazione Universale di S. Antonio, Padova, 1984;\n\n
+Deaglio Enrico, La banalità del bene. Storia di Giorgio Perlasca, Ed. Feltrinelli, 2003;\n\n
+Emerton Ephraim, The Defensor Pacis of Marsiglio of Padua, Oxford University Press, 1920;\n\nFabris Giovanni, Scritti di arte e storia padovana, Ed. Rebellato, Padova, 1977;\n\n
+Franceschini Ezio, Concetto Marchesi, Ed. Antenore, Padova, 1978;\n\n
+Gamboso Vergilio, Vita di sant’Antonio, Ed. Messaggero, Padova, 2011;\n\n
+Geyer Francesco Saverio, Mons Daniele Comboni, Ed. Biblioteca Comboniana, 2000;\n\n
+Jevnikar Ivo,Tottoli Apollonio ( a cura di), Padova-Chiesanuova, Un campo di concentramento e la carità di un frate, Ed. Over-Oltre, Padova 2009;\n\n
+Lamon Roberta, Le statue di Palazzo Scarpari, “Padova e il suo territorio”, 156, aprile 2012, p. 18-21;\n\n
+Lenci G., Le giornate di villa Giusti. Storia di un armistizio, Ed. Il Poligrafo, 2008;\n\n
+Martini Carla Liliana, Catena di salvezza, Ed. Messaggero, Padova, 2005;\n\n
+Puppi L., Toffanin G., Guida di Padova, Ed. Lint, Trieste, 1983;\n\n
+Ronconi Giorgio, Antenore, la sua tomba, il suo mito, “Padova e il suo territorio”, I, 1986, n. 1, pp. 8-11;\n\n
+Toffanin Giuseppe Junior, Cent’anni in una città, Ed. Rebellato, Padova, 1973;\n\n
+Todorov Tzvetan, Di fronte all’estremo, Ed. Garzanti, 1992;\n\n
+Todorov Tzvetan, Hope and Memory, Published by Princeton University Press, 2003;\n\n
+Vasoin Gigi: “La Signoria dei Carraresi nella Padova del ‘300”, Ed. la Garangola Padova, 1988\n\n
+Vecchia Giuliana, Breve storia del tempio della Pace, Tip. “La Garangola”, Padova, 1988;\n\n
+Zilli Arturo, Dio non uccide, Ed. Il Margine, 2012.\n
+        \n
+        <b>Ringraziamenti</b>\n\n
+Le foto che illustrano questa guida sono state scattate grazie alla cordiale disponibilità di
+tante persone ed istituzioni che mi hanno gentilmente aperto le porte delle loro case
+private, dei loro uffici o delle loro strutture. Senza questa collaborazione alcune
+inquadrature scattate da una angolazione inconsueta non sarebbero state possibili e
+alcune opere d’arte non sarebbero presenti qui. Pertanto desidero ringraziare: la
+dottoressa Dan ed il personale della Banca Antonveneta della sede di via VIII febbraio,
+Marco Piccolo di Banca Popolare Etica, il personale della sicurezza dell’Università di
+Padova, il Comboniano padre Celestino Prevedello, la dottoressa Chiara Giacon e padre
+Luciano Bertazzo del Centro Studi Antoniani, la signora Loriana Puggelli Abati. E senza
+dimenticare il personale della segreteria dell’ex Assessore Dalla Vecchia per l’esemplare
+collaborazione.\n
+        \n
+        <i>Sergio Bergami</i>
+</string>
+
+    <string name="credits" tools:ignore="TypographyOther">
+        APpace - Luoghi della Pace nel territorio di Padova\n
+        \n
+    Contenuti a cura del MIR, Movimento Internazionale Riconciliazione, sede di Padova\n
+    \n
+    Tratti da:\n
+        «Percorsi di Pace e di Non Violenza a Padova»,
+    Tipografia Imprimenda,
+    Limena (pd)\n
+    \n
+    Sviluppo app:\ndott. Alvise Spanò\n
+    \n
+    Coordinatore:\nprof. Agostino Cortesi\n
+    \n
+    (c) 2018\n
+    Università Ca\' Foscari Venezia
+    </string>
+
+    <string name="credits2">
+        <b>Percorsi di Pace e di Nonviolenza a Padova</b>\n
+    Terza edizione, maggio 2018\n
+    Progetto a cura del Movimento Internazionale della Riconciliazione, sede di Padova, Via Cornaro 1/A, Padova.\n
+    Sito Web: www.mirpadova.org\n
+    Traduzione in lingua inglese finanziata dal Comune di Padova.\n
+    \n
+    <b>Hanno collaborato alla stesura dei testi</b>:
+    Andrea Alessandrini, Luca Baggio, Sergio Bergami, Antonia Carone, Claudio Carrara,
+    Giampaolo Frison, Alfeo Merlin, Mariacristina Tassan, Francesco Varotto, Alberto Zangheri
+    Scheda su Francesco Canova a cura di Linda Previato, Medici con l’Africa Cuamm.\n
+    \n
+    <b>Foto:</b>
+        <i>“Sant’Antonio affronta il tiranno Ezzelino da Romano”</i>, foto di Sergio Bergami (2013) per
+    gentile concessione del “Centro Studi Antoniani”.\n
+    Tutte le altre foto sono di Sergio Bergami (2012, 2013, 2014, 2015, 2018),
+    ad esclusione di:\n
+        - Placido Cortese (<i>Messaggero di S. Antonio su licenza Creative Commons</i>);\n
+     - Concetto Marchesi, Mario Todesco, Silvio Barbato (<i>Wikipedia</i>);\n
+     - Mariano Girotto (<i>Famiglia Varotto</i>);\n
+    Tempio dell’Internato Ignoto e Giardino dei Giusti (<i>Giampaolo Frison</i>);\n
+     - Francesco Canova (<i>Medici con l’Africa, Cuamm</i>);\n
+        - <i>“S. Antonio restituisce la pace ai padovani”</i>, dalla fototeca del “Centro Studi
+    Antoniani” per gentile concessione (Prot. 092/13 del 23/04/2013).\n
+     - “Ritratto di Francesco Petrarca di Altichiero da Verona” (<i>foto: Wikimedia Commons</i>)\n
+    \n
+    <b>Traduzione schede</b>:\n
+    Helen Tamara Matthews\n
+    \n
+    <b>Traduzioni aggiuntive</b>:\n
+    Francesco Varotto\n
+    \n
+    <b>Revisione</b>:\n
+    Francesco Varotto, Alberto Zangheri\n
+    \n
+    <b>Editing</b>:\n
+    Francesco Varotto\n
+    \n
+    <b>Stampa</b>:\n
+    Imprimenda, Limena (PD)\n
+    \n
+    Il M.I.R. di Padova ringrazia fin d’ora quanti vorranno fornire eventuali suggerimenti o
+    informazioni utili alla maggiore completezza di questa guida. Si prega di inviare le
+    indicazioni all’indirizzo di posta elettronica: mirsezpd@libero.it\n\n
+        Nessuna parte dei testi può essere riprodotta con sistemi elettronici, meccanici o altri, senza
+l’autorizzazione scritta del M.I.R. di Padova.
+    </string>
+
+    <string name="site_string_not_found_error">
+        \n
+        <b>Errore: string resource non trovata.</b>\n
+        \n
+        Se questo errore si verifica, contattare l\'autore:\n
+        \n
+        alvise.spano@unive.it
+    </string>
+    <string name="home_scrolling_text">APpace · Luoghi di Pace nel territorio di Padova</string>
+
+    <string name="prexx_legenda_text">prima del novecento</string>
+    <string name="xx_legenda_text">ventesimo secolo</string>
+    <string name="contemporary_legenda_text">storia contemporanea</string>
+
+</resources>

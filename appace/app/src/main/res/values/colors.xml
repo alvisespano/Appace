@@ -22,6 +22,9 @@
     <color name="era_green_overlay">#4454A96C</color>
     <color name="era_yellow_overlay">#66CDB947</color>
 
+    <color name="legenda_red_overlay">#863036</color>
+    <color name="legenda_green_overlay">#54A96C</color>
+    <color name="legenda_yellow_overlay">#CDB947</color>
 
     <color name="colorPrimary">@color/main</color>
     <color name="colorPrimaryDark">@color/mainDark</color>

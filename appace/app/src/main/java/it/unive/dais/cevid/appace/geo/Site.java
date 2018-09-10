@@ -2,6 +2,7 @@ package it.unive.dais.cevid.appace.geo;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.support.annotation.DrawableRes;
@@ -155,12 +156,12 @@ public class Site implements MapItem {
     }
 
     @NonNull
-    public List<Drawable> getPhotos() {
+    public List<BitmapDrawable> getPhotos() {
         String name = getRoot();
-        List<Drawable> r = new ArrayList<>();
+        List<BitmapDrawable> r = new ArrayList<>();
         boolean stop = false;
         for (int i = 1; !stop; ++i) {
-            Drawable d;
+            BitmapDrawable d;
             if (i == 1) {
                 d = getDrawableByName(name);
                 if (d == null) d = getDrawableByName(name + 1);
@@ -175,11 +176,11 @@ public class Site implements MapItem {
     }
 
     @Nullable
-    private Drawable getDrawableByName(String name) {
+    private BitmapDrawable getDrawableByName(String name) {
         Resources resources = ctx.getResources();
         @DrawableRes final int rid = resources.getIdentifier(name, "drawable", ctx.getPackageName());
         try {
-            Drawable r = resources.getDrawable(rid, null);
+            BitmapDrawable r = (BitmapDrawable) resources.getDrawable(rid, null);
             Log.d(TAG, String.format("photo name exists: %s", name));
             return r;
         } catch (Resources.NotFoundException e) {

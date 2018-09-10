@@ -16,7 +16,7 @@ android {
         applicationId 'it.unive.dais.cevid.appace'
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 9
+        versionCode 10
         versionName "1.0-beta"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         versionNameSuffix '-beta'

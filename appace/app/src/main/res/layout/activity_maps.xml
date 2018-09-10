@@ -7,6 +7,79 @@
     tools:context="it.unive.dais.cevid.appace.component.MapsActivity">
 
     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:layout_margin="@dimen/map_layout_margin_left"
+        android:alpha="0.85"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="10dp"
+                android:background="@color/legenda_yellow_overlay" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:gravity="top"
+                android:maxLines="1"
+                android:text="@string/prexx_legenda_text"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="10dp"
+                android:background="@color/legenda_red_overlay" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:gravity="top"
+                android:maxLines="1"
+                android:text="@string/xx_legenda_text"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="10dp"
+                android:background="@color/legenda_green_overlay" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:gravity="top"
+                android:maxLines="1"
+                android:text="@string/contemporary_legenda_text"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="@dimen/map_layout_width"
         android:layout_height="@dimen/map_layout_height"
         android:layout_gravity="start|bottom"
@@ -23,10 +96,10 @@
             android:layout_marginTop="@dimen/button_margin"
             android:layout_weight="1"
             android:background="@color/transparent"
+            android:contentDescription="@string/imageview_default_contentdescription"
             android:scaleType="fitStart"
             android:src="@drawable/button_car"
-            android:visibility="invisible"
-            android:contentDescription="@string/imageview_default_contentdescription" />
+            android:visibility="invisible" />
 
         <ImageButton
             android:id="@+id/button_here"
@@ -35,10 +108,10 @@
             android:layout_marginTop="@dimen/button_margin"
             android:layout_weight="1"
             android:background="@color/transparent"
+            android:contentDescription="@string/imageview_default_contentdescription"
             android:scaleType="fitStart"
             android:src="@drawable/button_here"
-            android:visibility="visible"
-            android:contentDescription="@string/imageview_default_contentdescription" />
+            android:visibility="visible" />
 
     </LinearLayout>
 

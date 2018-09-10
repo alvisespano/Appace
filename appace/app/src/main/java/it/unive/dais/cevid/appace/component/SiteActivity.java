@@ -4,6 +4,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.os.Bundle;
@@ -52,10 +53,10 @@ public class SiteActivity extends BaseActivity {
         this.<TextView>findViewById(R.id.site_title_textview).setText(title);
 
         // photos
-        List<Drawable> photos = site.getPhotos();
+        List<BitmapDrawable> photos = site.getPhotos();
         LinearLayout layout = findViewById(R.id.site_imageview_layout);
         int i = 0;
-        for (Drawable d : photos) {
+        for (BitmapDrawable d : photos) {
             ImageView iv = new ImageView(this);
             iv.setId(i++);
             iv.setImageDrawable(d);
@@ -63,6 +64,7 @@ public class SiteActivity extends BaseActivity {
             iv.setPadding(7, 0, 7, 0);
             iv.setAdjustViewBounds(true);
             layout.addView(iv);
+            // TODO: ogni foto deve avere una didascalia
         }
 
         // text

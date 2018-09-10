@@ -13,6 +13,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.IdRes;
@@ -21,11 +22,14 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -377,15 +381,55 @@ public class MapsActivity extends BaseActivity
             String ord = site.getRomanOrdinal();
             @IdRes int mid;
             switch (site.getEra()) {
-                case PreXX: mid = R.drawable.marker_yellow; break;
-                case XX: mid = R.drawable.marker_red; break;
-                default: mid = R.drawable.marker_green; break;
+                case PreXX:
+                    mid = R.drawable.marker_yellow;
+                    break;
+                case XX:
+                    mid = R.drawable.marker_red;
+                    break;
+                default:
+                    mid = R.drawable.marker_green;
+                    break;
             }
             MarkerOptions opts = new MarkerOptions()
                     .title(String.format("%s. %s", ord, site.getTitle()))
                     .position(site.getPosition())
                     .snippet(site.getAddress())
-                    .icon(BitmapDescriptorFactory.fromBitmap(writeTextOnDrawable(mid, ord)));
+                    .icon(BitmapDescriptorFactory.fromBitmap(writeTextOnDrawable(this, mid, ord)));
+
+            final Context ctx = this;
+            gMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
+
+                @Override
+                public View getInfoWindow(Marker arg0) {
+                    return null;
+                }
+
+                @Override
+                public View getInfoContents(Marker marker) {
+
+                    LinearLayout info = new LinearLayout(ctx);
+                    info.setOrientation(LinearLayout.VERTICAL);
+
+                    TextView title = new TextView(ctx);
+                    title.setTextColor(Color.BLACK);
+                    title.setGravity(Gravity.CENTER);
+                    title.setTypeface(null, Typeface.BOLD);
+                    title.setText(marker.getTitle());
+
+                    TextView snippet = new TextView(ctx);
+                    snippet.setTextColor(Color.GRAY);
+                    snippet.setGravity(Gravity.CENTER);
+                    snippet.setTypeface(null, Typeface.NORMAL);
+                    snippet.setText(marker.getSnippet());
+
+                    info.addView(title);
+                    info.addView(snippet);
+
+                    return info;
+                }
+            });
+
             Marker m = gMap.addMarker(opts);
             m.setTag(site);
             markers.add(m);
@@ -407,9 +451,12 @@ public class MapsActivity extends BaseActivity
     }
 
 
-    private Bitmap writeTextOnDrawable(int id, String text) {
+    public static Bitmap writeTextOnDrawable(Context ctx, @IdRes int id, String text) {
+        Bitmap bm0 = BitmapFactory.decodeResource(ctx.getResources(), id).copy(Bitmap.Config.ARGB_8888, true);
+        return writeTextOnDrawable(ctx, bm0, text);
+    }
 
-        Bitmap bm0 = BitmapFactory.decodeResource(getResources(), id).copy(Bitmap.Config.ARGB_8888, true);
+    public static Bitmap writeTextOnDrawable(Context ctx, Bitmap bm0, String text) {
         final double scale = 0.45;
         Bitmap bm = Bitmap.createScaledBitmap(bm0, (int) (bm0.getWidth() * scale), (int) (bm0.getHeight() * scale), true);
         Typeface tf = Typeface.create("mantinia", Typeface.BOLD);
@@ -421,7 +468,7 @@ public class MapsActivity extends BaseActivity
         paint.setColor(Color.WHITE);
         paint.setTypeface(tf);
         paint.setTextAlign(Paint.Align.CENTER);
-        paint.setTextSize(convertToPixels(this, 10));
+        paint.setTextSize(convertToPixels(ctx, 10));
 
         Rect textRect = new Rect();
         paint.getTextBounds(text, 0, text.length(), textRect);
@@ -430,7 +477,7 @@ public class MapsActivity extends BaseActivity
 
         //If the text is bigger than the canvas , reduce the font size
         if (textRect.width() >= (canvas.getWidth() - 4))     //the padding on either sides is considered as 4, so as to appropriately fit in the text
-            paint.setTextSize(convertToPixels(this, 7));        //Scaling needs to be used for different dpi's
+            paint.setTextSize(convertToPixels(ctx, 7));        //Scaling needs to be used for different dpi's
 
         final int adjustmentX = 0, adjustmentY = -8;
 

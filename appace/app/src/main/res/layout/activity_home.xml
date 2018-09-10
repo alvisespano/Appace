@@ -5,12 +5,6 @@
     android:background="@color/background"
     android:fitsSystemWindows="true">
 
-    <!--<ImageView-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="300dp"-->
-    <!--android:background="@drawable/logo_black_tiled"-->
-    <!--android:contentDescription="@string/imageview_default_contentdescription" />-->
-
     <FrameLayout
         android:id="@+id/home_background_layout"
         android:layout_width="match_parent"
@@ -52,6 +46,8 @@
         android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:gravity="bottom"
         android:orientation="vertical">
 
@@ -88,17 +84,51 @@
                 android:background="@color/gray" />
         </LinearLayout>
 
-
-        <ImageView
-            android:id="@+id/home_image"
-            android:layout_width="132dp"
-            android:layout_height="249dp"
-            android:layout_gravity="center"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:weightSum="100"
             android:layout_margin="@dimen/home_vertical_padding"
-            android:alpha="0.9"
-            android:contentDescription="@string/imageview_default_contentdescription"
-            android:scaleType="fitCenter"
-            android:src="@drawable/pace_frontespizio" />
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:alpha="0.8"
+                android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:contentDescription="@string/imageview_default_contentdescription"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo_comune_padova_transp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:text="@string/logo_comune_padova_text"
+                    />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/home_image"
+                android:layout_width="0dp"
+                android:layout_height="260dp"
+                android:layout_weight="80"
+                android:alpha="0.9"
+                android:contentDescription="@string/imageview_default_contentdescription"
+                android:scaleType="fitCenter"
+                android:src="@drawable/pace_frontespizio" />
+
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
