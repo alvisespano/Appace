@@ -146,10 +146,9 @@ exemplary collaboration.\n
 </string>
 
     <string name="credits" tools:ignore="TypographyOther">
-        APpace - Places of Peace in Padua\n
+        APpace - Places of Peace in the Padua area\n
         \n
-    Photos and text by MIR\n
-    - Movimento Internazionale Riconciliazione\n
+    Photos and text by MIR, Movimento Internazionale Riconciliazione, sede di Padova\n
     \n
     From «Routes of peace and nonviolence in Padua»,
     Tipografia Imprimenda, Limena (pd)\n
@@ -222,6 +221,6 @@ authorised in writing by the MIR of Padua.
         alvise.spano@unive.it
     </string>
 
-    <string name="home_scrolling_text">APpace · Comune di Padova (Padua) · Places of Peace in the city center</string>
+    <string name="home_scrolling_text">APpace · Places of Peace in the Padua area</string>
 
 </resources>

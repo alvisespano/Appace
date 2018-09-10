@@ -147,10 +147,9 @@ collaborazione.\n
 </string>
 
     <string name="credits" tools:ignore="TypographyOther">
-        APpace - Luoghi della Pace del Comune di Padova\n
+        APpace - Luoghi della Pace nel territorio di Padova\n
         \n
-    Contenuti a cura del MIR\n
-    - Movimento Internazionale Riconciliazione\n
+    Contenuti a cura del MIR, Movimento Internazionale Riconciliazione, sede di Padova\n
     \n
     Tratti da:\n
         «Percorsi di Pace e di Non Violenza a Padova»,
@@ -221,7 +220,7 @@ l’autorizzazione scritta del M.I.R. di Padova.
         \n
         alvise.spano@unive.it
     </string>
-    <string name="home_scrolling_text">APpace · Comune di Padova · Luoghi di Pace del centro storico</string>
+    <string name="home_scrolling_text">APpace · Luoghi di Pace nel territorio di Padova</string>
 
 
 </resources>
