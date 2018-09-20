@@ -222,7 +222,6 @@ public class MapsActivity extends BaseActivity
 
     // maps callbacks
     //
-    //
 
     @Override
     public void onMapClick(LatLng latLng) {

@@ -12,7 +12,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -29,13 +28,10 @@ import it.unive.dais.cevid.datadroid.lib.parser.CsvParser;
 import it.unive.dais.cevid.datadroid.lib.progress.ProgressBarManager;
 import it.unive.dais.cevid.datadroid.lib.progress.ProgressCounter;
 
-@SuppressWarnings("FieldCanBeLocal")
 public class HomeActivity extends BaseActivity {
 
     private static final String TAG = "HomeActivity";
 
-    @Nullable
-    private ProgressBarManager progressBarManager;
     @Nullable
     private List<CsvParser.Row> rows = null;
     @Nullable
@@ -48,7 +44,7 @@ public class HomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        progressBarManager = new ProgressBarManager(this, new ProgressBar[]{findViewById(R.id.progress_bar)});
+        ProgressBarManager progressBarManager = new ProgressBarManager(this, new ProgressBar[]{findViewById(R.id.progress_bar)});
 
         // animations
         ScrollingImageView blackBg = findViewById(R.id.home_black_bg), redBg = findViewById(R.id.home_red_bg);
