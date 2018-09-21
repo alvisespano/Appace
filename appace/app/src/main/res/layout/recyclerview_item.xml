@@ -3,41 +3,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="80dp"
+    android:layout_gravity="end"
     android:layout_margin="2dp"
     android:background="@color/background_overlay"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:weightSum="5">
 
     <TextView
         android:id="@+id/list_id_textview"
         android:layout_width="wrap_content"
-        android:minWidth="60dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/text"
-        android:textAlignment="center"
-        android:textSize="20sp"
         android:fontFamily="@font/mantinia"
+        android:minWidth="60dp"
         android:text="XVIII"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textSize="20sp"
         tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/list_textview"
-        android:layout_width="230dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/list_text_color_overlay"
-        android:textAlignment="textStart"
-        android:textSize="22sp"
-        android:maxLines="3"
+        android:layout_weight="5"
         android:fontFamily="@font/mantinia"
-        android:text="@string/tomba_antenore_title" />
+        android:maxLines="3"
+        android:text="@string/tomba_antenore_title"
+        android:textAlignment="textStart"
+        android:textColor="@color/list_text_color_overlay"
+        android:textSize="22sp" />
 
     <ImageView
         android:id="@+id/list_imageview"
         android:layout_width="100dp"
         android:layout_height="match_parent"
+        android:contentDescription="@string/imageview_default_contentdescription"
+        android:gravity="end"
         android:scaleType="centerCrop"
-        android:layout_gravity="end"
-        android:src="@drawable/san_antonio3"
-        android:contentDescription="@string/imageview_default_contentdescription" />
+        android:src="@drawable/san_antonio3" />
 
 </LinearLayout>
 

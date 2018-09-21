@@ -3,7 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="false">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:alpha="0.8"
+        android:indeterminate="false"
+        android:max="100"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:progressTint="@color/colorAccent"
+        android:visibility="visible" />
+
 
     <FrameLayout
         android:id="@+id/home_background_layout"
@@ -27,77 +41,59 @@
             android:alpha="0.8"
             scrolling_image_view:speed="-0.2dp"
             scrolling_image_view:src="@drawable/logo_black_tile" />
-
     </FrameLayout>
 
 
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:alpha="0.8"
-        android:indeterminate="false"
-        android:max="100"
-        android:progressTint="@color/colorAccent"
-        android:visibility="visible" />
-
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/main_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="false"
-        android:gravity="bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:orientation="vertical">
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_scroll_margin_height"
+            android:background="@color/gray" />
+
+        <TextView
+            android:id="@+id/home_scrolling_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical">
+            android:background="#44000000"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:fontFamily="@font/mantinia"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="@string/home_scrolling_text"
+            android:textColor="@color/background"
+            android:textSize="27sp" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/home_scroll_margin_height"
-                android:background="@color/gray" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_scroll_margin_height"
+            android:background="@color/gray" />
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/home_scrolling_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#44000000"
-                android:ellipsize="marquee"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:fontFamily="@font/mantinia"
-                android:marqueeRepeatLimit="marquee_forever"
-                android:scrollHorizontally="true"
-                android:singleLine="true"
-                android:text="@string/home_scrolling_text"
-                android:textColor="@color/background"
-                android:textSize="27sp" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/home_scroll_margin_height"
-                android:background="@color/gray" />
-        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/home_central_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="5">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:weightSum="100"
-            android:layout_margin="@dimen/home_vertical_padding"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="20"
-                android:alpha="0.8"
-                android:orientation="vertical">
+            android:layout_weight="2"
+            android:alpha="0.8"
+            android:orientation="vertical">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -106,34 +102,40 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/logo_comune_padova_transp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:text="@string/logo_comune_padova_text"
-                    />
-
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/home_image"
-                android:layout_width="0dp"
-                android:layout_height="260dp"
-                android:layout_weight="80"
-                android:alpha="0.9"
-                android:contentDescription="@string/imageview_default_contentdescription"
-                android:scaleType="fitCenter"
-                android:src="@drawable/pace_frontespizio" />
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/logo_comune_padova_text"
+                android:textAlignment="center"
+                android:minLines="3"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
+        <ImageView
+            android:id="@+id/home_image"
+            android:layout_width="0dp"
+            android:layout_height="260dp"
+            android:layout_weight="3"
+            android:alpha="0.9"
+            android:contentDescription="@string/imageview_default_contentdescription"
+            android:scaleType="fitCenter"
+            android:src="@drawable/pace_frontespizio" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/home_menus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/home_vertical_padding"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/home_button_height"
-            android:layout_marginBottom="@dimen/home_vertical_padding"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <Button
@@ -157,8 +159,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/home_button_height"
-            android:layout_marginBottom="@dimen/home_vertical_padding"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <Button
@@ -188,6 +190,7 @@
                 android:background="@color/gray"
                 android:text="@string/credits_button" />
         </LinearLayout>
+
     </LinearLayout>
 
 
