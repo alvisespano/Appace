@@ -64,7 +64,6 @@
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:fontFamily="@font/mantinia"
-            android:marqueeRepeatLimit="marquee_forever"
             android:scrollHorizontally="true"
             android:singleLine="true"
             android:text="@string/home_scrolling_text"
